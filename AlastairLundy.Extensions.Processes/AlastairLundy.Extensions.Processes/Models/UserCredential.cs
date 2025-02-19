@@ -30,7 +30,7 @@ using System.Runtime.Versioning;
 namespace AlastairLundy.Extensions.Processes
 {
     /// <summary>
-    /// A class to represent a User Credential to be used with Commands.
+    /// A class to represent a User Credential to be used with Processes.
     /// </summary>
     [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")]
     public class UserCredential : IEquatable<UserCredential>, IDisposable
