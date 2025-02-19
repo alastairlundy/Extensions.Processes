@@ -1,8 +1,9 @@
 # ProcessExtensions
+In this readme, the package AlastairLundy.Extensions.Processes is referred to as ProcessExtensions for brevity.
+
 ProcessExtensions adds much needed abstractions and extensions to Processes and Process Running, to make it easier and safer.
 
 ProcessExtensions started as part of CliRunner but is now a separate package, helping other projects besides CliRunner to run processes easily and safely.
-
 
 [![NuGet](https://img.shields.io/nuget/v/AlastairLundy.Extensions.Processes.svg)](https://www.nuget.org/packages/AlastairLundy.Extensions.Processes/)
 [![NuGet](https://img.shields.io/nuget/dt/AlastairLundy.Extensions.Processes.svg)](https://www.nuget.org/packages/AlastairLundy.Extensions.Processes/)
