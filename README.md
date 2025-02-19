@@ -170,7 +170,7 @@ Builds should generally always include Source Link and symbol packages if intend
 ## How to Contribute to ProcessExtensions
 Thank you in advance for considering contributing to ProcessExtensions.
 
-Please see the [CONTRIBUTING.md file]() for code and localization contributions.
+Please see the [CONTRIBUTING.md file](https://github.com/alastairlundy/Extensions.Processes/blob/main/CONTRIBUTING.md) for code and localization contributions.
 
 If you want to file a bug report or suggest a potential feature to add, please check out the [GitHub issues page](https://github.com/alastairlundy/Extensions.Processes/issues/) to see if a similar or identical issue is already open.
 If there is not already a relevant issue filed, please [file one here](https://github.com/alastairlundy/Extensions.Processes/issues/new) and follow the respective guidance from the appropriate issue template.
