@@ -63,7 +63,7 @@ public class PipedProcessRunner : IPipedProcessRunner
     [UnsupportedOSPlatform("browser")]
 #endif
     public async Task<(ProcessResult processResult, Stream standardOutput, Stream standardError)> ExecuteProcessWithPipingAsync(Process process,
-        ProcessResultValidation processResultValidation, ProcessResourcePolicy processResourcePolicy = null, CancellationToken cancellationToken = default)
+        ProcessResultValidation processResultValidation, ProcessResourcePolicy? processResourcePolicy = null, CancellationToken cancellationToken = default)
     {
         await _processRunnerUtils.ExecuteAsync(process, ProcessResultValidation.None, processResourcePolicy, cancellationToken);
        
@@ -107,7 +107,7 @@ public class PipedProcessRunner : IPipedProcessRunner
 #endif
     public async Task<(BufferedProcessResult processResult, Stream standardOutput, Stream standardError)>
         ExecuteBufferedProcessWithPipingAsync(Process process, ProcessResultValidation processResultValidation,
-            ProcessResourcePolicy processResourcePolicy = null,
+            ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default)
     {
         process.StartInfo.RedirectStandardOutput = true;

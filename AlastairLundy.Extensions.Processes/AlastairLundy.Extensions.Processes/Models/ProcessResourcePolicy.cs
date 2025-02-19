@@ -12,6 +12,8 @@ using System.Diagnostics;
 
 #if NET5_0_OR_GREATER
 using System.Runtime.Versioning;
+#else
+using OperatingSystem = Polyfills.OperatingSystemPolyfill;
 #endif
 
 namespace AlastairLundy.Extensions.Processes;
@@ -39,10 +41,18 @@ public class ProcessResourcePolicy
         {
             processorAffinity = new IntPtr(0x0001);  
         }
+
+        if (OperatingSystem.IsWindows() || OperatingSystem.IsMacOS() || OperatingSystem.IsFreeBSD())
+        {
+            MinWorkingSet = minWorkingSet;
+            MaxWorkingSet = maxWorkingSet;
+        }
+
+        if (OperatingSystem.IsWindows() || OperatingSystem.IsLinux())
+        {
+            ProcessorAffinity = processorAffinity;
+        }
         
-        MinWorkingSet = minWorkingSet;
-        MaxWorkingSet = maxWorkingSet;
-        ProcessorAffinity = processorAffinity;
         PriorityClass = priorityClass;
         EnablePriorityBoost = enablePriorityBoost;
     }

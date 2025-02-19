@@ -29,7 +29,7 @@ public interface IPipedProcessRunner
     /// <returns>The Process Results from the running the process with the Piped Standard Output and Standard Error.</returns>
     public Task<(ProcessResult processResult, Stream standardOutput, Stream standardError)>
         ExecuteProcessWithPipingAsync(Process process, ProcessResultValidation processResultValidation,
-            ProcessResourcePolicy processResourcePolicy = null,
+            ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default);
 
 
@@ -44,6 +44,6 @@ public interface IPipedProcessRunner
     public Task<(BufferedProcessResult processResult, Stream standardOutput, Stream standardError)>
         ExecuteBufferedProcessWithPipingAsync(Process process,
             ProcessResultValidation processResultValidation,
-            ProcessResourcePolicy processResourcePolicy = null,
+            ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default);
 }

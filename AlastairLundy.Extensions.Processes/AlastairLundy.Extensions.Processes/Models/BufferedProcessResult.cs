@@ -48,7 +48,7 @@ namespace AlastairLundy.Extensions.Processes
         /// <remarks>This method intentionally does not consider Start and Exit times of Command Results for the purposes of equality comparison.</remarks>
         /// <param name="other">The other BufferedProcessResult to compare.</param>
         /// <returns>True if this BufferedProcessResult is equal to the other BufferedProcessResult; false otherwise.</returns>
-        public bool Equals(BufferedProcessResult other)
+        public bool Equals(BufferedProcessResult? other)
         {
             if (other is null)
             {
@@ -65,7 +65,7 @@ namespace AlastairLundy.Extensions.Processes
         /// </summary>
         /// <param name="obj">The other object to compare.</param>
         /// <returns>True if the other object is a BufferedProcessResult and is equal to this BufferedProcessResult; false otherwise.</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is null)
             {
@@ -95,7 +95,7 @@ namespace AlastairLundy.Extensions.Processes
         /// <param name="left">The first BufferedProcessResult to compare.</param>
         /// <param name="right">The second BufferedProcessResult to compare.</param>
         /// <returns>True if the two BufferedProcessResult objects are equal; false otherwise.</returns>
-        public static bool Equals(BufferedProcessResult left, BufferedProcessResult right)
+        public static bool Equals(BufferedProcessResult left, BufferedProcessResult? right)
         {
             return left.Equals(right);
         }
@@ -106,7 +106,7 @@ namespace AlastairLundy.Extensions.Processes
         /// <param name="left">A BufferedProcessResult to be compared.</param>
         /// <param name="right">The other BufferedProcessResult to be compared.</param>
         /// <returns>True if both BufferedProcessResults are equal to each other; false otherwise.</returns>
-        public static bool operator ==(BufferedProcessResult left, BufferedProcessResult right)
+        public static bool operator ==(BufferedProcessResult left, BufferedProcessResult? right)
         {
             return Equals(left, right);
         }
@@ -117,7 +117,7 @@ namespace AlastairLundy.Extensions.Processes
         /// <param name="left">A BufferedProcessResult to be compared.</param>
         /// <param name="right">The other BufferedProcessResult to be compared.</param>
         /// <returns>True if both BufferedProcessResults are not equal to each other; false otherwise.</returns>
-        public static bool operator !=(BufferedProcessResult left, BufferedProcessResult right)
+        public static bool operator !=(BufferedProcessResult left, BufferedProcessResult? right)
         {
             return Equals(left, right) == false;
         }

@@ -26,15 +26,15 @@ public static class ProcessSetResourcePolicyExtensions
     /// <param name="process">The process to apply the policy to.</param>
     /// <param name="policy">The process resource policy to be applied.</param>
     /// <exception cref="InvalidOperationException"></exception>
-    public static void SetResourcePolicy(this Process process, ProcessResourcePolicy? policy)
+    public static void SetResourcePolicy(this Process process, ProcessResourcePolicy? resourcePolicy)
     {
-        if (process.HasStarted())
+        if (process.HasStarted() && resourcePolicy != null)
         {
             if (OperatingSystem.IsWindows() || OperatingSystem.IsLinux())
             {
-                if (policy.ProcessorAffinity is not null)
+                if (resourcePolicy.ProcessorAffinity is not null)
                 {
-                    process.ProcessorAffinity = (IntPtr)policy.ProcessorAffinity;
+                    process.ProcessorAffinity = (IntPtr)resourcePolicy.ProcessorAffinity;
                 }
             }
 
@@ -43,19 +43,19 @@ public static class ProcessSetResourcePolicyExtensions
                 OperatingSystem.IsFreeBSD() ||
                 OperatingSystem.IsWindows())
             {
-                if (policy.MinWorkingSet != null)
+                if (resourcePolicy.MinWorkingSet != null)
                 {
-                    process.MinWorkingSet = (nint)policy.MinWorkingSet;
+                    process.MinWorkingSet = (nint)resourcePolicy.MinWorkingSet;
                 }
 
-                if (policy.MaxWorkingSet != null)
+                if (resourcePolicy.MaxWorkingSet != null)
                 {
-                    process.MaxWorkingSet = (nint)policy.MaxWorkingSet;
+                    process.MaxWorkingSet = (nint)resourcePolicy.MaxWorkingSet;
                 }
             }
         
-            process.PriorityClass = policy.PriorityClass;
-            process.PriorityBoostEnabled = policy.EnablePriorityBoost;
+            process.PriorityClass = resourcePolicy.PriorityClass;
+            process.PriorityBoostEnabled = resourcePolicy.EnablePriorityBoost;
         }
         else
         {
