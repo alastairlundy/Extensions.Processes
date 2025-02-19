@@ -10,9 +10,11 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
-using System.Runtime.Versioning;
+
 using AlastairLundy.Extensions.Processes.Builders.Abstractions;
+
 #if NET5_0_OR_GREATER
+using System.Runtime.Versioning;
 #endif
 
 namespace AlastairLundy.Extensions.Processes.Builders;

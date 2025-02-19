@@ -13,6 +13,8 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 using System.Security;
+
+
 using AlastairLundy.Extensions.Processes.Builders.Abstractions;
 
 // ReSharper disable ArrangeObjectCreationWhenTypeEvident
