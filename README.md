@@ -8,6 +8,16 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
 [![NuGet](https://img.shields.io/nuget/v/AlastairLundy.Extensions.Processes.svg)](https://www.nuget.org/packages/AlastairLundy.Extensions.Processes/)
 [![NuGet](https://img.shields.io/nuget/dt/AlastairLundy.Extensions.Processes.svg)](https://www.nuget.org/packages/AlastairLundy.Extensions.Processes/)
 
+## Table of Contents
+* [Features](#features)
+* [Installing ProcessExtensions](#how-to-install-and-use-processextensions)
+    * [Compatibility](#supported-platforms)
+* [Examples](#examples)
+* [Contributing to ProcessExtensions](#how-to-contribute-to-processextensions)
+* [Roadmap](#processextensions-roadmap)
+* [License](#license)
+* [Acknowledgements](#acknowledgements)
+
 ## Features
 * Easy to use safe Process Running classes and interfaces
 * Models that help abstract away some of the complicated nature of Process objects
