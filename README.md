@@ -49,14 +49,14 @@ The following table details which target platforms are supported for running Pro
 | Linux            | Fully Supported :white_check_mark: |                                                                                 |
 | FreeBSD          | Fully Supported :white_check_mark: |                                                                                 |
 | Android          | Untested Platform :warning:        | Support for this platform has not been tested but should theoretically work.    |
-| IOS              | Not Supported :x:                  | Not supported due to ``Process.Start()`` not supporting IOS. ^3                 | 
-| tvOS             | Not Supported :x:                  | Not supported due to ``Process.Start()`` not supporting tvOS ^3                 |
-| watchOS          | Not Supported :x:                  | Not supported due to ``Process.Start()`` not supporting watchOS ^4              |
+| IOS              | Not Supported :x:                  | Not supported due to ``Process.Start()`` not supporting IOS. ^2                 | 
+| tvOS             | Not Supported :x:                  | Not supported due to ``Process.Start()`` not supporting tvOS ^2                 |
+| watchOS          | Not Supported :x:                  | Not supported due to ``Process.Start()`` not supporting watchOS ^3              |
 | Browser          | Not Supported and Not Planned :x:  | Not supported due to not being a valid target Platform for executing processes. |
 
-^3 - See the [Process class documentation](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process.start?view=net-9.0#system-diagnostics-process-start) for more info.
+^2 - See the [Process class documentation](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process.start?view=net-9.0#system-diagnostics-process-start) for more info.
 
-^4 - Lack of watchOS support is implied by lack of IOS support since [watchOS is based on IOS](https://en.wikipedia.org/wiki/WatchOS).
+^3 - Lack of watchOS support is implied by lack of IOS support since [watchOS is based on IOS](https://en.wikipedia.org/wiki/WatchOS).
 
 
 **Note:** This library has not been tested on Android or Tizen.
