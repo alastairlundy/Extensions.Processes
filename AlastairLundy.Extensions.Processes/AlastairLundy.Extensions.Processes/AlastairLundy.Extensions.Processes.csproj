@@ -14,7 +14,9 @@
         <Description>ProcessExtensions adds much needed abstractions and extensions to Processes and Process Running, to make it easier and safer.
 
 ProcessExtensions started as part of CliRunner but is now a separate package, helping other projects besides CliRunner to run processes easily and safely.</Description>
-        <PackageReleaseNotes>Initial Release as separate package</PackageReleaseNotes>
+        <PackageReleaseNotes>## Changes since 1.0.0
+* Added ``IEnvironmentVariablesBuilder`` and ``EnvironmentVariablesBuilder`` from CliRunner
+* Updated Polyfill dependency required version from 7.16.1 to 7.17.0</PackageReleaseNotes>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -22,6 +24,7 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageTags>process, processes, process-runner, process runner, process-result,</PackageTags>
+        <Version>1.1.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
