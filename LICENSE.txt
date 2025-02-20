@@ -1,7 +1,3 @@
-AlastairLundy.Extensions.Processes 
-
-Copyright (c) Alastair Lundy 2024-2025
-
 Mozilla Public License Version 2.0
 ==================================
 
