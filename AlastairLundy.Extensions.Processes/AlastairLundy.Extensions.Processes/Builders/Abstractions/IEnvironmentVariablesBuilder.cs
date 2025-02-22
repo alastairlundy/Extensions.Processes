@@ -9,7 +9,7 @@
 
 using System.Collections.Generic;
 
-namespace CliRunner.Builders.Abstractions;
+namespace AlastairLundy.Extensions.Processes.Builders.Abstractions;
 
 public interface IEnvironmentVariablesBuilder
 {
