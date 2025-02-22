@@ -37,6 +37,7 @@ public interface IProcessRunnerUtility
     /// </summary>
     /// <param name="process">The process to be executed.</param>
     /// <param name="processResultValidation">Whether validation should be performed on the exit code.</param>
+    /// <param name="processResourcePolicy">The process resource policy to be set if it is not null.</param>
     /// <param name="cancellationToken">The cancellation token to use to cancel the waiting for process exit if required.</param>
     /// <returns>The process' exit code.</returns>
     public Task<int> ExecuteAsync(Process process, ProcessResultValidation processResultValidation, 
