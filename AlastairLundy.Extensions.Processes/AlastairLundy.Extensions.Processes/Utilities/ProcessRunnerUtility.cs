@@ -15,6 +15,7 @@ using System.Runtime.Versioning;
 
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -81,13 +82,9 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
     public int Execute(Process process, ProcessResultValidation processResultValidation,
         ProcessResourcePolicy? processResourcePolicy = null)
     {
-            _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
-            
-            if (resolvedFilePath.Equals(process.StartInfo.FileName) == false)
-            {
-                process.StartInfo.FileName = resolvedFilePath;    
-            }
-            
+        _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
+        process.StartInfo.FileName = resolvedFilePath;
+        
             if (process.HasStarted() == false)
             {
                 process.Start();
@@ -153,11 +150,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
         CancellationToken cancellationToken = default)
     {
         _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
-       
-        if (resolvedFilePath.Equals(process.StartInfo.FileName) == false)
-        {
-            process.StartInfo.FileName = resolvedFilePath;    
-        }
+        process.StartInfo.FileName = resolvedFilePath;
 
         if (process.HasStarted() == false)
         {

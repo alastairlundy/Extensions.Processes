@@ -12,9 +12,9 @@ namespace AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 public interface IFilePathResolverUtility
 {
     /// <summary>
-    /// Resolves the file path if the file path is a PATH environment variable.
+    ///
     /// </summary>
     /// <param name="inputFilePath">The input file path to resolve.</param>
-    /// <param name="resolvedFilePath">The resolved file path if the file path is in the PATH environment variable; the original input file path otherwise.</param>
+    /// <param name="resolvedFilePath">The resolved file path; the original input file path otherwise.</param>
     void ResolveFilePath(string inputFilePath, out string resolvedFilePath);
 }
