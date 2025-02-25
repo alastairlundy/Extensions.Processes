@@ -20,6 +20,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using AlastairLundy.Extensions.Processes.Exceptions;
+
 using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 
 namespace AlastairLundy.Extensions.Processes.Utilities;
@@ -30,9 +31,9 @@ namespace AlastairLundy.Extensions.Processes.Utilities;
 /// <remarks>This class is primarily intended for internal use OR use when creating a Process Runner or Command Runner implementation.</remarks>
 public class ProcessRunnerUtility : IProcessRunnerUtility
 {
-    private readonly IFilePathResolverUtility _filePathResolver;
+    private readonly IFilePathResolver _filePathResolver;
     
-    public ProcessRunnerUtility(IFilePathResolverUtility filePathResolver)
+    public ProcessRunnerUtility(FilePathResolver filePathResolver)
     {
         _filePathResolver = filePathResolver;
     }
