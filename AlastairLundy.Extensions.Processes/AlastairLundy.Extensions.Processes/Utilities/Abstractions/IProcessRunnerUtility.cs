@@ -31,7 +31,7 @@ public interface IProcessRunnerUtility
     /// <param name="cancellationToken">The cancellation token to use to cancel the waiting for process exit if required.</param>
     /// <returns>The process' exit code.</returns>
     public Task<int> ExecuteAsync(Process process, CancellationToken cancellationToken = default);
-
+    
     /// <summary>
     /// Starts a Process and asynchronously waits for it to exit before returning.
     /// </summary>

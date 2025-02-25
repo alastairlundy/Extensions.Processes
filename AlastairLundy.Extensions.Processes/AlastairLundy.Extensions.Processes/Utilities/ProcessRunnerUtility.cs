@@ -19,9 +19,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
+using AlastairLundy.Extensions.IO.Files;
 using AlastairLundy.Extensions.IO.Files.Abstractions;
 
 using AlastairLundy.Extensions.Processes.Exceptions;
+
 using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 
 namespace AlastairLundy.Extensions.Processes.Utilities;
@@ -34,7 +36,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
 {
     private readonly IFilePathResolver _filePathResolver;
     
-    public ProcessRunnerUtility(IFilePathResolver filePathResolver)
+    public ProcessRunnerUtility(FilePathResolver filePathResolver)
     {
         _filePathResolver = filePathResolver;
     }
@@ -83,13 +85,9 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
     public int Execute(Process process, ProcessResultValidation processResultValidation,
         ProcessResourcePolicy? processResourcePolicy = null)
     {
-            _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
-            
-            if (resolvedFilePath.Equals(process.StartInfo.FileName) == false)
-            {
-                process.StartInfo.FileName = resolvedFilePath;    
-            }
-            
+        _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
+        process.StartInfo.FileName = resolvedFilePath;
+        
             if (process.HasStarted() == false)
             {
                 process.Start();
@@ -155,11 +153,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
         CancellationToken cancellationToken = default)
     {
         _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
-       
-        if (resolvedFilePath.Equals(process.StartInfo.FileName) == false)
-        {
-            process.StartInfo.FileName = resolvedFilePath;    
-        }
+        process.StartInfo.FileName = resolvedFilePath;
 
         if (process.HasStarted() == false)
         {
