@@ -19,6 +19,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
+using AlastairLundy.Extensions.IO.Files;
+using AlastairLundy.Extensions.IO.Files.Abstractions;
+
 using AlastairLundy.Extensions.Processes.Exceptions;
 
 using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
