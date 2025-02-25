@@ -16,13 +16,18 @@ namespace AlastairLundy.Extensions.Processes.Utilities;
 
 public class FilePathResolverUtility : IFilePathResolverUtility
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="inputFilePath"></param>
+    /// <param name="resolvedFilePath"></param>
     public void ResolveFilePath(string inputFilePath, out string resolvedFilePath)
     {
         int recursionNumber = 0;
         string newPath = string.Join(string.Empty, inputFilePath.Where(x => Path.GetInvalidPathChars().Contains(x) == false && Path.GetInvalidFileNameChars().Contains(x) == false)
             .ToArray()); 
             
-        while (recursionNumber < 10)
+        while (recursionNumber < 3)
         {
 #if NET6_0_OR_GREATER || NETSTANDARD2_1
             if (Path.IsPathFullyQualified(newPath))
