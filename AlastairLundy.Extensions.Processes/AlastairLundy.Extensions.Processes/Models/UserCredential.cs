@@ -126,7 +126,9 @@ namespace AlastairLundy.Extensions.Processes
             
             return Domain == other.Domain &&
                UserName == other.UserName &&
-               Password!.Equals(other.Password)
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+               Password.Equals(other.Password)
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
                && LoadUserProfile == other.LoadUserProfile;
         }
 
