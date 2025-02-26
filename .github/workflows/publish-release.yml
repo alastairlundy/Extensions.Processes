@@ -1,0 +1,37 @@
+# This workflow will build and publish ProcessExtensions to Nuget.
+
+name: Publish
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  
+  publish-github:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: eregon/publish-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_id: ${{ steps.create_release.outputs.id }}
+
+  publish-nuget:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Create packages
+      run: dotnet build -c Release
+    - name: Publish the package to nuget.org
+      run: dotnet nuget push */bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
+      env:
+          NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
