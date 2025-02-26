@@ -48,7 +48,7 @@ public class UserCredentialBuilder : IUserCredentialBuilder
     /// <param name="domain">The domain to set.</param>
     /// <returns>A new instance of the CredentialsBuilder with the updated domain.</returns>
     [Pure]
-    public IUserCredentialBuilder SetDomain(string domain) =>
+    public IUserCredentialBuilder SetDomain(string? domain) =>
         new UserCredentialBuilder
         {
            _userCredential = new UserCredential(domain, _userCredential.UserName, _userCredential.Password,
@@ -61,7 +61,7 @@ public class UserCredentialBuilder : IUserCredentialBuilder
     /// <param name="username">The username to set.</param>
     /// <returns>A new instance of the CredentialsBuilder with the updated username.</returns>
     [Pure]
-    public IUserCredentialBuilder SetUsername(string username) =>
+    public IUserCredentialBuilder SetUsername(string? username) =>
         new UserCredentialBuilder
         {
             _userCredential = new UserCredential(_userCredential.Domain, username, _userCredential.Password,
@@ -74,7 +74,7 @@ public class UserCredentialBuilder : IUserCredentialBuilder
     /// <param name="password">The password to set, as a SecureString.</param>
     /// <returns>A new instance of the CredentialsBuilder with the updated password.</returns>
     [Pure]
-    public IUserCredentialBuilder SetPassword(SecureString password) =>
+    public IUserCredentialBuilder SetPassword(SecureString? password) =>
         new UserCredentialBuilder
         {
             _userCredential = new UserCredential(_userCredential.Domain, _userCredential.UserName, password,
@@ -100,7 +100,7 @@ public class UserCredentialBuilder : IUserCredentialBuilder
     /// <returns>The built UserCredentials.</returns>
     [Pure]
     public UserCredential Build() =>
-        new UserCredential(_userCredential!.Domain, _userCredential.UserName, _userCredential.Password,
+        new UserCredential(_userCredential.Domain, _userCredential.UserName, _userCredential.Password,
             _userCredential.LoadUserProfile);
         
     /// <summary>

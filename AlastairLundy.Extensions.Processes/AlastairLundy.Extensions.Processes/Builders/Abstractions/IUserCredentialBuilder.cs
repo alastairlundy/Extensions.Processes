@@ -33,7 +33,7 @@ public interface IUserCredentialBuilder : IDisposable
     /// </summary>
     /// <param name="password">The password to set, as a SecureString.</param>
     /// <returns>A new instance of the CredentialsBuilder with the updated password.</returns>
-    IUserCredentialBuilder SetPassword(SecureString password);
+    IUserCredentialBuilder SetPassword(SecureString? password);
 
     /// <summary>
     /// Specifies whether to load the user profile.
