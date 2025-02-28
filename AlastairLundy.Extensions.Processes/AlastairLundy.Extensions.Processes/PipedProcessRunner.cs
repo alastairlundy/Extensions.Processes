@@ -9,6 +9,7 @@
 
 using System.Diagnostics;
 using System.IO;
+using System.IO.Pipelines;
 using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
@@ -70,7 +71,7 @@ public class PipedProcessRunner : IPipedProcessRunner
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<(ProcessResult processResult, Stream standardOutput, Stream standardError)> ExecuteProcessWithPipingAsync(Process process,
+    public async Task<(ProcessResult processResult, PipeWriter standardOutput, PipeWriter standardError)> ExecuteProcessWithPipingAsync(Process process,
         ProcessResultValidation processResultValidation, ProcessResourcePolicy? processResourcePolicy = null, CancellationToken cancellationToken = default)
     {
         _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
@@ -89,12 +90,12 @@ public class PipedProcessRunner : IPipedProcessRunner
             throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
         }
 
-        Stream standardOutput = Stream.Null;
-        Stream standardError = Stream.Null;
+        PipeWriter standardOutput = PipeWriter.Create(Stream.Null);
+        PipeWriter standardError = PipeWriter.Create(Stream.Null);
         
         // Pipe Standard Output and Error
-        await _processPipeHandler.PipeStandardOutputAsync(process);
-        await _processPipeHandler.PipeStandardErrorAsync(process);
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput, cancellationToken);
+        await _processPipeHandler.PipeStandardErrorAsync(process, standardError, cancellationToken);
         
         ProcessResult processResult = await _processRunnerUtils.GetResultAsync(process, true);
        
@@ -122,7 +123,7 @@ public class PipedProcessRunner : IPipedProcessRunner
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<(BufferedProcessResult processResult, Stream standardOutput, Stream standardError)>
+    public async Task<(BufferedProcessResult processResult, PipeWriter standardOutput, PipeWriter standardError)>
         ExecuteBufferedProcessWithPipingAsync(Process process, ProcessResultValidation processResultValidation,
             ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default)
@@ -145,13 +146,13 @@ public class PipedProcessRunner : IPipedProcessRunner
         {
             throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
         }
-
-        Stream standardOutput = Stream.Null;
-        Stream standardError = Stream.Null;
+        
+        PipeWriter standardOutput = PipeWriter.Create(Stream.Null);
+        PipeWriter standardError = PipeWriter.Create(Stream.Null);
         
         // Pipe Standard Output and Error
-        await _processPipeHandler.PipeStandardOutputAsync(process);
-        await _processPipeHandler.PipeStandardErrorAsync(process);
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput, cancellationToken);
+        await _processPipeHandler.PipeStandardErrorAsync(process, standardError, cancellationToken);
         
         BufferedProcessResult output = await _processRunnerUtils.GetBufferedResultAsync(process, true);
 

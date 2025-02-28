@@ -9,6 +9,7 @@
 
 using System.Diagnostics;
 using System.IO;
+using System.IO.Pipelines;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -27,7 +28,7 @@ public interface IPipedProcessRunner
     /// <param name="processResourcePolicy"></param>
     /// <param name="cancellationToken">A token to cancel the operation if required.</param>
     /// <returns>The Process Results from the running the process with the Piped Standard Output and Standard Error.</returns>
-    public Task<(ProcessResult processResult, Stream standardOutput, Stream standardError)>
+    public Task<(ProcessResult processResult, PipeWriter standardOutput, PipeWriter standardError)>
         ExecuteProcessWithPipingAsync(Process process, ProcessResultValidation processResultValidation,
             ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default);
@@ -41,7 +42,7 @@ public interface IPipedProcessRunner
     /// <param name="processResourcePolicy"></param>
     /// <param name="cancellationToken">A token to cancel the operation if required.</param>
     /// <returns>The Buffered Process Results from running the process with the Piped Standard Output and Standard Error.</returns>
-    public Task<(BufferedProcessResult processResult, Stream standardOutput, Stream standardError)>
+    public Task<(BufferedProcessResult processResult, PipeWriter standardOutput, PipeWriter standardError)>
         ExecuteBufferedProcessWithPipingAsync(Process process,
             ProcessResultValidation processResultValidation,
             ProcessResourcePolicy? processResourcePolicy = null,

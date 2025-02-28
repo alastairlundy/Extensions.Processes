@@ -9,6 +9,8 @@
 
 using System.Diagnostics;
 using System.IO;
+using System.IO.Pipelines;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AlastairLundy.Extensions.Processes.Piping.Abstractions;
@@ -21,22 +23,25 @@ public interface IProcessPipeHandler
     /// <summary>
     /// Asynchronously copies the Stream to the process' standard input.
     /// </summary>
-    /// <param name="source">The Stream to be copied from.</param>
+    /// <param name="source">The Pipe to be copied from.</param>
     /// <param name="destination">The process to be copied to</param>
+    /// <param name="cancellationToken"></param>
     /// <returns>The destination process with the copied stream.</returns>
-    Task<Process> PipeStandardInputAsync(Stream source, Process destination);
+    Task PipeStandardInputAsync(PipeReader source, Process destination, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Asynchronously copies the process' Standard Output to a Stream.
     /// </summary>
     /// <param name="source">The process to be copied from.</param>
-    /// <returns>The copied stream.</returns>
-    Task<Stream> PipeStandardOutputAsync(Process source);
+    /// <param name="destination">The Pipe to be copied to.</param>
+    /// <param name="cancellationToken"></param>
+    Task PipeStandardOutputAsync(Process source, PipeWriter destination, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Asynchronously copies the process' Standard Error to a Stream.
     /// </summary>
     /// <param name="source">The process to be copied from.</param>
-    /// <returns>The copied stream.</returns>
-    Task<Stream> PipeStandardErrorAsync(Process source);
+    /// <param name="destination">The Pipe to copied to.</param>
+    /// <param name="cancellationToken"></param>
+    Task PipeStandardErrorAsync(Process source, PipeWriter destination, CancellationToken cancellationToken = default);
 }
