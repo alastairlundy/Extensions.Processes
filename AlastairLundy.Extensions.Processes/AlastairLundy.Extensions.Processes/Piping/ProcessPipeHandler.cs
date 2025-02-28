@@ -17,15 +17,16 @@ using AlastairLundy.Extensions.Processes.Piping.Abstractions;
 namespace AlastairLundy.Extensions.Processes.Piping;
 
 /// <summary>
-/// 
+/// A class to allow for piping Streams into and out of Process objects.
 /// </summary>
 public class ProcessPipeHandler : IProcessPipeHandler
 {
     /// <summary>
-    /// 
+    /// Asynchronously copies the Stream to the process' standard input.
     /// </summary>
-    /// <param name="source"></param>
-    /// <param name="destination"></param>
+    /// <param name="source">The Stream to be copied from.</param>
+    /// <param name="destination">The process to be copied to</param>
+    /// <returns>The destination process with the copied stream.</returns>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
@@ -37,7 +38,7 @@ public class ProcessPipeHandler : IProcessPipeHandler
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif 
-    public async Task PipeStandardInputAsync(Stream source, Process destination)
+    public async Task<Process> PipeStandardInputAsync(Stream source, Process destination)
     {
         if (destination.StartInfo.RedirectStandardInput && destination.StandardInput != StreamWriter.Null)
         {
@@ -45,13 +46,15 @@ public class ProcessPipeHandler : IProcessPipeHandler
             destination.StandardInput.BaseStream.Position = 0;
             await source.CopyToAsync(destination.StandardInput.BaseStream); 
         }
+        
+        return destination;
     }
 
     /// <summary>
-    /// 
+    /// Asynchronously copies the process' Standard Output to a Stream.
     /// </summary>
-    /// <param name="source"></param>
-    /// <param name="destination"></param>
+    /// <param name="source">The process to be copied from.</param>
+    /// <returns>The copied Standard Output stream if it was successfully copied; null otherwise.</returns>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
@@ -63,22 +66,26 @@ public class ProcessPipeHandler : IProcessPipeHandler
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif 
-    public async Task PipeStandardOutputAsync(Process source, Stream destination)
+    public async Task<Stream> PipeStandardOutputAsync(Process source)
     {
+        Stream output = Stream.Null;
+        
         if (source.StartInfo.RedirectStandardOutput)
         {
             if (source.StandardOutput != StreamReader.Null)
             {
-                await source.StandardOutput.BaseStream.CopyToAsync(destination);
+                await source.StandardOutput.BaseStream.CopyToAsync(output);
             }
         }
+        
+        return output;
     }
-
+    
     /// <summary>
-    /// 
+    /// Asynchronously copies the process' Standard Error to a Stream.
     /// </summary>
-    /// <param name="source"></param>
-    /// <param name="destination"></param>
+    /// <param name="source">The process to be copied from.</param>
+    /// <returns>The copied Standard Error stream if it was successfully copied; null otherwise.</returns>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
@@ -90,14 +97,18 @@ public class ProcessPipeHandler : IProcessPipeHandler
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif 
-    public async Task PipeStandardErrorAsync(Process source, Stream destination)
+    public async Task<Stream> PipeStandardErrorAsync(Process source)
     {
+        Stream output = Stream.Null;
+        
         if (source.StartInfo.RedirectStandardError)
         {
             if (source.StandardError != StreamReader.Null)
             {
-                await source.StandardError.BaseStream.CopyToAsync(destination);
+                await source.StandardError.BaseStream.CopyToAsync(output);
             }
         }
+        
+        return output;
     }
 }

@@ -19,23 +19,24 @@ namespace AlastairLundy.Extensions.Processes.Piping.Abstractions;
 public interface IProcessPipeHandler
 {
     /// <summary>
-    /// Asynchronously copies the StreamWriter to the process' standard input.
+    /// Asynchronously copies the Stream to the process' standard input.
     /// </summary>
-    /// <param name="source">The StreamWriter to be copied from.</param>
+    /// <param name="source">The Stream to be copied from.</param>
     /// <param name="destination">The process to be copied to</param>
-    Task PipeStandardInputAsync(Stream source, Process destination);
+    /// <returns>The destination process with the copied stream.</returns>
+    Task<Process> PipeStandardInputAsync(Stream source, Process destination);
 
     /// <summary>
-    /// Asynchronously copies the process' Standard Output to a StreamReader.
+    /// Asynchronously copies the process' Standard Output to a Stream.
     /// </summary>
     /// <param name="source">The process to be copied from.</param>
-    /// <param name="destination">The StreamReader to be copied to</param>
-    Task PipeStandardOutputAsync(Process source, Stream destination);
+    /// <returns>The copied stream.</returns>
+    Task<Stream> PipeStandardOutputAsync(Process source);
 
     /// <summary>
-    /// Asynchronously copies the process' Standard Error to a StreamReader.
+    /// Asynchronously copies the process' Standard Error to a Stream.
     /// </summary>
     /// <param name="source">The process to be copied from.</param>
-    /// <param name="destination">The StreamReader to be copied to</param>
-    Task PipeStandardErrorAsync(Process source, Stream destination);
+    /// <returns>The copied stream.</returns>
+    Task<Stream> PipeStandardErrorAsync(Process source);
 }

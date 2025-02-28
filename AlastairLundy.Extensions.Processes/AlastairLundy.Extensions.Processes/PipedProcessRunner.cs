@@ -93,8 +93,8 @@ public class PipedProcessRunner : IPipedProcessRunner
         Stream standardError = Stream.Null;
         
         // Pipe Standard Output and Error
-        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput);
-        await _processPipeHandler.PipeStandardErrorAsync(process, standardError);
+        await _processPipeHandler.PipeStandardOutputAsync(process);
+        await _processPipeHandler.PipeStandardErrorAsync(process);
         
         ProcessResult processResult = await _processRunnerUtils.GetResultAsync(process, true);
        
@@ -150,8 +150,8 @@ public class PipedProcessRunner : IPipedProcessRunner
         Stream standardError = Stream.Null;
         
         // Pipe Standard Output and Error
-        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput);
-        await _processPipeHandler.PipeStandardErrorAsync(process, standardError);
+        await _processPipeHandler.PipeStandardOutputAsync(process);
+        await _processPipeHandler.PipeStandardErrorAsync(process);
         
         BufferedProcessResult output = await _processRunnerUtils.GetBufferedResultAsync(process, true);
 
