@@ -13,10 +13,13 @@ using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
 
+using AlastairLundy.Extensions.IO.Files.Abstractions;
+
 using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
-
+using AlastairLundy.Extensions.Processes.Internal.Localizations;
 using AlastairLundy.Extensions.Processes.Piping.Abstractions;
+
 using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 
 namespace AlastairLundy.Extensions.Processes;
@@ -29,16 +32,21 @@ public class PipedProcessRunner : IPipedProcessRunner
     private readonly IProcessPipeHandler _processPipeHandler;
     
     private readonly IProcessRunnerUtility _processRunnerUtils;
+    
+    private readonly IFilePathResolver _filePathResolver;
 
     /// <summary>
     /// 
     /// </summary>
     /// <param name="processRunnerUtils">The process runner utility service to use.</param>
     /// <param name="processPipeHandler">The process pipe handler service to use.</param>
-    public PipedProcessRunner(IProcessRunnerUtility processRunnerUtils, IProcessPipeHandler processPipeHandler)
+    /// <param name="filePathResolver"></param>
+    public PipedProcessRunner(IProcessRunnerUtility processRunnerUtils, IProcessPipeHandler processPipeHandler,
+        IFilePathResolver filePathResolver)
     {
         _processRunnerUtils = processRunnerUtils;
         _processPipeHandler = processPipeHandler;
+        _filePathResolver = filePathResolver;
     }
 
     /// <summary>
@@ -65,6 +73,15 @@ public class PipedProcessRunner : IPipedProcessRunner
     public async Task<(ProcessResult processResult, Stream standardOutput, Stream standardError)> ExecuteProcessWithPipingAsync(Process process,
         ProcessResultValidation processResultValidation, ProcessResourcePolicy? processResourcePolicy = null, CancellationToken cancellationToken = default)
     {
+        _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
+        
+        if (File.Exists(resolvedFilePath) == false)
+        {
+            throw new FileNotFoundException(Resources.Exceptions_IO_FileNotFound.Replace("{file}", resolvedFilePath));
+        }
+        
+        process.StartInfo.FileName = resolvedFilePath;
+        
         await _processRunnerUtils.ExecuteAsync(process, ProcessResultValidation.None, processResourcePolicy, cancellationToken);
        
         if (processResultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
@@ -110,6 +127,15 @@ public class PipedProcessRunner : IPipedProcessRunner
             ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default)
     {
+        _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
+        
+        if (File.Exists(resolvedFilePath) == false)
+        {
+            throw new FileNotFoundException(Resources.Exceptions_IO_FileNotFound.Replace("{file}", resolvedFilePath));
+        }
+        
+        process.StartInfo.FileName = resolvedFilePath;
+        
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.RedirectStandardError = true;
         

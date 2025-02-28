@@ -12,7 +12,7 @@ using System.IO;
 using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
-
+using AlastairLundy.Extensions.IO.Files.Abstractions;
 using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
@@ -26,10 +26,12 @@ namespace AlastairLundy.Extensions.Processes;
 public class ProcessRunner : IProcessRunner
 {
     private readonly IProcessRunnerUtility _processRunnerUtils;
+    private readonly IFilePathResolver _filePathResolver;
     
-    public ProcessRunner(IProcessRunnerUtility processRunnerUtils)
+    public ProcessRunner(IProcessRunnerUtility processRunnerUtils, IFilePathResolver filePathResolver)
     {
         _processRunnerUtils = processRunnerUtils;
+        _filePathResolver = filePathResolver;
     }
 
     /// <summary>
@@ -56,10 +58,14 @@ public class ProcessRunner : IProcessRunner
     public ProcessResult ExecuteProcess(Process process, ProcessResultValidation processResultValidation,
         ProcessResourcePolicy? processResourcePolicy = null)
     {
-        if (File.Exists(process.StartInfo.FileName) == false)
+        _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
+        
+        if (File.Exists(resolvedFilePath) == false)
         {
-            throw new FileNotFoundException(Resources.Exceptions_IO_FileNotFound.Replace("{file}", process.StartInfo.FileName));
+            throw new FileNotFoundException(Resources.Exceptions_IO_FileNotFound.Replace("{file}", resolvedFilePath));
         }
+        
+        process.StartInfo.FileName = resolvedFilePath;
 
         _processRunnerUtils.Execute(process, processResultValidation, processResourcePolicy);
 
@@ -96,10 +102,14 @@ public class ProcessRunner : IProcessRunner
         ProcessResultValidation processResultValidation,
         ProcessResourcePolicy? processResourcePolicy = null)
     {
-        if (File.Exists(process.StartInfo.FileName) == false)
+        _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
+        
+        if (File.Exists(resolvedFilePath) == false)
         {
-            throw new FileNotFoundException(Resources.Exceptions_IO_FileNotFound.Replace("{file}", process.StartInfo.FileName));
+            throw new FileNotFoundException(Resources.Exceptions_IO_FileNotFound.Replace("{file}", resolvedFilePath));
         }
+        
+        process.StartInfo.FileName = resolvedFilePath;
         
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.RedirectStandardError = true;
@@ -140,6 +150,15 @@ public class ProcessRunner : IProcessRunner
         ProcessResourcePolicy? processResourcePolicy = null,
         CancellationToken cancellationToken = default)
     {
+        _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
+        
+        if (File.Exists(resolvedFilePath) == false)
+        {
+            throw new FileNotFoundException(Resources.Exceptions_IO_FileNotFound.Replace("{file}", resolvedFilePath));
+        }
+        
+        process.StartInfo.FileName = resolvedFilePath;
+        
         await _processRunnerUtils.ExecuteAsync(process, processResultValidation, processResourcePolicy , cancellationToken);
        
         return await _processRunnerUtils.GetResultAsync(process, disposeOfProcess: true);
@@ -172,6 +191,15 @@ public class ProcessRunner : IProcessRunner
         ProcessResourcePolicy? processResourcePolicy = null,
         CancellationToken cancellationToken = default)
     {
+        _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
+        
+        if (File.Exists(resolvedFilePath) == false)
+        {
+            throw new FileNotFoundException(Resources.Exceptions_IO_FileNotFound.Replace("{file}", resolvedFilePath));
+        }
+        
+        process.StartInfo.FileName = resolvedFilePath;
+        
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.RedirectStandardError = true;
         
