@@ -15,12 +15,8 @@
 
 ProcessExtensions started as part of CliRunner but is now a separate package, helping other projects besides CliRunner to run processes easily and safely.</Description>
         <PackageReleaseNotes>## Changes
-
-- Add Release Drafter GitHub action @alastairlundy (#2)
-
-## 🚀 Features
-
-- Rework ProcessRunnerUtility to use IO Extensions 2.1.0  @alastairlundy (#3)</PackageReleaseNotes>
+- Fixed an issue where ProcessRunnerUtility used a FilePathResolver as a dependency instead of IFilePathResolver as intended
+- Add xml doc comments to ProcessPipeHandler and correct xml doc comments for IProcessPipeHandler @alastairlundy (#4)</PackageReleaseNotes>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -28,7 +24,7 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageTags>process, processes, process-runner, process runner, process-result,</PackageTags>
-        <Version>1.2.0</Version>
+        <Version>1.2.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
