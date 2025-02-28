@@ -12,7 +12,9 @@ using System.IO;
 using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
+
 using AlastairLundy.Extensions.IO.Files.Abstractions;
+
 using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
