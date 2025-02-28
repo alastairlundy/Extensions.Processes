@@ -13,7 +13,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: eregon/publish-release@v1
+      - uses: eregon/publish-release@v1.0.6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -31,6 +31,7 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 9.0.x
+        working-directory: AlastairLundy.Extensions.Processes/AlastairLundy.Extensions.Processes/
     - name: Restore dependencies
       run: dotnet restore
     - name: Create packages
