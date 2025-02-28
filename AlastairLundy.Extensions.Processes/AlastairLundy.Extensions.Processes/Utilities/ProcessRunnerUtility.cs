@@ -36,7 +36,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
 {
     private readonly IFilePathResolver _filePathResolver;
     
-    public ProcessRunnerUtility(FilePathResolver filePathResolver)
+    public ProcessRunnerUtility(IFilePathResolver filePathResolver)
     {
         _filePathResolver = filePathResolver;
     }
