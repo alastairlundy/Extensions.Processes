@@ -51,8 +51,7 @@ The following table details which target platforms are supported for running Pro
 
 
 ## Usage
-
-
+To use the Dependency Injection extension method call the IServiceCollection ``AddProcessExtensions`` extension method before the Services are built.
 
 ## How to Build ProcessExtensions' code
 
