@@ -14,7 +14,19 @@ using System.IO.Pipelines;
 namespace AlastairLundy.Extensions.Processes;
 
 public class PipedProcessResult : ProcessResult
+/// <summary>
+/// A ProcessResult extended with Standard Output and Standard Error Pipes.
+/// </summary>
 {
+    /// <summary>
+    /// Instantiates the PipedProcessResult
+    /// </summary>
+    /// <param name="executableFilePath"></param>
+    /// <param name="exitCode"></param>
+    /// <param name="startTime"></param>
+    /// <param name="exitTime"></param>
+    /// <param name="standardOutput"></param>
+    /// <param name="standardError"></param>
     public PipedProcessResult(string executableFilePath,
         int exitCode,
         DateTime startTime,
@@ -29,12 +41,12 @@ public class PipedProcessResult : ProcessResult
     }
     
     /// <summary>
-    /// 
+    /// The Standard Output from a Process or Command as a Pipe.
     /// </summary>
     public Pipe StandardOutput { get; init; }
     
     /// <summary>
-    /// 
+    /// The Standard Error from a Process or Command as a Pipe.
     /// </summary>
     public Pipe StandardError { get; init; }
 }
