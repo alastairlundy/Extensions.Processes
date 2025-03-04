@@ -95,6 +95,11 @@ public class ProcessFactory : IProcessFactory
         return output;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="configuration"></param>
+    /// <returns></returns>
     public Process From(ProcessConfiguration configuration)
     {
         Process output;
@@ -220,6 +225,11 @@ public class ProcessFactory : IProcessFactory
         return process;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="configuration"></param>
+    /// <returns></returns>
     public Process StartNew(ProcessConfiguration configuration)
     {
         Process process = From(configuration);
