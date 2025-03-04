@@ -17,7 +17,6 @@ using AlastairLundy.Extensions.IO.Files.Abstractions;
 using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
-using AlastairLundy.Extensions.Processes.Piping.Abstractions;
 
 #if NET5_0_OR_GREATER
 using System.Runtime.Versioning;
@@ -347,7 +346,7 @@ public class ProcessFactory : IProcessFactory
         
         BufferedProcessResult processResult = new BufferedProcessResult(
             process.StartInfo.FileName, process.ExitCode,
-            await process.StandardOutput.ReadToEndAsync(),  await process.StandardError.ReadToEndAsync(),
+            await process.StandardOutput.ReadToEndAsync(cancellationToken),  await process.StandardError.ReadToEndAsync(),
             process.StartTime, process.ExitTime);
         
         process.Dispose();
