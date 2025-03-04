@@ -13,10 +13,10 @@ using System.IO.Pipelines;
 
 namespace AlastairLundy.Extensions.Processes;
 
-public class PipedProcessResult : ProcessResult
 /// <summary>
 /// A ProcessResult extended with Standard Output and Standard Error Pipes.
 /// </summary>
+public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
 {
     /// <summary>
     /// Instantiates the PipedProcessResult
@@ -49,4 +49,86 @@ public class PipedProcessResult : ProcessResult
     /// The Standard Error from a Process or Command as a Pipe.
     /// </summary>
     public Pipe StandardError { get; init; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns></returns>
+    public bool Equals(PipedProcessResult? other)
+    {
+        if (other is null)
+        {
+            return false;
+        }
+        
+        return StandardOutput.Equals(other.StandardOutput) &&
+               StandardError.Equals(other.StandardError) &&
+               ExitCode.Equals(other.ExitCode)
+               && StartTime.Equals(other.StartTime)
+               && ExitTime.Equals(other.ExitTime)
+               && ExecutedFilePath.Equals(other.ExecutedFilePath);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <returns></returns>
+    public override bool Equals(object? obj)
+    {
+        if (obj is null)
+        {
+            return false;
+        }
+    
+        return Equals((PipedProcessResult)obj);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="left"></param>
+    /// <param name="right"></param>
+    /// <returns></returns>
+    public static bool Equals(PipedProcessResult? left, PipedProcessResult? right)
+    {
+        if (left != null && right != null)
+        {
+            return left.Equals(right);
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(StandardOutput, StandardError);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="left"></param>
+    /// <param name="right"></param>
+    /// <returns></returns>
+    public static bool operator ==(PipedProcessResult? left, PipedProcessResult? right)
+    {
+        return Equals(left, right);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="left"></param>
+    /// <param name="right"></param>
+    /// <returns></returns>
+    public static bool operator !=(PipedProcessResult? left, PipedProcessResult? right)
+    {
+        return Equals(left, right) == false;
+    }
 }
