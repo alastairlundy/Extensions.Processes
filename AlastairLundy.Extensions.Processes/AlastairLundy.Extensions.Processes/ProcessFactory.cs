@@ -28,14 +28,19 @@ using System.IO;
 
 namespace AlastairLundy.Extensions.Processes;
 
+/// <summary>
+/// 
+/// </summary>
 public class ProcessFactory : IProcessFactory
 {
-    private readonly IProcessPipeHandler _processPipeHandler;
     private readonly IFilePathResolver _filePathResolver;
     
-    public ProcessFactory(IProcessPipeHandler processPipeHandler, IFilePathResolver filePathResolver)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="filePathResolver"></param>
+    public ProcessFactory(IFilePathResolver filePathResolver)
     {
-        _processPipeHandler = processPipeHandler;
         _filePathResolver = filePathResolver;
     }
     
