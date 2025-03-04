@@ -22,24 +22,31 @@ namespace AlastairLundy.Extensions.Processes
     /// <summary>
     /// A buffered ProcessResult containing a Process's or Command's StandardOutput and StandardError information.
     /// </summary>
-    public class BufferedProcessResult(
-        string executableFilePath,
-        int exitCode,
-        string standardOutput,
-        string standardError,
-        DateTime startTime,
-        DateTime exitTime)
-        : ProcessResult(executableFilePath, exitCode, startTime, exitTime), IEquatable<BufferedProcessResult>
+    public class BufferedProcessResult : ProcessResult, IEquatable<BufferedProcessResult>
     {
+        /// <summary>
+        /// A buffered ProcessResult containing a Process's or Command's StandardOutput and StandardError information.
+        /// </summary>
+        public BufferedProcessResult(string executableFilePath,
+            int exitCode,
+            string standardOutput,
+            string standardError,
+            DateTime startTime,
+            DateTime exitTime) : base(executableFilePath, exitCode, startTime, exitTime)
+        {
+            StandardOutput = standardOutput;
+            StandardError = standardError;
+        }
+
         /// <summary>
         /// The Standard Output from a Process or Command represented as a string.
         /// </summary>
-        public string StandardOutput { get; } = standardOutput;
+        public string StandardOutput { get; }
 
         /// <summary>
         /// The Standard Error from a Process or Command represented as a string.
         /// </summary>
-        public string StandardError { get; } = standardError;
+        public string StandardError { get; }
 
         
         /// <summary>
