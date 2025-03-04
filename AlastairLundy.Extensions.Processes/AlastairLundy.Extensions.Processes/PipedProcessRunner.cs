@@ -7,6 +7,7 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
    */
 
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.Versioning;
@@ -15,7 +16,7 @@ using System.Threading.Tasks;
 
 using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
-
+using AlastairLundy.Extensions.Processes.Internal;
 using AlastairLundy.Extensions.Processes.Piping.Abstractions;
 using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 
@@ -24,6 +25,7 @@ namespace AlastairLundy.Extensions.Processes;
 /// <summary>
 /// A Process Runner-esque class for Piping output after Executing processes.
 /// </summary>
+[Obsolete(DeprecationMessages.ClassDeprecationV2UseProcessFactoryInstead, false)]
 public class PipedProcessRunner : IPipedProcessRunner
 {
     private readonly IProcessPipeHandler _processPipeHandler;

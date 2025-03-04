@@ -7,16 +7,19 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
    */
 
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using AlastairLundy.Extensions.Processes.Internal;
 
 namespace AlastairLundy.Extensions.Processes.Abstractions;
 
 /// <summary>
 /// A Process Runner-esque interface for Piping output after Executing processes.
 /// </summary>
+[Obsolete(DeprecationMessages.InterfaceDeprecationV2UseProcessFactoryInstead)]
 public interface IPipedProcessRunner
 {
     /// <summary>
