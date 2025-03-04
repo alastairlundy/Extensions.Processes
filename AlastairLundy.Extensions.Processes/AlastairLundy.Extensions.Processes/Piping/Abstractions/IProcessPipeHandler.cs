@@ -23,25 +23,51 @@ public interface IProcessPipeHandler
     /// <summary>
     /// Asynchronously copies the Stream to the process' standard input.
     /// </summary>
-    /// <param name="source">The Pipe to be copied from.</param>
+    /// <param name="source">The Stream to be copied from.</param>
     /// <param name="destination">The process to be copied to</param>
     /// <param name="cancellationToken"></param>
-    /// <returns>The destination process with the copied stream.</returns>
-    Task PipeStandardInputAsync(PipeReader source, Process destination, CancellationToken cancellationToken = default);
+    Task PipeStandardInputAsync(Stream source, Process destination, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="destination"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task PipeStandardInputAsync(Pipe source, Process destination, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Asynchronously copies the process' Standard Output to a Stream.
     /// </summary>
     /// <param name="source">The process to be copied from.</param>
-    /// <param name="destination">The Pipe to be copied to.</param>
+    /// <param name="destination">The Stream to be copied to</param>
     /// <param name="cancellationToken"></param>
-    Task PipeStandardOutputAsync(Process source, PipeWriter destination, CancellationToken cancellationToken = default);
+    Task PipeStandardOutputAsync(Process source, Stream destination, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="destination"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task PipeStandardOutputAsync(Process source, Pipe destination, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Asynchronously copies the process' Standard Error to a Stream.
     /// </summary>
     /// <param name="source">The process to be copied from.</param>
-    /// <param name="destination">The Pipe to copied to.</param>
+    /// <param name="destination">The Stream to be copied to</param>
     /// <param name="cancellationToken"></param>
-    Task PipeStandardErrorAsync(Process source, PipeWriter destination, CancellationToken cancellationToken = default);
+    Task PipeStandardErrorAsync(Process source, Stream destination, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="destination"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task PipeStandardErrorAsync(Process source, Pipe destination, CancellationToken cancellationToken = default);
 }
