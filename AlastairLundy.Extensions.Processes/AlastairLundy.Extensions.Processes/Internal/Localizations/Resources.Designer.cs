@@ -94,5 +94,14 @@ namespace AlastairLundy.Extensions.Processes.Internal.Localizations {
                 return ResourceManager.GetString("Exceptions_ProcessNotSuccessful_Specific", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The process start info&apos;s file name cannot be null or empty..
+        /// </summary>
+        internal static string Process_FileName_Empty {
+            get {
+                return ResourceManager.GetString("Process.FileName.Empty", resourceCulture);
+            }
+        }
     }
 }
