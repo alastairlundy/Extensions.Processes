@@ -19,11 +19,10 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-using AlastairLundy.Extensions.IO.Files;
 using AlastairLundy.Extensions.IO.Files.Abstractions;
 
 using AlastairLundy.Extensions.Processes.Exceptions;
-
+using AlastairLundy.Extensions.Processes.Internal;
 using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 
 namespace AlastairLundy.Extensions.Processes.Utilities;
@@ -32,6 +31,7 @@ namespace AlastairLundy.Extensions.Processes.Utilities;
 /// A Process Running Utility to easily create different Process Runners.
 /// </summary>
 /// <remarks>This class is primarily intended for internal use OR use when creating a Process Runner or Command Runner implementation.</remarks>
+[Obsolete(DeprecationMessages.ClassDeprecationV2UseProcessFactoryInstead, false)]
 public class ProcessRunnerUtility : IProcessRunnerUtility
 {
     private readonly IFilePathResolver _filePathResolver;

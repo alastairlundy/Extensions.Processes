@@ -7,9 +7,11 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
    */
 
+using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
+using AlastairLundy.Extensions.Processes.Internal;
 
 namespace AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 
@@ -17,6 +19,7 @@ namespace AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 /// A Process Running Utility interface to easily create different Process Runners.
 /// </summary>
 /// <remarks>This interface is primarily intended for internal use OR use when creating a Process Runner or Command Runner implementation.</remarks>
+[Obsolete(DeprecationMessages.InterfaceDeprecationV2UseProcessFactoryInstead, false)]
 public interface IProcessRunnerUtility
 {
     public int Execute(Process process);
