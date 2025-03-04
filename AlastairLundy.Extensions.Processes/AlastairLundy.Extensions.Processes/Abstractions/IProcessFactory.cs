@@ -20,12 +20,13 @@ public interface IProcessFactory
 {
     public Process From(ProcessStartInfo startInfo);
     public Process From(ProcessStartInfo startInfo, UserCredential credential);
+    public Process From(ProcessConfiguration configuration);
     
     public Process StartNew(ProcessStartInfo startInfo);
     public Process StartNew(ProcessStartInfo startInfo, UserCredential credential);
     public Process StartNew(ProcessStartInfo startInfo, ProcessResourcePolicy resourcePolicy);
     public Process StartNew(ProcessStartInfo startInfo, ProcessResourcePolicy resourcePolicy, UserCredential credential);
-
+    public Process StartNew(ProcessConfiguration configuration);
 
     public Task<ProcessResult> ContinueWhenExitAsync(Process process, CancellationToken cancellationToken = default);
     public Task<ProcessResult> ContinueWhenExitAsync(Process process, ProcessResultValidation resultValidation, CancellationToken cancellationToken = default);

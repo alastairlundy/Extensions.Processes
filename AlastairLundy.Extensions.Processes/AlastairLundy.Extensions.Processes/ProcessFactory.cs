@@ -91,6 +91,23 @@ public class ProcessFactory : IProcessFactory
         return output;
     }
 
+    public Process From(ProcessConfiguration configuration)
+    {
+        Process output;
+        
+        // ReSharper disable once ConvertIfStatementToConditionalTernaryExpression
+        if (configuration.Credential != null)
+        {
+            output = From(configuration.StartInfo, configuration.Credential);
+        }
+        else
+        {
+            output = From(configuration.StartInfo);
+        }
+
+        return output; 
+    }
+
     /// <summary>
     /// 
     /// </summary>
@@ -196,6 +213,20 @@ public class ProcessFactory : IProcessFactory
         
         process.SetResourcePolicy(resourcePolicy);
 
+        return process;
+    }
+
+    public Process StartNew(ProcessConfiguration configuration)
+    {
+        Process process = From(configuration);
+        
+        process.Start();
+        
+        if (configuration.ResourcePolicy != null)
+        {
+            process.SetResourcePolicy(configuration.ResourcePolicy);
+        }
+        
         return process;
     }
 
