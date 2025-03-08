@@ -17,7 +17,6 @@ using AlastairLundy.Extensions.IO.Files.Abstractions;
 using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
-using AlastairLundy.Extensions.Processes.Piping.Abstractions;
 
 #if NET5_0_OR_GREATER
 using System.Runtime.Versioning;
@@ -28,14 +27,19 @@ using System.IO;
 
 namespace AlastairLundy.Extensions.Processes;
 
+/// <summary>
+/// 
+/// </summary>
 public class ProcessFactory : IProcessFactory
 {
-    private readonly IProcessPipeHandler _processPipeHandler;
     private readonly IFilePathResolver _filePathResolver;
     
-    public ProcessFactory(IProcessPipeHandler processPipeHandler, IFilePathResolver filePathResolver)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="filePathResolver"></param>
+    public ProcessFactory(IFilePathResolver filePathResolver)
     {
-        _processPipeHandler = processPipeHandler;
         _filePathResolver = filePathResolver;
     }
     
@@ -89,6 +93,28 @@ public class ProcessFactory : IProcessFactory
         }
 
         return output;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="configuration"></param>
+    /// <returns></returns>
+    public Process From(ProcessConfiguration configuration)
+    {
+        Process output;
+        
+        // ReSharper disable once ConvertIfStatementToConditionalTernaryExpression
+        if (configuration.Credential != null)
+        {
+            output = From(configuration.StartInfo, configuration.Credential);
+        }
+        else
+        {
+            output = From(configuration.StartInfo);
+        }
+
+        return output; 
     }
 
     /// <summary>
@@ -196,6 +222,25 @@ public class ProcessFactory : IProcessFactory
         
         process.SetResourcePolicy(resourcePolicy);
 
+        return process;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="configuration"></param>
+    /// <returns></returns>
+    public Process StartNew(ProcessConfiguration configuration)
+    {
+        Process process = From(configuration);
+        
+        process.Start();
+        
+        if (configuration.ResourcePolicy != null)
+        {
+            process.SetResourcePolicy(configuration.ResourcePolicy);
+        }
+        
         return process;
     }
 
@@ -311,7 +356,7 @@ public class ProcessFactory : IProcessFactory
         
         BufferedProcessResult processResult = new BufferedProcessResult(
             process.StartInfo.FileName, process.ExitCode,
-            await process.StandardOutput.ReadToEndAsync(),  await process.StandardError.ReadToEndAsync(),
+            await process.StandardOutput.ReadToEndAsync(cancellationToken),  await process.StandardError.ReadToEndAsync(),
             process.StartTime, process.ExitTime);
         
         process.Dispose();
