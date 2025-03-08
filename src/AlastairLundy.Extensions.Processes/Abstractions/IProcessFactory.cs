@@ -21,7 +21,7 @@ public interface IProcessFactory
     /// <summary>
     /// Creates a process from the specified start info.
     /// </summary>
-    /// <param name="startInfo"></param>
+    /// <param name="startInfo">The start information to use for the Process.</param>
     /// <returns>The newly created Process.</returns>
     public Process From(ProcessStartInfo startInfo);
     
