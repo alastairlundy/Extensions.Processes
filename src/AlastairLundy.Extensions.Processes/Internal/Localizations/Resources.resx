@@ -31,6 +31,6 @@
         <value />
     </data>
     <data name="Process.FileName.Empty" xml:space="preserve">
-        <value>The process start info's file name cannot be null or empty.</value>
+        <value />
     </data>
 </root>

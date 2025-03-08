@@ -96,7 +96,7 @@ namespace AlastairLundy.Extensions.Processes.Internal.Localizations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The process start info&apos;s file name cannot be null or empty..
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string Process_FileName_Empty {
             get {

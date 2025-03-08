@@ -9,9 +9,6 @@
 
 using System;
 using System.Diagnostics;
-using System.IO;
-using System.IO.Pipelines;
-using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -20,32 +17,38 @@ using AlastairLundy.Extensions.IO.Files.Abstractions;
 using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
-using AlastairLundy.Extensions.Processes.Piping.Abstractions;
 
 #if NET5_0_OR_GREATER
+using System.Runtime.Versioning;
+using System.IO;
 #endif
 
 // ReSharper disable UnusedType.Global
 
 namespace AlastairLundy.Extensions.Processes;
 
+/// <summary>
+/// 
+/// </summary>
 public class ProcessFactory : IProcessFactory
 {
-    private readonly IProcessPipeHandler _processPipeHandler;
     private readonly IFilePathResolver _filePathResolver;
-    
-    public ProcessFactory(IProcessPipeHandler processPipeHandler, IFilePathResolver filePathResolver)
-    {
-        _processPipeHandler = processPipeHandler;
-        _filePathResolver = filePathResolver;
-    }
     
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="processStartInfo"></param>
-    /// <returns></returns>
-    /// <exception cref="ArgumentException"></exception>
+    /// <param name="filePathResolver"></param>
+    public ProcessFactory(IFilePathResolver filePathResolver)
+    {
+        _filePathResolver = filePathResolver;
+    }
+    
+    /// <summary>
+    /// Creates a process from the specified start info.
+    /// </summary>
+    /// <param name="processStartInfo">The start information to use for the Process.</param>
+    /// <returns>The newly created Process.</returns>
+    /// <exception cref="ArgumentException">Thrown if the process start info FileName is empty.</exception>
     public Process From(ProcessStartInfo processStartInfo)
     {
         if (string.IsNullOrEmpty(processStartInfo.FileName))
@@ -73,11 +76,11 @@ public class ProcessFactory : IProcessFactory
     }
 
     /// <summary>
-    /// 
+    /// Creates a process from the specified start info and UserCredential.
     /// </summary>
-    /// <param name="startInfo"></param>
-    /// <param name="credential"></param>
-    /// <returns></returns>
+    /// <param name="startInfo">The start information to use for the Process.</param>
+    /// <param name="credential">The credential to use when creating the Process.</param>
+    /// <returns>The newly created Process.</returns>
     public Process From(ProcessStartInfo startInfo, UserCredential credential)
     {
         Process output = From(startInfo);
@@ -93,48 +96,32 @@ public class ProcessFactory : IProcessFactory
     }
 
     /// <summary>
-    /// 
+    /// Creates a process from the specified process configuration.
     /// </summary>
-    /// <param name="startInfo"></param>
-    /// <param name="standardInput"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
-    public async Task<Process> FromAsync(ProcessStartInfo startInfo, Pipe standardInput, CancellationToken cancellationToken = default)
+    /// <param name="configuration">The configuration information to use to configure the Process.</param>
+    /// <returns>The newly created Process with the configuration.</returns>
+    public Process From(ProcessConfiguration configuration)
     {
-        Process output = From(startInfo);
+        Process output;
         
-        output.StartInfo.RedirectStandardInput = true;
-        
-        await _processPipeHandler.PipeStandardInputAsync(standardInput, output, cancellationToken);
-            
-        return output;
+        // ReSharper disable once ConvertIfStatementToConditionalTernaryExpression
+        if (configuration.Credential != null)
+        {
+            output = From(configuration.StartInfo, configuration.Credential);
+        }
+        else
+        {
+            output = From(configuration.StartInfo);
+        }
+
+        return output; 
     }
 
     /// <summary>
-    /// 
+    /// Creates and starts a new Process with the specified Process Start Info.
     /// </summary>
-    /// <param name="startInfo"></param>
-    /// <param name="standardInput"></param>
-    /// <param name="userCredential"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
-    public async Task<Process> FromAsync(ProcessStartInfo startInfo, Pipe standardInput, UserCredential userCredential,
-        CancellationToken cancellationToken = default)
-    {
-        Process output = From(startInfo, userCredential);
-        
-        output.StartInfo.RedirectStandardInput = true;
-        
-        await _processPipeHandler.PipeStandardInputAsync(standardInput, output, cancellationToken);
-            
-        return output;
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="startInfo"></param>
-    /// <returns></returns>
+    /// <param name="startInfo">The start info to use when creating and starting the new Process.</param>
+    /// <returns>The newly created and started Process with the start info.</returns>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
@@ -156,11 +143,11 @@ public class ProcessFactory : IProcessFactory
     }
 
     /// <summary>
-    /// 
+    /// Creates and starts a new Process with the specified Process Start Info and credential.
     /// </summary>
-    /// <param name="startInfo"></param>
-    /// <param name="credential"></param>
-    /// <returns></returns>
+    /// <param name="startInfo">The start info to use when creating and starting the new Process.</param>
+    /// <param name="credential">The credential to use when creating and starting the Process.</param>
+    /// <returns>The newly created and started Process with the start info and credential.</returns>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
@@ -182,11 +169,11 @@ public class ProcessFactory : IProcessFactory
     }
 
     /// <summary>
-    /// 
+    /// Creates and starts a new Process with the specified Process Start Info and Process Resource policy.
     /// </summary>
-    /// <param name="startInfo"></param>
-    /// <param name="resourcePolicy"></param>
-    /// <returns></returns>
+    /// <param name="startInfo">The start info to use when creating and starting the new Process.</param>
+    /// <param name="resourcePolicy">The process resource policy to use when creating and starting the new Process.</param>
+    /// <returns>The newly created and started Process with the start info and Process Resource Policy.</returns>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
@@ -210,12 +197,12 @@ public class ProcessFactory : IProcessFactory
     }
 
     /// <summary>
-    /// 
+    /// Creates and starts a new Process with the specified Process Start Info, credential, and Process Resource policy.
     /// </summary>
-    /// <param name="startInfo"></param>
-    /// <param name="resourcePolicy"></param>
-    /// <param name="credential"></param>
-    /// <returns></returns>
+    /// <param name="startInfo">The start info to use when creating and starting the new Process.</param>
+    /// <param name="resourcePolicy">The process resource policy to use when creating and starting the new Process.</param>
+    /// <param name="credential">The credential to use when creating and starting the Process.</param>
+    /// <returns>The newly created and started Process with the start info and Process Resource Policy.</returns>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
@@ -239,11 +226,30 @@ public class ProcessFactory : IProcessFactory
     }
 
     /// <summary>
-    /// 
+    /// Creates and starts a new Process with the specified configuration.
     /// </summary>
-    /// <param name="process"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
+    /// <param name="configuration">The configuration to use when creating and starting the process.</param>
+    /// <returns>The newly created and started Process with the specified configuration.</returns>
+    public Process StartNew(ProcessConfiguration configuration)
+    {
+        Process process = From(configuration);
+        
+        process.Start();
+        
+        if (configuration.ResourcePolicy != null)
+        {
+            process.SetResourcePolicy(configuration.ResourcePolicy);
+        }
+        
+        return process;
+    }
+
+    /// <summary>
+    /// Creates a Task that returns a ProcessResult when the specified process exits.
+    /// </summary>
+    /// <param name="process">The process to continue and wait for exit.</param>
+    /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
+    /// <returns>The task and processResult that are returned upon completion of the task.</returns>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
@@ -261,13 +267,13 @@ public class ProcessFactory : IProcessFactory
     }
 
     /// <summary>
-    /// 
+    /// Creates a Task that returns a ProcessResult when the specified process exits.
     /// </summary>
-    /// <param name="process"></param>
-    /// <param name="resultValidation"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
-    /// <exception cref="ProcessNotSuccessfulException"></exception>
+    /// <param name="process">The process to continue and wait for exit.</param>
+    /// <param name="resultValidation">Whether to perform Result validation on the process' exit code.</param>
+    /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
+    /// <returns>The task and ProcessResult that are returned upon completion of the task.</returns>
+    /// <exception cref="ProcessNotSuccessfulException">Thrown if the process exit code is not zero AND exit code validation is performed.</exception>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
@@ -298,11 +304,11 @@ public class ProcessFactory : IProcessFactory
     }
 
     /// <summary>
-    /// 
+    /// Creates a Task that returns a BufferedProcessResult when the specified process exits.
     /// </summary>
-    /// <param name="processStartInfo"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
+    /// <param name="process">The process to continue and wait for exit.</param>
+    /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
+    /// <returns>The task and BufferedProcessResult that are returned upon completion of the task.</returns>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
@@ -314,19 +320,19 @@ public class ProcessFactory : IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process processStartInfo, CancellationToken cancellationToken = default)
+    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, CancellationToken cancellationToken = default)
     {
-        return await ContinueWhenExitBufferedAsync(processStartInfo, ProcessResultValidation.None, cancellationToken);
+        return await ContinueWhenExitBufferedAsync(process, ProcessResultValidation.None, cancellationToken);
     }
 
     /// <summary>
-    /// 
+    /// Creates a Task that returns a BufferedProcessResult when the specified process exits.
     /// </summary>
-    /// <param name="process"></param>
-    /// <param name="resultValidation"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
-    /// <exception cref="ProcessNotSuccessfulException"></exception>
+    /// <param name="process">The process to continue and wait for exit.</param>
+    /// <param name="resultValidation">Whether to perform Result validation on the process' exit code.</param>
+    /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
+    /// <returns>The task and BufferedProcessResult that are returned upon completion of the task.</returns>
+    /// <exception cref="ProcessNotSuccessfulException">Thrown if the process exit code is not zero AND exit code validation is performed.</exception>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
@@ -350,76 +356,8 @@ public class ProcessFactory : IProcessFactory
         
         BufferedProcessResult processResult = new BufferedProcessResult(
             process.StartInfo.FileName, process.ExitCode,
-            await process.StandardOutput.ReadToEndAsync(),  await process.StandardError.ReadToEndAsync(),
+            await process.StandardOutput.ReadToEndAsync(cancellationToken),  await process.StandardError.ReadToEndAsync(),
             process.StartTime, process.ExitTime);
-        
-        process.Dispose();
-        
-        return processResult;
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="process"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
-#if NET5_0_OR_GREATER
-    [SupportedOSPlatform("windows")]
-    [SupportedOSPlatform("linux")]
-    [SupportedOSPlatform("freebsd")]
-    [SupportedOSPlatform("macos")]
-    [SupportedOSPlatform("maccatalyst")]
-    [UnsupportedOSPlatform("ios")]
-    [SupportedOSPlatform("android")]
-    [UnsupportedOSPlatform("tvos")]
-    [UnsupportedOSPlatform("browser")]
-#endif
-    public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process, CancellationToken cancellationToken = default)
-    {
-        return await ContinueWhenExitPipedAsync(process, ProcessResultValidation.None, cancellationToken);
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="process"></param>
-    /// <param name="resultValidation"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
-    /// <exception cref="ProcessNotSuccessfulException"></exception>
-#if NET5_0_OR_GREATER
-    [SupportedOSPlatform("windows")]
-    [SupportedOSPlatform("linux")]
-    [SupportedOSPlatform("freebsd")]
-    [SupportedOSPlatform("macos")]
-    [SupportedOSPlatform("maccatalyst")]
-    [UnsupportedOSPlatform("ios")]
-    [SupportedOSPlatform("android")]
-    [UnsupportedOSPlatform("tvos")]
-    [UnsupportedOSPlatform("browser")]
-#endif
-    public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process, ProcessResultValidation resultValidation,
-        CancellationToken cancellationToken = default)
-    {
-        await process.WaitForExitAsync(cancellationToken);
-        
-        if (process.ExitCode != 0 && resultValidation == ProcessResultValidation.ExitCodeZero)
-        {
-            throw new ProcessNotSuccessfulException(exitCode: process.ExitCode, process: process);
-        }
-
-        Pipe standardOutput = new Pipe();
-        Pipe standardError = new Pipe();
-
-        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput, cancellationToken);
-        await _processPipeHandler.PipeStandardErrorAsync(process, standardError, cancellationToken);
-        
-        PipedProcessResult processResult = new PipedProcessResult(
-            process.StartInfo.FileName, process.ExitCode,
-            process.StartTime, process.ExitTime,
-            standardOutput,
-            standardError);
         
         process.Dispose();
         
