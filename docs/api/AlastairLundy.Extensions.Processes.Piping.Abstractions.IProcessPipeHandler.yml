@@ -1,0 +1,324 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler
+  commentId: T:AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler
+  id: IProcessPipeHandler
+  parent: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  children:
+  - AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardErrorAsync(System.Diagnostics.Process,System.IO.Stream)
+  - AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardInputAsync(System.IO.Stream,System.Diagnostics.Process)
+  - AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardOutputAsync(System.Diagnostics.Process,System.IO.Stream)
+  langs:
+  - csharp
+  - vb
+  name: IProcessPipeHandler
+  nameWithType: IProcessPipeHandler
+  fullName: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler
+  type: Interface
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Piping/Abstractions/IProcessPipeHandler.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: IProcessPipeHandler
+    path: ../src/AlastairLundy.Extensions.Processes/Piping/Abstractions/IProcessPipeHandler.cs
+    startLine: 18
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  summary: An interface to allow for a standardized way of Process pipe handling.
+  example: []
+  syntax:
+    content: public interface IProcessPipeHandler
+    content.vb: Public Interface IProcessPipeHandler
+- uid: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardInputAsync(System.IO.Stream,System.Diagnostics.Process)
+  commentId: M:AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardInputAsync(System.IO.Stream,System.Diagnostics.Process)
+  id: PipeStandardInputAsync(System.IO.Stream,System.Diagnostics.Process)
+  parent: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler
+  langs:
+  - csharp
+  - vb
+  name: PipeStandardInputAsync(Stream, Process)
+  nameWithType: IProcessPipeHandler.PipeStandardInputAsync(Stream, Process)
+  fullName: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardInputAsync(System.IO.Stream, System.Diagnostics.Process)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Piping/Abstractions/IProcessPipeHandler.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: PipeStandardInputAsync
+    path: ../src/AlastairLundy.Extensions.Processes/Piping/Abstractions/IProcessPipeHandler.cs
+    startLine: 25
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  summary: Asynchronously copies the Stream to the process' standard input.
+  example: []
+  syntax:
+    content: Task PipeStandardInputAsync(Stream source, Process destination)
+    parameters:
+    - id: source
+      type: System.IO.Stream
+      description: The Stream to be copied from.
+    - id: destination
+      type: System.Diagnostics.Process
+      description: The process to be copied to
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function PipeStandardInputAsync(source As Stream, destination As Process) As Task
+  overload: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardInputAsync*
+- uid: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardOutputAsync(System.Diagnostics.Process,System.IO.Stream)
+  commentId: M:AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardOutputAsync(System.Diagnostics.Process,System.IO.Stream)
+  id: PipeStandardOutputAsync(System.Diagnostics.Process,System.IO.Stream)
+  parent: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler
+  langs:
+  - csharp
+  - vb
+  name: PipeStandardOutputAsync(Process, Stream)
+  nameWithType: IProcessPipeHandler.PipeStandardOutputAsync(Process, Stream)
+  fullName: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardOutputAsync(System.Diagnostics.Process, System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Piping/Abstractions/IProcessPipeHandler.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: PipeStandardOutputAsync
+    path: ../src/AlastairLundy.Extensions.Processes/Piping/Abstractions/IProcessPipeHandler.cs
+    startLine: 32
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  summary: Asynchronously copies the process' Standard Output to a Stream.
+  example: []
+  syntax:
+    content: Task PipeStandardOutputAsync(Process source, Stream destination)
+    parameters:
+    - id: source
+      type: System.Diagnostics.Process
+      description: The process to be copied from.
+    - id: destination
+      type: System.IO.Stream
+      description: The Stream to be copied to
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function PipeStandardOutputAsync(source As Process, destination As Stream) As Task
+  overload: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardOutputAsync*
+- uid: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardErrorAsync(System.Diagnostics.Process,System.IO.Stream)
+  commentId: M:AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardErrorAsync(System.Diagnostics.Process,System.IO.Stream)
+  id: PipeStandardErrorAsync(System.Diagnostics.Process,System.IO.Stream)
+  parent: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler
+  langs:
+  - csharp
+  - vb
+  name: PipeStandardErrorAsync(Process, Stream)
+  nameWithType: IProcessPipeHandler.PipeStandardErrorAsync(Process, Stream)
+  fullName: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardErrorAsync(System.Diagnostics.Process, System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Piping/Abstractions/IProcessPipeHandler.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: PipeStandardErrorAsync
+    path: ../src/AlastairLundy.Extensions.Processes/Piping/Abstractions/IProcessPipeHandler.cs
+    startLine: 39
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  summary: Asynchronously copies the process' Standard Error to a Stream.
+  example: []
+  syntax:
+    content: Task PipeStandardErrorAsync(Process source, Stream destination)
+    parameters:
+    - id: source
+      type: System.Diagnostics.Process
+      description: The process to be copied from.
+    - id: destination
+      type: System.IO.Stream
+      description: The Stream to be copied to
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function PipeStandardErrorAsync(source As Process, destination As Stream) As Task
+  overload: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardErrorAsync*
+references:
+- uid: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Piping.Abstractions
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Piping
+    name: Piping
+    href: AlastairLundy.Extensions.Processes.Piping.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Piping.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Piping.Abstractions.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Piping
+    name: Piping
+    href: AlastairLundy.Extensions.Processes.Piping.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Piping.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Piping.Abstractions.html
+- uid: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardInputAsync*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardInputAsync
+  href: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.html#AlastairLundy_Extensions_Processes_Piping_Abstractions_IProcessPipeHandler_PipeStandardInputAsync_System_IO_Stream_System_Diagnostics_Process_
+  name: PipeStandardInputAsync
+  nameWithType: IProcessPipeHandler.PipeStandardInputAsync
+  fullName: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardInputAsync
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.Diagnostics.Process
+  commentId: T:System.Diagnostics.Process
+  parent: System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  name: Process
+  nameWithType: Process
+  fullName: System.Diagnostics.Process
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: System.Diagnostics
+  commentId: N:System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Diagnostics
+  nameWithType: System.Diagnostics
+  fullName: System.Diagnostics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardOutputAsync*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardOutputAsync
+  href: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.html#AlastairLundy_Extensions_Processes_Piping_Abstractions_IProcessPipeHandler_PipeStandardOutputAsync_System_Diagnostics_Process_System_IO_Stream_
+  name: PipeStandardOutputAsync
+  nameWithType: IProcessPipeHandler.PipeStandardOutputAsync
+  fullName: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardOutputAsync
+- uid: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardErrorAsync*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardErrorAsync
+  href: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.html#AlastairLundy_Extensions_Processes_Piping_Abstractions_IProcessPipeHandler_PipeStandardErrorAsync_System_Diagnostics_Process_System_IO_Stream_
+  name: PipeStandardErrorAsync
+  nameWithType: IProcessPipeHandler.PipeStandardErrorAsync
+  fullName: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.PipeStandardErrorAsync

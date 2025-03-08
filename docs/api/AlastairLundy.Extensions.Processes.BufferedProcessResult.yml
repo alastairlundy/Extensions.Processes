@@ -1,0 +1,944 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  commentId: T:AlastairLundy.Extensions.Processes.BufferedProcessResult
+  id: BufferedProcessResult
+  parent: AlastairLundy.Extensions.Processes
+  children:
+  - AlastairLundy.Extensions.Processes.BufferedProcessResult.#ctor(System.String,System.Int32,System.String,System.String,System.DateTime,System.DateTime)
+  - AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  - AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult,AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  - AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(System.Object)
+  - AlastairLundy.Extensions.Processes.BufferedProcessResult.GetHashCode
+  - AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardError
+  - AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardOutput
+  - AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Equality(AlastairLundy.Extensions.Processes.BufferedProcessResult,AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  - AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Inequality(AlastairLundy.Extensions.Processes.BufferedProcessResult,AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  langs:
+  - csharp
+  - vb
+  name: BufferedProcessResult
+  nameWithType: BufferedProcessResult
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  type: Class
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: BufferedProcessResult
+    path: ../src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+    startLine: 24
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: A buffered ProcessResult containing a Process's or Command's StandardOutput and StandardError information.
+  example: []
+  syntax:
+    content: 'public class BufferedProcessResult : ProcessResult, IEquatable<BufferedProcessResult>'
+    content.vb: Public Class BufferedProcessResult Inherits ProcessResult Implements IEquatable(Of BufferedProcessResult)
+  inheritance:
+  - System.Object
+  - AlastairLundy.Extensions.Processes.ProcessResult
+  implements:
+  - System.IEquatable{AlastairLundy.Extensions.Processes.BufferedProcessResult}
+  inheritedMembers:
+  - AlastairLundy.Extensions.Processes.ProcessResult.WasSuccessful
+  - AlastairLundy.Extensions.Processes.ProcessResult.ExitCode
+  - AlastairLundy.Extensions.Processes.ProcessResult.ExecutedFilePath
+  - AlastairLundy.Extensions.Processes.ProcessResult.StartTime
+  - AlastairLundy.Extensions.Processes.ProcessResult.ExitTime
+  - AlastairLundy.Extensions.Processes.ProcessResult.RuntimeDuration
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.#ctor(System.String,System.Int32,System.String,System.String,System.DateTime,System.DateTime)
+  commentId: M:AlastairLundy.Extensions.Processes.BufferedProcessResult.#ctor(System.String,System.Int32,System.String,System.String,System.DateTime,System.DateTime)
+  id: '#ctor(System.String,System.Int32,System.String,System.String,System.DateTime,System.DateTime)'
+  parent: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  langs:
+  - csharp
+  - vb
+  name: BufferedProcessResult(string, int, string, string, DateTime, DateTime)
+  nameWithType: BufferedProcessResult.BufferedProcessResult(string, int, string, string, DateTime, DateTime)
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.BufferedProcessResult(string, int, string, string, System.DateTime, System.DateTime)
+  type: Constructor
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: .ctor
+    path: ../src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+    startLine: 24
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: A buffered ProcessResult containing a Process's or Command's StandardOutput and StandardError information.
+  example: []
+  syntax:
+    content: public BufferedProcessResult(string executableFilePath, int exitCode, string standardOutput, string standardError, DateTime startTime, DateTime exitTime)
+    parameters:
+    - id: executableFilePath
+      type: System.String
+    - id: exitCode
+      type: System.Int32
+    - id: standardOutput
+      type: System.String
+    - id: standardError
+      type: System.String
+    - id: startTime
+      type: System.DateTime
+    - id: exitTime
+      type: System.DateTime
+    content.vb: Public Sub New(executableFilePath As String, exitCode As Integer, standardOutput As String, standardError As String, startTime As Date, exitTime As Date)
+  overload: AlastairLundy.Extensions.Processes.BufferedProcessResult.#ctor*
+  nameWithType.vb: BufferedProcessResult.New(String, Integer, String, String, Date, Date)
+  fullName.vb: AlastairLundy.Extensions.Processes.BufferedProcessResult.New(String, Integer, String, String, Date, Date)
+  name.vb: New(String, Integer, String, String, Date, Date)
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardOutput
+  commentId: P:AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardOutput
+  id: StandardOutput
+  parent: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  langs:
+  - csharp
+  - vb
+  name: StandardOutput
+  nameWithType: BufferedProcessResult.StandardOutput
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardOutput
+  type: Property
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: StandardOutput
+    path: ../src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+    startLine: 36
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: The Standard Output from a Process or Command represented as a string.
+  example: []
+  syntax:
+    content: public string StandardOutput { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property StandardOutput As String
+  overload: AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardOutput*
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardError
+  commentId: P:AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardError
+  id: StandardError
+  parent: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  langs:
+  - csharp
+  - vb
+  name: StandardError
+  nameWithType: BufferedProcessResult.StandardError
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardError
+  type: Property
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: StandardError
+    path: ../src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+    startLine: 41
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: The Standard Error from a Process or Command represented as a string.
+  example: []
+  syntax:
+    content: public string StandardError { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property StandardError As String
+  overload: AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardError*
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  commentId: M:AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  id: Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  parent: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  langs:
+  - csharp
+  - vb
+  name: Equals(BufferedProcessResult?)
+  nameWithType: BufferedProcessResult.Equals(BufferedProcessResult?)
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult?)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: Equals
+    path: ../src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+    startLine: 50
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: Determines whether this BufferedProcessResult is equal to another BufferedProcessResult object.
+  remarks: This method intentionally does not consider Start and Exit times of Command Results for the purposes of equality comparison.
+  example: []
+  syntax:
+    content: public bool Equals(BufferedProcessResult? other)
+    parameters:
+    - id: other
+      type: AlastairLundy.Extensions.Processes.BufferedProcessResult
+      description: The other BufferedProcessResult to compare.
+    return:
+      type: System.Boolean
+      description: True if this BufferedProcessResult is equal to the other BufferedProcessResult; false otherwise.
+    content.vb: Public Function Equals(other As BufferedProcessResult) As Boolean
+  overload: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals*
+  implements:
+  - System.IEquatable{AlastairLundy.Extensions.Processes.BufferedProcessResult}.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  nameWithType.vb: BufferedProcessResult.Equals(BufferedProcessResult)
+  fullName.vb: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  name.vb: Equals(BufferedProcessResult)
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(System.Object)
+  commentId: M:AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  langs:
+  - csharp
+  - vb
+  name: Equals(object?)
+  nameWithType: BufferedProcessResult.Equals(object?)
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(object?)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: Equals
+    path: ../src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+    startLine: 67
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: Determines whether this BufferedProcessResult is equal to another object.
+  example: []
+  syntax:
+    content: public override bool Equals(object? obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The other object to compare.
+    return:
+      type: System.Boolean
+      description: True if the other object is a BufferedProcessResult and is equal to this BufferedProcessResult; false otherwise.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals*
+  nameWithType.vb: BufferedProcessResult.Equals(Object)
+  fullName.vb: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(Object)
+  name.vb: Equals(Object)
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.GetHashCode
+  commentId: M:AlastairLundy.Extensions.Processes.BufferedProcessResult.GetHashCode
+  id: GetHashCode
+  parent: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: BufferedProcessResult.GetHashCode()
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: GetHashCode
+    path: ../src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+    startLine: 86
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: Returns the hash code for the current BufferedProcessResult.
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: The hash code for the current BufferedProcessResult.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: AlastairLundy.Extensions.Processes.BufferedProcessResult.GetHashCode*
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult,AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  commentId: M:AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult,AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  id: Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult,AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  parent: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  langs:
+  - csharp
+  - vb
+  name: Equals(BufferedProcessResult, BufferedProcessResult?)
+  nameWithType: BufferedProcessResult.Equals(BufferedProcessResult, BufferedProcessResult?)
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult, AlastairLundy.Extensions.Processes.BufferedProcessResult?)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: Equals
+    path: ../src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+    startLine: 97
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: Determines whether two BufferedProcessResults are equal.
+  example: []
+  syntax:
+    content: public static bool Equals(BufferedProcessResult left, BufferedProcessResult? right)
+    parameters:
+    - id: left
+      type: AlastairLundy.Extensions.Processes.BufferedProcessResult
+      description: The first BufferedProcessResult to compare.
+    - id: right
+      type: AlastairLundy.Extensions.Processes.BufferedProcessResult
+      description: The second BufferedProcessResult to compare.
+    return:
+      type: System.Boolean
+      description: True if the two BufferedProcessResult objects are equal; false otherwise.
+    content.vb: Public Shared Function Equals(left As BufferedProcessResult, right As BufferedProcessResult) As Boolean
+  overload: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals*
+  nameWithType.vb: BufferedProcessResult.Equals(BufferedProcessResult, BufferedProcessResult)
+  fullName.vb: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult, AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  name.vb: Equals(BufferedProcessResult, BufferedProcessResult)
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Equality(AlastairLundy.Extensions.Processes.BufferedProcessResult,AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  commentId: M:AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Equality(AlastairLundy.Extensions.Processes.BufferedProcessResult,AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  id: op_Equality(AlastairLundy.Extensions.Processes.BufferedProcessResult,AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  parent: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  langs:
+  - csharp
+  - vb
+  name: operator ==(BufferedProcessResult, BufferedProcessResult?)
+  nameWithType: BufferedProcessResult.operator ==(BufferedProcessResult, BufferedProcessResult?)
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.operator ==(AlastairLundy.Extensions.Processes.BufferedProcessResult, AlastairLundy.Extensions.Processes.BufferedProcessResult?)
+  type: Operator
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: op_Equality
+    path: ../src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+    startLine: 108
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: Determines if a BufferedProcessResult is equal to another BufferedProcessResult.
+  example: []
+  syntax:
+    content: public static bool operator ==(BufferedProcessResult left, BufferedProcessResult? right)
+    parameters:
+    - id: left
+      type: AlastairLundy.Extensions.Processes.BufferedProcessResult
+      description: A BufferedProcessResult to be compared.
+    - id: right
+      type: AlastairLundy.Extensions.Processes.BufferedProcessResult
+      description: The other BufferedProcessResult to be compared.
+    return:
+      type: System.Boolean
+      description: True if both BufferedProcessResults are equal to each other; false otherwise.
+    content.vb: Public Shared Operator =(left As BufferedProcessResult, right As BufferedProcessResult) As Boolean
+  overload: AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Equality*
+  nameWithType.vb: BufferedProcessResult.=(BufferedProcessResult, BufferedProcessResult)
+  fullName.vb: AlastairLundy.Extensions.Processes.BufferedProcessResult.=(AlastairLundy.Extensions.Processes.BufferedProcessResult, AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  name.vb: =(BufferedProcessResult, BufferedProcessResult)
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Inequality(AlastairLundy.Extensions.Processes.BufferedProcessResult,AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  commentId: M:AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Inequality(AlastairLundy.Extensions.Processes.BufferedProcessResult,AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  id: op_Inequality(AlastairLundy.Extensions.Processes.BufferedProcessResult,AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  parent: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  langs:
+  - csharp
+  - vb
+  name: operator !=(BufferedProcessResult, BufferedProcessResult?)
+  nameWithType: BufferedProcessResult.operator !=(BufferedProcessResult, BufferedProcessResult?)
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.operator !=(AlastairLundy.Extensions.Processes.BufferedProcessResult, AlastairLundy.Extensions.Processes.BufferedProcessResult?)
+  type: Operator
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: op_Inequality
+    path: ../src/AlastairLundy.Extensions.Processes/Models/BufferedProcessResult.cs
+    startLine: 119
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: Determines if a BufferedProcessResult is not equal to another BufferedProcessResult.
+  example: []
+  syntax:
+    content: public static bool operator !=(BufferedProcessResult left, BufferedProcessResult? right)
+    parameters:
+    - id: left
+      type: AlastairLundy.Extensions.Processes.BufferedProcessResult
+      description: A BufferedProcessResult to be compared.
+    - id: right
+      type: AlastairLundy.Extensions.Processes.BufferedProcessResult
+      description: The other BufferedProcessResult to be compared.
+    return:
+      type: System.Boolean
+      description: True if both BufferedProcessResults are not equal to each other; false otherwise.
+    content.vb: Public Shared Operator <>(left As BufferedProcessResult, right As BufferedProcessResult) As Boolean
+  overload: AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Inequality*
+  nameWithType.vb: BufferedProcessResult.<>(BufferedProcessResult, BufferedProcessResult)
+  fullName.vb: AlastairLundy.Extensions.Processes.BufferedProcessResult.<>(AlastairLundy.Extensions.Processes.BufferedProcessResult, AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  name.vb: <>(BufferedProcessResult, BufferedProcessResult)
+references:
+- uid: AlastairLundy.Extensions.Processes
+  commentId: N:AlastairLundy.Extensions.Processes
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes
+  nameWithType: AlastairLundy.Extensions.Processes
+  fullName: AlastairLundy.Extensions.Processes
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: AlastairLundy.Extensions.Processes.ProcessResult
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResult
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessResult.html
+  name: ProcessResult
+  nameWithType: ProcessResult
+  fullName: AlastairLundy.Extensions.Processes.ProcessResult
+- uid: System.IEquatable{AlastairLundy.Extensions.Processes.BufferedProcessResult}
+  commentId: T:System.IEquatable{AlastairLundy.Extensions.Processes.BufferedProcessResult}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<BufferedProcessResult>
+  nameWithType: IEquatable<BufferedProcessResult>
+  fullName: System.IEquatable<AlastairLundy.Extensions.Processes.BufferedProcessResult>
+  nameWithType.vb: IEquatable(Of BufferedProcessResult)
+  fullName.vb: System.IEquatable(Of AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  name.vb: IEquatable(Of BufferedProcessResult)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+    name: BufferedProcessResult
+    href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+    name: BufferedProcessResult
+    href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html
+  - name: )
+- uid: AlastairLundy.Extensions.Processes.ProcessResult.WasSuccessful
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessResult.WasSuccessful
+  parent: AlastairLundy.Extensions.Processes.ProcessResult
+  href: AlastairLundy.Extensions.Processes.ProcessResult.html#AlastairLundy_Extensions_Processes_ProcessResult_WasSuccessful
+  name: WasSuccessful
+  nameWithType: ProcessResult.WasSuccessful
+  fullName: AlastairLundy.Extensions.Processes.ProcessResult.WasSuccessful
+- uid: AlastairLundy.Extensions.Processes.ProcessResult.ExitCode
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessResult.ExitCode
+  parent: AlastairLundy.Extensions.Processes.ProcessResult
+  href: AlastairLundy.Extensions.Processes.ProcessResult.html#AlastairLundy_Extensions_Processes_ProcessResult_ExitCode
+  name: ExitCode
+  nameWithType: ProcessResult.ExitCode
+  fullName: AlastairLundy.Extensions.Processes.ProcessResult.ExitCode
+- uid: AlastairLundy.Extensions.Processes.ProcessResult.ExecutedFilePath
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessResult.ExecutedFilePath
+  parent: AlastairLundy.Extensions.Processes.ProcessResult
+  href: AlastairLundy.Extensions.Processes.ProcessResult.html#AlastairLundy_Extensions_Processes_ProcessResult_ExecutedFilePath
+  name: ExecutedFilePath
+  nameWithType: ProcessResult.ExecutedFilePath
+  fullName: AlastairLundy.Extensions.Processes.ProcessResult.ExecutedFilePath
+- uid: AlastairLundy.Extensions.Processes.ProcessResult.StartTime
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessResult.StartTime
+  parent: AlastairLundy.Extensions.Processes.ProcessResult
+  href: AlastairLundy.Extensions.Processes.ProcessResult.html#AlastairLundy_Extensions_Processes_ProcessResult_StartTime
+  name: StartTime
+  nameWithType: ProcessResult.StartTime
+  fullName: AlastairLundy.Extensions.Processes.ProcessResult.StartTime
+- uid: AlastairLundy.Extensions.Processes.ProcessResult.ExitTime
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessResult.ExitTime
+  parent: AlastairLundy.Extensions.Processes.ProcessResult
+  href: AlastairLundy.Extensions.Processes.ProcessResult.html#AlastairLundy_Extensions_Processes_ProcessResult_ExitTime
+  name: ExitTime
+  nameWithType: ProcessResult.ExitTime
+  fullName: AlastairLundy.Extensions.Processes.ProcessResult.ExitTime
+- uid: AlastairLundy.Extensions.Processes.ProcessResult.RuntimeDuration
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessResult.RuntimeDuration
+  parent: AlastairLundy.Extensions.Processes.ProcessResult
+  href: AlastairLundy.Extensions.Processes.ProcessResult.html#AlastairLundy_Extensions_Processes_ProcessResult_RuntimeDuration
+  name: RuntimeDuration
+  nameWithType: ProcessResult.RuntimeDuration
+  fullName: AlastairLundy.Extensions.Processes.ProcessResult.RuntimeDuration
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.#ctor*
+  commentId: Overload:AlastairLundy.Extensions.Processes.BufferedProcessResult.#ctor
+  href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html#AlastairLundy_Extensions_Processes_BufferedProcessResult__ctor_System_String_System_Int32_System_String_System_String_System_DateTime_System_DateTime_
+  name: BufferedProcessResult
+  nameWithType: BufferedProcessResult.BufferedProcessResult
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.BufferedProcessResult
+  nameWithType.vb: BufferedProcessResult.New
+  fullName.vb: AlastairLundy.Extensions.Processes.BufferedProcessResult.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardOutput*
+  commentId: Overload:AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardOutput
+  href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html#AlastairLundy_Extensions_Processes_BufferedProcessResult_StandardOutput
+  name: StandardOutput
+  nameWithType: BufferedProcessResult.StandardOutput
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardOutput
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardError*
+  commentId: Overload:AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardError
+  href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html#AlastairLundy_Extensions_Processes_BufferedProcessResult_StandardError
+  name: StandardError
+  nameWithType: BufferedProcessResult.StandardError
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.StandardError
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals*
+  commentId: Overload:AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals
+  href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html#AlastairLundy_Extensions_Processes_BufferedProcessResult_Equals_AlastairLundy_Extensions_Processes_BufferedProcessResult_
+  name: Equals
+  nameWithType: BufferedProcessResult.Equals
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.Equals
+- uid: System.IEquatable{AlastairLundy.Extensions.Processes.BufferedProcessResult}.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  commentId: M:System.IEquatable{AlastairLundy.Extensions.Processes.BufferedProcessResult}.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  parent: System.IEquatable{AlastairLundy.Extensions.Processes.BufferedProcessResult}
+  definition: System.IEquatable`1.Equals(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(BufferedProcessResult)
+  nameWithType: IEquatable<BufferedProcessResult>.Equals(BufferedProcessResult)
+  fullName: System.IEquatable<AlastairLundy.Extensions.Processes.BufferedProcessResult>.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  nameWithType.vb: IEquatable(Of BufferedProcessResult).Equals(BufferedProcessResult)
+  fullName.vb: System.IEquatable(Of AlastairLundy.Extensions.Processes.BufferedProcessResult).Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  spec.csharp:
+  - uid: System.IEquatable{AlastairLundy.Extensions.Processes.BufferedProcessResult}.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+    name: BufferedProcessResult
+    href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable{AlastairLundy.Extensions.Processes.BufferedProcessResult}.Equals(AlastairLundy.Extensions.Processes.BufferedProcessResult)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+    name: BufferedProcessResult
+    href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html
+  - name: )
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  commentId: T:AlastairLundy.Extensions.Processes.BufferedProcessResult
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html
+  name: BufferedProcessResult
+  nameWithType: BufferedProcessResult
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.GetHashCode*
+  commentId: Overload:AlastairLundy.Extensions.Processes.BufferedProcessResult.GetHashCode
+  href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html#AlastairLundy_Extensions_Processes_BufferedProcessResult_GetHashCode
+  name: GetHashCode
+  nameWithType: BufferedProcessResult.GetHashCode
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.GetHashCode
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Equality*
+  commentId: Overload:AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Equality
+  href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html#AlastairLundy_Extensions_Processes_BufferedProcessResult_op_Equality_AlastairLundy_Extensions_Processes_BufferedProcessResult_AlastairLundy_Extensions_Processes_BufferedProcessResult_
+  name: operator ==
+  nameWithType: BufferedProcessResult.operator ==
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.operator ==
+  nameWithType.vb: BufferedProcessResult.=
+  fullName.vb: AlastairLundy.Extensions.Processes.BufferedProcessResult.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Equality*
+    name: ==
+    href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html#AlastairLundy_Extensions_Processes_BufferedProcessResult_op_Equality_AlastairLundy_Extensions_Processes_BufferedProcessResult_AlastairLundy_Extensions_Processes_BufferedProcessResult_
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Inequality*
+  commentId: Overload:AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Inequality
+  href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html#AlastairLundy_Extensions_Processes_BufferedProcessResult_op_Inequality_AlastairLundy_Extensions_Processes_BufferedProcessResult_AlastairLundy_Extensions_Processes_BufferedProcessResult_
+  name: operator !=
+  nameWithType: BufferedProcessResult.operator !=
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult.operator !=
+  nameWithType.vb: BufferedProcessResult.<>
+  fullName.vb: AlastairLundy.Extensions.Processes.BufferedProcessResult.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult.op_Inequality*
+    name: '!='
+    href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html#AlastairLundy_Extensions_Processes_BufferedProcessResult_op_Inequality_AlastairLundy_Extensions_Processes_BufferedProcessResult_AlastairLundy_Extensions_Processes_BufferedProcessResult_

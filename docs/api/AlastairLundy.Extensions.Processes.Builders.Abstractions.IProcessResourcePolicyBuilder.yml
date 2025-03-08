@@ -1,0 +1,446 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  commentId: T:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  id: IProcessResourcePolicyBuilder
+  parent: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  children:
+  - AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.Build
+  - AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMaxWorkingSet(System.IntPtr)
+  - AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMinWorkingSet(System.IntPtr)
+  - AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityBoost(System.Boolean)
+  - AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityClass(System.Diagnostics.ProcessPriorityClass)
+  - AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithProcessorAffinity(System.IntPtr)
+  langs:
+  - csharp
+  - vb
+  name: IProcessResourcePolicyBuilder
+  nameWithType: IProcessResourcePolicyBuilder
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  type: Interface
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: IProcessResourcePolicyBuilder
+    path: ../src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+    startLine: 17
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  summary: An interface that defines the fluent builder methods all ProcessResourcePolicyBuilder classes must implement.
+  example: []
+  syntax:
+    content: public interface IProcessResourcePolicyBuilder
+    content.vb: Public Interface IProcessResourcePolicyBuilder
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithProcessorAffinity(System.IntPtr)
+  commentId: M:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithProcessorAffinity(System.IntPtr)
+  id: WithProcessorAffinity(System.IntPtr)
+  parent: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithProcessorAffinity(nint)
+  nameWithType: IProcessResourcePolicyBuilder.WithProcessorAffinity(nint)
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithProcessorAffinity(nint)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: WithProcessorAffinity
+    path: ../src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+    startLine: 26
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  summary: Configures the ProcessResourcePolicyBuilder with the specified ProcessorAffinity.
+  remarks: Process objects only support Processor Affinity on Windows and Linux operating systems.
+  example: []
+  syntax:
+    content: IProcessResourcePolicyBuilder WithProcessorAffinity(nint processorAffinity)
+    parameters:
+    - id: processorAffinity
+      type: System.IntPtr
+      description: The processor affinity to be used.
+    return:
+      type: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+      description: The newly created ProcessResourcePolicyBuilder with the updated ProcessorAffinity.
+    content.vb: Function WithProcessorAffinity(processorAffinity As IntPtr) As IProcessResourcePolicyBuilder
+  overload: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithProcessorAffinity*
+  nameWithType.vb: IProcessResourcePolicyBuilder.WithProcessorAffinity(IntPtr)
+  fullName.vb: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithProcessorAffinity(System.IntPtr)
+  name.vb: WithProcessorAffinity(IntPtr)
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMinWorkingSet(System.IntPtr)
+  commentId: M:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMinWorkingSet(System.IntPtr)
+  id: WithMinWorkingSet(System.IntPtr)
+  parent: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithMinWorkingSet(nint)
+  nameWithType: IProcessResourcePolicyBuilder.WithMinWorkingSet(nint)
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMinWorkingSet(nint)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: WithMinWorkingSet
+    path: ../src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+    startLine: 36
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  summary: Configures the ProcessResourcePolicyBuilder with the specified Minimum Working Set.
+  example: []
+  syntax:
+    content: IProcessResourcePolicyBuilder WithMinWorkingSet(nint minWorkingSet)
+    parameters:
+    - id: minWorkingSet
+      type: System.IntPtr
+      description: The minimum working set to be used.
+    return:
+      type: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+      description: The newly created ProcessResourcePolicyBuilder with the updated minimum working set.
+    content.vb: Function WithMinWorkingSet(minWorkingSet As IntPtr) As IProcessResourcePolicyBuilder
+  overload: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMinWorkingSet*
+  nameWithType.vb: IProcessResourcePolicyBuilder.WithMinWorkingSet(IntPtr)
+  fullName.vb: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMinWorkingSet(System.IntPtr)
+  name.vb: WithMinWorkingSet(IntPtr)
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMaxWorkingSet(System.IntPtr)
+  commentId: M:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMaxWorkingSet(System.IntPtr)
+  id: WithMaxWorkingSet(System.IntPtr)
+  parent: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithMaxWorkingSet(nint)
+  nameWithType: IProcessResourcePolicyBuilder.WithMaxWorkingSet(nint)
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMaxWorkingSet(nint)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: WithMaxWorkingSet
+    path: ../src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+    startLine: 43
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  summary: Configures the ProcessResourcePolicyBuilder with the specified Maximum Working Set.
+  example: []
+  syntax:
+    content: IProcessResourcePolicyBuilder WithMaxWorkingSet(nint maxWorkingSet)
+    parameters:
+    - id: maxWorkingSet
+      type: System.IntPtr
+      description: The maximum working set to be used.
+    return:
+      type: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+      description: The newly created ProcessResourcePolicyBuilder with the updated maximum working set.
+    content.vb: Function WithMaxWorkingSet(maxWorkingSet As IntPtr) As IProcessResourcePolicyBuilder
+  overload: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMaxWorkingSet*
+  nameWithType.vb: IProcessResourcePolicyBuilder.WithMaxWorkingSet(IntPtr)
+  fullName.vb: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMaxWorkingSet(System.IntPtr)
+  name.vb: WithMaxWorkingSet(IntPtr)
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityClass(System.Diagnostics.ProcessPriorityClass)
+  commentId: M:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityClass(System.Diagnostics.ProcessPriorityClass)
+  id: WithPriorityClass(System.Diagnostics.ProcessPriorityClass)
+  parent: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithPriorityClass(ProcessPriorityClass)
+  nameWithType: IProcessResourcePolicyBuilder.WithPriorityClass(ProcessPriorityClass)
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityClass(System.Diagnostics.ProcessPriorityClass)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: WithPriorityClass
+    path: ../src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+    startLine: 50
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  summary: Configures the ProcessResourcePolicyBuilder with the specified Process Priority Class.
+  example: []
+  syntax:
+    content: IProcessResourcePolicyBuilder WithPriorityClass(ProcessPriorityClass processPriorityClass)
+    parameters:
+    - id: processPriorityClass
+      type: System.Diagnostics.ProcessPriorityClass
+      description: The Process Priority Class to be used.
+    return:
+      type: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+      description: The newly created ProcessResourcePolicyBuilder with the updated Process Priority Class.
+    content.vb: Function WithPriorityClass(processPriorityClass As ProcessPriorityClass) As IProcessResourcePolicyBuilder
+  overload: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityClass*
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityBoost(System.Boolean)
+  commentId: M:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityBoost(System.Boolean)
+  id: WithPriorityBoost(System.Boolean)
+  parent: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithPriorityBoost(bool)
+  nameWithType: IProcessResourcePolicyBuilder.WithPriorityBoost(bool)
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityBoost(bool)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: WithPriorityBoost
+    path: ../src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+    startLine: 57
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  summary: Configures the ProcessResourcePolicyBuilder with the specified Priority Boost behaviour.
+  example: []
+  syntax:
+    content: IProcessResourcePolicyBuilder WithPriorityBoost(bool enablePriorityBoost)
+    parameters:
+    - id: enablePriorityBoost
+      type: System.Boolean
+      description: The priority boost behaviour to be used.
+    return:
+      type: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+      description: The newly created ProcessResourcePolicyBuilder with the updated priority boost behaviour.
+    content.vb: Function WithPriorityBoost(enablePriorityBoost As Boolean) As IProcessResourcePolicyBuilder
+  overload: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityBoost*
+  nameWithType.vb: IProcessResourcePolicyBuilder.WithPriorityBoost(Boolean)
+  fullName.vb: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityBoost(Boolean)
+  name.vb: WithPriorityBoost(Boolean)
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.Build
+  commentId: M:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.Build
+  id: Build
+  parent: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  langs:
+  - csharp
+  - vb
+  name: Build()
+  nameWithType: IProcessResourcePolicyBuilder.Build()
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.Build()
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: Build
+    path: ../src/AlastairLundy.Extensions.Processes/Builders/Abstractions/IProcessResourcePolicyBuilder.cs
+    startLine: 63
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  summary: Builds the configured ProcessResourcePolicy
+  example: []
+  syntax:
+    content: ProcessResourcePolicy Build()
+    return:
+      type: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+      description: The configured ProcessResourcePolicy.
+    content.vb: Function Build() As ProcessResourcePolicy
+  overload: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.Build*
+references:
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Builders.Abstractions
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Builders
+    name: Builders
+    href: AlastairLundy.Extensions.Processes.Builders.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Builders.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Builders.Abstractions.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Builders
+    name: Builders
+    href: AlastairLundy.Extensions.Processes.Builders.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Builders.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Builders.Abstractions.html
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithProcessorAffinity*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithProcessorAffinity
+  href: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.html#AlastairLundy_Extensions_Processes_Builders_Abstractions_IProcessResourcePolicyBuilder_WithProcessorAffinity_System_IntPtr_
+  name: WithProcessorAffinity
+  nameWithType: IProcessResourcePolicyBuilder.WithProcessorAffinity
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithProcessorAffinity
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  commentId: T:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  parent: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  href: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.html
+  name: IProcessResourcePolicyBuilder
+  nameWithType: IProcessResourcePolicyBuilder
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMinWorkingSet*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMinWorkingSet
+  href: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.html#AlastairLundy_Extensions_Processes_Builders_Abstractions_IProcessResourcePolicyBuilder_WithMinWorkingSet_System_IntPtr_
+  name: WithMinWorkingSet
+  nameWithType: IProcessResourcePolicyBuilder.WithMinWorkingSet
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMinWorkingSet
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMaxWorkingSet*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMaxWorkingSet
+  href: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.html#AlastairLundy_Extensions_Processes_Builders_Abstractions_IProcessResourcePolicyBuilder_WithMaxWorkingSet_System_IntPtr_
+  name: WithMaxWorkingSet
+  nameWithType: IProcessResourcePolicyBuilder.WithMaxWorkingSet
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithMaxWorkingSet
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityClass*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityClass
+  href: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.html#AlastairLundy_Extensions_Processes_Builders_Abstractions_IProcessResourcePolicyBuilder_WithPriorityClass_System_Diagnostics_ProcessPriorityClass_
+  name: WithPriorityClass
+  nameWithType: IProcessResourcePolicyBuilder.WithPriorityClass
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityClass
+- uid: System.Diagnostics.ProcessPriorityClass
+  commentId: T:System.Diagnostics.ProcessPriorityClass
+  parent: System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.processpriorityclass
+  name: ProcessPriorityClass
+  nameWithType: ProcessPriorityClass
+  fullName: System.Diagnostics.ProcessPriorityClass
+- uid: System.Diagnostics
+  commentId: N:System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Diagnostics
+  nameWithType: System.Diagnostics
+  fullName: System.Diagnostics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityBoost*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityBoost
+  href: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.html#AlastairLundy_Extensions_Processes_Builders_Abstractions_IProcessResourcePolicyBuilder_WithPriorityBoost_System_Boolean_
+  name: WithPriorityBoost
+  nameWithType: IProcessResourcePolicyBuilder.WithPriorityBoost
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.WithPriorityBoost
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.Build*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.Build
+  href: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.html#AlastairLundy_Extensions_Processes_Builders_Abstractions_IProcessResourcePolicyBuilder_Build
+  name: Build
+  nameWithType: IProcessResourcePolicyBuilder.Build
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.Build
+- uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  name: ProcessResourcePolicy
+  nameWithType: ProcessResourcePolicy
+  fullName: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+- uid: AlastairLundy.Extensions.Processes
+  commentId: N:AlastairLundy.Extensions.Processes
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes
+  nameWithType: AlastairLundy.Extensions.Processes
+  fullName: AlastairLundy.Extensions.Processes
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
