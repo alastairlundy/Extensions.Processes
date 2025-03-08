@@ -1,32 +1,6 @@
-# ProcessExtensions
-In this readme, the package AlastairLundy.Extensions.Processes is referred to as ProcessExtensions for brevity.
+# Getting Started
 
-ProcessExtensions adds much needed abstractions and extensions to Processes and Process Running, to make it easier and safer.
-
-ProcessExtensions started as part of CliInvoke but is now a separate package, helping other projects besides CliInvoke to run processes easily and safely.
-
-[![NuGet](https://img.shields.io/nuget/v/AlastairLundy.Extensions.Processes.svg)](https://www.nuget.org/packages/AlastairLundy.Extensions.Processes/)
-[![NuGet](https://img.shields.io/nuget/dt/AlastairLundy.Extensions.Processes.svg)](https://www.nuget.org/packages/AlastairLundy.Extensions.Processes/)
-
-## Table of Contents
-* [Features](#features)
-* [Installing ProcessExtensions](#how-to-install-and-use-processextensions)
-    * [Compatibility](#supported-platforms)
-* [Examples](#examples)
-* [Contributing to ProcessExtensions](#how-to-contribute-to-processextensions)
-* [Roadmap](#processextensions-roadmap)
-* [License](#license)
-* [Acknowledgements](#acknowledgements)
-
-## Features
-* Easy to use safe Process Running classes and interfaces
-* Models that help abstract away some of the complicated nature of Process objects
-* Compatible with .NET Standard 2.0 and 2.1 ^1
-* [SourceLink](https://learn.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink) support
-
-^1 - [Polyfill](https://github.com/SimonCropp/Polyfill) is a dependency only required for .NET Standard 2.0 and 2.1 users. [Microsoft.Bcl.HashCode](https://www.nuget.org/packages/Microsoft.Bcl.HashCode) is a dependency only required for .NET Standard 2.0 users.
-
-## How to install and use ProcessExtensions
+## Installing AlastairLundy.Extensions.Processes
 ProcessExtensions is available on [Nuget](https://nuget.org).
 
 ### Installing ProcessExtensions
@@ -35,32 +9,6 @@ ProcessExtensions's packages can be installed via the .NET SDK CLI, Nuget via yo
 | Package Name                       | Nuget Link                                                                                                | .NET SDK CLI command                                      |
 |------------------------------------|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
 | AlastairLundy.Extensions.Processes | [AlastairLundy.Extensions.Processes Nuget](https://nuget.org/packages/AlastairLundy.Extensions.Processes) | ``dotnet add package AlastairLundy.Extensions.Processes`` |
-
-### Supported Platforms
-ProcessExtensions can be added to any .NET Standard 2.0, .NET Standard 2.1, .NET 8, or .NET 9 supported project.
-
-The following table details which target platforms are supported for running Processes.
-
-| Operating System | Support Status                     | Notes                                                                           |
-|------------------|------------------------------------|---------------------------------------------------------------------------------|
-| Windows          | Fully Supported :white_check_mark: |                                                                                 |
-| macOS            | Fully Supported :white_check_mark: |                                                                                 |
-| Mac Catalyst     | Untested Platform :warning:        | Support for this platform has not been tested but should theoretically work.    |
-| Linux            | Fully Supported :white_check_mark: |                                                                                 |
-| FreeBSD          | Fully Supported :white_check_mark: |                                                                                 |
-| Android          | Untested Platform :warning:        | Support for this platform has not been tested but should theoretically work.    |
-| IOS              | Not Supported :x:                  | Not supported due to ``Process.Start()`` not supporting IOS. ^2                 | 
-| tvOS             | Not Supported :x:                  | Not supported due to ``Process.Start()`` not supporting tvOS ^2                 |
-| watchOS          | Not Supported :x:                  | Not supported due to ``Process.Start()`` not supporting watchOS ^3              |
-| Browser          | Not Supported and Not Planned :x:  | Not supported due to not being a valid target Platform for executing processes. |
-
-^2 - See the [Process class documentation](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process.start?view=net-9.0#system-diagnostics-process-start) for more info.
-
-^3 - Lack of watchOS support is implied by lack of IOS support since [watchOS is based on IOS](https://en.wikipedia.org/wiki/WatchOS).
-
-
-**Note:** This library has not been tested on Android or Tizen.
-
 
 ## Examples
 One of the main use cases for ProcessExtensions is intended to be [safe Process Running](#safe-process-running).
@@ -176,16 +124,6 @@ To manually build a project for release, enter ``dotnet build -c Release /p:Cont
 
 Builds should generally always include Source Link and symbol packages if intended for wider distribution.
 
-
-## How to Contribute to ProcessExtensions
-Thank you in advance for considering contributing to ProcessExtensions.
-
-Please see the [CONTRIBUTING.md file](https://github.com/alastairlundy/Extensions.Processes/blob/main/CONTRIBUTING.md) for code and localization contributions.
-
-If you want to file a bug report or suggest a potential feature to add, please check out the [GitHub issues page](https://github.com/alastairlundy/Extensions.Processes/issues/) to see if a similar or identical issue is already open.
-If there is not already a relevant issue filed, please [file one here](https://github.com/alastairlundy/Extensions.Processes/issues/new) and follow the respective guidance from the appropriate issue template.
-
-Thanks.
 
 ## ProcessExtensions' Roadmap
 ProcessExtensions aims to make working with processes easier and safer.

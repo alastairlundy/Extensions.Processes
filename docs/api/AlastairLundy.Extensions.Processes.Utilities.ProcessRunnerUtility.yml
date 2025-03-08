@@ -1,0 +1,1634 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  commentId: T:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  id: ProcessRunnerUtility
+  parent: AlastairLundy.Extensions.Processes.Utilities
+  children:
+  - AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.#ctor(AlastairLundy.Extensions.IO.Files.Abstractions.IFilePathResolver)
+  - AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.DisposeOfProcess(System.Diagnostics.Process)
+  - AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute(System.Diagnostics.Process)
+  - AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  - AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  - AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  - AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResult(System.Diagnostics.Process,System.Boolean)
+  - AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResultAsync(System.Diagnostics.Process,System.Boolean)
+  - AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResult(System.Diagnostics.Process,System.Boolean)
+  - AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResultAsync(System.Diagnostics.Process,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: ProcessRunnerUtility
+  nameWithType: ProcessRunnerUtility
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  type: Class
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ProcessRunnerUtility
+    path: ../src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+    startLine: 33
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Utilities
+  summary: A Process Running Utility to easily create different Process Runners.
+  remarks: This class is primarily intended for internal use OR use when creating a Process Runner or Command Runner implementation.
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("This class is deprecated and will be removed in version 2.0. Use ProcessFactory instead.", false)]
+
+      public class ProcessRunnerUtility : IProcessRunnerUtility
+    content.vb: >-
+      <Obsolete("This class is deprecated and will be removed in version 2.0. Use ProcessFactory instead.", False)>
+
+      Public Class ProcessRunnerUtility Implements IProcessRunnerUtility
+  inheritance:
+  - System.Object
+  implements:
+  - AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String,System.Boolean)
+    arguments:
+    - type: System.String
+      value: This class is deprecated and will be removed in version 2.0. Use ProcessFactory instead.
+    - type: System.Boolean
+      value: false
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.#ctor(AlastairLundy.Extensions.IO.Files.Abstractions.IFilePathResolver)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.#ctor(AlastairLundy.Extensions.IO.Files.Abstractions.IFilePathResolver)
+  id: '#ctor(AlastairLundy.Extensions.IO.Files.Abstractions.IFilePathResolver)'
+  parent: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  langs:
+  - csharp
+  - vb
+  name: ProcessRunnerUtility(IFilePathResolver)
+  nameWithType: ProcessRunnerUtility.ProcessRunnerUtility(IFilePathResolver)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ProcessRunnerUtility(AlastairLundy.Extensions.IO.Files.Abstractions.IFilePathResolver)
+  type: Constructor
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: .ctor
+    path: ../src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+    startLine: 38
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Utilities
+  syntax:
+    content: public ProcessRunnerUtility(IFilePathResolver filePathResolver)
+    parameters:
+    - id: filePathResolver
+      type: AlastairLundy.Extensions.IO.Files.Abstractions.IFilePathResolver
+    content.vb: Public Sub New(filePathResolver As IFilePathResolver)
+  overload: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.#ctor*
+  nameWithType.vb: ProcessRunnerUtility.New(IFilePathResolver)
+  fullName.vb: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.New(AlastairLundy.Extensions.IO.Files.Abstractions.IFilePathResolver)
+  name.vb: New(IFilePathResolver)
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute(System.Diagnostics.Process)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute(System.Diagnostics.Process)
+  id: Execute(System.Diagnostics.Process)
+  parent: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  langs:
+  - csharp
+  - vb
+  name: Execute(Process)
+  nameWithType: ProcessRunnerUtility.Execute(Process)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute(System.Diagnostics.Process)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: Execute
+    path: ../src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+    startLine: 50
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Utilities
+  summary: Starts a Process and synchronously waits for it to exit before returning.
+  example: []
+  syntax:
+    content: public int Execute(Process process)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to be executed.
+    return:
+      type: System.Int32
+      description: The process' exit code.
+    content.vb: Public Function Execute(process As Process) As Integer
+  overload: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if the specified process has not exited.
+  implements:
+  - AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.Execute(System.Diagnostics.Process)
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  id: Execute(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  parent: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  langs:
+  - csharp
+  - vb
+  name: Execute(Process, ProcessResultValidation, ProcessResourcePolicy?)
+  nameWithType: ProcessRunnerUtility.Execute(Process, ProcessResultValidation, ProcessResourcePolicy?)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, AlastairLundy.Extensions.Processes.ProcessResourcePolicy?)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: Execute
+    path: ../src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+    startLine: 74
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Utilities
+  summary: Starts a Process and synchronously waits for it to exit before returning.
+  example: []
+  syntax:
+    content: public int Execute(Process process, ProcessResultValidation processResultValidation, ProcessResourcePolicy? processResourcePolicy = null)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to be executed.
+    - id: processResultValidation
+      type: AlastairLundy.Extensions.Processes.ProcessResultValidation
+      description: Whether validation should be performed on the exit code.
+    - id: processResourcePolicy
+      type: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+      description: The process resource policy to be set if it is not null.
+    return:
+      type: System.Int32
+      description: The process' exit code.
+    content.vb: Public Function Execute(process As Process, processResultValidation As ProcessResultValidation, processResourcePolicy As ProcessResourcePolicy = Nothing) As Integer
+  overload: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if the specified process has not exited.
+  implements:
+  - AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.Execute(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  nameWithType.vb: ProcessRunnerUtility.Execute(Process, ProcessResultValidation, ProcessResourcePolicy)
+  fullName.vb: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  name.vb: Execute(Process, ProcessResultValidation, ProcessResourcePolicy)
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  id: ExecuteAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  parent: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  langs:
+  - csharp
+  - vb
+  name: ExecuteAsync(Process, CancellationToken)
+  nameWithType: ProcessRunnerUtility.ExecuteAsync(Process, CancellationToken)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ExecuteAsync
+    path: ../src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+    startLine: 113
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Utilities
+  summary: Starts a Process and asynchronously waits for it to exit before returning.
+  example: []
+  syntax:
+    content: public Task<int> ExecuteAsync(Process process, CancellationToken cancellationToken = default)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to be executed.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token to use to cancel the waiting for process exit if required.
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: The process' exit code.
+    content.vb: Public Function ExecuteAsync(process As Process, cancellationToken As CancellationToken = Nothing) As Task(Of Integer)
+  overload: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if the specified process has not exited.
+  implements:
+  - AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  id: ExecuteAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  parent: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  langs:
+  - csharp
+  - vb
+  name: ExecuteAsync(Process, ProcessResultValidation, ProcessResourcePolicy?, CancellationToken)
+  nameWithType: ProcessRunnerUtility.ExecuteAsync(Process, ProcessResultValidation, ProcessResourcePolicy?, CancellationToken)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, AlastairLundy.Extensions.Processes.ProcessResourcePolicy?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ExecuteAsync
+    path: ../src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+    startLine: 139
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Utilities
+  summary: Starts a Process and asynchronously waits for it to exit before returning.
+  example: []
+  syntax:
+    content: public Task<int> ExecuteAsync(Process process, ProcessResultValidation processResultValidation, ProcessResourcePolicy? processResourcePolicy = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to be executed.
+    - id: processResultValidation
+      type: AlastairLundy.Extensions.Processes.ProcessResultValidation
+      description: Whether validation should be performed on the exit code.
+    - id: processResourcePolicy
+      type: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+      description: The process resource policy to be set for the Process.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token to use to cancel the waiting for process exit if required.
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+      description: The process' exit code.
+    content.vb: Public Function ExecuteAsync(process As Process, processResultValidation As ProcessResultValidation, processResourcePolicy As ProcessResourcePolicy = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of Integer)
+  overload: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if the specified process has not exited.
+  - type: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+    commentId: T:AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+    description: Thrown if the process result validation was performed and the exit code is not zero.
+  implements:
+  - AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  nameWithType.vb: ProcessRunnerUtility.ExecuteAsync(Process, ProcessResultValidation, ProcessResourcePolicy, CancellationToken)
+  fullName.vb: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, AlastairLundy.Extensions.Processes.ProcessResourcePolicy, System.Threading.CancellationToken)
+  name.vb: ExecuteAsync(Process, ProcessResultValidation, ProcessResourcePolicy, CancellationToken)
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.DisposeOfProcess(System.Diagnostics.Process)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.DisposeOfProcess(System.Diagnostics.Process)
+  id: DisposeOfProcess(System.Diagnostics.Process)
+  parent: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  langs:
+  - csharp
+  - vb
+  name: DisposeOfProcess(Process)
+  nameWithType: ProcessRunnerUtility.DisposeOfProcess(Process)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.DisposeOfProcess(System.Diagnostics.Process)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: DisposeOfProcess
+    path: ../src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+    startLine: 181
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Utilities
+  summary: Disposes of the specified process.
+  example: []
+  syntax:
+    content: public void DisposeOfProcess(Process process)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to be disposed of.
+    content.vb: Public Sub DisposeOfProcess(process As Process)
+  overload: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.DisposeOfProcess*
+  implements:
+  - AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.DisposeOfProcess(System.Diagnostics.Process)
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResult(System.Diagnostics.Process,System.Boolean)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResult(System.Diagnostics.Process,System.Boolean)
+  id: GetResult(System.Diagnostics.Process,System.Boolean)
+  parent: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  langs:
+  - csharp
+  - vb
+  name: GetResult(Process, bool)
+  nameWithType: ProcessRunnerUtility.GetResult(Process, bool)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResult(System.Diagnostics.Process, bool)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: GetResult
+    path: ../src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+    startLine: 198
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Utilities
+  summary: Gets the results from an exited Process.
+  example: []
+  syntax:
+    content: public ProcessResult GetResult(Process process, bool disposeOfProcess)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to retrieve results from.
+    - id: disposeOfProcess
+      type: System.Boolean
+      description: Whether to dispose of the Process before returning.
+    return:
+      type: AlastairLundy.Extensions.Processes.ProcessResult
+      description: The results from an exited process.
+    content.vb: Public Function GetResult(process As Process, disposeOfProcess As Boolean) As ProcessResult
+  overload: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResult*
+  implements:
+  - AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResult(System.Diagnostics.Process,System.Boolean)
+  nameWithType.vb: ProcessRunnerUtility.GetResult(Process, Boolean)
+  fullName.vb: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResult(System.Diagnostics.Process, Boolean)
+  name.vb: GetResult(Process, Boolean)
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResult(System.Diagnostics.Process,System.Boolean)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResult(System.Diagnostics.Process,System.Boolean)
+  id: GetBufferedResult(System.Diagnostics.Process,System.Boolean)
+  parent: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  langs:
+  - csharp
+  - vb
+  name: GetBufferedResult(Process, bool)
+  nameWithType: ProcessRunnerUtility.GetBufferedResult(Process, bool)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResult(System.Diagnostics.Process, bool)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: GetBufferedResult
+    path: ../src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+    startLine: 235
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Utilities
+  summary: Gets the BufferedProcessResults results from an exited Process.
+  example: []
+  syntax:
+    content: public BufferedProcessResult GetBufferedResult(Process process, bool disposeOfProcess)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to retrieve results from.
+    - id: disposeOfProcess
+      type: System.Boolean
+      description: Whether to dispose of the Process before returning.
+    return:
+      type: AlastairLundy.Extensions.Processes.BufferedProcessResult
+      description: The results from an exited process.
+    content.vb: Public Function GetBufferedResult(process As Process, disposeOfProcess As Boolean) As BufferedProcessResult
+  overload: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResult*
+  implements:
+  - AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResult(System.Diagnostics.Process,System.Boolean)
+  nameWithType.vb: ProcessRunnerUtility.GetBufferedResult(Process, Boolean)
+  fullName.vb: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResult(System.Diagnostics.Process, Boolean)
+  name.vb: GetBufferedResult(Process, Boolean)
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResultAsync(System.Diagnostics.Process,System.Boolean)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResultAsync(System.Diagnostics.Process,System.Boolean)
+  id: GetResultAsync(System.Diagnostics.Process,System.Boolean)
+  parent: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  langs:
+  - csharp
+  - vb
+  name: GetResultAsync(Process, bool)
+  nameWithType: ProcessRunnerUtility.GetResultAsync(Process, bool)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResultAsync(System.Diagnostics.Process, bool)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: GetResultAsync
+    path: ../src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+    startLine: 284
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Utilities
+  summary: Asynchronously gets the ProcessResult results from an exited Process.
+  example: []
+  syntax:
+    content: public Task<ProcessResult> GetResultAsync(Process process, bool disposeOfProcess)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to retrieve results from.
+    - id: disposeOfProcess
+      type: System.Boolean
+      description: Whether to dispose of the Process before returning.
+    return:
+      type: System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.ProcessResult}
+      description: The results from an exited process.
+    content.vb: Public Function GetResultAsync(process As Process, disposeOfProcess As Boolean) As Task(Of ProcessResult)
+  overload: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResultAsync*
+  implements:
+  - AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResultAsync(System.Diagnostics.Process,System.Boolean)
+  nameWithType.vb: ProcessRunnerUtility.GetResultAsync(Process, Boolean)
+  fullName.vb: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResultAsync(System.Diagnostics.Process, Boolean)
+  name.vb: GetResultAsync(Process, Boolean)
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResultAsync(System.Diagnostics.Process,System.Boolean)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResultAsync(System.Diagnostics.Process,System.Boolean)
+  id: GetBufferedResultAsync(System.Diagnostics.Process,System.Boolean)
+  parent: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  langs:
+  - csharp
+  - vb
+  name: GetBufferedResultAsync(Process, bool)
+  nameWithType: ProcessRunnerUtility.GetBufferedResultAsync(Process, bool)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResultAsync(System.Diagnostics.Process, bool)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: GetBufferedResultAsync
+    path: ../src/AlastairLundy.Extensions.Processes/Utilities/ProcessRunnerUtility.cs
+    startLine: 326
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Utilities
+  summary: Asynchronously gets the BufferedProcessResult results from an exited Process.
+  example: []
+  syntax:
+    content: public Task<BufferedProcessResult> GetBufferedResultAsync(Process process, bool disposeOfProcess)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to retrieve results from.
+    - id: disposeOfProcess
+      type: System.Boolean
+      description: Whether to dispose of the Process before returning.
+    return:
+      type: System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.BufferedProcessResult}
+      description: The results from an exited process.
+    content.vb: Public Function GetBufferedResultAsync(process As Process, disposeOfProcess As Boolean) As Task(Of BufferedProcessResult)
+  overload: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResultAsync*
+  implements:
+  - AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResultAsync(System.Diagnostics.Process,System.Boolean)
+  nameWithType.vb: ProcessRunnerUtility.GetBufferedResultAsync(Process, Boolean)
+  fullName.vb: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResultAsync(System.Diagnostics.Process, Boolean)
+  name.vb: GetBufferedResultAsync(Process, Boolean)
+references:
+- uid: AlastairLundy.Extensions.Processes.Utilities
+  commentId: N:AlastairLundy.Extensions.Processes.Utilities
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes.Utilities
+  nameWithType: AlastairLundy.Extensions.Processes.Utilities
+  fullName: AlastairLundy.Extensions.Processes.Utilities
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities
+    name: Utilities
+    href: AlastairLundy.Extensions.Processes.Utilities.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities
+    name: Utilities
+    href: AlastairLundy.Extensions.Processes.Utilities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  commentId: T:AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  parent: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html
+  name: IProcessRunnerUtility
+  nameWithType: IProcessRunnerUtility
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities
+    name: Utilities
+    href: AlastairLundy.Extensions.Processes.Utilities.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities
+    name: Utilities
+    href: AlastairLundy.Extensions.Processes.Utilities.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.html
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.#ctor*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.#ctor
+  href: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_ProcessRunnerUtility__ctor_AlastairLundy_Extensions_IO_Files_Abstractions_IFilePathResolver_
+  name: ProcessRunnerUtility
+  nameWithType: ProcessRunnerUtility.ProcessRunnerUtility
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ProcessRunnerUtility
+  nameWithType.vb: ProcessRunnerUtility.New
+  fullName.vb: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.New
+  name.vb: New
+- uid: AlastairLundy.Extensions.IO.Files.Abstractions.IFilePathResolver
+  commentId: T:AlastairLundy.Extensions.IO.Files.Abstractions.IFilePathResolver
+  parent: AlastairLundy.Extensions.IO.Files.Abstractions
+  isExternal: true
+  name: IFilePathResolver
+  nameWithType: IFilePathResolver
+  fullName: AlastairLundy.Extensions.IO.Files.Abstractions.IFilePathResolver
+- uid: AlastairLundy.Extensions.IO.Files.Abstractions
+  commentId: N:AlastairLundy.Extensions.IO.Files.Abstractions
+  isExternal: true
+  name: AlastairLundy.Extensions.IO.Files.Abstractions
+  nameWithType: AlastairLundy.Extensions.IO.Files.Abstractions
+  fullName: AlastairLundy.Extensions.IO.Files.Abstractions
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    isExternal: true
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    isExternal: true
+  - name: .
+  - uid: AlastairLundy.Extensions.IO
+    name: IO
+    isExternal: true
+  - name: .
+  - uid: AlastairLundy.Extensions.IO.Files
+    name: Files
+    isExternal: true
+  - name: .
+  - uid: AlastairLundy.Extensions.IO.Files.Abstractions
+    name: Abstractions
+    isExternal: true
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    isExternal: true
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    isExternal: true
+  - name: .
+  - uid: AlastairLundy.Extensions.IO
+    name: IO
+    isExternal: true
+  - name: .
+  - uid: AlastairLundy.Extensions.IO.Files
+    name: Files
+    isExternal: true
+  - name: .
+  - uid: AlastairLundy.Extensions.IO.Files.Abstractions
+    name: Abstractions
+    isExternal: true
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute
+  href: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_ProcessRunnerUtility_Execute_System_Diagnostics_Process_
+  name: Execute
+  nameWithType: ProcessRunnerUtility.Execute
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.Execute
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.Execute(System.Diagnostics.Process)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.Execute(System.Diagnostics.Process)
+  parent: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  isExternal: true
+  href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_Execute_System_Diagnostics_Process_
+  name: Execute(Process)
+  nameWithType: IProcessRunnerUtility.Execute(Process)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.Execute(System.Diagnostics.Process)
+  spec.csharp:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.Execute(System.Diagnostics.Process)
+    name: Execute
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_Execute_System_Diagnostics_Process_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: )
+  spec.vb:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.Execute(System.Diagnostics.Process)
+    name: Execute
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_Execute_System_Diagnostics_Process_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: )
+- uid: System.Diagnostics.Process
+  commentId: T:System.Diagnostics.Process
+  parent: System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  name: Process
+  nameWithType: Process
+  fullName: System.Diagnostics.Process
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Diagnostics
+  commentId: N:System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Diagnostics
+  nameWithType: System.Diagnostics
+  fullName: System.Diagnostics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.Execute(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.Execute(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  parent: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  isExternal: true
+  href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_Execute_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_
+  name: Execute(Process, ProcessResultValidation, ProcessResourcePolicy)
+  nameWithType: IProcessRunnerUtility.Execute(Process, ProcessResultValidation, ProcessResourcePolicy)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.Execute(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  spec.csharp:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.Execute(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+    name: Execute
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_Execute_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+    name: ProcessResultValidation
+    href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+    name: ProcessResourcePolicy
+    href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  - name: )
+  spec.vb:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.Execute(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+    name: Execute
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_Execute_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+    name: ProcessResultValidation
+    href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+    name: ProcessResourcePolicy
+    href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  - name: )
+- uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResultValidation
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  name: ProcessResultValidation
+  nameWithType: ProcessResultValidation
+  fullName: AlastairLundy.Extensions.Processes.ProcessResultValidation
+- uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  name: ProcessResourcePolicy
+  nameWithType: ProcessResourcePolicy
+  fullName: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+- uid: AlastairLundy.Extensions.Processes
+  commentId: N:AlastairLundy.Extensions.Processes
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes
+  nameWithType: AlastairLundy.Extensions.Processes
+  fullName: AlastairLundy.Extensions.Processes
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync
+  href: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_ProcessRunnerUtility_ExecuteAsync_System_Diagnostics_Process_System_Threading_CancellationToken_
+  name: ExecuteAsync
+  nameWithType: ProcessRunnerUtility.ExecuteAsync
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.ExecuteAsync
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  parent: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  isExternal: true
+  href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_ExecuteAsync_System_Diagnostics_Process_System_Threading_CancellationToken_
+  name: ExecuteAsync(Process, CancellationToken)
+  nameWithType: IProcessRunnerUtility.ExecuteAsync(Process, CancellationToken)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+    name: ExecuteAsync
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_ExecuteAsync_System_Diagnostics_Process_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+    name: ExecuteAsync
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_ExecuteAsync_System_Diagnostics_Process_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Int32}
+  commentId: T:System.Threading.Tasks.Task{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int>
+  nameWithType: Task<int>
+  fullName: System.Threading.Tasks.Task<int>
+  nameWithType.vb: Task(Of Integer)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer)
+  name.vb: Task(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+  commentId: T:AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+  href: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException.html
+  name: ProcessNotSuccessfulException
+  nameWithType: ProcessNotSuccessfulException
+  fullName: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  parent: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  isExternal: true
+  href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_ExecuteAsync_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_System_Threading_CancellationToken_
+  name: ExecuteAsync(Process, ProcessResultValidation, ProcessResourcePolicy, CancellationToken)
+  nameWithType: IProcessRunnerUtility.ExecuteAsync(Process, ProcessResultValidation, ProcessResourcePolicy, CancellationToken)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, AlastairLundy.Extensions.Processes.ProcessResourcePolicy, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+    name: ExecuteAsync
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_ExecuteAsync_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+    name: ProcessResultValidation
+    href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+    name: ProcessResourcePolicy
+    href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.ExecuteAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+    name: ExecuteAsync
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_ExecuteAsync_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+    name: ProcessResultValidation
+    href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+    name: ProcessResourcePolicy
+    href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.DisposeOfProcess*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.DisposeOfProcess
+  href: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_ProcessRunnerUtility_DisposeOfProcess_System_Diagnostics_Process_
+  name: DisposeOfProcess
+  nameWithType: ProcessRunnerUtility.DisposeOfProcess
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.DisposeOfProcess
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.DisposeOfProcess(System.Diagnostics.Process)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.DisposeOfProcess(System.Diagnostics.Process)
+  parent: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  isExternal: true
+  href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_DisposeOfProcess_System_Diagnostics_Process_
+  name: DisposeOfProcess(Process)
+  nameWithType: IProcessRunnerUtility.DisposeOfProcess(Process)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.DisposeOfProcess(System.Diagnostics.Process)
+  spec.csharp:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.DisposeOfProcess(System.Diagnostics.Process)
+    name: DisposeOfProcess
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_DisposeOfProcess_System_Diagnostics_Process_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: )
+  spec.vb:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.DisposeOfProcess(System.Diagnostics.Process)
+    name: DisposeOfProcess
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_DisposeOfProcess_System_Diagnostics_Process_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: )
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResult*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResult
+  href: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_ProcessRunnerUtility_GetResult_System_Diagnostics_Process_System_Boolean_
+  name: GetResult
+  nameWithType: ProcessRunnerUtility.GetResult
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResult
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResult(System.Diagnostics.Process,System.Boolean)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResult(System.Diagnostics.Process,System.Boolean)
+  parent: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  isExternal: true
+  href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_GetResult_System_Diagnostics_Process_System_Boolean_
+  name: GetResult(Process, bool)
+  nameWithType: IProcessRunnerUtility.GetResult(Process, bool)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResult(System.Diagnostics.Process, bool)
+  nameWithType.vb: IProcessRunnerUtility.GetResult(Process, Boolean)
+  fullName.vb: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResult(System.Diagnostics.Process, Boolean)
+  name.vb: GetResult(Process, Boolean)
+  spec.csharp:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResult(System.Diagnostics.Process,System.Boolean)
+    name: GetResult
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_GetResult_System_Diagnostics_Process_System_Boolean_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResult(System.Diagnostics.Process,System.Boolean)
+    name: GetResult
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_GetResult_System_Diagnostics_Process_System_Boolean_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: AlastairLundy.Extensions.Processes.ProcessResult
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResult
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessResult.html
+  name: ProcessResult
+  nameWithType: ProcessResult
+  fullName: AlastairLundy.Extensions.Processes.ProcessResult
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResult*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResult
+  href: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_ProcessRunnerUtility_GetBufferedResult_System_Diagnostics_Process_System_Boolean_
+  name: GetBufferedResult
+  nameWithType: ProcessRunnerUtility.GetBufferedResult
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResult
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResult(System.Diagnostics.Process,System.Boolean)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResult(System.Diagnostics.Process,System.Boolean)
+  parent: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  isExternal: true
+  href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_GetBufferedResult_System_Diagnostics_Process_System_Boolean_
+  name: GetBufferedResult(Process, bool)
+  nameWithType: IProcessRunnerUtility.GetBufferedResult(Process, bool)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResult(System.Diagnostics.Process, bool)
+  nameWithType.vb: IProcessRunnerUtility.GetBufferedResult(Process, Boolean)
+  fullName.vb: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResult(System.Diagnostics.Process, Boolean)
+  name.vb: GetBufferedResult(Process, Boolean)
+  spec.csharp:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResult(System.Diagnostics.Process,System.Boolean)
+    name: GetBufferedResult
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_GetBufferedResult_System_Diagnostics_Process_System_Boolean_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResult(System.Diagnostics.Process,System.Boolean)
+    name: GetBufferedResult
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_GetBufferedResult_System_Diagnostics_Process_System_Boolean_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+  commentId: T:AlastairLundy.Extensions.Processes.BufferedProcessResult
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html
+  name: BufferedProcessResult
+  nameWithType: BufferedProcessResult
+  fullName: AlastairLundy.Extensions.Processes.BufferedProcessResult
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResultAsync*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResultAsync
+  href: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_ProcessRunnerUtility_GetResultAsync_System_Diagnostics_Process_System_Boolean_
+  name: GetResultAsync
+  nameWithType: ProcessRunnerUtility.GetResultAsync
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetResultAsync
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResultAsync(System.Diagnostics.Process,System.Boolean)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResultAsync(System.Diagnostics.Process,System.Boolean)
+  parent: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  isExternal: true
+  href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_GetResultAsync_System_Diagnostics_Process_System_Boolean_
+  name: GetResultAsync(Process, bool)
+  nameWithType: IProcessRunnerUtility.GetResultAsync(Process, bool)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResultAsync(System.Diagnostics.Process, bool)
+  nameWithType.vb: IProcessRunnerUtility.GetResultAsync(Process, Boolean)
+  fullName.vb: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResultAsync(System.Diagnostics.Process, Boolean)
+  name.vb: GetResultAsync(Process, Boolean)
+  spec.csharp:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResultAsync(System.Diagnostics.Process,System.Boolean)
+    name: GetResultAsync
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_GetResultAsync_System_Diagnostics_Process_System_Boolean_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetResultAsync(System.Diagnostics.Process,System.Boolean)
+    name: GetResultAsync
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_GetResultAsync_System_Diagnostics_Process_System_Boolean_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.ProcessResult}
+  commentId: T:System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.ProcessResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ProcessResult>
+  nameWithType: Task<ProcessResult>
+  fullName: System.Threading.Tasks.Task<AlastairLundy.Extensions.Processes.ProcessResult>
+  nameWithType.vb: Task(Of ProcessResult)
+  fullName.vb: System.Threading.Tasks.Task(Of AlastairLundy.Extensions.Processes.ProcessResult)
+  name.vb: Task(Of ProcessResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: AlastairLundy.Extensions.Processes.ProcessResult
+    name: ProcessResult
+    href: AlastairLundy.Extensions.Processes.ProcessResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResult
+    name: ProcessResult
+    href: AlastairLundy.Extensions.Processes.ProcessResult.html
+  - name: )
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResultAsync*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResultAsync
+  href: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_ProcessRunnerUtility_GetBufferedResultAsync_System_Diagnostics_Process_System_Boolean_
+  name: GetBufferedResultAsync
+  nameWithType: ProcessRunnerUtility.GetBufferedResultAsync
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.GetBufferedResultAsync
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResultAsync(System.Diagnostics.Process,System.Boolean)
+  commentId: M:AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResultAsync(System.Diagnostics.Process,System.Boolean)
+  parent: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  isExternal: true
+  href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_GetBufferedResultAsync_System_Diagnostics_Process_System_Boolean_
+  name: GetBufferedResultAsync(Process, bool)
+  nameWithType: IProcessRunnerUtility.GetBufferedResultAsync(Process, bool)
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResultAsync(System.Diagnostics.Process, bool)
+  nameWithType.vb: IProcessRunnerUtility.GetBufferedResultAsync(Process, Boolean)
+  fullName.vb: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResultAsync(System.Diagnostics.Process, Boolean)
+  name.vb: GetBufferedResultAsync(Process, Boolean)
+  spec.csharp:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResultAsync(System.Diagnostics.Process,System.Boolean)
+    name: GetBufferedResultAsync
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_GetBufferedResultAsync_System_Diagnostics_Process_System_Boolean_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.GetBufferedResultAsync(System.Diagnostics.Process,System.Boolean)
+    name: GetBufferedResultAsync
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html#AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_GetBufferedResultAsync_System_Diagnostics_Process_System_Boolean_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.BufferedProcessResult}
+  commentId: T:System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.BufferedProcessResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<BufferedProcessResult>
+  nameWithType: Task<BufferedProcessResult>
+  fullName: System.Threading.Tasks.Task<AlastairLundy.Extensions.Processes.BufferedProcessResult>
+  nameWithType.vb: Task(Of BufferedProcessResult)
+  fullName.vb: System.Threading.Tasks.Task(Of AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  name.vb: Task(Of BufferedProcessResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+    name: BufferedProcessResult
+    href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+    name: BufferedProcessResult
+    href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html
+  - name: )

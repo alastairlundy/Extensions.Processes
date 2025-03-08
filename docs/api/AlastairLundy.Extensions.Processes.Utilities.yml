@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.Utilities
+  commentId: N:AlastairLundy.Extensions.Processes.Utilities
+  id: AlastairLundy.Extensions.Processes.Utilities
+  children:
+  - AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  langs:
+  - csharp
+  - vb
+  name: AlastairLundy.Extensions.Processes.Utilities
+  nameWithType: AlastairLundy.Extensions.Processes.Utilities
+  fullName: AlastairLundy.Extensions.Processes.Utilities
+  type: Namespace
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+references:
+- uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  commentId: T:AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+  href: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility.html
+  name: ProcessRunnerUtility
+  nameWithType: ProcessRunnerUtility
+  fullName: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility

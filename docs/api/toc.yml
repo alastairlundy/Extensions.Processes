@@ -1,0 +1,133 @@
+### YamlMime:TableOfContent
+items:
+- uid: AlastairLundy.Extensions.Processes
+  name: AlastairLundy.Extensions.Processes
+  type: Namespace
+  items:
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+    name: BufferedProcessResult
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.IsProcessRunningExtensions
+    name: IsProcessRunningExtensions
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.IsSupportedOnOsExtensions
+    name: IsSupportedOnOsExtensions
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.PipedProcessRunner
+    name: PipedProcessRunner
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.ProcessAddCredentialExtensions
+    name: ProcessAddCredentialExtensions
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.ProcessConfiguration
+    name: ProcessConfiguration
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.ProcessFactory
+    name: ProcessFactory
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.ProcessHasStartedExtensions
+    name: ProcessHasStartedExtensions
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+    name: ProcessResourcePolicy
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.ProcessResult
+    name: ProcessResult
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+    name: ProcessResultValidation
+    type: Enum
+  - uid: AlastairLundy.Extensions.Processes.ProcessRunner
+    name: ProcessRunner
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.ProcessSetResourcePolicyExtensions
+    name: ProcessSetResourcePolicyExtensions
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions
+    name: SanitizeProcessNamesExtensions
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.UserCredential
+    name: UserCredential
+    type: Class
+- uid: AlastairLundy.Extensions.Processes.Abstractions
+  name: AlastairLundy.Extensions.Processes.Abstractions
+  type: Namespace
+  items:
+  - uid: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner
+    name: IPipedProcessRunner
+    type: Interface
+  - uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+    name: IProcessFactory
+    type: Interface
+  - uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessRunner
+    name: IProcessRunner
+    type: Interface
+- uid: AlastairLundy.Extensions.Processes.Builders
+  name: AlastairLundy.Extensions.Processes.Builders
+  type: Namespace
+  items:
+  - uid: AlastairLundy.Extensions.Processes.Builders.EnvironmentVariablesBuilder
+    name: EnvironmentVariablesBuilder
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.Builders.ProcessResourcePolicyBuilder
+    name: ProcessResourcePolicyBuilder
+    type: Class
+  - uid: AlastairLundy.Extensions.Processes.Builders.UserCredentialBuilder
+    name: UserCredentialBuilder
+    type: Class
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  name: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  type: Namespace
+  items:
+  - uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IEnvironmentVariablesBuilder
+    name: IEnvironmentVariablesBuilder
+    type: Interface
+  - uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+    name: IProcessResourcePolicyBuilder
+    type: Interface
+  - uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IUserCredentialBuilder
+    name: IUserCredentialBuilder
+    type: Interface
+- uid: AlastairLundy.Extensions.Processes.DependencyInjection
+  name: AlastairLundy.Extensions.Processes.DependencyInjection
+  type: Namespace
+  items:
+  - uid: AlastairLundy.Extensions.Processes.DependencyInjection.DependencyInjectionExtensions
+    name: DependencyInjectionExtensions
+    type: Class
+- uid: AlastairLundy.Extensions.Processes.Exceptions
+  name: AlastairLundy.Extensions.Processes.Exceptions
+  type: Namespace
+  items:
+  - uid: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+    name: ProcessNotSuccessfulException
+    type: Class
+- uid: AlastairLundy.Extensions.Processes.Piping
+  name: AlastairLundy.Extensions.Processes.Piping
+  type: Namespace
+  items:
+  - uid: AlastairLundy.Extensions.Processes.Piping.ProcessPipeHandler
+    name: ProcessPipeHandler
+    type: Class
+- uid: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  name: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  type: Namespace
+  items:
+  - uid: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler
+    name: IProcessPipeHandler
+    type: Interface
+- uid: AlastairLundy.Extensions.Processes.Utilities
+  name: AlastairLundy.Extensions.Processes.Utilities
+  type: Namespace
+  items:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.ProcessRunnerUtility
+    name: ProcessRunnerUtility
+    type: Class
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  name: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  type: Namespace
+  items:
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+    name: IProcessRunnerUtility
+    type: Interface
+memberLayout: SamePage

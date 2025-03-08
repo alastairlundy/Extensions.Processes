@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Abstractions
+  id: AlastairLundy.Extensions.Processes.Abstractions
+  children:
+  - AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessRunner
+  langs:
+  - csharp
+  - vb
+  name: AlastairLundy.Extensions.Processes.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Abstractions
+  type: Namespace
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+references:
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner
+  commentId: T:AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner
+  parent: AlastairLundy.Extensions.Processes.Abstractions
+  href: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.html
+  name: IPipedProcessRunner
+  nameWithType: IPipedProcessRunner
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  commentId: T:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  parent: AlastairLundy.Extensions.Processes.Abstractions
+  href: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.html
+  name: IProcessFactory
+  nameWithType: IProcessFactory
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessRunner
+  commentId: T:AlastairLundy.Extensions.Processes.Abstractions.IProcessRunner
+  parent: AlastairLundy.Extensions.Processes.Abstractions
+  href: AlastairLundy.Extensions.Processes.Abstractions.IProcessRunner.html
+  name: IProcessRunner
+  nameWithType: IProcessRunner
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessRunner
+- uid: AlastairLundy.Extensions.Processes.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Abstractions
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Abstractions
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Abstractions.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Abstractions.html
