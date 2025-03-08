@@ -24,12 +24,22 @@ namespace AlastairLundy.Extensions.Processes
     /// <summary>
     /// A class that represents the results from an executed Process or Command.
     /// </summary>
-    public class ProcessResult(
-        string executableFilePath,
-        int exitCode,
-        DateTime startTime,
-        DateTime exitTime)
+    public class ProcessResult
     {
+        /// <summary>
+        /// A class that represents the results from an executed Process or Command.
+        /// </summary>
+        public ProcessResult(string executableFilePath,
+            int exitCode,
+            DateTime startTime,
+            DateTime exitTime)
+        {
+            ExitCode = exitCode;
+            ExecutedFilePath = executableFilePath;
+            StartTime = startTime;
+            ExitTime = exitTime;
+        }
+
         /// <summary>
         /// Whether the Command successfully exited.
         /// </summary>
@@ -37,22 +47,22 @@ namespace AlastairLundy.Extensions.Processes
         /// <summary>
         /// The exit code from the Command that was executed.
         /// </summary>
-        public int ExitCode { get; } = exitCode;
+        public int ExitCode { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public string ExecutedFilePath { get; } = executableFilePath;
+        public string ExecutedFilePath { get; }
 
         /// <summary>
         /// The Date and Time that the Command's execution started.
         /// </summary>
-        public DateTime StartTime { get; } = startTime;
+        public DateTime StartTime { get; }
 
         /// <summary>
         /// The Date and Time that the Command's execution finished.
         /// </summary>
-        public DateTime ExitTime { get; } = exitTime;
+        public DateTime ExitTime { get; }
 
         /// <summary>
         /// How long the Command took to execute represented as a TimeSpan.

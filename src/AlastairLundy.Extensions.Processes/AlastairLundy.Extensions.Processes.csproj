@@ -41,11 +41,12 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
     <ItemGroup>
         <PackageReference Include="AlastairLundy.Extensions.Collections" Version="[6.0.0, 7.0.0)"/>
         <PackageReference Include="AlastairLundy.Extensions.IO" Version="[2.1.0, 3.0.0)"/>
+        <PackageReference Include="System.IO.Pipelines" Version="[9.0.2, 10.0.0)" />
     </ItemGroup>
     
     <ItemGroup >
         <PackageReference Include="Microsoft.Bcl.HashCode" Version="[6.0.0, 7.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0'"/>
-        <PackageReference Include="PolyFill" Version="[7.18.0, 8.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1'"/>
+        <PackageReference Include="PolyFill" Version="[7.20.0, 8.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1'"/>
     </ItemGroup>
     
     <ItemGroup>
