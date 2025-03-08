@@ -1,0 +1,1113 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.PipedProcessRunner
+  commentId: T:AlastairLundy.Extensions.Processes.PipedProcessRunner
+  id: PipedProcessRunner
+  parent: AlastairLundy.Extensions.Processes
+  children:
+  - AlastairLundy.Extensions.Processes.PipedProcessRunner.#ctor(AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility,AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler)
+  - AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  - AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: PipedProcessRunner
+  nameWithType: PipedProcessRunner
+  fullName: AlastairLundy.Extensions.Processes.PipedProcessRunner
+  type: Class
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/PipedProcessRunner.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: PipedProcessRunner
+    path: ../src/AlastairLundy.Extensions.Processes/PipedProcessRunner.cs
+    startLine: 27
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: A Process Runner-esque class for Piping output after Executing processes.
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("This class is deprecated and will be removed in version 2.0. Use ProcessFactory instead.", false)]
+
+      public class PipedProcessRunner : IPipedProcessRunner
+    content.vb: >-
+      <Obsolete("This class is deprecated and will be removed in version 2.0. Use ProcessFactory instead.", False)>
+
+      Public Class PipedProcessRunner Implements IPipedProcessRunner
+  inheritance:
+  - System.Object
+  implements:
+  - AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String,System.Boolean)
+    arguments:
+    - type: System.String
+      value: This class is deprecated and will be removed in version 2.0. Use ProcessFactory instead.
+    - type: System.Boolean
+      value: false
+- uid: AlastairLundy.Extensions.Processes.PipedProcessRunner.#ctor(AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility,AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler)
+  commentId: M:AlastairLundy.Extensions.Processes.PipedProcessRunner.#ctor(AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility,AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler)
+  id: '#ctor(AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility,AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler)'
+  parent: AlastairLundy.Extensions.Processes.PipedProcessRunner
+  langs:
+  - csharp
+  - vb
+  name: PipedProcessRunner(IProcessRunnerUtility, IProcessPipeHandler)
+  nameWithType: PipedProcessRunner.PipedProcessRunner(IProcessRunnerUtility, IProcessPipeHandler)
+  fullName: AlastairLundy.Extensions.Processes.PipedProcessRunner.PipedProcessRunner(AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility, AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler)
+  type: Constructor
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/PipedProcessRunner.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: .ctor
+    path: ../src/AlastairLundy.Extensions.Processes/PipedProcessRunner.cs
+    startLine: 39
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: ''
+  example: []
+  syntax:
+    content: public PipedProcessRunner(IProcessRunnerUtility processRunnerUtils, IProcessPipeHandler processPipeHandler)
+    parameters:
+    - id: processRunnerUtils
+      type: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+      description: The process runner utility service to use.
+    - id: processPipeHandler
+      type: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler
+      description: The process pipe handler service to use.
+    content.vb: Public Sub New(processRunnerUtils As IProcessRunnerUtility, processPipeHandler As IProcessPipeHandler)
+  overload: AlastairLundy.Extensions.Processes.PipedProcessRunner.#ctor*
+  nameWithType.vb: PipedProcessRunner.New(IProcessRunnerUtility, IProcessPipeHandler)
+  fullName.vb: AlastairLundy.Extensions.Processes.PipedProcessRunner.New(AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility, AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler)
+  name.vb: New(IProcessRunnerUtility, IProcessPipeHandler)
+- uid: AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  commentId: M:AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  id: ExecuteProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  parent: AlastairLundy.Extensions.Processes.PipedProcessRunner
+  langs:
+  - csharp
+  - vb
+  name: ExecuteProcessWithPipingAsync(Process, ProcessResultValidation, ProcessResourcePolicy?, CancellationToken)
+  nameWithType: PipedProcessRunner.ExecuteProcessWithPipingAsync(Process, ProcessResultValidation, ProcessResourcePolicy?, CancellationToken)
+  fullName: AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteProcessWithPipingAsync(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, AlastairLundy.Extensions.Processes.ProcessResourcePolicy?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/PipedProcessRunner.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ExecuteProcessWithPipingAsync
+    path: ../src/AlastairLundy.Extensions.Processes/PipedProcessRunner.cs
+    startLine: 56
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: Runs the process asynchronously, waits for exit, and safely disposes of the Process before returning.
+  example: []
+  syntax:
+    content: public Task<(ProcessResult processResult, Stream standardOutput, Stream standardError)> ExecuteProcessWithPipingAsync(Process process, ProcessResultValidation processResultValidation, ProcessResourcePolicy? processResourcePolicy = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to be run.
+    - id: processResultValidation
+      type: AlastairLundy.Extensions.Processes.ProcessResultValidation
+      description: The process result validation to be used.
+    - id: processResourcePolicy
+      type: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+      description: The process resource policy to be set if it is not null.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A token to cancel the operation if required.
+    return:
+      type: System.Threading.Tasks.Task{System.ValueTuple{AlastairLundy.Extensions.Processes.ProcessResult,System.IO.Stream,System.IO.Stream}}
+      description: The Process Results from the running the process with the Piped Standard Output and Standard Error.
+    content.vb: Public Function ExecuteProcessWithPipingAsync(process As Process, processResultValidation As ProcessResultValidation, processResourcePolicy As ProcessResourcePolicy = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of (processResult As ProcessResult, standardOutput As Stream, standardError As Stream))
+  overload: AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteProcessWithPipingAsync*
+  exceptions:
+  - type: System.IO.FileNotFoundException
+    commentId: T:System.IO.FileNotFoundException
+    description: Thrown if the file, with the file name of the process to be executed, is not found.
+  - type: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+    commentId: T:AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+    description: Thrown if the result validation requires the process to exit with exit code zero and the process exits with a different exit code.
+  implements:
+  - AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.ExecuteProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  nameWithType.vb: PipedProcessRunner.ExecuteProcessWithPipingAsync(Process, ProcessResultValidation, ProcessResourcePolicy, CancellationToken)
+  fullName.vb: AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteProcessWithPipingAsync(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, AlastairLundy.Extensions.Processes.ProcessResourcePolicy, System.Threading.CancellationToken)
+  name.vb: ExecuteProcessWithPipingAsync(Process, ProcessResultValidation, ProcessResourcePolicy, CancellationToken)
+- uid: AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  commentId: M:AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  id: ExecuteBufferedProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  parent: AlastairLundy.Extensions.Processes.PipedProcessRunner
+  langs:
+  - csharp
+  - vb
+  name: ExecuteBufferedProcessWithPipingAsync(Process, ProcessResultValidation, ProcessResourcePolicy?, CancellationToken)
+  nameWithType: PipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(Process, ProcessResultValidation, ProcessResourcePolicy?, CancellationToken)
+  fullName: AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, AlastairLundy.Extensions.Processes.ProcessResourcePolicy?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/PipedProcessRunner.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ExecuteBufferedProcessWithPipingAsync
+    path: ../src/AlastairLundy.Extensions.Processes/PipedProcessRunner.cs
+    startLine: 99
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: Runs the process asynchronously, waits for exit, and safely disposes of the Process before returning.
+  example: []
+  syntax:
+    content: public Task<(BufferedProcessResult processResult, Stream standardOutput, Stream standardError)> ExecuteBufferedProcessWithPipingAsync(Process process, ProcessResultValidation processResultValidation, ProcessResourcePolicy? processResourcePolicy = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to be run.
+    - id: processResultValidation
+      type: AlastairLundy.Extensions.Processes.ProcessResultValidation
+      description: The process result validation to be used.
+    - id: processResourcePolicy
+      type: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+      description: The process resource policy to be set if it is not null.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A token to cancel the operation if required.
+    return:
+      type: System.Threading.Tasks.Task{System.ValueTuple{AlastairLundy.Extensions.Processes.BufferedProcessResult,System.IO.Stream,System.IO.Stream}}
+      description: The Buffered Process Results from running the process with the Piped Standard Output and Standard Error.
+    content.vb: Public Function ExecuteBufferedProcessWithPipingAsync(process As Process, processResultValidation As ProcessResultValidation, processResourcePolicy As ProcessResourcePolicy = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of (processResult As BufferedProcessResult, standardOutput As Stream, standardError As Stream))
+  overload: AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteBufferedProcessWithPipingAsync*
+  exceptions:
+  - type: System.IO.FileNotFoundException
+    commentId: T:System.IO.FileNotFoundException
+    description: Thrown if the file, with the file name of the process to be executed, is not found.
+  - type: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+    commentId: T:AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+    description: Thrown if the result validation requires the process to exit with exit code zero and the process exits with a different exit code.
+  implements:
+  - AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  nameWithType.vb: PipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(Process, ProcessResultValidation, ProcessResourcePolicy, CancellationToken)
+  fullName.vb: AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, AlastairLundy.Extensions.Processes.ProcessResourcePolicy, System.Threading.CancellationToken)
+  name.vb: ExecuteBufferedProcessWithPipingAsync(Process, ProcessResultValidation, ProcessResourcePolicy, CancellationToken)
+references:
+- uid: AlastairLundy.Extensions.Processes
+  commentId: N:AlastairLundy.Extensions.Processes
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes
+  nameWithType: AlastairLundy.Extensions.Processes
+  fullName: AlastairLundy.Extensions.Processes
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner
+  commentId: T:AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner
+  parent: AlastairLundy.Extensions.Processes.Abstractions
+  href: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.html
+  name: IPipedProcessRunner
+  nameWithType: IPipedProcessRunner
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AlastairLundy.Extensions.Processes.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Abstractions
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Abstractions
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Abstractions.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Abstractions.html
+- uid: AlastairLundy.Extensions.Processes.PipedProcessRunner.#ctor*
+  commentId: Overload:AlastairLundy.Extensions.Processes.PipedProcessRunner.#ctor
+  href: AlastairLundy.Extensions.Processes.PipedProcessRunner.html#AlastairLundy_Extensions_Processes_PipedProcessRunner__ctor_AlastairLundy_Extensions_Processes_Utilities_Abstractions_IProcessRunnerUtility_AlastairLundy_Extensions_Processes_Piping_Abstractions_IProcessPipeHandler_
+  name: PipedProcessRunner
+  nameWithType: PipedProcessRunner.PipedProcessRunner
+  fullName: AlastairLundy.Extensions.Processes.PipedProcessRunner.PipedProcessRunner
+  nameWithType.vb: PipedProcessRunner.New
+  fullName.vb: AlastairLundy.Extensions.Processes.PipedProcessRunner.New
+  name.vb: New
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  commentId: T:AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  parent: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html
+  name: IProcessRunnerUtility
+  nameWithType: IProcessRunnerUtility
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+- uid: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler
+  commentId: T:AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler
+  parent: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  href: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler.html
+  name: IProcessPipeHandler
+  nameWithType: IProcessPipeHandler
+  fullName: AlastairLundy.Extensions.Processes.Piping.Abstractions.IProcessPipeHandler
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities
+    name: Utilities
+    href: AlastairLundy.Extensions.Processes.Utilities.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities
+    name: Utilities
+    href: AlastairLundy.Extensions.Processes.Utilities.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.html
+- uid: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Piping.Abstractions
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Piping.Abstractions
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Piping
+    name: Piping
+    href: AlastairLundy.Extensions.Processes.Piping.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Piping.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Piping.Abstractions.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Piping
+    name: Piping
+    href: AlastairLundy.Extensions.Processes.Piping.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Piping.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Piping.Abstractions.html
+- uid: System.IO.FileNotFoundException
+  commentId: T:System.IO.FileNotFoundException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception
+  name: FileNotFoundException
+  nameWithType: FileNotFoundException
+  fullName: System.IO.FileNotFoundException
+- uid: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+  commentId: T:AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+  href: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException.html
+  name: ProcessNotSuccessfulException
+  nameWithType: ProcessNotSuccessfulException
+  fullName: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+- uid: AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteProcessWithPipingAsync*
+  commentId: Overload:AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteProcessWithPipingAsync
+  href: AlastairLundy.Extensions.Processes.PipedProcessRunner.html#AlastairLundy_Extensions_Processes_PipedProcessRunner_ExecuteProcessWithPipingAsync_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_System_Threading_CancellationToken_
+  name: ExecuteProcessWithPipingAsync
+  nameWithType: PipedProcessRunner.ExecuteProcessWithPipingAsync
+  fullName: AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteProcessWithPipingAsync
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.ExecuteProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.ExecuteProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner
+  isExternal: true
+  href: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.html#AlastairLundy_Extensions_Processes_Abstractions_IPipedProcessRunner_ExecuteProcessWithPipingAsync_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_System_Threading_CancellationToken_
+  name: ExecuteProcessWithPipingAsync(Process, ProcessResultValidation, ProcessResourcePolicy, CancellationToken)
+  nameWithType: IPipedProcessRunner.ExecuteProcessWithPipingAsync(Process, ProcessResultValidation, ProcessResourcePolicy, CancellationToken)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.ExecuteProcessWithPipingAsync(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, AlastairLundy.Extensions.Processes.ProcessResourcePolicy, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.ExecuteProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+    name: ExecuteProcessWithPipingAsync
+    href: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.html#AlastairLundy_Extensions_Processes_Abstractions_IPipedProcessRunner_ExecuteProcessWithPipingAsync_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+    name: ProcessResultValidation
+    href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+    name: ProcessResourcePolicy
+    href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.ExecuteProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+    name: ExecuteProcessWithPipingAsync
+    href: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.html#AlastairLundy_Extensions_Processes_Abstractions_IPipedProcessRunner_ExecuteProcessWithPipingAsync_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+    name: ProcessResultValidation
+    href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+    name: ProcessResourcePolicy
+    href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Diagnostics.Process
+  commentId: T:System.Diagnostics.Process
+  parent: System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  name: Process
+  nameWithType: Process
+  fullName: System.Diagnostics.Process
+- uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResultValidation
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  name: ProcessResultValidation
+  nameWithType: ProcessResultValidation
+  fullName: AlastairLundy.Extensions.Processes.ProcessResultValidation
+- uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  name: ProcessResourcePolicy
+  nameWithType: ProcessResourcePolicy
+  fullName: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.ValueTuple{AlastairLundy.Extensions.Processes.ProcessResult,System.IO.Stream,System.IO.Stream}}
+  commentId: T:System.Threading.Tasks.Task{System.ValueTuple{AlastairLundy.Extensions.Processes.ProcessResult,System.IO.Stream,System.IO.Stream}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<(ProcessResult processResult, Stream standardOutput, Stream standardError)>
+  nameWithType: Task<(ProcessResult processResult, Stream standardOutput, Stream standardError)>
+  fullName: System.Threading.Tasks.Task<(AlastairLundy.Extensions.Processes.ProcessResult processResult, System.IO.Stream standardOutput, System.IO.Stream standardError)>
+  nameWithType.vb: Task(Of (processResult As ProcessResult, standardOutput As Stream, standardError As Stream))
+  fullName.vb: System.Threading.Tasks.Task(Of (processResult As AlastairLundy.Extensions.Processes.ProcessResult, standardOutput As System.IO.Stream, standardError As System.IO.Stream))
+  name.vb: Task(Of (processResult As ProcessResult, standardOutput As Stream, standardError As Stream))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: (
+  - uid: AlastairLundy.Extensions.Processes.ProcessResult
+    name: ProcessResult
+    href: AlastairLundy.Extensions.Processes.ProcessResult.html
+  - name: " "
+  - uid: System.ValueTuple{AlastairLundy.Extensions.Processes.ProcessResult,System.IO.Stream,System.IO.Stream}.processResult
+    name: processResult
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-alastairlundy.extensions.processes.processresult,system.io.stream,system.io.stream-.processresult
+  - name: ','
+  - name: " "
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: " "
+  - uid: System.ValueTuple{AlastairLundy.Extensions.Processes.ProcessResult,System.IO.Stream,System.IO.Stream}.standardOutput
+    name: standardOutput
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-alastairlundy.extensions.processes.processresult,system.io.stream,system.io.stream-.standardoutput
+  - name: ','
+  - name: " "
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: " "
+  - uid: System.ValueTuple{AlastairLundy.Extensions.Processes.ProcessResult,System.IO.Stream,System.IO.Stream}.standardError
+    name: standardError
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-alastairlundy.extensions.processes.processresult,system.io.stream,system.io.stream-.standarderror
+  - name: )
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: (
+  - uid: System.ValueTuple{AlastairLundy.Extensions.Processes.ProcessResult,System.IO.Stream,System.IO.Stream}.processResult
+    name: processResult
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-alastairlundy.extensions.processes.processresult,system.io.stream,system.io.stream-.processresult
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResult
+    name: ProcessResult
+    href: AlastairLundy.Extensions.Processes.ProcessResult.html
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{AlastairLundy.Extensions.Processes.ProcessResult,System.IO.Stream,System.IO.Stream}.standardOutput
+    name: standardOutput
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-alastairlundy.extensions.processes.processresult,system.io.stream,system.io.stream-.standardoutput
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{AlastairLundy.Extensions.Processes.ProcessResult,System.IO.Stream,System.IO.Stream}.standardError
+    name: standardError
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-alastairlundy.extensions.processes.processresult,system.io.stream,system.io.stream-.standarderror
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: )
+  - name: )
+- uid: System.Diagnostics
+  commentId: N:System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Diagnostics
+  nameWithType: System.Diagnostics
+  fullName: System.Diagnostics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteBufferedProcessWithPipingAsync*
+  commentId: Overload:AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteBufferedProcessWithPipingAsync
+  href: AlastairLundy.Extensions.Processes.PipedProcessRunner.html#AlastairLundy_Extensions_Processes_PipedProcessRunner_ExecuteBufferedProcessWithPipingAsync_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_System_Threading_CancellationToken_
+  name: ExecuteBufferedProcessWithPipingAsync
+  nameWithType: PipedProcessRunner.ExecuteBufferedProcessWithPipingAsync
+  fullName: AlastairLundy.Extensions.Processes.PipedProcessRunner.ExecuteBufferedProcessWithPipingAsync
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner
+  isExternal: true
+  href: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.html#AlastairLundy_Extensions_Processes_Abstractions_IPipedProcessRunner_ExecuteBufferedProcessWithPipingAsync_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_System_Threading_CancellationToken_
+  name: ExecuteBufferedProcessWithPipingAsync(Process, ProcessResultValidation, ProcessResourcePolicy, CancellationToken)
+  nameWithType: IPipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(Process, ProcessResultValidation, ProcessResourcePolicy, CancellationToken)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, AlastairLundy.Extensions.Processes.ProcessResourcePolicy, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+    name: ExecuteBufferedProcessWithPipingAsync
+    href: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.html#AlastairLundy_Extensions_Processes_Abstractions_IPipedProcessRunner_ExecuteBufferedProcessWithPipingAsync_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+    name: ProcessResultValidation
+    href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+    name: ProcessResourcePolicy
+    href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.ExecuteBufferedProcessWithPipingAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,System.Threading.CancellationToken)
+    name: ExecuteBufferedProcessWithPipingAsync
+    href: AlastairLundy.Extensions.Processes.Abstractions.IPipedProcessRunner.html#AlastairLundy_Extensions_Processes_Abstractions_IPipedProcessRunner_ExecuteBufferedProcessWithPipingAsync_System_Diagnostics_Process_AlastairLundy_Extensions_Processes_ProcessResultValidation_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+    name: ProcessResultValidation
+    href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  - name: ','
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+    name: ProcessResourcePolicy
+    href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task{System.ValueTuple{AlastairLundy.Extensions.Processes.BufferedProcessResult,System.IO.Stream,System.IO.Stream}}
+  commentId: T:System.Threading.Tasks.Task{System.ValueTuple{AlastairLundy.Extensions.Processes.BufferedProcessResult,System.IO.Stream,System.IO.Stream}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<(BufferedProcessResult processResult, Stream standardOutput, Stream standardError)>
+  nameWithType: Task<(BufferedProcessResult processResult, Stream standardOutput, Stream standardError)>
+  fullName: System.Threading.Tasks.Task<(AlastairLundy.Extensions.Processes.BufferedProcessResult processResult, System.IO.Stream standardOutput, System.IO.Stream standardError)>
+  nameWithType.vb: Task(Of (processResult As BufferedProcessResult, standardOutput As Stream, standardError As Stream))
+  fullName.vb: System.Threading.Tasks.Task(Of (processResult As AlastairLundy.Extensions.Processes.BufferedProcessResult, standardOutput As System.IO.Stream, standardError As System.IO.Stream))
+  name.vb: Task(Of (processResult As BufferedProcessResult, standardOutput As Stream, standardError As Stream))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: (
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+    name: BufferedProcessResult
+    href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html
+  - name: " "
+  - uid: System.ValueTuple{AlastairLundy.Extensions.Processes.BufferedProcessResult,System.IO.Stream,System.IO.Stream}.processResult
+    name: processResult
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-alastairlundy.extensions.processes.bufferedprocessresult,system.io.stream,system.io.stream-.processresult
+  - name: ','
+  - name: " "
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: " "
+  - uid: System.ValueTuple{AlastairLundy.Extensions.Processes.BufferedProcessResult,System.IO.Stream,System.IO.Stream}.standardOutput
+    name: standardOutput
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-alastairlundy.extensions.processes.bufferedprocessresult,system.io.stream,system.io.stream-.standardoutput
+  - name: ','
+  - name: " "
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: " "
+  - uid: System.ValueTuple{AlastairLundy.Extensions.Processes.BufferedProcessResult,System.IO.Stream,System.IO.Stream}.standardError
+    name: standardError
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-alastairlundy.extensions.processes.bufferedprocessresult,system.io.stream,system.io.stream-.standarderror
+  - name: )
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: (
+  - uid: System.ValueTuple{AlastairLundy.Extensions.Processes.BufferedProcessResult,System.IO.Stream,System.IO.Stream}.processResult
+    name: processResult
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-alastairlundy.extensions.processes.bufferedprocessresult,system.io.stream,system.io.stream-.processresult
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+    name: BufferedProcessResult
+    href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{AlastairLundy.Extensions.Processes.BufferedProcessResult,System.IO.Stream,System.IO.Stream}.standardOutput
+    name: standardOutput
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-alastairlundy.extensions.processes.bufferedprocessresult,system.io.stream,system.io.stream-.standardoutput
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{AlastairLundy.Extensions.Processes.BufferedProcessResult,System.IO.Stream,System.IO.Stream}.standardError
+    name: standardError
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-alastairlundy.extensions.processes.bufferedprocessresult,system.io.stream,system.io.stream-.standarderror
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: )
+  - name: )

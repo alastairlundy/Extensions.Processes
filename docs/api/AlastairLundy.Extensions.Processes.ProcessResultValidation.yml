@@ -1,0 +1,136 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResultValidation
+  id: ProcessResultValidation
+  parent: AlastairLundy.Extensions.Processes
+  children:
+  - AlastairLundy.Extensions.Processes.ProcessResultValidation.ExitCodeZero
+  - AlastairLundy.Extensions.Processes.ProcessResultValidation.None
+  langs:
+  - csharp
+  - vb
+  name: ProcessResultValidation
+  nameWithType: ProcessResultValidation
+  fullName: AlastairLundy.Extensions.Processes.ProcessResultValidation
+  type: Enum
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Enums/ProcessResultValidation.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ProcessResultValidation
+    path: ../src/AlastairLundy.Extensions.Processes/Enums/ProcessResultValidation.cs
+    startLine: 14
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: An enum to represent Result Validation states and whether Result Validation should be performed.
+  example: []
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum ProcessResultValidation
+    content.vb: >-
+      <Flags>
+
+      Public Enum ProcessResultValidation
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: AlastairLundy.Extensions.Processes.ProcessResultValidation.None
+  commentId: F:AlastairLundy.Extensions.Processes.ProcessResultValidation.None
+  id: None
+  parent: AlastairLundy.Extensions.Processes.ProcessResultValidation
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: ProcessResultValidation.None
+  fullName: AlastairLundy.Extensions.Processes.ProcessResultValidation.None
+  type: Field
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Enums/ProcessResultValidation.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: None
+    path: ../src/AlastairLundy.Extensions.Processes/Enums/ProcessResultValidation.cs
+    startLine: 20
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: No validation is performed.
+  example: []
+  syntax:
+    content: None = 0
+    return:
+      type: AlastairLundy.Extensions.Processes.ProcessResultValidation
+- uid: AlastairLundy.Extensions.Processes.ProcessResultValidation.ExitCodeZero
+  commentId: F:AlastairLundy.Extensions.Processes.ProcessResultValidation.ExitCodeZero
+  id: ExitCodeZero
+  parent: AlastairLundy.Extensions.Processes.ProcessResultValidation
+  langs:
+  - csharp
+  - vb
+  name: ExitCodeZero
+  nameWithType: ProcessResultValidation.ExitCodeZero
+  fullName: AlastairLundy.Extensions.Processes.ProcessResultValidation.ExitCodeZero
+  type: Field
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Enums/ProcessResultValidation.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ExitCodeZero
+    path: ../src/AlastairLundy.Extensions.Processes/Enums/ProcessResultValidation.cs
+    startLine: 24
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: Throws an exception if the Process's Exit code is not zero.
+  example: []
+  syntax:
+    content: ExitCodeZero = 1
+    return:
+      type: AlastairLundy.Extensions.Processes.ProcessResultValidation
+references:
+- uid: AlastairLundy.Extensions.Processes
+  commentId: N:AlastairLundy.Extensions.Processes
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes
+  nameWithType: AlastairLundy.Extensions.Processes
+  fullName: AlastairLundy.Extensions.Processes
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+- uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResultValidation
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  name: ProcessResultValidation
+  nameWithType: ProcessResultValidation
+  fullName: AlastairLundy.Extensions.Processes.ProcessResultValidation

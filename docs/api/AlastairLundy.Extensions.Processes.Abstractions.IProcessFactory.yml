@@ -1,0 +1,825 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  commentId: T:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  id: IProcessFactory
+  parent: AlastairLundy.Extensions.Processes.Abstractions
+  children:
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,System.Threading.CancellationToken)
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,System.Threading.CancellationToken)
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From(AlastairLundy.Extensions.Processes.ProcessConfiguration)
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From(System.Diagnostics.ProcessStartInfo)
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.UserCredential)
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(AlastairLundy.Extensions.Processes.ProcessConfiguration)
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo)
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,AlastairLundy.Extensions.Processes.UserCredential)
+  - AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.UserCredential)
+  langs:
+  - csharp
+  - vb
+  name: IProcessFactory
+  nameWithType: IProcessFactory
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  type: Interface
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: IProcessFactory
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 18
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Create and manage processes efficiently.
+  example: []
+  syntax:
+    content: public interface IProcessFactory
+    content.vb: Public Interface IProcessFactory
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From(System.Diagnostics.ProcessStartInfo)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From(System.Diagnostics.ProcessStartInfo)
+  id: From(System.Diagnostics.ProcessStartInfo)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  langs:
+  - csharp
+  - vb
+  name: From(ProcessStartInfo)
+  nameWithType: IProcessFactory.From(ProcessStartInfo)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From(System.Diagnostics.ProcessStartInfo)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: From
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 25
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Creates a process from the specified start info.
+  example: []
+  syntax:
+    content: Process From(ProcessStartInfo startInfo)
+    parameters:
+    - id: startInfo
+      type: System.Diagnostics.ProcessStartInfo
+      description: ''
+    return:
+      type: System.Diagnostics.Process
+      description: The newly created Process.
+    content.vb: Function From(startInfo As ProcessStartInfo) As Process
+  overload: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From*
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.UserCredential)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.UserCredential)
+  id: From(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.UserCredential)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  langs:
+  - csharp
+  - vb
+  name: From(ProcessStartInfo, UserCredential)
+  nameWithType: IProcessFactory.From(ProcessStartInfo, UserCredential)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From(System.Diagnostics.ProcessStartInfo, AlastairLundy.Extensions.Processes.UserCredential)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: From
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 33
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Creates a process from the specified start info and UserCredential.
+  example: []
+  syntax:
+    content: Process From(ProcessStartInfo startInfo, UserCredential credential)
+    parameters:
+    - id: startInfo
+      type: System.Diagnostics.ProcessStartInfo
+      description: The start information to use for the Process.
+    - id: credential
+      type: AlastairLundy.Extensions.Processes.UserCredential
+      description: The credential to use when creating the Process.
+    return:
+      type: System.Diagnostics.Process
+      description: The newly created Process.
+    content.vb: Function From(startInfo As ProcessStartInfo, credential As UserCredential) As Process
+  overload: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From*
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From(AlastairLundy.Extensions.Processes.ProcessConfiguration)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From(AlastairLundy.Extensions.Processes.ProcessConfiguration)
+  id: From(AlastairLundy.Extensions.Processes.ProcessConfiguration)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  langs:
+  - csharp
+  - vb
+  name: From(ProcessConfiguration)
+  nameWithType: IProcessFactory.From(ProcessConfiguration)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From(AlastairLundy.Extensions.Processes.ProcessConfiguration)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: From
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 40
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Creates a process from the specified process configuration.
+  example: []
+  syntax:
+    content: Process From(ProcessConfiguration configuration)
+    parameters:
+    - id: configuration
+      type: AlastairLundy.Extensions.Processes.ProcessConfiguration
+      description: The configuration information to use to configure the Process.
+    return:
+      type: System.Diagnostics.Process
+      description: The newly created Process with the configuration.
+    content.vb: Function From(configuration As ProcessConfiguration) As Process
+  overload: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From*
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo)
+  id: StartNew(System.Diagnostics.ProcessStartInfo)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  langs:
+  - csharp
+  - vb
+  name: StartNew(ProcessStartInfo)
+  nameWithType: IProcessFactory.StartNew(ProcessStartInfo)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: StartNew
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 47
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Creates and starts a new Process with the specified Process Start Info.
+  example: []
+  syntax:
+    content: Process StartNew(ProcessStartInfo startInfo)
+    parameters:
+    - id: startInfo
+      type: System.Diagnostics.ProcessStartInfo
+      description: The start info to use when creating and starting the new Process.
+    return:
+      type: System.Diagnostics.Process
+      description: The newly created and started Process with the start info.
+    content.vb: Function StartNew(startInfo As ProcessStartInfo) As Process
+  overload: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew*
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.UserCredential)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.UserCredential)
+  id: StartNew(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.UserCredential)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  langs:
+  - csharp
+  - vb
+  name: StartNew(ProcessStartInfo, UserCredential)
+  nameWithType: IProcessFactory.StartNew(ProcessStartInfo, UserCredential)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo, AlastairLundy.Extensions.Processes.UserCredential)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: StartNew
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 55
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Creates and starts a new Process with the specified Process Start Info and credential.
+  example: []
+  syntax:
+    content: Process StartNew(ProcessStartInfo startInfo, UserCredential credential)
+    parameters:
+    - id: startInfo
+      type: System.Diagnostics.ProcessStartInfo
+      description: The start info to use when creating and starting the new Process.
+    - id: credential
+      type: AlastairLundy.Extensions.Processes.UserCredential
+      description: The credential to use when creating and starting the Process.
+    return:
+      type: System.Diagnostics.Process
+      description: The newly created and started Process with the start info and credential.
+    content.vb: Function StartNew(startInfo As ProcessStartInfo, credential As UserCredential) As Process
+  overload: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew*
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  id: StartNew(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  langs:
+  - csharp
+  - vb
+  name: StartNew(ProcessStartInfo, ProcessResourcePolicy)
+  nameWithType: IProcessFactory.StartNew(ProcessStartInfo, ProcessResourcePolicy)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo, AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: StartNew
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 63
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Creates and starts a new Process with the specified Process Start Info and Process Resource policy.
+  example: []
+  syntax:
+    content: Process StartNew(ProcessStartInfo startInfo, ProcessResourcePolicy resourcePolicy)
+    parameters:
+    - id: startInfo
+      type: System.Diagnostics.ProcessStartInfo
+      description: The start info to use when creating and starting the new Process.
+    - id: resourcePolicy
+      type: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+      description: The process resource policy to use when creating and starting the new Process.
+    return:
+      type: System.Diagnostics.Process
+      description: The newly created and started Process with the start info and Process Resource Policy.
+    content.vb: Function StartNew(startInfo As ProcessStartInfo, resourcePolicy As ProcessResourcePolicy) As Process
+  overload: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew*
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,AlastairLundy.Extensions.Processes.UserCredential)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,AlastairLundy.Extensions.Processes.UserCredential)
+  id: StartNew(System.Diagnostics.ProcessStartInfo,AlastairLundy.Extensions.Processes.ProcessResourcePolicy,AlastairLundy.Extensions.Processes.UserCredential)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  langs:
+  - csharp
+  - vb
+  name: StartNew(ProcessStartInfo, ProcessResourcePolicy, UserCredential)
+  nameWithType: IProcessFactory.StartNew(ProcessStartInfo, ProcessResourcePolicy, UserCredential)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(System.Diagnostics.ProcessStartInfo, AlastairLundy.Extensions.Processes.ProcessResourcePolicy, AlastairLundy.Extensions.Processes.UserCredential)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: StartNew
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 72
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Creates and starts a new Process with the specified Process Start Info, credential, and Process Resource policy.
+  example: []
+  syntax:
+    content: Process StartNew(ProcessStartInfo startInfo, ProcessResourcePolicy resourcePolicy, UserCredential credential)
+    parameters:
+    - id: startInfo
+      type: System.Diagnostics.ProcessStartInfo
+      description: The start info to use when creating and starting the new Process.
+    - id: resourcePolicy
+      type: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+      description: The process resource policy to use when creating and starting the new Process.
+    - id: credential
+      type: AlastairLundy.Extensions.Processes.UserCredential
+      description: The credential to use when creating and starting the Process.
+    return:
+      type: System.Diagnostics.Process
+      description: The newly created and started Process with the start info and Process Resource Policy.
+    content.vb: Function StartNew(startInfo As ProcessStartInfo, resourcePolicy As ProcessResourcePolicy, credential As UserCredential) As Process
+  overload: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew*
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(AlastairLundy.Extensions.Processes.ProcessConfiguration)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(AlastairLundy.Extensions.Processes.ProcessConfiguration)
+  id: StartNew(AlastairLundy.Extensions.Processes.ProcessConfiguration)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  langs:
+  - csharp
+  - vb
+  name: StartNew(ProcessConfiguration)
+  nameWithType: IProcessFactory.StartNew(ProcessConfiguration)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew(AlastairLundy.Extensions.Processes.ProcessConfiguration)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: StartNew
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 79
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Creates and starts a new Process with the specified configuration.
+  example: []
+  syntax:
+    content: Process StartNew(ProcessConfiguration configuration)
+    parameters:
+    - id: configuration
+      type: AlastairLundy.Extensions.Processes.ProcessConfiguration
+      description: The configuration to use when creating and starting the process.
+    return:
+      type: System.Diagnostics.Process
+      description: The newly created and started Process with the specified configuration.
+    content.vb: Function StartNew(configuration As ProcessConfiguration) As Process
+  overload: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew*
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  id: ContinueWhenExitAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  langs:
+  - csharp
+  - vb
+  name: ContinueWhenExitAsync(Process, CancellationToken)
+  nameWithType: IProcessFactory.ContinueWhenExitAsync(Process, CancellationToken)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync(System.Diagnostics.Process, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ContinueWhenExitAsync
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 87
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Creates a Task that returns a ProcessResult when the specified process exits.
+  example: []
+  syntax:
+    content: Task<ProcessResult> ContinueWhenExitAsync(Process process, CancellationToken cancellationToken = default)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to continue and wait for exit.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token to use in case cancellation is requested.
+    return:
+      type: System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.ProcessResult}
+      description: The task and processResult that are returned upon completion of the task.
+    content.vb: Function ContinueWhenExitAsync(process As Process, cancellationToken As CancellationToken = Nothing) As Task(Of ProcessResult)
+  overload: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync*
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,System.Threading.CancellationToken)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,System.Threading.CancellationToken)
+  id: ContinueWhenExitAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,System.Threading.CancellationToken)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  langs:
+  - csharp
+  - vb
+  name: ContinueWhenExitAsync(Process, ProcessResultValidation, CancellationToken)
+  nameWithType: IProcessFactory.ContinueWhenExitAsync(Process, ProcessResultValidation, CancellationToken)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ContinueWhenExitAsync
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 96
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Creates a Task that returns a ProcessResult when the specified process exits.
+  example: []
+  syntax:
+    content: Task<ProcessResult> ContinueWhenExitAsync(Process process, ProcessResultValidation resultValidation, CancellationToken cancellationToken = default)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to continue and wait for exit.
+    - id: resultValidation
+      type: AlastairLundy.Extensions.Processes.ProcessResultValidation
+      description: Whether to perform Result validation on the process' exit code.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token to use in case cancellation is requested.
+    return:
+      type: System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.ProcessResult}
+      description: The task and ProcessResult that are returned upon completion of the task.
+    content.vb: Function ContinueWhenExitAsync(process As Process, resultValidation As ProcessResultValidation, cancellationToken As CancellationToken = Nothing) As Task(Of ProcessResult)
+  overload: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync*
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  id: ContinueWhenExitBufferedAsync(System.Diagnostics.Process,System.Threading.CancellationToken)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  langs:
+  - csharp
+  - vb
+  name: ContinueWhenExitBufferedAsync(Process, CancellationToken)
+  nameWithType: IProcessFactory.ContinueWhenExitBufferedAsync(Process, CancellationToken)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync(System.Diagnostics.Process, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ContinueWhenExitBufferedAsync
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 104
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Creates a Task that returns a BufferedProcessResult when the specified process exits.
+  example: []
+  syntax:
+    content: Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, CancellationToken cancellationToken = default)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to continue and wait for exit.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token to use in case cancellation is requested.
+    return:
+      type: System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.BufferedProcessResult}
+      description: The task and BufferedProcessResult that are returned upon completion of the task.
+    content.vb: Function ContinueWhenExitBufferedAsync(process As Process, cancellationToken As CancellationToken = Nothing) As Task(Of BufferedProcessResult)
+  overload: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync*
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,System.Threading.CancellationToken)
+  commentId: M:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,System.Threading.CancellationToken)
+  id: ContinueWhenExitBufferedAsync(System.Diagnostics.Process,AlastairLundy.Extensions.Processes.ProcessResultValidation,System.Threading.CancellationToken)
+  parent: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory
+  langs:
+  - csharp
+  - vb
+  name: ContinueWhenExitBufferedAsync(Process, ProcessResultValidation, CancellationToken)
+  nameWithType: IProcessFactory.ContinueWhenExitBufferedAsync(Process, ProcessResultValidation, CancellationToken)
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync(System.Diagnostics.Process, AlastairLundy.Extensions.Processes.ProcessResultValidation, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ContinueWhenExitBufferedAsync
+    path: ../src/AlastairLundy.Extensions.Processes/Abstractions/IProcessFactory.cs
+    startLine: 113
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes.Abstractions
+  summary: Creates a Task that returns a BufferedProcessResult when the specified process exits.
+  example: []
+  syntax:
+    content: Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, ProcessResultValidation resultValidation, CancellationToken cancellationToken = default)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to continue and wait for exit.
+    - id: resultValidation
+      type: AlastairLundy.Extensions.Processes.ProcessResultValidation
+      description: Whether to perform Result validation on the process' exit code.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token to use in case cancellation is requested.
+    return:
+      type: System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.BufferedProcessResult}
+      description: The task and BufferedProcessResult that are returned upon completion of the task.
+    content.vb: Function ContinueWhenExitBufferedAsync(process As Process, resultValidation As ProcessResultValidation, cancellationToken As CancellationToken = Nothing) As Task(Of BufferedProcessResult)
+  overload: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync*
+references:
+- uid: AlastairLundy.Extensions.Processes.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Abstractions
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Abstractions
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Abstractions.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Abstractions.html
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From
+  href: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.html#AlastairLundy_Extensions_Processes_Abstractions_IProcessFactory_From_System_Diagnostics_ProcessStartInfo_
+  name: From
+  nameWithType: IProcessFactory.From
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.From
+- uid: System.Diagnostics.ProcessStartInfo
+  commentId: T:System.Diagnostics.ProcessStartInfo
+  parent: System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.processstartinfo
+  name: ProcessStartInfo
+  nameWithType: ProcessStartInfo
+  fullName: System.Diagnostics.ProcessStartInfo
+- uid: System.Diagnostics.Process
+  commentId: T:System.Diagnostics.Process
+  parent: System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  name: Process
+  nameWithType: Process
+  fullName: System.Diagnostics.Process
+- uid: System.Diagnostics
+  commentId: N:System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Diagnostics
+  nameWithType: System.Diagnostics
+  fullName: System.Diagnostics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+- uid: AlastairLundy.Extensions.Processes.UserCredential
+  commentId: T:AlastairLundy.Extensions.Processes.UserCredential
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.UserCredential.html
+  name: UserCredential
+  nameWithType: UserCredential
+  fullName: AlastairLundy.Extensions.Processes.UserCredential
+- uid: AlastairLundy.Extensions.Processes
+  commentId: N:AlastairLundy.Extensions.Processes
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes
+  nameWithType: AlastairLundy.Extensions.Processes
+  fullName: AlastairLundy.Extensions.Processes
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessConfiguration
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessConfiguration.html
+  name: ProcessConfiguration
+  nameWithType: ProcessConfiguration
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew
+  href: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.html#AlastairLundy_Extensions_Processes_Abstractions_IProcessFactory_StartNew_System_Diagnostics_ProcessStartInfo_
+  name: StartNew
+  nameWithType: IProcessFactory.StartNew
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.StartNew
+- uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  name: ProcessResourcePolicy
+  nameWithType: ProcessResourcePolicy
+  fullName: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync
+  href: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.html#AlastairLundy_Extensions_Processes_Abstractions_IProcessFactory_ContinueWhenExitAsync_System_Diagnostics_Process_System_Threading_CancellationToken_
+  name: ContinueWhenExitAsync
+  nameWithType: IProcessFactory.ContinueWhenExitAsync
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.ProcessResult}
+  commentId: T:System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.ProcessResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ProcessResult>
+  nameWithType: Task<ProcessResult>
+  fullName: System.Threading.Tasks.Task<AlastairLundy.Extensions.Processes.ProcessResult>
+  nameWithType.vb: Task(Of ProcessResult)
+  fullName.vb: System.Threading.Tasks.Task(Of AlastairLundy.Extensions.Processes.ProcessResult)
+  name.vb: Task(Of ProcessResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: AlastairLundy.Extensions.Processes.ProcessResult
+    name: ProcessResult
+    href: AlastairLundy.Extensions.Processes.ProcessResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.ProcessResult
+    name: ProcessResult
+    href: AlastairLundy.Extensions.Processes.ProcessResult.html
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResultValidation
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  name: ProcessResultValidation
+  nameWithType: ProcessResultValidation
+  fullName: AlastairLundy.Extensions.Processes.ProcessResultValidation
+- uid: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync*
+  commentId: Overload:AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync
+  href: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.html#AlastairLundy_Extensions_Processes_Abstractions_IProcessFactory_ContinueWhenExitBufferedAsync_System_Diagnostics_Process_System_Threading_CancellationToken_
+  name: ContinueWhenExitBufferedAsync
+  nameWithType: IProcessFactory.ContinueWhenExitBufferedAsync
+  fullName: AlastairLundy.Extensions.Processes.Abstractions.IProcessFactory.ContinueWhenExitBufferedAsync
+- uid: System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.BufferedProcessResult}
+  commentId: T:System.Threading.Tasks.Task{AlastairLundy.Extensions.Processes.BufferedProcessResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<BufferedProcessResult>
+  nameWithType: Task<BufferedProcessResult>
+  fullName: System.Threading.Tasks.Task<AlastairLundy.Extensions.Processes.BufferedProcessResult>
+  nameWithType.vb: Task(Of BufferedProcessResult)
+  fullName.vb: System.Threading.Tasks.Task(Of AlastairLundy.Extensions.Processes.BufferedProcessResult)
+  name.vb: Task(Of BufferedProcessResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+    name: BufferedProcessResult
+    href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: AlastairLundy.Extensions.Processes.BufferedProcessResult
+    name: BufferedProcessResult
+    href: AlastairLundy.Extensions.Processes.BufferedProcessResult.html
+  - name: )
