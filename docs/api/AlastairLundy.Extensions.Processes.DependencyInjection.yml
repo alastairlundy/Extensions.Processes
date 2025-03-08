@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.DependencyInjection
+  commentId: N:AlastairLundy.Extensions.Processes.DependencyInjection
+  id: AlastairLundy.Extensions.Processes.DependencyInjection
+  children:
+  - AlastairLundy.Extensions.Processes.DependencyInjection.DependencyInjectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AlastairLundy.Extensions.Processes.DependencyInjection
+  nameWithType: AlastairLundy.Extensions.Processes.DependencyInjection
+  fullName: AlastairLundy.Extensions.Processes.DependencyInjection
+  type: Namespace
+  assemblies:
+  - AlastairLundy.Extensions.Processes.DependencyInjection
+references:
+- uid: AlastairLundy.Extensions.Processes.DependencyInjection.DependencyInjectionExtensions
+  commentId: T:AlastairLundy.Extensions.Processes.DependencyInjection.DependencyInjectionExtensions
+  href: AlastairLundy.Extensions.Processes.DependencyInjection.DependencyInjectionExtensions.html
+  name: DependencyInjectionExtensions
+  nameWithType: DependencyInjectionExtensions
+  fullName: AlastairLundy.Extensions.Processes.DependencyInjection.DependencyInjectionExtensions

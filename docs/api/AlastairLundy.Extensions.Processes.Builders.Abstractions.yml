@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Builders.Abstractions
+  id: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  children:
+  - AlastairLundy.Extensions.Processes.Builders.Abstractions.IEnvironmentVariablesBuilder
+  - AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  - AlastairLundy.Extensions.Processes.Builders.Abstractions.IUserCredentialBuilder
+  langs:
+  - csharp
+  - vb
+  name: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  type: Namespace
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+references:
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IEnvironmentVariablesBuilder
+  commentId: T:AlastairLundy.Extensions.Processes.Builders.Abstractions.IEnvironmentVariablesBuilder
+  parent: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  href: AlastairLundy.Extensions.Processes.Builders.Abstractions.IEnvironmentVariablesBuilder.html
+  name: IEnvironmentVariablesBuilder
+  nameWithType: IEnvironmentVariablesBuilder
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IEnvironmentVariablesBuilder
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  commentId: T:AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+  parent: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  href: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder.html
+  name: IProcessResourcePolicyBuilder
+  nameWithType: IProcessResourcePolicyBuilder
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IProcessResourcePolicyBuilder
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions.IUserCredentialBuilder
+  commentId: T:AlastairLundy.Extensions.Processes.Builders.Abstractions.IUserCredentialBuilder
+  parent: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  href: AlastairLundy.Extensions.Processes.Builders.Abstractions.IUserCredentialBuilder.html
+  name: IUserCredentialBuilder
+  nameWithType: IUserCredentialBuilder
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions.IUserCredentialBuilder
+- uid: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Builders.Abstractions
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Builders.Abstractions
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Builders
+    name: Builders
+    href: AlastairLundy.Extensions.Processes.Builders.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Builders.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Builders.Abstractions.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Builders
+    name: Builders
+    href: AlastairLundy.Extensions.Processes.Builders.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Builders.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Builders.Abstractions.html

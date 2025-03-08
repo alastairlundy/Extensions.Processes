@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.Piping
+  commentId: N:AlastairLundy.Extensions.Processes.Piping
+  id: AlastairLundy.Extensions.Processes.Piping
+  children:
+  - AlastairLundy.Extensions.Processes.Piping.ProcessPipeHandler
+  langs:
+  - csharp
+  - vb
+  name: AlastairLundy.Extensions.Processes.Piping
+  nameWithType: AlastairLundy.Extensions.Processes.Piping
+  fullName: AlastairLundy.Extensions.Processes.Piping
+  type: Namespace
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+references:
+- uid: AlastairLundy.Extensions.Processes.Piping.ProcessPipeHandler
+  commentId: T:AlastairLundy.Extensions.Processes.Piping.ProcessPipeHandler
+  href: AlastairLundy.Extensions.Processes.Piping.ProcessPipeHandler.html
+  name: ProcessPipeHandler
+  nameWithType: ProcessPipeHandler
+  fullName: AlastairLundy.Extensions.Processes.Piping.ProcessPipeHandler

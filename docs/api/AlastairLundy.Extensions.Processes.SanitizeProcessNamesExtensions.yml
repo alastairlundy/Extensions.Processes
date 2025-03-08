@@ -1,0 +1,596 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions
+  commentId: T:AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions
+  id: SanitizeProcessNamesExtensions
+  parent: AlastairLundy.Extensions.Processes
+  children:
+  - AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessName(System.Diagnostics.Process,System.Boolean)
+  - AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessNames(System.Collections.Generic.IEnumerable{System.Diagnostics.Process},System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: SanitizeProcessNamesExtensions
+  nameWithType: SanitizeProcessNamesExtensions
+  fullName: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions
+  type: Class
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Extensions/Processes/SanitizeProcessNamesExtensions.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: SanitizeProcessNamesExtensions
+    path: ../src/AlastairLundy.Extensions.Processes/Extensions/Processes/SanitizeProcessNamesExtensions.cs
+    startLine: 17
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  syntax:
+    content: public static class SanitizeProcessNamesExtensions
+    content.vb: Public Module SanitizeProcessNamesExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessName(System.Diagnostics.Process,System.Boolean)
+  commentId: M:AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessName(System.Diagnostics.Process,System.Boolean)
+  id: SanitizeProcessName(System.Diagnostics.Process,System.Boolean)
+  isExtensionMethod: true
+  parent: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions
+  langs:
+  - csharp
+  - vb
+  name: SanitizeProcessName(Process, bool)
+  nameWithType: SanitizeProcessNamesExtensions.SanitizeProcessName(Process, bool)
+  fullName: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessName(System.Diagnostics.Process, bool)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Extensions/Processes/SanitizeProcessNamesExtensions.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: SanitizeProcessName
+    path: ../src/AlastairLundy.Extensions.Processes/Extensions/Processes/SanitizeProcessNamesExtensions.cs
+    startLine: 25
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: Sanitizes a Process Name.
+  example: []
+  syntax:
+    content: public static string SanitizeProcessName(this Process process, bool excludeFileExtension = true)
+    parameters:
+    - id: process
+      type: System.Diagnostics.Process
+      description: The process to sanitize the name of.
+    - id: excludeFileExtension
+      type: System.Boolean
+      description: Whether to remove the file extension from the Process when sanitizing the process name.
+    return:
+      type: System.String
+      description: the sanitized process names.
+    content.vb: Public Shared Function SanitizeProcessName(process As Process, excludeFileExtension As Boolean = True) As String
+  overload: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessName*
+  nameWithType.vb: SanitizeProcessNamesExtensions.SanitizeProcessName(Process, Boolean)
+  fullName.vb: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessName(System.Diagnostics.Process, Boolean)
+  name.vb: SanitizeProcessName(Process, Boolean)
+- uid: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessNames(System.Collections.Generic.IEnumerable{System.Diagnostics.Process},System.Boolean)
+  commentId: M:AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessNames(System.Collections.Generic.IEnumerable{System.Diagnostics.Process},System.Boolean)
+  id: SanitizeProcessNames(System.Collections.Generic.IEnumerable{System.Diagnostics.Process},System.Boolean)
+  isExtensionMethod: true
+  parent: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions
+  langs:
+  - csharp
+  - vb
+  name: SanitizeProcessNames(IEnumerable<Process>, bool)
+  nameWithType: SanitizeProcessNamesExtensions.SanitizeProcessNames(IEnumerable<Process>, bool)
+  fullName: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessNames(System.Collections.Generic.IEnumerable<System.Diagnostics.Process>, bool)
+  type: Method
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Extensions/Processes/SanitizeProcessNamesExtensions.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: SanitizeProcessNames
+    path: ../src/AlastairLundy.Extensions.Processes/Extensions/Processes/SanitizeProcessNamesExtensions.cs
+    startLine: 40
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: Sanitizes Process Names from a list of Process objects.
+  example: []
+  syntax:
+    content: public static IEnumerable<string> SanitizeProcessNames(this IEnumerable<Process> processNames, bool excludeFileExtensions = true)
+    parameters:
+    - id: processNames
+      type: System.Collections.Generic.IEnumerable{System.Diagnostics.Process}
+      description: The list of Processes to sanitize the names of.
+    - id: excludeFileExtensions
+      type: System.Boolean
+      description: Whether to remove the file extension from the Process when sanitizing the process name.
+    return:
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: the sanitized process names.
+    content.vb: Public Shared Function SanitizeProcessNames(processNames As IEnumerable(Of Process), excludeFileExtensions As Boolean = True) As IEnumerable(Of String)
+  overload: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessNames*
+  nameWithType.vb: SanitizeProcessNamesExtensions.SanitizeProcessNames(IEnumerable(Of Process), Boolean)
+  fullName.vb: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessNames(System.Collections.Generic.IEnumerable(Of System.Diagnostics.Process), Boolean)
+  name.vb: SanitizeProcessNames(IEnumerable(Of Process), Boolean)
+references:
+- uid: AlastairLundy.Extensions.Processes
+  commentId: N:AlastairLundy.Extensions.Processes
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes
+  nameWithType: AlastairLundy.Extensions.Processes
+  fullName: AlastairLundy.Extensions.Processes
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessName*
+  commentId: Overload:AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessName
+  href: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.html#AlastairLundy_Extensions_Processes_SanitizeProcessNamesExtensions_SanitizeProcessName_System_Diagnostics_Process_System_Boolean_
+  name: SanitizeProcessName
+  nameWithType: SanitizeProcessNamesExtensions.SanitizeProcessName
+  fullName: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessName
+- uid: System.Diagnostics.Process
+  commentId: T:System.Diagnostics.Process
+  parent: System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  name: Process
+  nameWithType: Process
+  fullName: System.Diagnostics.Process
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Diagnostics
+  commentId: N:System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Diagnostics
+  nameWithType: System.Diagnostics
+  fullName: System.Diagnostics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+- uid: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessNames*
+  commentId: Overload:AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessNames
+  href: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.html#AlastairLundy_Extensions_Processes_SanitizeProcessNamesExtensions_SanitizeProcessNames_System_Collections_Generic_IEnumerable_System_Diagnostics_Process__System_Boolean_
+  name: SanitizeProcessNames
+  nameWithType: SanitizeProcessNamesExtensions.SanitizeProcessNames
+  fullName: AlastairLundy.Extensions.Processes.SanitizeProcessNamesExtensions.SanitizeProcessNames
+- uid: System.Collections.Generic.IEnumerable{System.Diagnostics.Process}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Diagnostics.Process}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Process>
+  nameWithType: IEnumerable<Process>
+  fullName: System.Collections.Generic.IEnumerable<System.Diagnostics.Process>
+  nameWithType.vb: IEnumerable(Of Process)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Diagnostics.Process)
+  name.vb: IEnumerable(Of Process)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Diagnostics.Process
+    name: Process
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.process
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<string>
+  nameWithType: IEnumerable<string>
+  fullName: System.Collections.Generic.IEnumerable<string>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

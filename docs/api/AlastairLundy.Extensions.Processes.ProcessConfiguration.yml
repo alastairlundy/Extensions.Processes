@@ -1,0 +1,952 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessConfiguration
+  id: ProcessConfiguration
+  parent: AlastairLundy.Extensions.Processes
+  children:
+  - AlastairLundy.Extensions.Processes.ProcessConfiguration.#ctor(System.Diagnostics.ProcessStartInfo,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},AlastairLundy.Extensions.Processes.UserCredential,AlastairLundy.Extensions.Processes.ProcessResultValidation,System.TimeSpan,System.IO.StreamWriter,System.IO.StreamReader,System.IO.StreamReader,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  - AlastairLundy.Extensions.Processes.ProcessConfiguration.Credential
+  - AlastairLundy.Extensions.Processes.ProcessConfiguration.EnvironmentVariables
+  - AlastairLundy.Extensions.Processes.ProcessConfiguration.ResourcePolicy
+  - AlastairLundy.Extensions.Processes.ProcessConfiguration.ResultValidation
+  - AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardError
+  - AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardInput
+  - AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardOutput
+  - AlastairLundy.Extensions.Processes.ProcessConfiguration.StartInfo
+  - AlastairLundy.Extensions.Processes.ProcessConfiguration.TimeoutThreshold
+  langs:
+  - csharp
+  - vb
+  name: ProcessConfiguration
+  nameWithType: ProcessConfiguration
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  type: Class
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ProcessConfiguration
+    path: ../src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+    startLine: 21
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: A class to store Process configuration information.
+  example: []
+  syntax:
+    content: public class ProcessConfiguration
+    content.vb: Public Class ProcessConfiguration
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.#ctor(System.Diagnostics.ProcessStartInfo,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},AlastairLundy.Extensions.Processes.UserCredential,AlastairLundy.Extensions.Processes.ProcessResultValidation,System.TimeSpan,System.IO.StreamWriter,System.IO.StreamReader,System.IO.StreamReader,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  commentId: M:AlastairLundy.Extensions.Processes.ProcessConfiguration.#ctor(System.Diagnostics.ProcessStartInfo,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},AlastairLundy.Extensions.Processes.UserCredential,AlastairLundy.Extensions.Processes.ProcessResultValidation,System.TimeSpan,System.IO.StreamWriter,System.IO.StreamReader,System.IO.StreamReader,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  id: '#ctor(System.Diagnostics.ProcessStartInfo,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},AlastairLundy.Extensions.Processes.UserCredential,AlastairLundy.Extensions.Processes.ProcessResultValidation,System.TimeSpan,System.IO.StreamWriter,System.IO.StreamReader,System.IO.StreamReader,AlastairLundy.Extensions.Processes.ProcessResourcePolicy)'
+  parent: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ProcessConfiguration(ProcessStartInfo, IReadOnlyDictionary<string, string>?, UserCredential?, ProcessResultValidation, TimeSpan, StreamWriter?, StreamReader?, StreamReader?, ProcessResourcePolicy?)
+  nameWithType: ProcessConfiguration.ProcessConfiguration(ProcessStartInfo, IReadOnlyDictionary<string, string>?, UserCredential?, ProcessResultValidation, TimeSpan, StreamWriter?, StreamReader?, StreamReader?, ProcessResourcePolicy?)
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.ProcessConfiguration(System.Diagnostics.ProcessStartInfo, System.Collections.Generic.IReadOnlyDictionary<string, string>?, AlastairLundy.Extensions.Processes.UserCredential?, AlastairLundy.Extensions.Processes.ProcessResultValidation, System.TimeSpan, System.IO.StreamWriter?, System.IO.StreamReader?, System.IO.StreamReader?, AlastairLundy.Extensions.Processes.ProcessResourcePolicy?)
+  type: Constructor
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: .ctor
+    path: ../src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+    startLine: 35
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: Instantiates the Process Configuration class with a ProcessStartInfo and other optional parameters.
+  example: []
+  syntax:
+    content: public ProcessConfiguration(ProcessStartInfo processStartInfo, IReadOnlyDictionary<string, string>? environmentVariables = null, UserCredential? credential = null, ProcessResultValidation resultValidation = ProcessResultValidation.ExitCodeZero, TimeSpan timeOutThreshold = default, StreamWriter? standardInput = null, StreamReader? standardOutput = null, StreamReader? standardError = null, ProcessResourcePolicy? processResourcePolicy = null)
+    parameters:
+    - id: processStartInfo
+      type: System.Diagnostics.ProcessStartInfo
+      description: ''
+    - id: environmentVariables
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+      description: The environment variables to be set (if specified).
+    - id: credential
+      type: AlastairLundy.Extensions.Processes.UserCredential
+      description: The credential to be used (if specified).
+    - id: resultValidation
+      type: AlastairLundy.Extensions.Processes.ProcessResultValidation
+      description: Whether to perform Result Validation and exception throwing if the Command exits with an exit code other than 0.
+    - id: timeOutThreshold
+      type: System.TimeSpan
+      description: ''
+    - id: standardInput
+      type: System.IO.StreamWriter
+      description: The standard input source to be used (if specified).
+    - id: standardOutput
+      type: System.IO.StreamReader
+      description: The standard output destination to be used (if specified).
+    - id: standardError
+      type: System.IO.StreamReader
+      description: The standard error destination to be used (if specified).
+    - id: processResourcePolicy
+      type: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+      description: The process resource policy to be used (if specified).
+    content.vb: Public Sub New(processStartInfo As ProcessStartInfo, environmentVariables As IReadOnlyDictionary(Of String, String) = Nothing, credential As UserCredential = Nothing, resultValidation As ProcessResultValidation = ProcessResultValidation.ExitCodeZero, timeOutThreshold As TimeSpan = Nothing, standardInput As StreamWriter = Nothing, standardOutput As StreamReader = Nothing, standardError As StreamReader = Nothing, processResourcePolicy As ProcessResourcePolicy = Nothing)
+  overload: AlastairLundy.Extensions.Processes.ProcessConfiguration.#ctor*
+  nameWithType.vb: ProcessConfiguration.New(ProcessStartInfo, IReadOnlyDictionary(Of String, String), UserCredential, ProcessResultValidation, TimeSpan, StreamWriter, StreamReader, StreamReader, ProcessResourcePolicy)
+  fullName.vb: AlastairLundy.Extensions.Processes.ProcessConfiguration.New(System.Diagnostics.ProcessStartInfo, System.Collections.Generic.IReadOnlyDictionary(Of String, String), AlastairLundy.Extensions.Processes.UserCredential, AlastairLundy.Extensions.Processes.ProcessResultValidation, System.TimeSpan, System.IO.StreamWriter, System.IO.StreamReader, System.IO.StreamReader, AlastairLundy.Extensions.Processes.ProcessResourcePolicy)
+  name.vb: New(ProcessStartInfo, IReadOnlyDictionary(Of String, String), UserCredential, ProcessResultValidation, TimeSpan, StreamWriter, StreamReader, StreamReader, ProcessResourcePolicy)
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.EnvironmentVariables
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessConfiguration.EnvironmentVariables
+  id: EnvironmentVariables
+  parent: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentVariables
+  nameWithType: ProcessConfiguration.EnvironmentVariables
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.EnvironmentVariables
+  type: Property
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: EnvironmentVariables
+    path: ../src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+    startLine: 71
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: The environment variables to be set.
+  example: []
+  syntax:
+    content: public IReadOnlyDictionary<string, string> EnvironmentVariables { get; protected set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+    content.vb: Public Property EnvironmentVariables As IReadOnlyDictionary(Of String, String)
+  overload: AlastairLundy.Extensions.Processes.ProcessConfiguration.EnvironmentVariables*
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.TimeoutThreshold
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessConfiguration.TimeoutThreshold
+  id: TimeoutThreshold
+  parent: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  langs:
+  - csharp
+  - vb
+  name: TimeoutThreshold
+  nameWithType: ProcessConfiguration.TimeoutThreshold
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.TimeoutThreshold
+  type: Property
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: TimeoutThreshold
+    path: ../src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+    startLine: 76
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: The timespan after which a Process should no longer be allowed to continue waiting to exit.
+  example: []
+  syntax:
+    content: public TimeSpan TimeoutThreshold { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public Property TimeoutThreshold As TimeSpan
+  overload: AlastairLundy.Extensions.Processes.ProcessConfiguration.TimeoutThreshold*
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.StartInfo
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessConfiguration.StartInfo
+  id: StartInfo
+  parent: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  langs:
+  - csharp
+  - vb
+  name: StartInfo
+  nameWithType: ProcessConfiguration.StartInfo
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.StartInfo
+  type: Property
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: StartInfo
+    path: ../src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+    startLine: 81
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: The Process start information to be used.
+  example: []
+  syntax:
+    content: public ProcessStartInfo StartInfo { get; }
+    parameters: []
+    return:
+      type: System.Diagnostics.ProcessStartInfo
+    content.vb: Public Property StartInfo As ProcessStartInfo
+  overload: AlastairLundy.Extensions.Processes.ProcessConfiguration.StartInfo*
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.Credential
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessConfiguration.Credential
+  id: Credential
+  parent: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  langs:
+  - csharp
+  - vb
+  name: Credential
+  nameWithType: ProcessConfiguration.Credential
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.Credential
+  type: Property
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: Credential
+    path: ../src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+    startLine: 86
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: The credential to be used when executing the Command.
+  example: []
+  syntax:
+    content: public UserCredential? Credential { get; protected set; }
+    parameters: []
+    return:
+      type: AlastairLundy.Extensions.Processes.UserCredential
+    content.vb: Public Property Credential As UserCredential
+  overload: AlastairLundy.Extensions.Processes.ProcessConfiguration.Credential*
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.ResultValidation
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessConfiguration.ResultValidation
+  id: ResultValidation
+  parent: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ResultValidation
+  nameWithType: ProcessConfiguration.ResultValidation
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.ResultValidation
+  type: Property
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ResultValidation
+    path: ../src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+    startLine: 91
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: The result validation to apply to the Command when it is executed.
+  example: []
+  syntax:
+    content: public ProcessResultValidation ResultValidation { get; protected set; }
+    parameters: []
+    return:
+      type: AlastairLundy.Extensions.Processes.ProcessResultValidation
+    content.vb: Public Property ResultValidation As ProcessResultValidation
+  overload: AlastairLundy.Extensions.Processes.ProcessConfiguration.ResultValidation*
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardInput
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardInput
+  id: StandardInput
+  parent: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  langs:
+  - csharp
+  - vb
+  name: StandardInput
+  nameWithType: ProcessConfiguration.StandardInput
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardInput
+  type: Property
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: StandardInput
+    path: ../src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+    startLine: 98
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: The Standard Input source to redirect Standard Input to if configured.
+  remarks: Using Shell Execution whilst also Redirecting Standard Input will throw an Exception. This is a known issue with the System Process class.
+  example: []
+  syntax:
+    content: public StreamWriter? StandardInput { get; protected set; }
+    parameters: []
+    return:
+      type: System.IO.StreamWriter
+    content.vb: Public Property StandardInput As StreamWriter
+  overload: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardInput*
+  seealso:
+  - linkType: HRef
+    linkId: https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.processstartinfo.redirectstandarderror
+    altText: https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.processstartinfo.redirectstandarderror
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardOutput
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardOutput
+  id: StandardOutput
+  parent: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  langs:
+  - csharp
+  - vb
+  name: StandardOutput
+  nameWithType: ProcessConfiguration.StandardOutput
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardOutput
+  type: Property
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: StandardOutput
+    path: ../src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+    startLine: 103
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: The Standard Output target to redirect Standard Output to if configured.
+  example: []
+  syntax:
+    content: public StreamReader? StandardOutput { get; protected set; }
+    parameters: []
+    return:
+      type: System.IO.StreamReader
+    content.vb: Public Property StandardOutput As StreamReader
+  overload: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardOutput*
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardError
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardError
+  id: StandardError
+  parent: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  langs:
+  - csharp
+  - vb
+  name: StandardError
+  nameWithType: ProcessConfiguration.StandardError
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardError
+  type: Property
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: StandardError
+    path: ../src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+    startLine: 108
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: The Standard Error target to redirect Standard Output to if configured.
+  example: []
+  syntax:
+    content: public StreamReader? StandardError { get; protected set; }
+    parameters: []
+    return:
+      type: System.IO.StreamReader
+    content.vb: Public Property StandardError As StreamReader
+  overload: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardError*
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.ResourcePolicy
+  commentId: P:AlastairLundy.Extensions.Processes.ProcessConfiguration.ResourcePolicy
+  id: ResourcePolicy
+  parent: AlastairLundy.Extensions.Processes.ProcessConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ResourcePolicy
+  nameWithType: ProcessConfiguration.ResourcePolicy
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.ResourcePolicy
+  type: Property
+  source:
+    remote:
+      path: src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+      branch: add-xml-doc-comments
+      repo: https://github.com/alastairlundy/Extensions.Processes.git
+    id: ResourcePolicy
+    path: ../src/AlastairLundy.Extensions.Processes/Models/ProcessConfiguration.cs
+    startLine: 115
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+  namespace: AlastairLundy.Extensions.Processes
+  summary: The Process Resource Policy to be used for executing the Command.
+  remarks: >-
+    Process Resource Policy objects enable configuring Processor Affinity and other resource settings to be applied to the Command if supported by the currently running operating system.
+        <p>Not all properties of a Process Resource Policy support all operating systems. Check before configuring a property.</p>
+  example: []
+  syntax:
+    content: public ProcessResourcePolicy? ResourcePolicy { get; protected set; }
+    parameters: []
+    return:
+      type: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+    content.vb: Public Property ResourcePolicy As ProcessResourcePolicy
+  overload: AlastairLundy.Extensions.Processes.ProcessConfiguration.ResourcePolicy*
+references:
+- uid: AlastairLundy.Extensions.Processes
+  commentId: N:AlastairLundy.Extensions.Processes
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes
+  nameWithType: AlastairLundy.Extensions.Processes
+  fullName: AlastairLundy.Extensions.Processes
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.#ctor*
+  commentId: Overload:AlastairLundy.Extensions.Processes.ProcessConfiguration.#ctor
+  href: AlastairLundy.Extensions.Processes.ProcessConfiguration.html#AlastairLundy_Extensions_Processes_ProcessConfiguration__ctor_System_Diagnostics_ProcessStartInfo_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__AlastairLundy_Extensions_Processes_UserCredential_AlastairLundy_Extensions_Processes_ProcessResultValidation_System_TimeSpan_System_IO_StreamWriter_System_IO_StreamReader_System_IO_StreamReader_AlastairLundy_Extensions_Processes_ProcessResourcePolicy_
+  name: ProcessConfiguration
+  nameWithType: ProcessConfiguration.ProcessConfiguration
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.ProcessConfiguration
+  nameWithType.vb: ProcessConfiguration.New
+  fullName.vb: AlastairLundy.Extensions.Processes.ProcessConfiguration.New
+  name.vb: New
+- uid: System.Diagnostics.ProcessStartInfo
+  commentId: T:System.Diagnostics.ProcessStartInfo
+  parent: System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.processstartinfo
+  name: ProcessStartInfo
+  nameWithType: ProcessStartInfo
+  fullName: System.Diagnostics.ProcessStartInfo
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<string, string>
+  nameWithType: IReadOnlyDictionary<string, string>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string, string>
+  nameWithType.vb: IReadOnlyDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of String, String)
+  name.vb: IReadOnlyDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: AlastairLundy.Extensions.Processes.UserCredential
+  commentId: T:AlastairLundy.Extensions.Processes.UserCredential
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.UserCredential.html
+  name: UserCredential
+  nameWithType: UserCredential
+  fullName: AlastairLundy.Extensions.Processes.UserCredential
+- uid: AlastairLundy.Extensions.Processes.ProcessResultValidation
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResultValidation
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessResultValidation.html
+  name: ProcessResultValidation
+  nameWithType: ProcessResultValidation
+  fullName: AlastairLundy.Extensions.Processes.ProcessResultValidation
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: System.IO.StreamWriter
+  commentId: T:System.IO.StreamWriter
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.streamwriter
+  name: StreamWriter
+  nameWithType: StreamWriter
+  fullName: System.IO.StreamWriter
+- uid: System.IO.StreamReader
+  commentId: T:System.IO.StreamReader
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.streamreader
+  name: StreamReader
+  nameWithType: StreamReader
+  fullName: System.IO.StreamReader
+- uid: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+  commentId: T:AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+  parent: AlastairLundy.Extensions.Processes
+  href: AlastairLundy.Extensions.Processes.ProcessResourcePolicy.html
+  name: ProcessResourcePolicy
+  nameWithType: ProcessResourcePolicy
+  fullName: AlastairLundy.Extensions.Processes.ProcessResourcePolicy
+- uid: System.Diagnostics
+  commentId: N:System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Diagnostics
+  nameWithType: System.Diagnostics
+  fullName: System.Diagnostics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+- uid: System.Collections.Generic.IReadOnlyDictionary`2
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<TKey, TValue>
+  nameWithType: IReadOnlyDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>
+  nameWithType.vb: IReadOnlyDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of TKey, TValue)
+  name.vb: IReadOnlyDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.EnvironmentVariables*
+  commentId: Overload:AlastairLundy.Extensions.Processes.ProcessConfiguration.EnvironmentVariables
+  href: AlastairLundy.Extensions.Processes.ProcessConfiguration.html#AlastairLundy_Extensions_Processes_ProcessConfiguration_EnvironmentVariables
+  name: EnvironmentVariables
+  nameWithType: ProcessConfiguration.EnvironmentVariables
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.EnvironmentVariables
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.TimeoutThreshold*
+  commentId: Overload:AlastairLundy.Extensions.Processes.ProcessConfiguration.TimeoutThreshold
+  href: AlastairLundy.Extensions.Processes.ProcessConfiguration.html#AlastairLundy_Extensions_Processes_ProcessConfiguration_TimeoutThreshold
+  name: TimeoutThreshold
+  nameWithType: ProcessConfiguration.TimeoutThreshold
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.TimeoutThreshold
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.StartInfo*
+  commentId: Overload:AlastairLundy.Extensions.Processes.ProcessConfiguration.StartInfo
+  href: AlastairLundy.Extensions.Processes.ProcessConfiguration.html#AlastairLundy_Extensions_Processes_ProcessConfiguration_StartInfo
+  name: StartInfo
+  nameWithType: ProcessConfiguration.StartInfo
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.StartInfo
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.Credential*
+  commentId: Overload:AlastairLundy.Extensions.Processes.ProcessConfiguration.Credential
+  href: AlastairLundy.Extensions.Processes.ProcessConfiguration.html#AlastairLundy_Extensions_Processes_ProcessConfiguration_Credential
+  name: Credential
+  nameWithType: ProcessConfiguration.Credential
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.Credential
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.ResultValidation*
+  commentId: Overload:AlastairLundy.Extensions.Processes.ProcessConfiguration.ResultValidation
+  href: AlastairLundy.Extensions.Processes.ProcessConfiguration.html#AlastairLundy_Extensions_Processes_ProcessConfiguration_ResultValidation
+  name: ResultValidation
+  nameWithType: ProcessConfiguration.ResultValidation
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.ResultValidation
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardInput*
+  commentId: Overload:AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardInput
+  href: AlastairLundy.Extensions.Processes.ProcessConfiguration.html#AlastairLundy_Extensions_Processes_ProcessConfiguration_StandardInput
+  name: StandardInput
+  nameWithType: ProcessConfiguration.StandardInput
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardInput
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardOutput*
+  commentId: Overload:AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardOutput
+  href: AlastairLundy.Extensions.Processes.ProcessConfiguration.html#AlastairLundy_Extensions_Processes_ProcessConfiguration_StandardOutput
+  name: StandardOutput
+  nameWithType: ProcessConfiguration.StandardOutput
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardOutput
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardError*
+  commentId: Overload:AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardError
+  href: AlastairLundy.Extensions.Processes.ProcessConfiguration.html#AlastairLundy_Extensions_Processes_ProcessConfiguration_StandardError
+  name: StandardError
+  nameWithType: ProcessConfiguration.StandardError
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.StandardError
+- uid: AlastairLundy.Extensions.Processes.ProcessConfiguration.ResourcePolicy*
+  commentId: Overload:AlastairLundy.Extensions.Processes.ProcessConfiguration.ResourcePolicy
+  href: AlastairLundy.Extensions.Processes.ProcessConfiguration.html#AlastairLundy_Extensions_Processes_ProcessConfiguration_ResourcePolicy
+  name: ResourcePolicy
+  nameWithType: ProcessConfiguration.ResourcePolicy
+  fullName: AlastairLundy.Extensions.Processes.ProcessConfiguration.ResourcePolicy

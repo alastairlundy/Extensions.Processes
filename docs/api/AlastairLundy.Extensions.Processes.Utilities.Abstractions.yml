@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  id: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  children:
+  - AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  langs:
+  - csharp
+  - vb
+  name: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  type: Namespace
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+references:
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  commentId: T:AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+  parent: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility.html
+  name: IProcessRunnerUtility
+  nameWithType: IProcessRunnerUtility
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions.IProcessRunnerUtility
+- uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  commentId: N:AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  href: AlastairLundy.html
+  name: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  nameWithType: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  fullName: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+  spec.csharp:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities
+    name: Utilities
+    href: AlastairLundy.Extensions.Processes.Utilities.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.html
+  spec.vb:
+  - uid: AlastairLundy
+    name: AlastairLundy
+    href: AlastairLundy.html
+  - name: .
+  - uid: AlastairLundy.Extensions
+    name: Extensions
+    href: AlastairLundy.Extensions.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes
+    name: Processes
+    href: AlastairLundy.Extensions.Processes.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities
+    name: Utilities
+    href: AlastairLundy.Extensions.Processes.Utilities.html
+  - name: .
+  - uid: AlastairLundy.Extensions.Processes.Utilities.Abstractions
+    name: Abstractions
+    href: AlastairLundy.Extensions.Processes.Utilities.Abstractions.html

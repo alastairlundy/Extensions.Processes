@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.Builders
+  commentId: N:AlastairLundy.Extensions.Processes.Builders
+  id: AlastairLundy.Extensions.Processes.Builders
+  children:
+  - AlastairLundy.Extensions.Processes.Builders.EnvironmentVariablesBuilder
+  - AlastairLundy.Extensions.Processes.Builders.ProcessResourcePolicyBuilder
+  - AlastairLundy.Extensions.Processes.Builders.UserCredentialBuilder
+  langs:
+  - csharp
+  - vb
+  name: AlastairLundy.Extensions.Processes.Builders
+  nameWithType: AlastairLundy.Extensions.Processes.Builders
+  fullName: AlastairLundy.Extensions.Processes.Builders
+  type: Namespace
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+references:
+- uid: AlastairLundy.Extensions.Processes.Builders.EnvironmentVariablesBuilder
+  commentId: T:AlastairLundy.Extensions.Processes.Builders.EnvironmentVariablesBuilder
+  href: AlastairLundy.Extensions.Processes.Builders.EnvironmentVariablesBuilder.html
+  name: EnvironmentVariablesBuilder
+  nameWithType: EnvironmentVariablesBuilder
+  fullName: AlastairLundy.Extensions.Processes.Builders.EnvironmentVariablesBuilder
+- uid: AlastairLundy.Extensions.Processes.Builders.ProcessResourcePolicyBuilder
+  commentId: T:AlastairLundy.Extensions.Processes.Builders.ProcessResourcePolicyBuilder
+  href: AlastairLundy.Extensions.Processes.Builders.ProcessResourcePolicyBuilder.html
+  name: ProcessResourcePolicyBuilder
+  nameWithType: ProcessResourcePolicyBuilder
+  fullName: AlastairLundy.Extensions.Processes.Builders.ProcessResourcePolicyBuilder
+- uid: AlastairLundy.Extensions.Processes.Builders.UserCredentialBuilder
+  commentId: T:AlastairLundy.Extensions.Processes.Builders.UserCredentialBuilder
+  href: AlastairLundy.Extensions.Processes.Builders.UserCredentialBuilder.html
+  name: UserCredentialBuilder
+  nameWithType: UserCredentialBuilder
+  fullName: AlastairLundy.Extensions.Processes.Builders.UserCredentialBuilder

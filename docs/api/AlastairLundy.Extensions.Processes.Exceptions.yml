@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: AlastairLundy.Extensions.Processes.Exceptions
+  commentId: N:AlastairLundy.Extensions.Processes.Exceptions
+  id: AlastairLundy.Extensions.Processes.Exceptions
+  children:
+  - AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+  langs:
+  - csharp
+  - vb
+  name: AlastairLundy.Extensions.Processes.Exceptions
+  nameWithType: AlastairLundy.Extensions.Processes.Exceptions
+  fullName: AlastairLundy.Extensions.Processes.Exceptions
+  type: Namespace
+  assemblies:
+  - AlastairLundy.Extensions.Processes
+references:
+- uid: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+  commentId: T:AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
+  href: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException.html
+  name: ProcessNotSuccessfulException
+  nameWithType: ProcessNotSuccessfulException
+  fullName: AlastairLundy.Extensions.Processes.Exceptions.ProcessNotSuccessfulException
