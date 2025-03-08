@@ -400,3 +400,4 @@ FodyWeavers.xsd
 *.sln.iml
 /AlastairLundy.Extensions.Processes/.idea
 /docs/_site
+/src/.idea
