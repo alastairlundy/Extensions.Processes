@@ -7,10 +7,10 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
    */
 
+#if NET5_0_OR_GREATER
 using System;
-
-#if NETSTANDARD2_0 || NETSTANDARD2_1
-using OperatingSystem = Polyfills.OperatingSystemPolyfill;
+#else
+using System.Runtime.InteropServices;
 #endif
 
 namespace AlastairLundy.Extensions.Processes;
@@ -24,7 +24,11 @@ public static class IsSupportedOnOsExtensions
     /// <returns>True if supported; false otherwise.</returns>
     public static bool IsSupportedOnCurrentOS(this UserCredential userCredential)
     {
+#if NET5_0_OR_GREATER
         return OperatingSystem.IsWindows();
+#else
+        return RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+#endif
     }
     
     

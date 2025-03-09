@@ -24,7 +24,7 @@ public static class ProcessSetResourcePolicyExtensions
     /// Applies a ProcessResourcePolicy to a Process.
     /// </summary>
     /// <param name="process">The process to apply the policy to.</param>
-    /// <param name="policy">The process resource policy to be applied.</param>
+    /// <param name="resourcePolicy">The process resource policy to be applied.</param>
     /// <exception cref="InvalidOperationException"></exception>
     public static void SetResourcePolicy(this Process process, ProcessResourcePolicy? resourcePolicy)
     {
