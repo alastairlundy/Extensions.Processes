@@ -7,9 +7,11 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
    */
 
+using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
+using AlastairLundy.Extensions.Processes.Internal;
 
 namespace AlastairLundy.Extensions.Processes.Abstractions;
 
@@ -37,8 +39,8 @@ public interface IProcessRunner
     /// <param name="processResultValidation">The process result validation to be used.</param>
     /// <param name="processResourcePolicy">The process resource policy to be set if it is not null.</param>
     /// <returns>The Buffered Process Results from running the process.</returns>
-    public BufferedProcessResult ExecuteBufferedProcess(Process process,
     [Obsolete(DeprecationMessages.InterfaceDeprecationV2)]
+     BufferedProcessResult ExecuteBufferedProcess(Process process,
         ProcessResultValidation processResultValidation, 
         ProcessResourcePolicy? processResourcePolicy = null);
 
