@@ -14,6 +14,7 @@ using System.Diagnostics;
 using System.Runtime.Versioning;
 #else
 using OperatingSystem = Polyfills.OperatingSystemPolyfill;
+using System.Runtime.InteropServices;
 #endif
 
 namespace AlastairLundy.Extensions.Processes;
