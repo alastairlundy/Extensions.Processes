@@ -48,7 +48,12 @@ public class ProcessResourcePolicy
             MaxWorkingSet = maxWorkingSet;
         }
 
+#if NET5_0_OR_GREATER
         if (OperatingSystem.IsWindows() || OperatingSystem.IsLinux())
+#else
+        if(RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ||
+           RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+#endif
         {
             ProcessorAffinity = processorAffinity;
         }
