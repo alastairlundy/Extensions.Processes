@@ -7,16 +7,22 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
    */
 
+using System;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
 
 using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
+using AlastairLundy.Extensions.Processes.Internal;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
+using AlastairLundy.Extensions.Processes.Utilities;
 using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
+
+#if NET5_0_OR_GREATER
+using System.Runtime.Versioning;
+#endif
 
 namespace AlastairLundy.Extensions.Processes;
 
@@ -27,11 +33,12 @@ public class ProcessRunner : IProcessRunner
 {
     private readonly IProcessRunnerUtility _processRunnerUtils;
     
+    [Obsolete(DeprecationMessages.InterfaceDeprecationV2)]
     public ProcessRunner(IProcessRunnerUtility processRunnerUtils)
     {
         _processRunnerUtils = processRunnerUtils;
     }
-
+    
     /// <summary>
     /// Runs the process synchronously, waits for exit, and safely disposes of the Process before returning.
     /// </summary>
@@ -53,6 +60,7 @@ public class ProcessRunner : IProcessRunner
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
+    [Obsolete(DeprecationMessages.InterfaceDeprecationV2)]
     public ProcessResult ExecuteProcess(Process process, ProcessResultValidation processResultValidation,
         ProcessResourcePolicy? processResourcePolicy = null)
     {
@@ -92,6 +100,7 @@ public class ProcessRunner : IProcessRunner
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
+    [Obsolete(DeprecationMessages.InterfaceDeprecationV2)]
     public BufferedProcessResult ExecuteBufferedProcess(Process process,
         ProcessResultValidation processResultValidation,
         ProcessResourcePolicy? processResourcePolicy = null)
