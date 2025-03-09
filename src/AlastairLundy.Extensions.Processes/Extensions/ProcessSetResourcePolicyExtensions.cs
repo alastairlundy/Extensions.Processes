@@ -10,6 +10,7 @@
 
 #if NETSTANDARD2_0 || NETSTANDARD2_1
 using OperatingSystem = Polyfills.OperatingSystemPolyfill;
+using System.Runtime.InteropServices;
 #endif
 
 using System;
@@ -30,7 +31,12 @@ public static class ProcessSetResourcePolicyExtensions
     {
         if (process.HasStarted() && resourcePolicy != null)
         {
+#if NET5_0_OR_GREATER
             if (OperatingSystem.IsWindows() || OperatingSystem.IsLinux())
+#else
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ||
+                RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+#endif
             {
                 if (resourcePolicy.ProcessorAffinity is not null)
                 {
