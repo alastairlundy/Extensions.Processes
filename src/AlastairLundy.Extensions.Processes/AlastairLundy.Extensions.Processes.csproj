@@ -40,7 +40,7 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
 
     <ItemGroup>
         <PackageReference Include="AlastairLundy.Extensions.Collections" Version="[6.0.0, 7.0.0)"/>
-        <PackageReference Include="AlastairLundy.Extensions.IO" Version="[2.1.0, 3.0.0)"/>
+        <PackageReference Include="AlastairLundy.Extensions.IO" Version="[2.2.0, 3.0.0)"/>
     </ItemGroup>
     
     <ItemGroup >
