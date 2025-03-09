@@ -13,7 +13,6 @@ using System.Diagnostics;
 #if NET5_0_OR_GREATER
 using System.Runtime.Versioning;
 #else
-using OperatingSystem = Polyfills.OperatingSystemPolyfill;
 using System.Runtime.InteropServices;
 #endif
 
@@ -43,7 +42,12 @@ public class ProcessResourcePolicy
             processorAffinity = new IntPtr(0x0001);  
         }
 
+#if NET5_0_OR_GREATER
         if (OperatingSystem.IsWindows() || OperatingSystem.IsMacOS() || OperatingSystem.IsFreeBSD())
+#else
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ||
+            RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+#endif
         {
             MinWorkingSet = minWorkingSet;
             MaxWorkingSet = maxWorkingSet;

@@ -8,10 +8,12 @@
    */
 
 
-#if NETSTANDARD2_0 || NETSTANDARD2_1
-using OperatingSystem = Polyfills.OperatingSystemPolyfill;
+#if NET5_0_OR_GREATER
+using System;
+#else
 using System.Runtime.InteropServices;
 #endif
+
 
 using System;
 using System.Diagnostics;
@@ -44,11 +46,16 @@ public static class ProcessSetResourcePolicyExtensions
                 }
             }
 
+#if NET5_0_OR_GREATER
             if (OperatingSystem.IsMacOS() ||
                 OperatingSystem.IsMacCatalyst() ||
                 OperatingSystem.IsFreeBSD() ||
                 OperatingSystem.IsWindows())
-            {
+#else
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ||
+                RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+#endif
+{
                 if (resourcePolicy.MinWorkingSet != null)
                 {
                     process.MinWorkingSet = (nint)resourcePolicy.MinWorkingSet;
