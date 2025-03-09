@@ -28,6 +28,7 @@ public interface IProcessRunner
     /// <param name="processResultValidation">The process result validation to be used.</param>
     /// <param name="processResourcePolicy">The process resource policy to be set if it is not null.</param>
     /// <returns>The Process Results from the running the process.</returns>
+    [Obsolete(DeprecationMessages.InterfaceDeprecationV2)]
     public ProcessResult ExecuteProcess(Process process, ProcessResultValidation processResultValidation,
         ProcessResourcePolicy? processResourcePolicy = null);
 
