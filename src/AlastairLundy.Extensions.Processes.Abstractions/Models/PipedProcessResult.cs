@@ -1,0 +1,136 @@
+﻿/*
+    AlastairLundy.Extensions.Processes.Abstractions
+    Copyright (C) 2024-2025  Alastair Lundy
+
+    This Source Code Form is subject to the terms of the Mozilla Public
+    License, v. 2.0. If a copy of the MPL was not distributed with this
+    file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+using System;
+using System.IO.Pipelines;
+// ReSharper disable MemberCanBePrivate.Global
+
+namespace AlastairLundy.Extensions.Processes.Abstractions;
+
+/// <summary>
+/// 
+/// </summary>
+public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
+{
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public Pipe StandardOutput { get; }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public Pipe StandardError { get; }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="executableFilePath"></param>
+    /// <param name="exitCode"></param>
+    /// <param name="startTime"></param>
+    /// <param name="exitTime"></param>
+    /// <param name="standardOutput"></param>
+    /// <param name="standardError"></param>
+    public PipedProcessResult(string executableFilePath, int exitCode, DateTime startTime, DateTime exitTime,
+        Pipe standardOutput, Pipe standardError) : base(executableFilePath, exitCode, startTime, exitTime)
+    {
+        StandardOutput = standardOutput;
+        StandardError = standardError;
+    }
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns></returns>
+    public bool Equals(PipedProcessResult? other)
+    {
+        if (other is null)
+        {
+            return false;
+        }
+        
+        return StandardOutput.Equals(other.StandardOutput) &&
+               StandardError.Equals(other.StandardError) &&
+               ExitCode.Equals(other.ExitCode) && 
+               StartTime.Equals(other.StartTime) &&
+               ExitTime.Equals(other.ExitTime);
+    }
+
+    /// <summary>
+    /// /
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <returns></returns>
+    public override bool Equals(object? obj)
+    {
+        if (obj is null)
+        {
+            return false;
+        }
+
+        if (obj is PipedProcessResult pipedProcessResult)
+        {
+            return Equals(pipedProcessResult);
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(StandardOutput, StandardError);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="left"></param>
+    /// <param name="right"></param>
+    /// <returns></returns>
+    public static bool Equals(PipedProcessResult? left, PipedProcessResult? right)
+    {
+        if (left is null || right is null)
+        {
+            return false;
+        }
+
+        return left.Equals(right);
+    }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="left"></param>
+    /// <param name="right"></param>
+    /// <returns></returns>
+    public static bool operator ==(PipedProcessResult? left, PipedProcessResult? right)
+    {
+        return Equals(left, right);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="left"></param>
+    /// <param name="right"></param>
+    /// <returns></returns>
+    public static bool operator !=(PipedProcessResult? left, PipedProcessResult? right)
+    {
+        return !Equals(left, right);
+    }
+}
