@@ -15,7 +15,9 @@
         <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
         <RepositoryType>git</RepositoryType>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-        <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+        <PackageReleaseNotes># Changes since 1.4.0
+* Added support for PipedProcessResult to IFactory, IProcessRunner
+* Added System.IO.Pipelines support for IProcessPipeHandler</PackageReleaseNotes>
         <PackageTags>process, processes, process runner, process-result,</PackageTags>
     </PropertyGroup>
 
