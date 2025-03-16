@@ -1,5 +1,5 @@
 ﻿/*
-    AlastairLundy.Extensions.Processes  
+    AlastairLundy.Extensions.Processes
     Copyright (C) 2024-2025  Alastair Lundy
 
     This Source Code Form is subject to the terms of the Mozilla Public
@@ -10,6 +10,7 @@
 
 #if NETSTANDARD2_0 || NETSTANDARD2_1
 using OperatingSystem = Polyfills.OperatingSystemPolyfill;
+using System.Runtime.InteropServices;
 #endif
 
 using System;
@@ -24,13 +25,18 @@ public static class ProcessSetResourcePolicyExtensions
     /// Applies a ProcessResourcePolicy to a Process.
     /// </summary>
     /// <param name="process">The process to apply the policy to.</param>
-    /// <param name="policy">The process resource policy to be applied.</param>
+    /// <param name="resourcePolicy">The process resource policy to be applied.</param>
     /// <exception cref="InvalidOperationException"></exception>
     public static void SetResourcePolicy(this Process process, ProcessResourcePolicy? resourcePolicy)
     {
         if (process.HasStarted() && resourcePolicy != null)
         {
+#if NET5_0_OR_GREATER
             if (OperatingSystem.IsWindows() || OperatingSystem.IsLinux())
+#else
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ||
+                RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+#endif
             {
                 if (resourcePolicy.ProcessorAffinity is not null)
                 {

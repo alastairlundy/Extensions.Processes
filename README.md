@@ -1,4 +1,4 @@
-# ProcessExtensions
+# AlastairLundy.Extensions.Processes
 In this readme, the package AlastairLundy.Extensions.Processes is referred to as ProcessExtensions for brevity.
 
 ProcessExtensions adds much needed abstractions and extensions to Processes and Process Running, to make it easier and safer.
