@@ -9,6 +9,7 @@
 
 using System.Diagnostics;
 using System.IO;
+using System.IO.Pipelines;
 using System.Threading.Tasks;
 
 namespace AlastairLundy.Extensions.Processes.Abstractions.Piping
@@ -24,13 +25,27 @@ namespace AlastairLundy.Extensions.Processes.Abstractions.Piping
         /// <param name="source">The Stream to be copied from.</param>
         /// <param name="destination">The process to be copied to</param>
         Task PipeStandardInputAsync(Stream source, Process destination);
-
+        
+        /// <summary>
+        /// Asynchronously copies the Pipe to the process' standard input.
+        /// </summary>
+        /// <param name="source">The Pipe to be copied from.</param>
+        /// <param name="destination">The process to be copied to</param>
+        Task PipeStandardInputAsync(Pipe source, Process destination);
+        
         /// <summary>
         /// Asynchronously copies the process' Standard Output to a Stream.
         /// </summary>
         /// <param name="source">The process to be copied from.</param>
         /// <param name="destination">The Stream to be copied to</param>
         Task PipeStandardOutputAsync(Process source, Stream destination);
+        
+        /// <summary>
+        /// Asynchronously copies the process' Standard Output to a Pipe.
+        /// </summary>
+        /// <param name="source">The process to be copied from.</param>
+        /// <param name="destination">The Pipe to be copied to</param>
+        Task PipeStandardOutputAsync(Process source, Pipe destination);
 
         /// <summary>
         /// Asynchronously copies the process' Standard Error to a Stream.
@@ -38,5 +53,12 @@ namespace AlastairLundy.Extensions.Processes.Abstractions.Piping
         /// <param name="source">The process to be copied from.</param>
         /// <param name="destination">The Stream to be copied to</param>
         Task PipeStandardErrorAsync(Process source, Stream destination);
+        
+        /// <summary>
+        /// Asynchronously copies the process' Standard Error to a Pipe.
+        /// </summary>
+        /// <param name="source">The process to be copied from.</param>
+        /// <param name="destination">The Pipe to be copied to</param>
+        Task PipeStandardErrorAsync(Process source, Pipe destination);
     }
 }
