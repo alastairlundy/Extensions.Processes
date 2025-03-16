@@ -14,18 +14,18 @@ using System.IO.Pipelines;
 namespace AlastairLundy.Extensions.Processes.Abstractions;
 
 /// <summary>
-/// 
+/// A Piped ProcessResult containing a Process's or Command's StandardOutput and StandardError Pipes.
 /// </summary>
 public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
 {
     
     /// <summary>
-    /// 
+    /// The Standard Output from a Process or Command represented as a Pipe.
     /// </summary>
     public Pipe StandardOutput { get; }
     
     /// <summary>
-    /// 
+    /// The Standard Error from a Process or Command represented as a Pipe.
     /// </summary>
     public Pipe StandardError { get; }
     
@@ -47,10 +47,11 @@ public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
 
 
     /// <summary>
-    /// 
+    /// Determines whether this PipedProcessResult is equal to another PipedProcessResult object.
     /// </summary>
-    /// <param name="other"></param>
-    /// <returns></returns>
+    /// <remarks>This method intentionally does not consider Start and Exit times of Piped Results for the purposes of equality comparison.</remarks>
+    /// <param name="other">The other PipedProcessResult to compare.</param>
+    /// <returns>True if this PipedProcessResult is equal to the other PipedProcessResult; false otherwise.</returns>
     public bool Equals(PipedProcessResult? other)
     {
         if (other is null)
@@ -66,10 +67,10 @@ public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
     }
 
     /// <summary>
-    /// /
+    /// Determines whether this PipedProcessResult is equal to another object.
     /// </summary>
-    /// <param name="obj"></param>
-    /// <returns></returns>
+    /// <param name="obj">The other object to compare.</param>
+    /// <returns>True if the other object is a PipedProcessResult and is equal to this PipedProcessResult; false otherwise.</returns>
     public override bool Equals(object? obj)
     {
         if (obj is null)
@@ -88,20 +89,20 @@ public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
     }
 
     /// <summary>
-    /// 
+    /// Returns the hash code for the current PipedProcessResult.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>The hash code for the current PipedProcessResult.</returns>
     public override int GetHashCode()
     {
         return HashCode.Combine(StandardOutput, StandardError);
     }
 
     /// <summary>
-    /// 
+    /// Determines whether two PipedProcessResult are equal.
     /// </summary>
-    /// <param name="left"></param>
-    /// <param name="right"></param>
-    /// <returns></returns>
+    /// <param name="left">The first PipedProcessResult to compare.</param>
+    /// <param name="right">The second PipedProcessResult to compare.</param>
+    /// <returns>True if the two PipedProcessResult objects are equal; false otherwise.</returns>
     public static bool Equals(PipedProcessResult? left, PipedProcessResult? right)
     {
         if (left is null || right is null)
@@ -113,22 +114,22 @@ public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
     }
     
     /// <summary>
-    /// 
+    /// Determines if a PipedProcessResult is equal to another PipedProcessResult.
     /// </summary>
-    /// <param name="left"></param>
-    /// <param name="right"></param>
-    /// <returns></returns>
+    /// <param name="left">A PipedProcessResult to be compared.</param>
+    /// <param name="right">The other PipedProcessResult to be compared.</param>
+    /// <returns>True if both PipedProcessResult are equal to each other; false otherwise.</returns>
     public static bool operator ==(PipedProcessResult? left, PipedProcessResult? right)
     {
         return Equals(left, right);
     }
 
     /// <summary>
-    /// 
+    /// Determines if a PipedProcessResult is not equal to another PipedProcessResult.
     /// </summary>
-    /// <param name="left"></param>
-    /// <param name="right"></param>
-    /// <returns></returns>
+    /// <param name="left">A PipedProcessResult to be compared.</param>
+    /// <param name="right">The other PipedProcessResult to be compared.</param>
+    /// <returns>True if both PipedProcessResult are not equal to each other; false otherwise.</returns>
     public static bool operator !=(PipedProcessResult? left, PipedProcessResult? right)
     {
         return !Equals(left, right);
