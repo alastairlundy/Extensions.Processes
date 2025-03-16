@@ -35,20 +35,20 @@ public class ProcessConfiguration
         /// <param name="processResourcePolicy">The process resource policy to be used (if specified).</param>
         public ProcessConfiguration(ProcessStartInfo processStartInfo,
                 IReadOnlyDictionary<string, string>? environmentVariables = null,
-                UserCredential? credential = null,
-                ProcessResultValidation resultValidation = ProcessResultValidation.ExitCodeZero,
+                Processes.Abstractions.UserCredential? credential = null,
+                Processes.Abstractions.ProcessResultValidation resultValidation = Processes.Abstractions.ProcessResultValidation.ExitCodeZero,
                 TimeSpan timeOutThreshold = default,
                 StreamWriter? standardInput = null,
                 StreamReader? standardOutput = null,
                 StreamReader? standardError = null,
-                ProcessResourcePolicy? processResourcePolicy = null)
+                Processes.Abstractions.ProcessResourcePolicy? processResourcePolicy = null)
         {
                 StartInfo = processStartInfo;
                 EnvironmentVariables = environmentVariables ?? new Dictionary<string, string>();
                 
-                Credential = credential ?? UserCredential.Null;
+                Credential = credential ?? Processes.Abstractions.UserCredential.Null;
             
-                ResourcePolicy = processResourcePolicy ?? ProcessResourcePolicy.Default;
+                ResourcePolicy = processResourcePolicy ?? Processes.Abstractions.ProcessResourcePolicy.Default;
 
                 ResultValidation = resultValidation;
 
@@ -84,12 +84,12 @@ public class ProcessConfiguration
         /// <summary>
         /// The credential to be used when executing the Command.
         /// </summary>
-        public UserCredential? Credential { get; protected set; }
+        public Processes.Abstractions.UserCredential? Credential { get; protected set; }
 
         /// <summary>
         /// The result validation to apply to the Command when it is executed.
         /// </summary>
-        public ProcessResultValidation ResultValidation { get; protected set; }
+        public Processes.Abstractions.ProcessResultValidation ResultValidation { get; protected set; }
 
         /// <summary>
         /// The Standard Input source to redirect Standard Input to if configured.
@@ -113,5 +113,5 @@ public class ProcessConfiguration
         /// </summary>
         /// <remarks>Process Resource Policy objects enable configuring Processor Affinity and other resource settings to be applied to the Command if supported by the currently running operating system.
         /// <para>Not all properties of a Process Resource Policy support all operating systems. Check before configuring a property.</para></remarks>
-        public ProcessResourcePolicy? ResourcePolicy { get; protected set; }
+        public Processes.Abstractions.ProcessResourcePolicy? ResourcePolicy { get; protected set; }
 }

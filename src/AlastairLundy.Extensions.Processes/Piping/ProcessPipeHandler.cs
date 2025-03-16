@@ -12,7 +12,8 @@ using System.IO;
 using System.Runtime.Versioning;
 using System.Threading.Tasks;
 
-using AlastairLundy.Extensions.Processes.Piping.Abstractions;
+using AlastairLundy.Extensions.Processes.Abstractions.Piping;
+
 
 namespace AlastairLundy.Extensions.Processes.Piping;
 

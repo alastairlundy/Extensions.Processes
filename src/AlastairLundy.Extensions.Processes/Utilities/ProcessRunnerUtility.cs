@@ -20,10 +20,9 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using AlastairLundy.Extensions.IO.Files.Abstractions;
-
+using AlastairLundy.Extensions.Processes.Abstractions.Utilities;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal;
-using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 
 namespace AlastairLundy.Extensions.Processes.Utilities;
 
@@ -60,7 +59,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
 #endif
     public int Execute(Process process)
     {
-        return Execute(process, ProcessResultValidation.None);
+        return Execute(process, Processes.Abstractions.ProcessResultValidation.None);
     }
 
     /// <summary>
@@ -82,8 +81,8 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public int Execute(Process process, ProcessResultValidation processResultValidation,
-        ProcessResourcePolicy? processResourcePolicy = null)
+    public int Execute(Process process, Processes.Abstractions.ProcessResultValidation processResultValidation,
+        Processes.Abstractions.ProcessResourcePolicy? processResourcePolicy = null)
     {
         _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
         process.StartInfo.FileName = resolvedFilePath;
@@ -123,7 +122,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
 #endif
     public async Task<int> ExecuteAsync(Process process, CancellationToken cancellationToken = default)
     {
-        return await ExecuteAsync(process, ProcessResultValidation.None,null, cancellationToken);
+        return await ExecuteAsync(process, Processes.Abstractions.ProcessResultValidation.None,null, cancellationToken);
     }
 
     /// <summary>
@@ -148,8 +147,8 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
     [UnsupportedOSPlatform("browser")]
 #endif
     public async Task<int> ExecuteAsync(Process process,
-        ProcessResultValidation processResultValidation,
-        ProcessResourcePolicy? processResourcePolicy = null,
+        Processes.Abstractions.ProcessResultValidation processResultValidation,
+        Processes.Abstractions.ProcessResourcePolicy? processResourcePolicy = null,
         CancellationToken cancellationToken = default)
     {
         _filePathResolver.ResolveFilePath(process.StartInfo.FileName, out string resolvedFilePath);
@@ -167,7 +166,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
             
         await process.WaitForExitAsync(cancellationToken);
 
-        if (process.ExitCode != 0 && processResultValidation == ProcessResultValidation.ExitCodeZero)
+        if (process.ExitCode != 0 && processResultValidation == Processes.Abstractions.ProcessResultValidation.ExitCodeZero)
         {
             throw new ProcessNotSuccessfulException(exitCode: process.ExitCode, process: process);
         }
@@ -196,7 +195,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
     /// <param name="process">The process to retrieve results from.</param>
     /// <param name="disposeOfProcess">Whether to dispose of the Process before returning.</param>
     /// <returns>The results from an exited process.</returns>
-    public ProcessResult GetResult(Process process, bool disposeOfProcess)
+    public Processes.Abstractions.ProcessResult GetResult(Process process, bool disposeOfProcess)
     {
         if (process.HasStarted() == false)
         {
@@ -215,7 +214,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
             process.WaitForExit();
         }
         
-        ProcessResult processResult = new ProcessResult(process.StartInfo.FileName, process.ExitCode, process.StartTime,
+        Processes.Abstractions.ProcessResult processResult = new Processes.Abstractions.ProcessResult(process.StartInfo.FileName, process.ExitCode, process.StartTime,
             process.ExitTime);
 
         if (disposeOfProcess)
@@ -243,7 +242,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public BufferedProcessResult GetBufferedResult(Process process, bool disposeOfProcess)
+    public Processes.Abstractions.BufferedProcessResult GetBufferedResult(Process process, bool disposeOfProcess)
     {
         if (process.HasStarted() == false)
         {
@@ -262,7 +261,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
             process.WaitForExit();
         }
         
-        BufferedProcessResult processResult = new BufferedProcessResult(
+        Processes.Abstractions.BufferedProcessResult processResult = new Processes.Abstractions.BufferedProcessResult(
             process.StartInfo.FileName, process.ExitCode,
              process.StandardOutput.ReadToEnd(),  process.StandardError.ReadToEnd(),
             process.StartTime, process.ExitTime);
@@ -292,7 +291,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<ProcessResult> GetResultAsync(Process process, bool disposeOfProcess)
+    public async Task<Processes.Abstractions.ProcessResult> GetResultAsync(Process process, bool disposeOfProcess)
     {
         if (process.HasStarted() == false)
         {
@@ -306,7 +305,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
             }
         }
         
-        ProcessResult processResult = new ProcessResult(process.StartInfo.FileName, process.ExitCode, process.StartTime,
+        Processes.Abstractions.ProcessResult processResult = new Processes.Abstractions.ProcessResult(process.StartInfo.FileName, process.ExitCode, process.StartTime,
             process.ExitTime);
 
         if (disposeOfProcess)
@@ -334,7 +333,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<BufferedProcessResult> GetBufferedResultAsync(Process process, bool disposeOfProcess)
+    public async Task<Processes.Abstractions.BufferedProcessResult> GetBufferedResultAsync(Process process, bool disposeOfProcess)
     {
         if (process.HasStarted() == false)
         {
@@ -346,7 +345,7 @@ public class ProcessRunnerUtility : IProcessRunnerUtility
             await process.WaitForExitAsync();
         }
         
-        BufferedProcessResult processResult = new BufferedProcessResult(
+        Processes.Abstractions.BufferedProcessResult processResult = new Processes.Abstractions.BufferedProcessResult(
             process.StartInfo.FileName, process.ExitCode,
             await process.StandardOutput.ReadToEndAsync(),
             await process.StandardError.ReadToEndAsync(),
