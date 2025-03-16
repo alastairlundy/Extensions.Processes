@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 
 using AlastairLundy.Extensions.Collections.Generic;
-using AlastairLundy.Extensions.Processes.Builders.Abstractions;
+using AlastairLundy.Extensions.Processes.Abstractions.Builders;
 
 // ReSharper disable ArrangeObjectCreationWhenTypeEvident
 // ReSharper disable RedundantExplicitArrayCreation

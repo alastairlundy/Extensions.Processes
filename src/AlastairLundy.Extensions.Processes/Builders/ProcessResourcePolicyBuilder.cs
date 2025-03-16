@@ -11,7 +11,8 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 
-using AlastairLundy.Extensions.Processes.Builders.Abstractions;
+using AlastairLundy.Extensions.Processes.Abstractions;
+using AlastairLundy.Extensions.Processes.Abstractions.Builders;
 
 #if NET5_0_OR_GREATER
 using System.Runtime.Versioning;

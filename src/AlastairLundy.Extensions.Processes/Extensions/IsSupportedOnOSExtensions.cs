@@ -7,6 +7,8 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
    */
 
+
+using AlastairLundy.Extensions.Processes.Abstractions;
 #if NET5_0_OR_GREATER
 using System;
 #else
