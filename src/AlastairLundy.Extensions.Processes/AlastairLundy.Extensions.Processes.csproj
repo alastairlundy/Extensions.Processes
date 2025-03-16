@@ -16,11 +16,9 @@
 ProcessExtensions started as part of CliRunner but is now a separate package, helping other projects besides CliRunner to run processes easily and safely.</Description>
         <PackageReleaseNotes>## Changes
 
-- Update IO Extensions and Polyfill dependencies @alastairlundy (#9)
-
 ## 🚀 Features
 
-- Add PipedProcessResult and separated Abstractions from Implementations library @alastairlundy (#10) - This type will see more use in version 2
+- update implementations package to use separate abstractions library @alastairlundy (#11)
 </PackageReleaseNotes>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -29,7 +27,7 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageTags>process, processes, process-runner, process runner, process-result,</PackageTags>
-        <Version>1.4.0</Version>
+        <Version>1.4.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
