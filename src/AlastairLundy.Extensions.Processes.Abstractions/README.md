@@ -13,9 +13,10 @@ Key Abstractions:
   * ``IUserCredentialBuilder``
 
 Key Types:
-* Process Results:
+* Process Results
   * ``ProcessResult``
   * ``BufferedProcessResult``
+  * ``PipedProcessResult`` - A new type that will see more use in version 2
 * ``ProcessResourcePolicy``
 * ``UserCredential``
 * ``ProcessConfiguration``
