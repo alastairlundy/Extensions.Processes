@@ -12,8 +12,12 @@ using System.Collections.Generic;
 
 namespace AlastairLundy.Extensions.Processes.Abstractions.Builders;
 
+/// <summary>
+/// An interface that defines the fluent builder methods all EnvironmentVariablesBuilder classes must implement.
+/// </summary>
 public interface IEnvironmentVariablesBuilder
 {
+    
     /// <summary>
     /// Sets a single environment variable.
     /// </summary>

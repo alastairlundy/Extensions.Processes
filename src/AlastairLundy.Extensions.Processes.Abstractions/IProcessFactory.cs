@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace AlastairLundy.Extensions.Processes.Abstractions
 {
     /// <summary>
-    /// Create and manage processes efficiently.
+    /// An interface for creating and managing processes efficiently.
     /// </summary>
     public interface IProcessFactory
     {

@@ -12,6 +12,9 @@ using System.Security;
 
 namespace AlastairLundy.Extensions.Processes.Abstractions.Builders;
 
+/// <summary>
+/// An interface that defines the fluent builder methods all UserCredentialBuilder classes must implement.
+/// </summary>
 public interface IUserCredentialBuilder : IDisposable
 {
     /// <summary>

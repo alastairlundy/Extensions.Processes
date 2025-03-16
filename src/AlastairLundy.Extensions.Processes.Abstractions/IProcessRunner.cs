@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace AlastairLundy.Extensions.Processes.Abstractions
 {
     /// <summary>
-    /// 
+    /// An interface for running processes efficiently.
     /// </summary>
     public interface IProcessRunner
     {
