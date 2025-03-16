@@ -14,7 +14,6 @@ using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
 
-using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
@@ -30,9 +29,9 @@ namespace AlastairLundy.Extensions.Processes;
 /// <summary>
 /// The default implementation of IProcessRunner, a safer way to execute processes.
 /// </summary>
-public class ProcessRunner : IProcessRunner
+public class ProcessRunner : Abstractions.IProcessRunner
 {
-    private readonly Abstractions.Utilities.IProcessRunnerUtility _processRunnerUtils;
+    private readonly IProcessRunnerUtility _processRunnerUtils;
     
     [Obsolete(DeprecationMessages.InterfaceDeprecationV2)]
     public ProcessRunner(IProcessRunnerUtility processRunnerUtils)
