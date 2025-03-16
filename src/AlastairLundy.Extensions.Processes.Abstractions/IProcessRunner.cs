@@ -13,7 +13,7 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// Runs the process asynchronously, waits for exit, and safely disposes of the Process before returning.
         /// </summary>
         /// <param name="process">The process to be run.</param>
-        /// <param name="processConfiguration"></param>
+        /// <param name="processConfiguration">The process configuration to use when running the Process.</param>
         /// <param name="cancellationToken">A token to cancel the operation if required.</param>
         /// <returns>The Process Results from the running the process.</returns>
          Task<ProcessResult> ExecuteProcessAsync(Process process, 
@@ -36,7 +36,7 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// Runs the process asynchronously, waits for exit, and safely disposes of the Process before returning.
         /// </summary>
         /// <param name="process">The process to be run.</param>
-        /// <param name="processConfiguration"></param>
+        /// <param name="processConfiguration">The process configuration to use when running the Process.</param>
         /// <param name="cancellationToken">A token to cancel the operation if required.</param>
         /// <returns>The Buffered Process Results from running the process.</returns>
          Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
