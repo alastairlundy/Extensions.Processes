@@ -13,7 +13,6 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using AlastairLundy.Extensions.IO.Files.Abstractions;
-
 using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
@@ -81,7 +80,7 @@ public class ProcessFactory : IProcessFactory
     /// <param name="startInfo">The start information to use for the Process.</param>
     /// <param name="credential">The credential to use when creating the Process.</param>
     /// <returns>The newly created Process.</returns>
-    public Process From(ProcessStartInfo startInfo, UserCredential credential)
+    public Process From(ProcessStartInfo startInfo, Processes.Abstractions.UserCredential credential)
     {
         Process output = From(startInfo);
 
@@ -100,7 +99,7 @@ public class ProcessFactory : IProcessFactory
     /// </summary>
     /// <param name="configuration">The configuration information to use to configure the Process.</param>
     /// <returns>The newly created Process with the configuration.</returns>
-    public Process From(ProcessConfiguration configuration)
+    public Process From(Processes.Abstractions.ProcessConfiguration configuration)
     {
         Process output;
         
@@ -159,7 +158,7 @@ public class ProcessFactory : IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo, UserCredential credential)
+    public Process StartNew(ProcessStartInfo startInfo, Processes.Abstractions.UserCredential credential)
     {
         Process process = From(startInfo, credential);
         
@@ -185,7 +184,7 @@ public class ProcessFactory : IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo, ProcessResourcePolicy resourcePolicy)
+    public Process StartNew(ProcessStartInfo startInfo, Processes.Abstractions.ProcessResourcePolicy resourcePolicy)
     {
         Process process = From(startInfo);
 
@@ -214,7 +213,7 @@ public class ProcessFactory : IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo, ProcessResourcePolicy resourcePolicy, UserCredential credential)
+    public Process StartNew(ProcessStartInfo startInfo, Processes.Abstractions.ProcessResourcePolicy resourcePolicy, Processes.Abstractions.UserCredential credential)
     {
         Process process = From(startInfo, credential);
         
@@ -230,7 +229,7 @@ public class ProcessFactory : IProcessFactory
     /// </summary>
     /// <param name="configuration">The configuration to use when creating and starting the process.</param>
     /// <returns>The newly created and started Process with the specified configuration.</returns>
-    public Process StartNew(ProcessConfiguration configuration)
+    public Process StartNew(Processes.Abstractions.ProcessConfiguration configuration)
     {
         Process process = From(configuration);
         
@@ -261,9 +260,9 @@ public class ProcessFactory : IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<ProcessResult> ContinueWhenExitAsync(Process process, CancellationToken cancellationToken = default)
+    public async Task<Processes.Abstractions.ProcessResult> ContinueWhenExitAsync(Process process, CancellationToken cancellationToken = default)
     {
-        return await ContinueWhenExitAsync(process, ProcessResultValidation.None, cancellationToken);
+        return await ContinueWhenExitAsync(process, Processes.Abstractions.ProcessResultValidation.None, cancellationToken);
     }
 
     /// <summary>
@@ -285,17 +284,17 @@ public class ProcessFactory : IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<ProcessResult> ContinueWhenExitAsync(Process process, ProcessResultValidation resultValidation,
+    public async Task<Processes.Abstractions.ProcessResult> ContinueWhenExitAsync(Process process, Processes.Abstractions.ProcessResultValidation resultValidation,
         CancellationToken cancellationToken = default)
     {
         await process.WaitForExitAsync(cancellationToken);
 
-        if (process.ExitCode != 0 && resultValidation == ProcessResultValidation.ExitCodeZero)
+        if (process.ExitCode != 0 && resultValidation == Processes.Abstractions.ProcessResultValidation.ExitCodeZero)
         {
             throw new ProcessNotSuccessfulException(exitCode: process.ExitCode, process: process);
         }
         
-        ProcessResult processResult = new ProcessResult(process.StartInfo.FileName, process.ExitCode, process.StartTime,
+        Processes.Abstractions.ProcessResult processResult = new Processes.Abstractions.ProcessResult(process.StartInfo.FileName, process.ExitCode, process.StartTime,
             process.ExitTime);
         
         process.Dispose();
@@ -320,9 +319,9 @@ public class ProcessFactory : IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, CancellationToken cancellationToken = default)
+    public async Task<Processes.Abstractions.BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, CancellationToken cancellationToken = default)
     {
-        return await ContinueWhenExitBufferedAsync(process, ProcessResultValidation.None, cancellationToken);
+        return await ContinueWhenExitBufferedAsync(process, Processes.Abstractions.ProcessResultValidation.None, cancellationToken);
     }
 
     /// <summary>
@@ -344,17 +343,17 @@ public class ProcessFactory : IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, ProcessResultValidation resultValidation,
+    public async Task<Processes.Abstractions.BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, Processes.Abstractions.ProcessResultValidation resultValidation,
         CancellationToken cancellationToken = default)
     {
         await process.WaitForExitAsync(cancellationToken);
         
-        if (process.ExitCode != 0 && resultValidation == ProcessResultValidation.ExitCodeZero)
+        if (process.ExitCode != 0 && resultValidation == Processes.Abstractions.ProcessResultValidation.ExitCodeZero)
         {
             throw new ProcessNotSuccessfulException(exitCode: process.ExitCode, process: process);
         }
         
-        BufferedProcessResult processResult = new BufferedProcessResult(
+        Processes.Abstractions.BufferedProcessResult processResult = new Processes.Abstractions.BufferedProcessResult(
             process.StartInfo.FileName, process.ExitCode,
             await process.StandardOutput.ReadToEndAsync(cancellationToken),  await process.StandardError.ReadToEndAsync(),
             process.StartTime, process.ExitTime);
