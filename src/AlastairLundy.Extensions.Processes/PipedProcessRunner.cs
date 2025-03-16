@@ -26,7 +26,7 @@ namespace AlastairLundy.Extensions.Processes;
 /// A Process Runner-esque class for Piping output after Executing processes.
 /// </summary>
 [Obsolete(DeprecationMessages.ClassDeprecationV2UseProcessFactoryInstead, false)]
-public class PipedProcessRunner : IPipedProcessRunner
+public class PipedProcessRunner : Abstractions.IPipedProcessRunner
 {
     private readonly IProcessPipeHandler _processPipeHandler;
     

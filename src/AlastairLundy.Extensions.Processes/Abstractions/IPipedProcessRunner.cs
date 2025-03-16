@@ -14,7 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AlastairLundy.Extensions.Processes.Internal;
 
-namespace AlastairLundy.Extensions.Processes.Abstractions;
+namespace AlastairLundy.Extensions.Processes;
 
 /// <summary>
 /// A Process Runner-esque interface for Piping output after Executing processes.

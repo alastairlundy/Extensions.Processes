@@ -29,7 +29,7 @@ namespace AlastairLundy.Extensions.Processes;
 /// <summary>
 /// 
 /// </summary>
-public class ProcessFactory : IProcessFactory
+public class ProcessFactory : Abstractions.IProcessFactory
 {
     private readonly IFilePathResolver _filePathResolver;
     

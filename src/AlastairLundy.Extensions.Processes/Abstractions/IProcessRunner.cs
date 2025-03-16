@@ -13,7 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AlastairLundy.Extensions.Processes.Internal;
 
-namespace AlastairLundy.Extensions.Processes.Abstractions;
+namespace AlastairLundy.Extensions.Processes;
 
 /// <summary>
 /// An interface to specify safe Process Running functionality.

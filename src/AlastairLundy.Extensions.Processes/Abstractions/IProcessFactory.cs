@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AlastairLundy.Extensions.Processes.Abstractions;
+namespace AlastairLundy.Extensions.Processes;
 
 /// <summary>
 /// Create and manage processes efficiently.
