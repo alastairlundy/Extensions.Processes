@@ -16,18 +16,12 @@
 ProcessExtensions started as part of CliRunner but is now a separate package, helping other projects besides CliRunner to run processes easily and safely.</Description>
         <PackageReleaseNotes>## Changes
 
-- Add xml doc comments @alastairlundy (#7)
-- Add Process Configuration and add xml doc comments to IProcessFactory @alastairlundy (#5)
+- Update IO Extensions and Polyfill dependencies @alastairlundy (#9)
 
 ## 🚀 Features
 
-- Add DocFx documentation @alastairlundy (#6)
-- Added ``IProcessFactory`` the new recommend way to create, start, and await Processes
-- Added the implementation class ``ProcessFactory``
-
-### Deprecations
-* Deprecated `IPipedProcessRunner`` and ``PipedProcessRunner``- These will be removed in version 2.0 . A replacement will be provided in a future version.
-* Deprecated ``IProcessRunnerUtility`` and ``ProcessRunnerUtility`` These will be removed in version 2.0 . Please use ``IProcessFactory`` and ``ProcessFactory`` instead respectively.</PackageReleaseNotes>
+- Add PipedProcessResult and separated Abstractions from Implementations library @alastairlundy (#10) - This type will see more use in version 2
+</PackageReleaseNotes>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -35,7 +29,7 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageTags>process, processes, process-runner, process runner, process-result,</PackageTags>
-        <Version>1.3.0</Version>
+        <Version>1.4.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
