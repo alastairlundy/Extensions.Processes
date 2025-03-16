@@ -44,6 +44,7 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// Whether the Command successfully exited.
         /// </summary>
         public bool WasSuccessful => ExitCode == 0;
+        
         /// <summary>
         /// The exit code from the Command that was executed.
         /// </summary>
