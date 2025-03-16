@@ -97,6 +97,24 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
          Task<ProcessResult> ContinueWhenExitAsync(Process process, ProcessResultValidation resultValidation, CancellationToken cancellationToken = default);
     
         /// <summary>
+        /// Creates a Task that returns a PipedProcessResult when the specified process exits.
+        /// </summary>
+        /// <param name="process">The process to continue and wait for exit.</param>
+        /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
+        /// <returns>The task and PipedProcessResult that are returned upon completion of the task.</returns>
+         Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates a Task that returns a PipedProcessResult when the specified process exits.
+        /// </summary>
+        /// <param name="process">The process to continue and wait for exit.</param>
+        /// <param name="resultValidation">Whether to perform Result validation on the process' exit code.</param>
+        /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
+        /// <returns>The task and PipedProcessResult that are returned upon completion of the task.</returns>
+         Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process, ProcessResultValidation resultValidation, CancellationToken cancellationToken = default);
+
+        
+        /// <summary>
         /// Creates a Task that returns a BufferedProcessResult when the specified process exits.
         /// </summary>
         /// <param name="process">The process to continue and wait for exit.</param>
