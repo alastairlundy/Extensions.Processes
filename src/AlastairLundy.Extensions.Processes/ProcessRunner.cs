@@ -10,6 +10,9 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Diagnostics;
+using System.IO;
+using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -24,6 +27,8 @@ using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 using System.Runtime.Versioning;
 #endif
 
+using AlastairLundy.Extensions.Processes.Internal.Localizations;
+using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 namespace AlastairLundy.Extensions.Processes;
 
 /// <summary>
