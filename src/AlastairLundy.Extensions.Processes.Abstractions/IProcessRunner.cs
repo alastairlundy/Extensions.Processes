@@ -16,7 +16,7 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// <param name="processConfiguration"></param>
         /// <param name="cancellationToken">A token to cancel the operation if required.</param>
         /// <returns>The Process Results from the running the process.</returns>
-        public Task<ProcessResult> ExecuteProcessAsync(Process process, 
+         Task<ProcessResult> ExecuteProcessAsync(Process process, 
             ProcessConfiguration processConfiguration,
             CancellationToken cancellationToken = default);
         
@@ -28,7 +28,7 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// <param name="processResourcePolicy">The process resource policy to be set if it is not null.</param>
         /// <param name="cancellationToken">A token to cancel the operation if required.</param>
         /// <returns>The Process Results from the running the process.</returns>
-        public Task<ProcessResult> ExecuteProcessAsync(Process process, ProcessResultValidation processResultValidation,
+         Task<ProcessResult> ExecuteProcessAsync(Process process, ProcessResultValidation processResultValidation,
             ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default);
 
@@ -39,7 +39,7 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// <param name="processConfiguration"></param>
         /// <param name="cancellationToken">A token to cancel the operation if required.</param>
         /// <returns>The Buffered Process Results from running the process.</returns>
-        public Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
+         Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
             ProcessConfiguration processConfiguration,
             CancellationToken cancellationToken = default);
         
@@ -51,7 +51,7 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// <param name="processResourcePolicy">The process resource policy to be set if it is not null.</param>
         /// <param name="cancellationToken">A token to cancel the operation if required.</param>
         /// <returns>The Buffered Process Results from running the process.</returns>
-        public Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
+         Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
             ProcessResultValidation processResultValidation,
             ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default);
