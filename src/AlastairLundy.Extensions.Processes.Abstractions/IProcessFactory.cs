@@ -92,6 +92,17 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
          CancellationToken cancellationToken = default);
 
          /// <summary>
+         /// Creates a Task that returns a ProcessResult when the specified process exits.
+         /// </summary>
+         /// <param name="process">The process to continue and wait for exit.</param>
+         /// <param name="processConfiguration"></param>
+         /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
+         /// <returns>The task and ProcessResult that are returned upon completion of the task.</returns>
+         Task<ProcessResult> ContinueWhenExitAsync(Process process,
+         ProcessConfiguration processConfiguration,
+          CancellationToken cancellationToken = default);
+
+         /// <summary>
          /// Creates a Task that returns a PipedProcessResult when the specified process exits.
          /// </summary>
          /// <param name="process">The process to continue and wait for exit.</param>
@@ -114,15 +125,6 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
           CancellationToken cancellationToken = default);
 
 
-        
-        /// <summary>
-        /// Creates a Task that returns a BufferedProcessResult when the specified process exits.
-        /// </summary>
-        /// <param name="process">The process to continue and wait for exit.</param>
-        /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
-        /// <returns>The task and BufferedProcessResult that are returned upon completion of the task.</returns>
-         Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, CancellationToken cancellationToken = default);
-    
          /// <summary>
          /// Creates a Task that returns a BufferedProcessResult when the specified process exits.
          /// </summary>
@@ -133,5 +135,15 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
          Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
          ProcessResultValidation resultValidation,
           CancellationToken cancellationToken = default);
+
+         /// <summary>
+         /// Creates a Task that returns a BufferedProcessResult when the specified process exits.
+         /// </summary>
+         /// <param name="process">The process to continue and wait for exit.</param>
+         /// <param name="processConfiguration"></param>
+         /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
+         /// <returns>The task and BufferedProcessResult that are returned upon completion of the task.</returns>
+         Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
+         ProcessConfiguration processConfiguration, CancellationToken cancellationToken = default);
     }
 }
