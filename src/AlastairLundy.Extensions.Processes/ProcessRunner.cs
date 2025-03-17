@@ -71,7 +71,7 @@ public class ProcessRunner : Abstractions.IProcessRunner
 
         _processRunnerUtils.Execute(process, processResultValidation, processResourcePolicy);
 
-        if (processResultValidation == Processes.Abstractions.ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        if (processResultValidation == Abstractions.ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
         {
             throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
         }
@@ -115,12 +115,53 @@ public class ProcessRunner : Abstractions.IProcessRunner
         
         _processRunnerUtils.Execute(process, processResultValidation, processResourcePolicy);
        
-        if (processResultValidation == Processes.Abstractions.ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        if (processResultValidation == Abstractions.ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
         {
             throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
         }
         
         return _processRunnerUtils.GetBufferedResult(process, disposeOfProcess: true);
+    }
+
+    /// <summary>
+    /// Runs the process synchronously, waits for exit, and safely disposes of the Process before returning.
+    /// </summary>
+    /// <param name="process">The process to be run.</param>
+    /// <param name="processConfiguration">The configuration to use for the process.</param>
+    /// <param name="cancellationToken">A token to cancel the operation if required.</param>
+    /// <returns>The Process Results from running the process.</returns>
+    /// <exception cref="FileNotFoundException">Thrown if the file, with the file name of the process to be executed, is not found.</exception>
+    /// <exception cref="ProcessNotSuccessfulException">Thrown if the result validation requires the process to exit with exit code zero and the process exits with a different exit code.</exception>
+#if NET5_0_OR_GREATER
+    [SupportedOSPlatform("windows")]
+    [SupportedOSPlatform("linux")]
+    [SupportedOSPlatform("freebsd")]
+    [SupportedOSPlatform("macos")]
+    [SupportedOSPlatform("maccatalyst")]
+    [UnsupportedOSPlatform("ios")]
+    [SupportedOSPlatform("android")]
+    [UnsupportedOSPlatform("tvos")]
+    [UnsupportedOSPlatform("browser")]
+#endif
+    public async Task<Abstractions.ProcessResult> ExecuteProcessAsync(Process process, Abstractions.ProcessConfiguration processConfiguration,
+        CancellationToken cancellationToken = default)
+    {
+        if (File.Exists(process.StartInfo.FileName) == false)
+        {
+            throw new FileNotFoundException(Resources.Exceptions_IO_FileNotFound.Replace("{file}", process.StartInfo.FileName));
+        }
+        
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+        
+        await _processRunnerUtils.ExecuteAsync(process, processConfiguration.ResultValidation, processConfiguration.ResourcePolicy, cancellationToken);
+       
+        if (processConfiguration.ResultValidation == Abstractions.ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        {
+            throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
+        }
+        
+        return await _processRunnerUtils.GetBufferedResultAsync(process, disposeOfProcess: true);
     }
 
     /// <summary>
@@ -152,6 +193,38 @@ public class ProcessRunner : Abstractions.IProcessRunner
         await _processRunnerUtils.ExecuteAsync(process, processResultValidation, processResourcePolicy , cancellationToken);
        
         return await _processRunnerUtils.GetResultAsync(process, disposeOfProcess: true);
+    }
+
+    /// <summary>
+    /// Runs the process asynchronously, waits for exit, and safely disposes of the Process before returning.
+    /// </summary>
+    /// <param name="process">The process to be run.</param>
+    /// <param name="processConfiguration">The configuration to use for the process.</param>
+    /// <param name="cancellationToken">A token to cancel the operation if required.</param>
+    /// <returns>The Buffered Process Results from running the process.</returns>
+#if NET5_0_OR_GREATER
+    [SupportedOSPlatform("windows")]
+    [SupportedOSPlatform("linux")]
+    [SupportedOSPlatform("freebsd")]
+    [SupportedOSPlatform("macos")]
+    [SupportedOSPlatform("maccatalyst")]
+    [UnsupportedOSPlatform("ios")]
+    [SupportedOSPlatform("android")]
+    [UnsupportedOSPlatform("tvos")]
+    [UnsupportedOSPlatform("browser")]
+#endif
+    public async Task<Abstractions.BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
+        Abstractions.ProcessConfiguration processConfiguration,
+        CancellationToken cancellationToken = default)
+    {
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+        
+        await _processRunnerUtils.ExecuteAsync(process, processConfiguration.ResultValidation,
+            processConfiguration.ResourcePolicy,
+            cancellationToken);
+        
+        return await _processRunnerUtils.GetBufferedResultAsync(process, disposeOfProcess: true);
     }
 
 
