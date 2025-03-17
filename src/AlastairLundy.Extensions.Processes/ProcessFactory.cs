@@ -331,7 +331,20 @@ public class ProcessFactory : IProcessFactory
         ProcessResultValidation resultValidation,
         CancellationToken cancellationToken = default)
     {
-        return await ContinueWhenExitPipedAsync(process, ProcessResultValidation.None, cancellationToken);
+        await process.WaitForExitAsync(cancellationToken);
+
+        Pipe standardOutput = new Pipe();
+        Pipe standardError = new Pipe();
+        
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput);
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardError);
+        
+        PipedProcessResult pipedProcessResult = new PipedProcessResult(process.StartInfo.FileName, process.ExitCode,
+            process.StartTime, process.ExitTime, standardOutput, standardError);
+
+        process.Dispose();
+        
+        return pipedProcessResult;
     }
 
 
@@ -339,6 +352,11 @@ public class ProcessFactory : IProcessFactory
         ProcessConfiguration processConfiguration,
         CancellationToken cancellationToken = default)
     {
+        if (processConfiguration.StandardInput is not null && process.StartInfo.RedirectStandardInput)
+        {
+            await _processPipeHandler.PipeStandardInputAsync(processConfiguration.StandardInput.BaseStream, process);
+        }
+
         await process.WaitForExitAsync(cancellationToken);
 
         Pipe standardOutput = new Pipe();
@@ -359,7 +377,8 @@ public class ProcessFactory : IProcessFactory
     /// Creates a Task that returns a BufferedProcessResult when the specified process exits.
     /// </summary>
     /// <param name="process">The process to continue and wait for exit.</param>
-    /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
+    /// <param name="resultValidation"></param>
+    /// <param name="cancellationToken"></param>
     /// <returns>The task and BufferedProcessResult that are returned upon completion of the task.</returns>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
