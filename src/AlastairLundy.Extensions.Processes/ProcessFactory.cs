@@ -9,6 +9,7 @@
 
 using System;
 using System.Diagnostics;
+using System.IO.Pipelines;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -312,6 +313,35 @@ public class ProcessFactory : IProcessFactory
         process.Dispose();
         
         return processResult;
+    }
+
+    
+    public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
+        ProcessResultValidation resultValidation,
+        CancellationToken resultValidation)
+    {
+        return await ContinueWhenExitPipedAsync(process, ProcessResultValidation.None, cancellationToken);
+    }
+
+    
+    public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
+        ProcessConfiguration processConfiguration,
+        CancellationToken cancellationToken = bad)
+    {
+        await process.WaitForExitAsync(cancellationToken);
+
+        Pipe standardOutput = new Pipe();
+        Pipe standardError = new Pipe();
+        
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput);
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardError);
+        
+        PipedProcessResult pipedProcessResult = new PipedProcessResult(process.StartInfo.FileName, process.ExitCode,
+            process.StartTime, process.ExitTime, standardOutput, standardError);
+
+        process.Dispose();
+        
+        return pipedProcessResult;
     }
 
     /// <summary>
