@@ -318,15 +318,15 @@ public class ProcessFactory : IProcessFactory
     
     public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
         ProcessResultValidation resultValidation,
-        CancellationToken resultValidation)
+        CancellationToken cancellationToken = default)
     {
         return await ContinueWhenExitPipedAsync(process, ProcessResultValidation.None, cancellationToken);
     }
 
-    
+
     public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
         ProcessConfiguration processConfiguration,
-        CancellationToken cancellationToken = bad)
+        CancellationToken cancellationToken = default)
     {
         await process.WaitForExitAsync(cancellationToken);
 
@@ -363,17 +363,18 @@ public class ProcessFactory : IProcessFactory
 #endif
     public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
         ProcessResultValidation resultValidation,
-        CancellationToken resultValidation)
+        CancellationToken cancellationToken = default)
     {
-        return await ContinueWhenExitBufferedAsync(process, ProcessResultValidation.None, cancellationToken);
+        
     }
 
     /// <summary>
     /// Creates a Task that returns a BufferedProcessResult when the specified process exits.
     /// </summary>
     /// <param name="process">The process to continue and wait for exit.</param>
-    /// <param name="resultValidation">Whether to perform Result validation on the process' exit code.</param>
-    /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
+    /// <param name="processConfiguration"></param>
+    /// <param name="resultValidation"></param>
+    /// <param name="cancellationToken"></param>
     /// <returns>The task and BufferedProcessResult that are returned upon completion of the task.</returns>
     /// <exception cref="ProcessNotSuccessfulException">Thrown if the process exit code is not zero AND exit code validation is performed.</exception>
 #if NET5_0_OR_GREATER
@@ -387,7 +388,9 @@ public class ProcessFactory : IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, ProcessResultValidation resultValidation,
+    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
+        ProcessConfiguration processConfiguration,
+        ProcessResultValidation resultValidation,
         CancellationToken cancellationToken = default)
     {
         await process.WaitForExitAsync(cancellationToken);
