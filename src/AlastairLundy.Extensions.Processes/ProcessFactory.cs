@@ -429,6 +429,12 @@ public class ProcessFactory : IProcessFactory
             throw new ProcessNotSuccessfulException(exitCode: process.ExitCode, process: process);
         }
         
+        Stream standardOutput = Stream.Null;
+        Stream standardError = Stream.Null;
+        
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput);
+        await _processPipeHandler.PipeStandardErrorAsync(process, standardError);
+        
         BufferedProcessResult processResult = new BufferedProcessResult(
             process.StartInfo.FileName, process.ExitCode,
             await process.StandardOutput.ReadToEndAsync(cancellationToken),  await process.StandardError.ReadToEndAsync(),
