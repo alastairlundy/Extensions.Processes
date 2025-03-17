@@ -214,7 +214,8 @@ public class ProcessFactory : IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo, ProcessResourcePolicy resourcePolicy, UserCredential credential)
+    public Process StartNew(ProcessStartInfo startInfo, ProcessResourcePolicy resourcePolicy,
+        UserCredential credential)
     {
         Process process = From(startInfo, credential);
         
@@ -320,7 +321,9 @@ public class ProcessFactory : IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, CancellationToken cancellationToken = default)
+    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
+        ProcessResultValidation resultValidation,
+        CancellationToken resultValidation)
     {
         return await ContinueWhenExitBufferedAsync(process, ProcessResultValidation.None, cancellationToken);
     }
