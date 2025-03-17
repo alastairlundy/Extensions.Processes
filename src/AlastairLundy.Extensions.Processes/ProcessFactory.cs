@@ -314,7 +314,6 @@ public class ProcessFactory : IProcessFactory
         
         return processResult;
     }
-
     
     public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, CancellationToken cancellationToken = new CancellationToken())
     {
