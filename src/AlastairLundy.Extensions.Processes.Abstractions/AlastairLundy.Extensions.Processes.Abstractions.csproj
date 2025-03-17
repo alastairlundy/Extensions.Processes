@@ -15,6 +15,10 @@
         <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
         <RepositoryType>git</RepositoryType>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <PackageReleaseNotes># Changes since 1.4.0
 * Added support for PipedProcessResult to IFactory, IProcessRunner
 * Added System.IO.Pipelines support for IProcessPipeHandler</PackageReleaseNotes>
@@ -25,6 +29,13 @@
     <ItemGroup >
         <PackageReference Include="System.IO.Pipelines" Version="[9.0.3, 10.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1' OR '$(TargetFramework)' == 'net8.0'"/>
         <PackageReference Include="Microsoft.Bcl.HashCode" Version="[6.0.0, 7.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0'"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <Content Include="README.md">
+            <Link>README.md</Link>
+            <PackagePath>README.md</PackagePath>
+        </Content>
     </ItemGroup>
 
 </Project>
