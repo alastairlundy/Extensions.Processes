@@ -10,6 +10,7 @@
 using System;
 using System.IO.Pipelines;
 // ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable ClassNeverInstantiated.Global
 
 namespace AlastairLundy.Extensions.Processes.Abstractions;
 
