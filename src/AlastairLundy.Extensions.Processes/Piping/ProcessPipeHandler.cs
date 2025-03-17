@@ -42,7 +42,6 @@ public class ProcessPipeHandler : IProcessPipeHandler
         if (destination.StartInfo.RedirectStandardInput && destination.StandardInput != StreamWriter.Null)
         {
             await destination.StandardInput.FlushAsync();
-            destination.StandardInput.BaseStream.Position = 0;
             await source.CopyToAsync(destination.StandardInput.BaseStream); 
         }
     }
