@@ -10,6 +10,8 @@
 using System.Diagnostics;
 using System.IO;
 using System.IO.Pipelines;
+
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AlastairLundy.Extensions.Processes.Abstractions.Piping
@@ -24,41 +26,53 @@ namespace AlastairLundy.Extensions.Processes.Abstractions.Piping
         /// </summary>
         /// <param name="source">The Stream to be copied from.</param>
         /// <param name="destination">The process to be copied to</param>
-        Task PipeStandardInputAsync(Stream source, Process destination);
-        
+        /// <param name="cancellationToken"></param>
+        Task PipeStandardInputAsync(Stream source, Process destination,
+            CancellationToken cancellationToken = default);
+
         /// <summary>
         /// Asynchronously copies the Pipe to the process' standard input.
         /// </summary>
         /// <param name="source">The Pipe to be copied from.</param>
         /// <param name="destination">The process to be copied to</param>
-        Task PipeStandardInputAsync(Pipe source, Process destination);
-        
+        /// <param name="cancellationToken"></param>
+        Task PipeStandardInputAsync(Pipe source, Process destination,
+            CancellationToken cancellationToken = default);
+
         /// <summary>
         /// Asynchronously copies the process' Standard Output to a Stream.
         /// </summary>
         /// <param name="source">The process to be copied from.</param>
         /// <param name="destination">The Stream to be copied to</param>
-        Task PipeStandardOutputAsync(Process source, Stream destination);
-        
+        /// <param name="cancellationToken"></param>
+        Task PipeStandardOutputAsync(Process source, Stream destination,
+            CancellationToken cancellationToken = default);
+
         /// <summary>
         /// Asynchronously copies the process' Standard Output to a Pipe.
         /// </summary>
         /// <param name="source">The process to be copied from.</param>
         /// <param name="destination">The Pipe to be copied to</param>
-        Task PipeStandardOutputAsync(Process source, Pipe destination);
+        /// <param name="cancellationToken"></param>
+        Task PipeStandardOutputAsync(Process source, Pipe destination,
+            CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Asynchronously copies the process' Standard Error to a Stream.
         /// </summary>
         /// <param name="source">The process to be copied from.</param>
         /// <param name="destination">The Stream to be copied to</param>
-        Task PipeStandardErrorAsync(Process source, Stream destination);
-        
+        /// <param name="cancellationToken"></param>
+        Task PipeStandardErrorAsync(Process source, Stream destination,
+            CancellationToken cancellationToken = default);
+
         /// <summary>
         /// Asynchronously copies the process' Standard Error to a Pipe.
         /// </summary>
         /// <param name="source">The process to be copied from.</param>
         /// <param name="destination">The Pipe to be copied to</param>
-        Task PipeStandardErrorAsync(Process source, Pipe destination);
+        /// <param name="cancellationToken"></param>
+        Task PipeStandardErrorAsync(Process source, Pipe destination,
+            CancellationToken cancellationToken = default);
     }
 }
