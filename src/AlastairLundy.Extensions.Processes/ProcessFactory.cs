@@ -302,9 +302,9 @@ public class ProcessFactory : IProcessFactory
     {
         await process.WaitForExitAsync(cancellationToken);
 
-        if (process.ExitCode != 0 && resultValidation == ProcessResultValidation.ExitCodeZero)
+        if (resultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
         {
-            throw new ProcessNotSuccessfulException(exitCode: process.ExitCode, process: process);
+            throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
         }
 
         ProcessResult processResult = new ProcessResult(process.StartInfo.FileName, process.ExitCode, process.StartTime,
@@ -332,6 +332,11 @@ public class ProcessFactory : IProcessFactory
     {
         await process.WaitForExitAsync(cancellationToken);
 
+        if (resultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        {
+            throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
+        }
+        
         Pipe standardOutput = new Pipe();
         Pipe standardError = new Pipe();
         
@@ -355,9 +360,14 @@ public class ProcessFactory : IProcessFactory
         {
             await _processPipeHandler.PipeStandardInputAsync(processConfiguration.StandardInput.BaseStream, process);
         }
-
+        
         await process.WaitForExitAsync(cancellationToken);
 
+        if (processConfiguration.ResultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        {
+            throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
+        }
+        
         Pipe standardOutput = new Pipe();
         Pipe standardError = new Pipe();
         
