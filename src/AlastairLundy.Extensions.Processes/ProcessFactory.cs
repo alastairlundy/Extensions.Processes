@@ -315,13 +315,14 @@ public class ProcessFactory : IProcessFactory
         return processResult;
     }
     
-    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, CancellationToken cancellationToken = new CancellationToken())
+    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
+        CancellationToken cancellationToken = default)
     {
         
     }
 
     public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
-        CancellationToken cancellationToken = new CancellationToken())
+        CancellationToken cancellationToken = default)
     {
         
     }
