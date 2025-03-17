@@ -7,8 +7,10 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
    */
 
+using System;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Pipelines;
 using System.Runtime.Versioning;
 using System.Threading.Tasks;
 
@@ -46,6 +48,14 @@ public class ProcessPipeHandler : IProcessPipeHandler
         }
     }
 
+    public async Task PipeStandardInputAsync(Pipe source, Process destination)
+    {
+        if (destination.StartInfo.RedirectStandardInput &&
+            destination.StandardInput != StreamWriter.Null)
+        {
+        }
+    }
+
     /// <summary>
     /// Asynchronously copies the process' Standard Output to a Stream.
     /// </summary>
@@ -73,6 +83,11 @@ public class ProcessPipeHandler : IProcessPipeHandler
         }
     }
 
+    public async Task PipeStandardOutputAsync(Process source, Pipe destination)
+    {
+        
+    }
+
     /// <summary>
     /// Asynchronously copies the process' Standard Error to a Stream.
     /// </summary>
@@ -98,5 +113,11 @@ public class ProcessPipeHandler : IProcessPipeHandler
                 await source.StandardError.BaseStream.CopyToAsync(destination);
             }
         }
+    }
+
+    public async Task PipeStandardErrorAsync(Process source, Pipe destination)
+    {
+       
+        
     }
 }
