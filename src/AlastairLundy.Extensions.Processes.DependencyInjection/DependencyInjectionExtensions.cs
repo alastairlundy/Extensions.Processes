@@ -12,11 +12,8 @@ using AlastairLundy.Extensions.IO.Files.Abstractions;
 
 using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Abstractions.Piping;
-using AlastairLundy.Extensions.Processes.Abstractions.Utilities;
 
 using AlastairLundy.Extensions.Processes.Piping;
-
-using AlastairLundy.Extensions.Processes.Utilities;
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -40,7 +37,6 @@ public static class DependencyInjectionExtensions
                 services.TryAddSingleton<IFilePathResolver, FilePathResolver>();
 
                 services.AddSingleton<IProcessFactory, ProcessFactory>();
-                services.AddSingleton<IProcessRunnerUtility, ProcessRunnerUtility>();
                 services.AddSingleton<IPipedProcessRunner, PipedProcessRunner>();
                 services.AddSingleton<IProcessRunner, ProcessRunner>();
                 services.AddSingleton<IProcessPipeHandler, ProcessPipeHandler>();
@@ -50,7 +46,6 @@ public static class DependencyInjectionExtensions
                 
                 services.AddScoped<IProcessFactory, ProcessFactory>();
 
-                services.AddScoped<IProcessRunnerUtility, ProcessRunnerUtility>();
                 services.AddScoped<IPipedProcessRunner, PipedProcessRunner>();
                 services.AddScoped<IProcessRunner, ProcessRunner>();
                 services.AddScoped<IProcessPipeHandler, ProcessPipeHandler>();
@@ -60,8 +55,6 @@ public static class DependencyInjectionExtensions
                 
                 services.AddTransient<IProcessFactory, ProcessFactory>();
 
-                
-                services.AddTransient<IProcessRunnerUtility, ProcessRunnerUtility>();
                 services.AddTransient<IPipedProcessRunner, PipedProcessRunner>();
                 services.AddTransient<IProcessRunner, ProcessRunner>();
                 services.AddTransient<IProcessPipeHandler, ProcessPipeHandler>();

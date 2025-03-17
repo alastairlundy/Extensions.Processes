@@ -17,8 +17,6 @@ using System.Threading.Tasks;
 using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal;
-using AlastairLundy.Extensions.Processes.Piping.Abstractions;
-using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 
 namespace AlastairLundy.Extensions.Processes;
 
@@ -26,7 +24,7 @@ namespace AlastairLundy.Extensions.Processes;
 /// A Process Runner-esque class for Piping output after Executing processes.
 /// </summary>
 [Obsolete(DeprecationMessages.ClassDeprecationV2UseProcessFactoryInstead, false)]
-public class PipedProcessRunner : IPipedProcessRunner
+public class PipedProcessRunner
 {
     private readonly IProcessPipeHandler _processPipeHandler;
     
