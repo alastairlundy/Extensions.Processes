@@ -24,34 +24,31 @@ namespace AlastairLundy.Extensions.Processes;
 /// </summary>
 public class ProcessRunner : IProcessRunner
 {
-    private readonly IProcessRunnerUtility _processRunnerUtils;
+    private readonly IProcessFactory _processFactory;
     
-    public ProcessRunner(IProcessRunnerUtility processRunnerUtils)
+    public ProcessRunner(IProcessFactory processFactory)
     {
-        _processRunnerUtils = processRunnerUtils;
+        _processFactory = processFactory;
     }
 
 
     /// <summary>
     /// 
     /// </summary>
+    /// <param name="process"></param>
+    /// <param name="processConfiguration"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    public async Task<ProcessResult> ExecuteProcessAsync(Process process, 
+        ProcessConfiguration processConfiguration,
+        CancellationToken cancellationToken = default)
     {
-        if (File.Exists(process.StartInfo.FileName) == false)
-        {
-            throw new FileNotFoundException(Resources.Exceptions_IO_FileNotFound.Replace("{file}", process.StartInfo.FileName));
-        }
+        Process actualProcess = _processFactory.StartNew(processConfiguration);        
         
-        process.StartInfo.RedirectStandardOutput = true;
-        process.StartInfo.RedirectStandardError = true;
+        actualProcess.SetResourcePolicy(processConfiguration.ResourcePolicy);
         
-        _processRunnerUtils.Execute(process, processResultValidation, processResourcePolicy);
-       
-        if (processResultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
-        {
-            throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
-        }
-        
-        return _processRunnerUtils.GetBufferedResult(process, disposeOfProcess: true);
+        return await _processFactory.ContinueWhenExitAsync(actualProcess, processConfiguration.ResultValidation,
+            cancellationToken);
     }
 
     /// <summary>
@@ -80,9 +77,46 @@ public class ProcessRunner : IProcessRunner
         ProcessResourcePolicy? processResourcePolicy = null,
         CancellationToken cancellationToken = default)
     {
-        await _processRunnerUtils.ExecuteAsync(process, processResultValidation, processResourcePolicy , cancellationToken);
-       
-        return await _processRunnerUtils.GetResultAsync(process, disposeOfProcess: true);
+        Process actualProcess;
+        
+        if (processResourcePolicy is not null)
+        {
+            actualProcess = _processFactory.StartNew(process.StartInfo, processResourcePolicy);
+        }
+        else
+        {
+            actualProcess = _processFactory.StartNew(process.StartInfo);
+        }
+        
+        return await _processFactory.ContinueWhenExitAsync(actualProcess, processResultValidation,
+                cancellationToken);
+    }
+
+    public async Task<PipedProcessResult> ExecutePipedProcessAsync(Process process,
+        ProcessConfiguration processConfiguration,
+        CancellationToken cancellationToken = default)
+    {
+        
+    }
+
+    public async Task<PipedProcessResult> ExecutePipedProcessAsync(Process process,
+        ProcessResultValidation processResultValidation,
+        ProcessResourcePolicy? processResourcePolicy = null, CancellationToken cancellationToken = default)
+    {
+        
+    }
+
+    public async Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
+        ProcessConfiguration processConfiguration,
+        CancellationToken cancellationToken = default)
+    {
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+
+        Process actualProcess = _processFactory.StartNew(processConfiguration);
+        
+        return await _processFactory.ContinueWhenExitBufferedAsync(actualProcess, processConfiguration.ResultValidation,
+            cancellationToken);
     }
 
 
@@ -114,9 +148,19 @@ public class ProcessRunner : IProcessRunner
     {
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.RedirectStandardError = true;
+
+        Process actualProcess;
+
+        if (processResourcePolicy is not null)
+        {
+            actualProcess = _processFactory.StartNew(process.StartInfo, processResourcePolicy);
+        }
+        else
+        {
+            actualProcess = _processFactory.StartNew(process.StartInfo);
+        }
         
-        await _processRunnerUtils.ExecuteAsync(process, processResultValidation, processResourcePolicy, cancellationToken);
-        
-        return await _processRunnerUtils.GetBufferedResultAsync(process, disposeOfProcess: true);
+        return await _processFactory.ContinueWhenExitBufferedAsync(actualProcess, processResultValidation,
+            cancellationToken);
     }
 }
