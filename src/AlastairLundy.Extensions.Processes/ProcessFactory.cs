@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using AlastairLundy.Extensions.IO.Files.Abstractions;
 
 using AlastairLundy.Extensions.Processes.Abstractions;
+using AlastairLundy.Extensions.Processes.Abstractions.Piping;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
 
@@ -34,13 +35,17 @@ public class ProcessFactory : IProcessFactory
 {
     private readonly IFilePathResolver _filePathResolver;
     
+    private readonly IProcessPipeHandler _processPipeHandler;
+
     /// <summary>
     /// 
     /// </summary>
     /// <param name="filePathResolver"></param>
-    public ProcessFactory(IFilePathResolver filePathResolver)
+    /// <param name="processPipeHandler"></param>
+    public ProcessFactory(IFilePathResolver filePathResolver, IProcessPipeHandler processPipeHandler)
     {
         _filePathResolver = filePathResolver;
+        _processPipeHandler = processPipeHandler;
     }
     
     /// <summary>
@@ -112,6 +117,11 @@ public class ProcessFactory : IProcessFactory
         else
         {
             output = From(configuration.StartInfo);
+        }
+
+        if (configuration.StandardInput is not null)
+        {
+            _processPipeHandler.PipeStandardInputAsync(configuration.StandardInput.BaseStream, output);
         }
 
         return output; 
@@ -295,7 +305,7 @@ public class ProcessFactory : IProcessFactory
         {
             throw new ProcessNotSuccessfulException(exitCode: process.ExitCode, process: process);
         }
-        
+
         ProcessResult processResult = new ProcessResult(process.StartInfo.FileName, process.ExitCode, process.StartTime,
             process.ExitTime);
         
