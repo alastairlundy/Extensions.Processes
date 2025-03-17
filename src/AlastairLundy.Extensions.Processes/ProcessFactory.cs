@@ -316,6 +316,17 @@ public class ProcessFactory : IProcessFactory
     }
 
     
+    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, CancellationToken cancellationToken = new CancellationToken())
+    {
+        
+    }
+
+    public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
+        CancellationToken cancellationToken = new CancellationToken())
+    {
+        
+    }
+
     public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
         ProcessResultValidation resultValidation,
         CancellationToken cancellationToken = default)
