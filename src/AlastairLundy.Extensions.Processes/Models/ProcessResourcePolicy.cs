@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 #endif
 
-namespace AlastairLundy.Extensions.Processes;
+namespace AlastairLundy.Extensions.Processes
 {
     /// <summary>
     /// A class that defines a Process' resource configuration.
