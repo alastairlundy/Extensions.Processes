@@ -39,7 +39,7 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// <param name="configuration">The configuration information to use to configure the Process.</param>
         /// <returns>The newly created Process with the configuration.</returns>
         Process From(ProcessConfiguration configuration);
-    
+        
         /// <summary>
         /// Creates and starts a new Process with the specified Process Start Info.
         /// </summary>
