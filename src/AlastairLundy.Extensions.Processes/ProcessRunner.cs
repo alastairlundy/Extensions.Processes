@@ -13,6 +13,8 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
+using AlastairLundy.Extensions.Processes.Abstractions;
+using AlastairLundy.Extensions.Processes.Abstractions.Utilities;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
@@ -21,14 +23,12 @@ using AlastairLundy.Extensions.Processes.Internal.Localizations;
 using System.Runtime.Versioning;
 #endif
 
-using IProcessRunnerUtility = AlastairLundy.Extensions.Processes.Abstractions.Utilities.IProcessRunnerUtility;
-
 namespace AlastairLundy.Extensions.Processes;
 
 /// <summary>
 /// The default implementation of IProcessRunner, a safer way to execute processes.
 /// </summary>
-public class ProcessRunner : Processes.Abstractions.IProcessRunner
+public class ProcessRunner : IProcessRunner
 {
     private readonly IProcessRunnerUtility _processRunnerUtils;
     
@@ -60,8 +60,8 @@ public class ProcessRunner : Processes.Abstractions.IProcessRunner
     [UnsupportedOSPlatform("browser")]
 #endif
     [Obsolete(DeprecationMessages.InterfaceDeprecationV2)]
-    public Processes.Abstractions.ProcessResult ExecuteProcess(Process process, Processes.Abstractions.ProcessResultValidation processResultValidation,
-        Processes.Abstractions.ProcessResourcePolicy? processResourcePolicy = null)
+    public ProcessResult ExecuteProcess(Process process, ProcessResultValidation processResultValidation,
+        ProcessResourcePolicy? processResourcePolicy = null)
     {
         if (File.Exists(process.StartInfo.FileName) == false)
         {
@@ -70,7 +70,7 @@ public class ProcessRunner : Processes.Abstractions.IProcessRunner
 
         _processRunnerUtils.Execute(process, processResultValidation, processResourcePolicy);
 
-        if (processResultValidation == Abstractions.ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        if (processResultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
         {
             throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
         }
@@ -100,9 +100,9 @@ public class ProcessRunner : Processes.Abstractions.IProcessRunner
     [UnsupportedOSPlatform("browser")]
 #endif
     [Obsolete(DeprecationMessages.InterfaceDeprecationV2)]
-    public Processes.Abstractions.BufferedProcessResult ExecuteBufferedProcess(Process process,
-        Processes.Abstractions.ProcessResultValidation processResultValidation,
-        Processes.Abstractions.ProcessResourcePolicy? processResourcePolicy = null)
+    public BufferedProcessResult ExecuteBufferedProcess(Process process,
+        ProcessResultValidation processResultValidation,
+        ProcessResourcePolicy? processResourcePolicy = null)
     {
         if (File.Exists(process.StartInfo.FileName) == false)
         {
@@ -114,7 +114,7 @@ public class ProcessRunner : Processes.Abstractions.IProcessRunner
         
         _processRunnerUtils.Execute(process, processResultValidation, processResourcePolicy);
        
-        if (processResultValidation == Abstractions.ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        if (processResultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
         {
             throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
         }
@@ -142,7 +142,7 @@ public class ProcessRunner : Processes.Abstractions.IProcessRunner
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<Abstractions.ProcessResult> ExecuteProcessAsync(Process process, Abstractions.ProcessConfiguration processConfiguration,
+    public async Task<ProcessResult> ExecuteProcessAsync(Process process, ProcessConfiguration processConfiguration,
         CancellationToken cancellationToken = default)
     {
         if (File.Exists(process.StartInfo.FileName) == false)
@@ -155,7 +155,7 @@ public class ProcessRunner : Processes.Abstractions.IProcessRunner
         
         await _processRunnerUtils.ExecuteAsync(process, processConfiguration.ResultValidation, processConfiguration.ResourcePolicy, cancellationToken);
        
-        if (processConfiguration.ResultValidation == Abstractions.ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        if (processConfiguration.ResultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
         {
             throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
         }
@@ -184,9 +184,9 @@ public class ProcessRunner : Processes.Abstractions.IProcessRunner
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<Processes.Abstractions.ProcessResult> ExecuteProcessAsync(Process process,
-        Processes.Abstractions.ProcessResultValidation processResultValidation,
-        Processes.Abstractions.ProcessResourcePolicy? processResourcePolicy = null,
+    public async Task<ProcessResult> ExecuteProcessAsync(Process process,
+        ProcessResultValidation processResultValidation,
+        ProcessResourcePolicy? processResourcePolicy = null,
         CancellationToken cancellationToken = default)
     {
         await _processRunnerUtils.ExecuteAsync(process, processResultValidation, processResourcePolicy , cancellationToken);
@@ -212,8 +212,8 @@ public class ProcessRunner : Processes.Abstractions.IProcessRunner
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<Abstractions.BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
-        Abstractions.ProcessConfiguration processConfiguration,
+    public async Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
+        ProcessConfiguration processConfiguration,
         CancellationToken cancellationToken = default)
     {
         process.StartInfo.RedirectStandardOutput = true;
@@ -248,9 +248,9 @@ public class ProcessRunner : Processes.Abstractions.IProcessRunner
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<Processes.Abstractions.BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
-        Processes.Abstractions.ProcessResultValidation processResultValidation,
-        Processes.Abstractions.ProcessResourcePolicy? processResourcePolicy = null,
+    public async Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
+        ProcessResultValidation processResultValidation,
+        ProcessResourcePolicy? processResourcePolicy = null,
         CancellationToken cancellationToken = default)
     {
         process.StartInfo.RedirectStandardOutput = true;

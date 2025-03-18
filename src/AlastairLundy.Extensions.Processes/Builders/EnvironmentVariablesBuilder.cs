@@ -26,7 +26,7 @@ namespace AlastairLundy.Extensions.Processes.Builders;
 /// <summary>
 /// A class that provides builder methods for constructing Environment Variables.
 /// </summary>
-public class EnvironmentVariablesBuilder : Abstractions.IEnvironmentVariablesBuilder
+public class EnvironmentVariablesBuilder : IEnvironmentVariablesBuilder
 {
     private readonly Dictionary<string, string> _environmentVariables;
 
@@ -54,7 +54,7 @@ public class EnvironmentVariablesBuilder : Abstractions.IEnvironmentVariablesBui
     /// <param name="value">The value of the environment variable to set.</param>
     /// <returns>A new instance of the IEnvironmentVariablesBuilder with the updated environment variables.</returns>
     [Pure]
-    public Abstractions.IEnvironmentVariablesBuilder Set(string name, string value){
+    public IEnvironmentVariablesBuilder Set(string name, string value){
         Dictionary<string, string> output = new Dictionary<string, string>(_environmentVariables, StringComparer.Ordinal) { { name, value } };
 
         return new EnvironmentVariablesBuilder(output);
@@ -66,7 +66,7 @@ public class EnvironmentVariablesBuilder : Abstractions.IEnvironmentVariablesBui
     /// <param name="variables">The environment variables to set.</param>
     /// <returns>A new instance of the IEnvironmentVariablesBuilder with the updated environment variables.</returns>
     [Pure]
-    public Abstractions.IEnvironmentVariablesBuilder Set(IEnumerable<KeyValuePair<string, string>> variables)
+    public IEnvironmentVariablesBuilder Set(IEnumerable<KeyValuePair<string, string>> variables)
     {
         Dictionary<string, string> output = new Dictionary<string, string>(_environmentVariables, StringComparer.Ordinal);
         output.AddRange(variables);
@@ -80,7 +80,7 @@ public class EnvironmentVariablesBuilder : Abstractions.IEnvironmentVariablesBui
     /// <param name="variables">The read-only dictionary of environment variables to set.</param>
     /// <returns>A new instance of the IEnvironmentVariablesBuilder with the updated environment variables.</returns>
     [Pure]
-    public Abstractions.IEnvironmentVariablesBuilder Set(IReadOnlyDictionary<string, string> variables)
+    public IEnvironmentVariablesBuilder Set(IReadOnlyDictionary<string, string> variables)
     {
         Dictionary<string, string> output = new Dictionary<string, string>(_environmentVariables, StringComparer.Ordinal);
         output.AddRange(variables);

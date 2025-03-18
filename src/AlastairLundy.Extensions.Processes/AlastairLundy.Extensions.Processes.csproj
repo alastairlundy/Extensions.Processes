@@ -68,8 +68,4 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
       </Content>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Utilities\Abstractions\" />
-    </ItemGroup>
-
 </Project>
