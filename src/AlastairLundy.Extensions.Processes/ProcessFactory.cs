@@ -306,28 +306,6 @@ public class ProcessFactory : IProcessFactory
     /// Creates a Task that returns a ProcessResult when the specified process exits.
     /// </summary>
     /// <param name="process">The process to continue and wait for exit.</param>
-    /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
-    /// <returns>The task and processResult that are returned upon completion of the task.</returns>
-#if NET5_0_OR_GREATER
-    [SupportedOSPlatform("windows")]
-    [SupportedOSPlatform("linux")]
-    [SupportedOSPlatform("freebsd")]
-    [SupportedOSPlatform("macos")]
-    [SupportedOSPlatform("maccatalyst")]
-    [UnsupportedOSPlatform("ios")]
-    [SupportedOSPlatform("android")]
-    [UnsupportedOSPlatform("tvos")]
-    [UnsupportedOSPlatform("browser")]
-#endif
-    public async Task<ProcessResult> ContinueWhenExitAsync(Process process, CancellationToken cancellationToken = default)
-    {
-        return await ContinueWhenExitAsync(process, ProcessResultValidation.None, cancellationToken);
-    }
-
-    /// <summary>
-    /// Creates a Task that returns a ProcessResult when the specified process exits.
-    /// </summary>
-    /// <param name="process">The process to continue and wait for exit.</param>
     /// <param name="resultValidation">Whether to perform Result validation on the process' exit code.</param>
     /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
     /// <returns>The task and ProcessResult that are returned upon completion of the task.</returns>
@@ -360,31 +338,9 @@ public class ProcessFactory : IProcessFactory
         
         return processResult;
     }
-    
-    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
-        CancellationToken cancellationToken = default)
-    {
-        if (process.StartInfo.RedirectStandardInput)
-        {
-            await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
-        }
-        
-        
-    }
 
     public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
-        CancellationToken cancellationToken = default)
-    {
-        if (process.StartInfo.RedirectStandardInput)
-        {
-            await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
-        }
-        
-        
-    }
-
-    public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
-        ProcessResultValidation resultValidation,
+        ProcessResultValidation resultValidation = ProcessResultValidation.ExitCodeZero,
         CancellationToken cancellationToken = default)
     {
         if (process.StartInfo.RedirectStandardInput)
@@ -463,7 +419,7 @@ public class ProcessFactory : IProcessFactory
     [UnsupportedOSPlatform("browser")]
 #endif
     public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
-        ProcessResultValidation resultValidation,
+        ProcessResultValidation resultValidation = ProcessResultValidation.ExitCodeZero,
         CancellationToken cancellationToken = default)
     {
         if (process.StartInfo.RedirectStandardInput)
@@ -478,7 +434,6 @@ public class ProcessFactory : IProcessFactory
     /// </summary>
     /// <param name="process">The process to continue and wait for exit.</param>
     /// <param name="processConfiguration"></param>
-    /// <param name="resultValidation"></param>
     /// <param name="cancellationToken"></param>
     /// <returns>The task and BufferedProcessResult that are returned upon completion of the task.</returns>
     /// <exception cref="ProcessNotSuccessfulException">Thrown if the process exit code is not zero AND exit code validation is performed.</exception>
