@@ -158,7 +158,8 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo, Processes.Abstractions.UserCredential credential)
+    public Process StartNew(ProcessStartInfo startInfo,
+        Processes.Abstractions.UserCredential credential)
     {
         Process process = From(startInfo, credential);
         
@@ -184,7 +185,8 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo, Processes.Abstractions.ProcessResourcePolicy resourcePolicy)
+    public Process StartNew(ProcessStartInfo startInfo,
+        Processes.Abstractions.ProcessResourcePolicy resourcePolicy)
     {
         Process process = From(startInfo);
 
@@ -213,7 +215,9 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo, Processes.Abstractions.ProcessResourcePolicy resourcePolicy, Processes.Abstractions.UserCredential credential)
+    public Process StartNew(ProcessStartInfo startInfo, 
+        Processes.Abstractions.ProcessResourcePolicy resourcePolicy,
+        Processes.Abstractions.UserCredential credential)
     {
         Process process = From(startInfo, credential);
         
@@ -232,6 +236,12 @@ public class ProcessFactory : Abstractions.IProcessFactory
     public Process StartNew(Processes.Abstractions.ProcessConfiguration configuration)
     {
         Process process = From(configuration);
+
+        if (configuration.StandardInput is not null)
+        {
+            process.StartInfo.RedirectStandardInput = true;
+            configuration.StandardInput.BaseStream.CopyTo(process.StandardInput.BaseStream);
+        }
         
         process.Start();
         
@@ -343,9 +353,13 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<Processes.Abstractions.BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, Processes.Abstractions.ProcessResultValidation resultValidation,
+    public async Task<Processes.Abstractions.BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
+        Processes.Abstractions.ProcessResultValidation resultValidation,
         CancellationToken cancellationToken = default)
     {
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+        
         await process.WaitForExitAsync(cancellationToken);
         
         if (process.ExitCode != 0 && resultValidation == Processes.Abstractions.ProcessResultValidation.ExitCodeZero)
