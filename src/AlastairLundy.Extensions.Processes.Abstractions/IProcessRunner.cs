@@ -9,6 +9,9 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
     /// </summary>
     public interface IProcessRunner
     {
+        Task<ProcessResult> ExecuteProcessConfigAsync(ProcessConfiguration processConfiguration,
+            CancellationToken cancellationToken = default);
+        
         /// <summary>
         /// Runs the process asynchronously, waits for exit, and safely disposes of the Process before returning.
         /// </summary>
@@ -33,6 +36,11 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
             ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default);
         
+        
+        Task<PipedProcessResult> ExecutePipedProcessConfigAsync(
+            ProcessConfiguration processConfiguration,
+            CancellationToken cancellationToken = default);
+        
         /// <summary>
         /// Runs the process asynchronously, waits for exit, and safely disposes of the Process before returning.
         /// </summary>
@@ -54,6 +62,9 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// <returns>The Piped Process Results from running the process.</returns>
         Task<PipedProcessResult> ExecutePipedProcessAsync(Process process, ProcessResultValidation processResultValidation,
             ProcessResourcePolicy? processResourcePolicy = null,
+            CancellationToken cancellationToken = default);
+        
+        Task<BufferedProcessResult> ExecuteBufferedProcessConfigAsync(ProcessConfiguration processConfiguration,
             CancellationToken cancellationToken = default);
         
         /// <summary>
