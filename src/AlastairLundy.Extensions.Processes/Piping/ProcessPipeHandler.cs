@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Pipelines;
 using System.Runtime.Versioning;
+using System.Threading;
 using System.Threading.Tasks;
 
 using AlastairLundy.Extensions.Processes.Abstractions.Piping;
@@ -39,16 +40,16 @@ public class ProcessPipeHandler : IProcessPipeHandler
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif 
-    public async Task PipeStandardInputAsync(Stream source, Process destination)
+    public async Task PipeStandardInputAsync(Stream source, Process destination, CancellationToken cancellationToken = default)
     {
         if (destination.StartInfo.RedirectStandardInput && destination.StandardInput != StreamWriter.Null)
         {
-            await destination.StandardInput.FlushAsync();
-            await source.CopyToAsync(destination.StandardInput.BaseStream); 
+            await destination.StandardInput.FlushAsync(cancellationToken);
+            await source.CopyToAsync(destination.StandardInput.BaseStream, cancellationToken); 
         }
     }
 
-    public async Task PipeStandardInputAsync(Pipe source, Process destination)
+    public async Task PipeStandardInputAsync(Pipe source, Process destination, CancellationToken cancellationToken = default)
     {
         if (destination.StartInfo.RedirectStandardInput &&
             destination.StandardInput != StreamWriter.Null)
@@ -61,6 +62,7 @@ public class ProcessPipeHandler : IProcessPipeHandler
     /// </summary>
     /// <param name="source">The process to be copied from.</param>
     /// <param name="destination">The Stream to be copied to</param>
+    /// <param name="cancellationToken"></param>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
     [SupportedOSPlatform("linux")]
@@ -72,18 +74,18 @@ public class ProcessPipeHandler : IProcessPipeHandler
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif 
-    public async Task PipeStandardOutputAsync(Process source, Stream destination)
+    public async Task PipeStandardOutputAsync(Process source, Stream destination, CancellationToken cancellationToken = default)
     {
         if (source.StartInfo.RedirectStandardOutput)
         {
             if (source.StandardOutput != StreamReader.Null)
             {
-                await source.StandardOutput.BaseStream.CopyToAsync(destination);
+                await source.StandardOutput.BaseStream.CopyToAsync(destination, cancellationToken);
             }
         }
     }
 
-    public async Task PipeStandardOutputAsync(Process source, Pipe destination)
+    public async Task PipeStandardOutputAsync(Process source, Pipe destination, CancellationToken cancellationToken = default)
     {
         
     }
@@ -104,18 +106,18 @@ public class ProcessPipeHandler : IProcessPipeHandler
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif 
-    public async Task PipeStandardErrorAsync(Process source, Stream destination)
+    public async Task PipeStandardErrorAsync(Process source, Stream destination, CancellationToken cancellationToken = default)
     {
         if (source.StartInfo.RedirectStandardError)
         {
             if (source.StandardError != StreamReader.Null)
             {
-                await source.StandardError.BaseStream.CopyToAsync(destination);
+                await source.StandardError.BaseStream.CopyToAsync(destination, cancellationToken);
             }
         }
     }
 
-    public async Task PipeStandardErrorAsync(Process source, Pipe destination)
+    public async Task PipeStandardErrorAsync(Process source, Pipe destination, CancellationToken cancellationToken = default)
     {
        
         
