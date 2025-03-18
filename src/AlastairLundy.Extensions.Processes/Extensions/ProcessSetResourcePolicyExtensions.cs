@@ -15,6 +15,7 @@ using System.Runtime.InteropServices;
 
 using System;
 using System.Diagnostics;
+using AlastairLundy.Extensions.Processes.Abstractions;
 
 namespace AlastairLundy.Extensions.Processes;
 

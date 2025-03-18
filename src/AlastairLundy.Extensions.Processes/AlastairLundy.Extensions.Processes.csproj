@@ -14,13 +14,10 @@
         <Description>ProcessExtensions adds much needed abstractions and extensions to Processes and Process Running, to make it easier and safer.
 
 ProcessExtensions started as part of CliRunner but is now a separate package, helping other projects besides CliRunner to run processes easily and safely.</Description>
-        <PackageReleaseNotes>## Changes
-
-## 🚀 Features
-
-- Update ProcessFactory implementation in 1.x @alastairlundy (#13)
-- Add missing xml doc comments @alastairlundy (#12)
-- Fixed a bug where a namespace collision would occur between some interfaces in the abstractions package and the implementation package</PackageReleaseNotes>
+        <PackageReleaseNotes># Changes since 1.x
+* Removed obsolete code
+* Removed all abstraction and common code now part of the abstractions library
+* Updated implementation code to make use of separate abstraction library.</PackageReleaseNotes>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -28,13 +25,13 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageTags>process, processes, process-runner, process runner, process-result,</PackageTags>
-        <Version>1.4.2</Version>
+        <Version>2.0.0-preview.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="AlastairLundy.Extensions.Collections" Version="[6.0.0, 7.0.0)"/>
         <PackageReference Include="AlastairLundy.Extensions.IO" Version="[2.2.0, 3.0.0)" />
-        <PackageReference Include="AlastairLundy.Extensions.Processes.Abstractions" Version="[1.4.2, 2.0.0)"/>
+        <PackageReference Include="AlastairLundy.Extensions.Processes.Abstractions" Version="2.0.0-preview.2" />
     </ItemGroup>
     
     <ItemGroup >
@@ -66,10 +63,6 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
         <Link>README.md</Link>
           <PackagePath>README.md</PackagePath>
       </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Utilities\Abstractions\" />
     </ItemGroup>
 
 </Project>

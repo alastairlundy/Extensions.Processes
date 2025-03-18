@@ -14,8 +14,8 @@ using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
 
+using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Abstractions.Piping;
-using AlastairLundy.Extensions.Processes.Abstractions.Utilities;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal;
 
@@ -25,7 +25,7 @@ namespace AlastairLundy.Extensions.Processes;
 /// A Process Runner-esque class for Piping output after Executing processes.
 /// </summary>
 [Obsolete(DeprecationMessages.ClassDeprecationV2UseProcessFactoryInstead, false)]
-public class PipedProcessRunner : Abstractions.IPipedProcessRunner
+public class PipedProcessRunner
 {
     private readonly IProcessPipeHandler _processPipeHandler;
     
@@ -63,13 +63,12 @@ public class PipedProcessRunner : Abstractions.IPipedProcessRunner
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<(
-        Processes.Abstractions.ProcessResult processResult, Stream standardOutput, Stream standardError)> ExecuteProcessWithPipingAsync(Process process,
-        Processes.Abstractions.ProcessResultValidation processResultValidation, Processes.Abstractions.ProcessResourcePolicy? processResourcePolicy = null, CancellationToken cancellationToken = default)
+    public async Task<(ProcessResult processResult, Stream standardOutput, Stream standardError)> ExecuteProcessWithPipingAsync(Process process,
+        ProcessResultValidation processResultValidation, ProcessResourcePolicy? processResourcePolicy = null, CancellationToken cancellationToken = default)
     {
-        await _processRunnerUtils.ExecuteAsync(process, Processes.Abstractions.ProcessResultValidation.None, processResourcePolicy, cancellationToken);
+        await _processRunnerUtils.ExecuteAsync(process, ProcessResultValidation.None, processResourcePolicy, cancellationToken);
        
-        if (processResultValidation == Processes.Abstractions.ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        if (processResultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
         {
             throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
         }
@@ -81,7 +80,7 @@ public class PipedProcessRunner : Abstractions.IPipedProcessRunner
         await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput);
         await _processPipeHandler.PipeStandardErrorAsync(process, standardError);
         
-        Processes.Abstractions.ProcessResult processResult = await _processRunnerUtils.GetResultAsync(process, true);
+        ProcessResult processResult = await _processRunnerUtils.GetResultAsync(process, true);
        
         return (processResult, standardOutput, standardError);
     }
@@ -107,17 +106,17 @@ public class PipedProcessRunner : Abstractions.IPipedProcessRunner
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<(Processes.Abstractions.BufferedProcessResult processResult, Stream standardOutput, Stream standardError)>
-        ExecuteBufferedProcessWithPipingAsync(Process process, Processes.Abstractions.ProcessResultValidation processResultValidation,
-            Processes.Abstractions.ProcessResourcePolicy? processResourcePolicy = null,
+    public async Task<(BufferedProcessResult processResult, Stream standardOutput, Stream standardError)>
+        ExecuteBufferedProcessWithPipingAsync(Process process, ProcessResultValidation processResultValidation,
+            ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default)
     {
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.RedirectStandardError = true;
         
-        await _processRunnerUtils.ExecuteAsync(process, Processes.Abstractions.ProcessResultValidation.None, processResourcePolicy, cancellationToken);
+        await _processRunnerUtils.ExecuteAsync(process, ProcessResultValidation.None, processResourcePolicy, cancellationToken);
         
-        if (processResultValidation == Processes.Abstractions.ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        if (processResultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
         {
             throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
         }
@@ -129,7 +128,7 @@ public class PipedProcessRunner : Abstractions.IPipedProcessRunner
         await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput);
         await _processPipeHandler.PipeStandardErrorAsync(process, standardError);
         
-        Processes.Abstractions.BufferedProcessResult output = await _processRunnerUtils.GetBufferedResultAsync(process, true);
+        BufferedProcessResult output = await _processRunnerUtils.GetBufferedResultAsync(process, true);
 
         return (output, standardOutput, standardError);
     }

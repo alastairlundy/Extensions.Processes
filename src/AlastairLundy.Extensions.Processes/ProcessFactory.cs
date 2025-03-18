@@ -9,11 +9,15 @@
 
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.IO.Pipelines;
 using System.Threading;
 using System.Threading.Tasks;
 
 using AlastairLundy.Extensions.IO.Files.Abstractions;
+
 using AlastairLundy.Extensions.Processes.Abstractions;
+using AlastairLundy.Extensions.Processes.Abstractions.Piping;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
 
@@ -33,13 +37,17 @@ public class ProcessFactory : Abstractions.IProcessFactory
 {
     private readonly IFilePathResolver _filePathResolver;
     
+    private readonly IProcessPipeHandler _processPipeHandler;
+
     /// <summary>
     /// 
     /// </summary>
     /// <param name="filePathResolver"></param>
-    public ProcessFactory(IFilePathResolver filePathResolver)
+    /// <param name="processPipeHandler"></param>
+    public ProcessFactory(IFilePathResolver filePathResolver, IProcessPipeHandler processPipeHandler)
     {
         _filePathResolver = filePathResolver;
+        _processPipeHandler = processPipeHandler;
     }
     
     /// <summary>
@@ -80,7 +88,7 @@ public class ProcessFactory : Abstractions.IProcessFactory
     /// <param name="startInfo">The start information to use for the Process.</param>
     /// <param name="credential">The credential to use when creating the Process.</param>
     /// <returns>The newly created Process.</returns>
-    public Process From(ProcessStartInfo startInfo, Processes.Abstractions.UserCredential credential)
+    public Process From(ProcessStartInfo startInfo, UserCredential credential)
     {
         Process output = From(startInfo);
 
@@ -90,7 +98,7 @@ public class ProcessFactory : Abstractions.IProcessFactory
             output.AddUserCredential(credential);
 #pragma warning restore CA1416
         }
-
+        
         return output;
     }
 
@@ -99,7 +107,7 @@ public class ProcessFactory : Abstractions.IProcessFactory
     /// </summary>
     /// <param name="configuration">The configuration information to use to configure the Process.</param>
     /// <returns>The newly created Process with the configuration.</returns>
-    public Process From(Processes.Abstractions.ProcessConfiguration configuration)
+    public Process From(ProcessConfiguration configuration)
     {
         Process output;
         
@@ -111,6 +119,20 @@ public class ProcessFactory : Abstractions.IProcessFactory
         else
         {
             output = From(configuration.StartInfo);
+        }
+
+        if (configuration.StandardInput is not null && configuration.StandardInput != StreamWriter.Null)
+        {
+            Task pipeInputTask = _processPipeHandler.PipeStandardInputAsync(configuration.StandardInput.BaseStream, output);
+
+            pipeInputTask.Start();
+            
+            pipeInputTask.Wait();
+        }
+        
+        if (configuration.StandardInput is not null)
+        {
+            _processPipeHandler.PipeStandardInputAsync(configuration.StandardInput.BaseStream, output);
         }
 
         return output; 
@@ -158,10 +180,18 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo,
-        Processes.Abstractions.UserCredential credential)
+    public Process StartNew(ProcessStartInfo startInfo, UserCredential credential)
     {
         Process process = From(startInfo, credential);
+        
+        if (process.StartInfo.RedirectStandardInput)
+        {
+            Task task = _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
+
+            task.Start();
+
+            task.Wait();
+        }
         
         process.Start();
         
@@ -185,11 +215,19 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo,
-        Processes.Abstractions.ProcessResourcePolicy resourcePolicy)
+    public Process StartNew(ProcessStartInfo startInfo, ProcessResourcePolicy resourcePolicy)
     {
         Process process = From(startInfo);
 
+        if (process.StartInfo.RedirectStandardInput)
+        {
+            Task task = _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
+
+            task.Start();
+
+            task.Wait();
+        }
+        
         process.Start();
         
         process.SetResourcePolicy(resourcePolicy);
@@ -215,11 +253,19 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo, 
-        Processes.Abstractions.ProcessResourcePolicy resourcePolicy,
-        Processes.Abstractions.UserCredential credential)
+    public Process StartNew(ProcessStartInfo startInfo, ProcessResourcePolicy resourcePolicy,
+        UserCredential credential)
     {
         Process process = From(startInfo, credential);
+        
+        if (process.StartInfo.RedirectStandardInput)
+        {
+            Task task = _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
+
+            task.Start();
+
+            task.Wait();
+        }
         
         process.Start();
         
@@ -233,14 +279,17 @@ public class ProcessFactory : Abstractions.IProcessFactory
     /// </summary>
     /// <param name="configuration">The configuration to use when creating and starting the process.</param>
     /// <returns>The newly created and started Process with the specified configuration.</returns>
-    public Process StartNew(Processes.Abstractions.ProcessConfiguration configuration)
+    public Process StartNew(ProcessConfiguration configuration)
     {
         Process process = From(configuration);
 
-        if (configuration.StandardInput is not null)
+        if (configuration.StandardInput is not null && configuration.StandardInput != StreamWriter.Null)
         {
-            process.StartInfo.RedirectStandardInput = true;
-            configuration.StandardInput.BaseStream.CopyTo(process.StandardInput.BaseStream);
+            Task pipeInputTask = _processPipeHandler.PipeStandardInputAsync(configuration.StandardInput.BaseStream, process);
+
+            pipeInputTask.Start();
+            
+            pipeInputTask.Wait();
         }
         
         process.Start();
@@ -251,28 +300,6 @@ public class ProcessFactory : Abstractions.IProcessFactory
         }
         
         return process;
-    }
-
-    /// <summary>
-    /// Creates a Task that returns a ProcessResult when the specified process exits.
-    /// </summary>
-    /// <param name="process">The process to continue and wait for exit.</param>
-    /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
-    /// <returns>The task and processResult that are returned upon completion of the task.</returns>
-#if NET5_0_OR_GREATER
-    [SupportedOSPlatform("windows")]
-    [SupportedOSPlatform("linux")]
-    [SupportedOSPlatform("freebsd")]
-    [SupportedOSPlatform("macos")]
-    [SupportedOSPlatform("maccatalyst")]
-    [UnsupportedOSPlatform("ios")]
-    [SupportedOSPlatform("android")]
-    [UnsupportedOSPlatform("tvos")]
-    [UnsupportedOSPlatform("browser")]
-#endif
-    public async Task<Processes.Abstractions.ProcessResult> ContinueWhenExitAsync(Process process, CancellationToken cancellationToken = default)
-    {
-        return await ContinueWhenExitAsync(process, Processes.Abstractions.ProcessResultValidation.None, cancellationToken);
     }
 
     /// <summary>
@@ -294,17 +321,17 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<Processes.Abstractions.ProcessResult> ContinueWhenExitAsync(Process process, Processes.Abstractions.ProcessResultValidation resultValidation,
+    public async Task<ProcessResult> ContinueWhenExitAsync(Process process, ProcessResultValidation resultValidation,
         CancellationToken cancellationToken = default)
     {
         await process.WaitForExitAsync(cancellationToken);
 
-        if (process.ExitCode != 0 && resultValidation == Processes.Abstractions.ProcessResultValidation.ExitCodeZero)
+        if (resultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
         {
-            throw new ProcessNotSuccessfulException(exitCode: process.ExitCode, process: process);
+            throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
         }
-        
-        Processes.Abstractions.ProcessResult processResult = new Processes.Abstractions.ProcessResult(process.StartInfo.FileName, process.ExitCode, process.StartTime,
+
+        ProcessResult processResult = new ProcessResult(process.StartInfo.FileName, process.ExitCode, process.StartTime,
             process.ExitTime);
         
         process.Dispose();
@@ -312,11 +339,86 @@ public class ProcessFactory : Abstractions.IProcessFactory
         return processResult;
     }
 
+    public async Task<ProcessResult> ContinueWhenExitAsync(Process process, 
+        ProcessConfiguration processConfiguration,
+        CancellationToken cancellationToken = default)
+    {
+        
+    }
+
+    public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
+        ProcessResultValidation resultValidation = ProcessResultValidation.ExitCodeZero,
+        CancellationToken cancellationToken = default)
+    {
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+        
+        if (process.StartInfo.RedirectStandardInput)
+        {
+            await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process, cancellationToken);
+        }
+        
+        await process.WaitForExitAsync(cancellationToken);
+
+        if (resultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        {
+            throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
+        }
+        
+        Pipe standardOutput = new Pipe();
+        Pipe standardError = new Pipe();
+        
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput, cancellationToken);
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardError, cancellationToken);
+        
+        PipedProcessResult pipedProcessResult = new PipedProcessResult(process.StartInfo.FileName, process.ExitCode,
+            process.StartTime, process.ExitTime, standardOutput, standardError);
+
+        process.Dispose();
+        
+        return pipedProcessResult;
+    }
+
+
+    public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
+        ProcessConfiguration processConfiguration,
+        CancellationToken cancellationToken = default)
+    {
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+        
+        if (processConfiguration.StandardInput is not null && process.StartInfo.RedirectStandardInput)
+        {
+            await _processPipeHandler.PipeStandardInputAsync(processConfiguration.StandardInput.BaseStream, process, cancellationToken);
+        }
+        
+        await process.WaitForExitAsync(cancellationToken);
+
+        if (processConfiguration.ResultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        {
+            throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
+        }
+        
+        Pipe standardOutput = new Pipe();
+        Pipe standardError = new Pipe();
+        
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput, cancellationToken);
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardError, cancellationToken);
+        
+        PipedProcessResult pipedProcessResult = new PipedProcessResult(process.StartInfo.FileName, process.ExitCode,
+            process.StartTime, process.ExitTime, standardOutput, standardError);
+
+        process.Dispose();
+        
+        return pipedProcessResult;
+    }
+
     /// <summary>
     /// Creates a Task that returns a BufferedProcessResult when the specified process exits.
     /// </summary>
     /// <param name="process">The process to continue and wait for exit.</param>
-    /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
+    /// <param name="resultValidation"></param>
+    /// <param name="cancellationToken"></param>
     /// <returns>The task and BufferedProcessResult that are returned upon completion of the task.</returns>
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
@@ -329,17 +431,24 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<Processes.Abstractions.BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, CancellationToken cancellationToken = default)
+    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
+        ProcessResultValidation resultValidation = ProcessResultValidation.ExitCodeZero,
+        CancellationToken cancellationToken = default)
     {
-        return await ContinueWhenExitBufferedAsync(process, Processes.Abstractions.ProcessResultValidation.None, cancellationToken);
+        if (process.StartInfo.RedirectStandardInput)
+        {
+            await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process, cancellationToken);
+        }
+        
+        
     }
 
     /// <summary>
     /// Creates a Task that returns a BufferedProcessResult when the specified process exits.
     /// </summary>
     /// <param name="process">The process to continue and wait for exit.</param>
-    /// <param name="resultValidation">Whether to perform Result validation on the process' exit code.</param>
-    /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
+    /// <param name="processConfiguration"></param>
+    /// <param name="cancellationToken"></param>
     /// <returns>The task and BufferedProcessResult that are returned upon completion of the task.</returns>
     /// <exception cref="ProcessNotSuccessfulException">Thrown if the process exit code is not zero AND exit code validation is performed.</exception>
 #if NET5_0_OR_GREATER
@@ -353,21 +462,32 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<Processes.Abstractions.BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
-        Processes.Abstractions.ProcessResultValidation resultValidation,
+    public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
+        ProcessConfiguration processConfiguration,
         CancellationToken cancellationToken = default)
     {
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.RedirectStandardError = true;
         
+        if (processConfiguration.StandardInput is not null && process.StartInfo.RedirectStandardInput)
+        {
+            await _processPipeHandler.PipeStandardInputAsync(processConfiguration.StandardInput.BaseStream, process, cancellationToken);
+        }
+        
         await process.WaitForExitAsync(cancellationToken);
         
-        if (process.ExitCode != 0 && resultValidation == Processes.Abstractions.ProcessResultValidation.ExitCodeZero)
+        if (process.ExitCode != 0 && processConfiguration.ResultValidation == ProcessResultValidation.ExitCodeZero)
         {
             throw new ProcessNotSuccessfulException(exitCode: process.ExitCode, process: process);
         }
         
-        Processes.Abstractions.BufferedProcessResult processResult = new Processes.Abstractions.BufferedProcessResult(
+        Stream standardOutput = Stream.Null;
+        Stream standardError = Stream.Null;
+        
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput, cancellationToken);
+        await _processPipeHandler.PipeStandardErrorAsync(process, standardError, cancellationToken);
+        
+        BufferedProcessResult processResult = new BufferedProcessResult(
             process.StartInfo.FileName, process.ExitCode,
             await process.StandardOutput.ReadToEndAsync(cancellationToken),  await process.StandardError.ReadToEndAsync(),
             process.StartTime, process.ExitTime);

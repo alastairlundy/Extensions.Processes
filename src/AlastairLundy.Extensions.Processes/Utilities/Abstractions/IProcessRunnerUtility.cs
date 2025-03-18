@@ -11,6 +11,7 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
+using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Internal;
 
 namespace AlastairLundy.Extensions.Processes.Utilities.Abstractions;

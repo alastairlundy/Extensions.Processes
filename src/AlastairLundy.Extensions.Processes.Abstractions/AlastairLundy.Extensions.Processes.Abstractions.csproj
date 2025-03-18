@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
         <TargetFrameworks>net8.0;net9.0;netstandard2.0;netstandard2.1</TargetFrameworks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>1.4.2</Version>
+        <Version>2.0.0-preview.2</Version>
         <Title>AlastairLundy.Extensions.Processes.Abstractions</Title>
         <Authors>AlastairLundy</Authors>
         <Description>Abstractions and common types used by AlastairLundy.Extensions.Processes</Description>
@@ -19,12 +19,10 @@
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
-        <PackageReleaseNotes>## Changes
-
-## 🚀 Features
-- Add missing xml doc comments @alastairlundy (#12)</PackageReleaseNotes>
+        <PackageReleaseNotes># Changes since 2.0.0 Preview 1
+* Updated ``IProcessFactory`` to simplify interface
+* Added missing xml doc comments</PackageReleaseNotes>
         <PackageTags>process, processes, process runner, process-result,</PackageTags>
-        
     </PropertyGroup>
 
 
@@ -32,12 +30,12 @@
         <PackageReference Include="System.IO.Pipelines" Version="[9.0.3, 10.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1' OR '$(TargetFramework)' == 'net8.0'"/>
         <PackageReference Include="Microsoft.Bcl.HashCode" Version="[6.0.0, 7.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0'"/>
     </ItemGroup>
-
+    
     <ItemGroup>
         <Content Include="README.md">
             <Link>README.md</Link>
             <PackagePath>README.md</PackagePath>
         </Content>
     </ItemGroup>
-    
+
 </Project>
