@@ -24,7 +24,7 @@ namespace AlastairLundy.Extensions.Processes.Builders;
 /// A class to fluently configure and build ProcessResourcePolicy objects.
 /// </summary>
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")]
-public class ProcessResourcePolicyBuilder : IProcessResourcePolicyBuilder
+public class ProcessResourcePolicyBuilder : Processes.Abstractions.Builders.IProcessResourcePolicyBuilder
 {
     private readonly Processes.Abstractions.ProcessResourcePolicy _processResourcePolicy;
 

@@ -30,7 +30,7 @@ namespace AlastairLundy.Extensions.Processes.Builders;
 /// A class that provides builder methods for constructing UserCredentials.
 /// </summary>
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")]
-public class UserCredentialBuilder : IUserCredentialBuilder
+public class UserCredentialBuilder : Processes.Abstractions.Builders.IUserCredentialBuilder
 {
     private Processes.Abstractions.UserCredential? _userCredential;
 
