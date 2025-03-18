@@ -24,9 +24,16 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
     /// </summary>
     public class BufferedProcessResult : ProcessResult, IEquatable<BufferedProcessResult>
     {
+
         /// <summary>
-        /// A buffered ProcessResult containing a Process's or Command's StandardOutput and StandardError information.
+        /// 
         /// </summary>
+        /// <param name="executableFilePath"></param>
+        /// <param name="exitCode"></param>
+        /// <param name="standardOutput"></param>
+        /// <param name="standardError"></param>
+        /// <param name="startTime"></param>
+        /// <param name="exitTime"></param>
         public BufferedProcessResult(string executableFilePath,
             int exitCode,
             string standardOutput,

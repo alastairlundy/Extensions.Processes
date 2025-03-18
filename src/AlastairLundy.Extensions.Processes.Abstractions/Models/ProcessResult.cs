@@ -44,13 +44,14 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// Whether the Command successfully exited.
         /// </summary>
         public bool WasSuccessful => ExitCode == 0;
+        
         /// <summary>
         /// The exit code from the Command that was executed.
         /// </summary>
         public int ExitCode { get; }
 
         /// <summary>
-        /// 
+        /// The file path of the file to be executed.
         /// </summary>
         public string ExecutedFilePath { get; }
 
