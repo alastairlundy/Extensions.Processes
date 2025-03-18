@@ -20,9 +20,10 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using AlastairLundy.Extensions.IO.Files.Abstractions;
-using AlastairLundy.Extensions.Processes.Abstractions.Utilities;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal;
+
+using IProcessRunnerUtility = AlastairLundy.Extensions.Processes.Abstractions.Utilities.IProcessRunnerUtility;
 
 namespace AlastairLundy.Extensions.Processes.Utilities;
 

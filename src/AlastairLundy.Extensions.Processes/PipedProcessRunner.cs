@@ -14,7 +14,6 @@ using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
 
-using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Abstractions.Piping;
 using AlastairLundy.Extensions.Processes.Abstractions.Utilities;
 using AlastairLundy.Extensions.Processes.Exceptions;
