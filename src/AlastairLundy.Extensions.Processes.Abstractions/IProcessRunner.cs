@@ -36,9 +36,7 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
             ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default);
         
-        
-        Task<PipedProcessResult> ExecutePipedProcessConfigAsync(
-            ProcessConfiguration processConfiguration,
+        Task<BufferedProcessResult> ExecuteBufferedProcessConfigAsync(ProcessConfiguration processConfiguration,
             CancellationToken cancellationToken = default);
         
         /// <summary>
@@ -47,8 +45,8 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// <param name="process">The process to be run.</param>
         /// <param name="processConfiguration">The process configuration to use when running the Process.</param>
         /// <param name="cancellationToken">A token to cancel the operation if required.</param>
-        /// <returns>The Piped Process Results from running the process.</returns>
-        Task<PipedProcessResult> ExecutePipedProcessAsync(Process process, 
+        /// <returns>The Buffered Process Results from running the process.</returns>
+        Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
             ProcessConfiguration processConfiguration,
             CancellationToken cancellationToken = default);
         
