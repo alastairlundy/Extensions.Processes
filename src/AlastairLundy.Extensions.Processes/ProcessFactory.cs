@@ -339,6 +339,13 @@ public class ProcessFactory : Abstractions.IProcessFactory
         return processResult;
     }
 
+    public async Task<ProcessResult> ContinueWhenExitAsync(Process process, 
+        ProcessConfiguration processConfiguration,
+        CancellationToken cancellationToken = default)
+    {
+        
+    }
+
     public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
         ProcessResultValidation resultValidation = ProcessResultValidation.ExitCodeZero,
         CancellationToken cancellationToken = default)

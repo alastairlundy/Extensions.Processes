@@ -32,6 +32,12 @@ public class ProcessRunner : Abstractions.IProcessRunner
     }
 
 
+    public async Task<ProcessResult> ExecuteProcessConfigAsync(ProcessConfiguration processConfiguration,
+        CancellationToken cancellationToken = new CancellationToken())
+    {
+        
+    }
+
     /// <summary>
     /// 
     /// </summary>
@@ -90,6 +96,18 @@ public class ProcessRunner : Abstractions.IProcessRunner
         
         return await _processFactory.ContinueWhenExitAsync(actualProcess, processResultValidation,
                 cancellationToken);
+    }
+
+    public async Task<BufferedProcessResult> ExecuteBufferedProcessConfigAsync(ProcessConfiguration processConfiguration,
+        CancellationToken cancellationToken = new CancellationToken())
+    {
+        
+    }
+
+    public async Task<PipedProcessResult> ExecutePipedProcessConfigAsync(ProcessConfiguration processConfiguration,
+        CancellationToken cancellationToken = new CancellationToken())
+    {
+        
     }
 
     public async Task<PipedProcessResult> ExecutePipedProcessAsync(Process process,
