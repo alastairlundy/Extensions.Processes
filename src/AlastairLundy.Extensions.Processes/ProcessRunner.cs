@@ -28,7 +28,7 @@ namespace AlastairLundy.Extensions.Processes;
 /// <summary>
 /// The default implementation of IProcessRunner, a safer way to execute processes.
 /// </summary>
-public class ProcessRunner : Abstractions.IProcessRunner
+public class ProcessRunner : Processes.Abstractions.IProcessRunner
 {
     private readonly IProcessRunnerUtility _processRunnerUtils;
     

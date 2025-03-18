@@ -18,7 +18,7 @@ namespace AlastairLundy.Extensions.Processes.Piping;
 /// <summary>
 /// 
 /// </summary>
-public class ProcessPipeHandler : Abstractions.IProcessPipeHandler
+public class ProcessPipeHandler : Processes.Abstractions.Piping.IProcessPipeHandler
 {
     /// <summary>
     /// Asynchronously copies the Stream to the process' standard input.

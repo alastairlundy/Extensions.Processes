@@ -13,7 +13,6 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using AlastairLundy.Extensions.IO.Files.Abstractions;
-using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
 
@@ -29,7 +28,7 @@ namespace AlastairLundy.Extensions.Processes;
 /// <summary>
 /// 
 /// </summary>
-public class ProcessFactory : Abstractions.IProcessFactory
+public class ProcessFactory : Processes.Abstractions.IProcessFactory
 {
     private readonly IFilePathResolver _filePathResolver;
     
