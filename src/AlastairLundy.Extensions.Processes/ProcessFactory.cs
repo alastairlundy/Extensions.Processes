@@ -33,7 +33,7 @@ namespace AlastairLundy.Extensions.Processes;
 /// <summary>
 /// 
 /// </summary>
-public class ProcessFactory : IProcessFactory
+public class ProcessFactory : Abstractions.IProcessFactory
 {
     private readonly IFilePathResolver _filePathResolver;
     
@@ -343,6 +343,9 @@ public class ProcessFactory : IProcessFactory
         ProcessResultValidation resultValidation = ProcessResultValidation.ExitCodeZero,
         CancellationToken cancellationToken = default)
     {
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+        
         if (process.StartInfo.RedirectStandardInput)
         {
             await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
@@ -374,6 +377,9 @@ public class ProcessFactory : IProcessFactory
         ProcessConfiguration processConfiguration,
         CancellationToken cancellationToken = default)
     {
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+        
         if (processConfiguration.StandardInput is not null && process.StartInfo.RedirectStandardInput)
         {
             await _processPipeHandler.PipeStandardInputAsync(processConfiguration.StandardInput.BaseStream, process);
@@ -427,6 +433,7 @@ public class ProcessFactory : IProcessFactory
             await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
         }
         
+        
     }
 
     /// <summary>
@@ -452,6 +459,9 @@ public class ProcessFactory : IProcessFactory
         ProcessConfiguration processConfiguration,
         CancellationToken cancellationToken = default)
     {
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+        
         if (processConfiguration.StandardInput is not null && process.StartInfo.RedirectStandardInput)
         {
             await _processPipeHandler.PipeStandardInputAsync(processConfiguration.StandardInput.BaseStream, process);
