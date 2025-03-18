@@ -352,7 +352,8 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public async Task<Processes.Abstractions.BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process, Processes.Abstractions.ProcessResultValidation resultValidation,
+    public async Task<Processes.Abstractions.BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
+        Processes.Abstractions.ProcessResultValidation resultValidation,
         CancellationToken cancellationToken = default)
     {
         await process.WaitForExitAsync(cancellationToken);
