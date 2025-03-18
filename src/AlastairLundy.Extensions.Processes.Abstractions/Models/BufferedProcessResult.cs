@@ -26,14 +26,14 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
     {
 
         /// <summary>
-        /// 
+        /// Initializes the BufferedProcessResult with process information.
         /// </summary>
-        /// <param name="executableFilePath"></param>
-        /// <param name="exitCode"></param>
-        /// <param name="standardOutput"></param>
-        /// <param name="standardError"></param>
-        /// <param name="startTime"></param>
-        /// <param name="exitTime"></param>
+        /// <param name="executableFilePath">The file path of the file that was executed.</param>
+        /// <param name="exitCode">The process' exit code.</param>
+        /// <param name="standardOutput">The process' standard output as a string.</param>
+        /// <param name="standardError">The process' standard error as a string.</param>
+        /// <param name="startTime">The start time of the process.</param>
+        /// <param name="exitTime">The exit time of the process.</param>
         public BufferedProcessResult(string executableFilePath,
             int exitCode,
             string standardOutput,

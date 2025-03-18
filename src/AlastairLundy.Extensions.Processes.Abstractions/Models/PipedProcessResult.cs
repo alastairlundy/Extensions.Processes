@@ -32,14 +32,14 @@ public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
     public Pipe StandardError { get; }
     
     /// <summary>
-    /// 
+    /// Initializes the PipedProcessResult with process information.
     /// </summary>
     /// <param name="executableFilePath">The file path of the file that was executed.</param>
     /// <param name="exitCode">The process' exit code.</param>
-    /// <param name="startTime"></param>
-    /// <param name="exitTime"></param>
-    /// <param name="standardOutput"></param>
-    /// <param name="standardError"></param>
+    /// <param name="startTime">The start time of the process.</param>
+    /// <param name="exitTime">The exit time of the process.</param>
+    /// <param name="standardOutput">The process' standard output.</param>
+    /// <param name="standardError">The process' standard error.</param>
     public PipedProcessResult(string executableFilePath, int exitCode, DateTime startTime, DateTime exitTime,
         Pipe standardOutput, Pipe standardError) : base(executableFilePath, exitCode, startTime, exitTime)
     {
