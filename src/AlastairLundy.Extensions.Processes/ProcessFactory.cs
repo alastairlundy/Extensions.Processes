@@ -348,7 +348,7 @@ public class ProcessFactory : Abstractions.IProcessFactory
         
         if (process.StartInfo.RedirectStandardInput)
         {
-            await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
+            await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process, cancellationToken);
         }
         
         await process.WaitForExitAsync(cancellationToken);
@@ -361,8 +361,8 @@ public class ProcessFactory : Abstractions.IProcessFactory
         Pipe standardOutput = new Pipe();
         Pipe standardError = new Pipe();
         
-        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput);
-        await _processPipeHandler.PipeStandardOutputAsync(process, standardError);
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput, cancellationToken);
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardError, cancellationToken);
         
         PipedProcessResult pipedProcessResult = new PipedProcessResult(process.StartInfo.FileName, process.ExitCode,
             process.StartTime, process.ExitTime, standardOutput, standardError);
@@ -382,7 +382,7 @@ public class ProcessFactory : Abstractions.IProcessFactory
         
         if (processConfiguration.StandardInput is not null && process.StartInfo.RedirectStandardInput)
         {
-            await _processPipeHandler.PipeStandardInputAsync(processConfiguration.StandardInput.BaseStream, process);
+            await _processPipeHandler.PipeStandardInputAsync(processConfiguration.StandardInput.BaseStream, process, cancellationToken);
         }
         
         await process.WaitForExitAsync(cancellationToken);
@@ -395,8 +395,8 @@ public class ProcessFactory : Abstractions.IProcessFactory
         Pipe standardOutput = new Pipe();
         Pipe standardError = new Pipe();
         
-        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput);
-        await _processPipeHandler.PipeStandardOutputAsync(process, standardError);
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput, cancellationToken);
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardError, cancellationToken);
         
         PipedProcessResult pipedProcessResult = new PipedProcessResult(process.StartInfo.FileName, process.ExitCode,
             process.StartTime, process.ExitTime, standardOutput, standardError);
@@ -430,7 +430,7 @@ public class ProcessFactory : Abstractions.IProcessFactory
     {
         if (process.StartInfo.RedirectStandardInput)
         {
-            await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
+            await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process, cancellationToken);
         }
         
         
@@ -464,7 +464,7 @@ public class ProcessFactory : Abstractions.IProcessFactory
         
         if (processConfiguration.StandardInput is not null && process.StartInfo.RedirectStandardInput)
         {
-            await _processPipeHandler.PipeStandardInputAsync(processConfiguration.StandardInput.BaseStream, process);
+            await _processPipeHandler.PipeStandardInputAsync(processConfiguration.StandardInput.BaseStream, process, cancellationToken);
         }
         
         await process.WaitForExitAsync(cancellationToken);
@@ -477,8 +477,8 @@ public class ProcessFactory : Abstractions.IProcessFactory
         Stream standardOutput = Stream.Null;
         Stream standardError = Stream.Null;
         
-        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput);
-        await _processPipeHandler.PipeStandardErrorAsync(process, standardError);
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput, cancellationToken);
+        await _processPipeHandler.PipeStandardErrorAsync(process, standardError, cancellationToken);
         
         BufferedProcessResult processResult = new BufferedProcessResult(
             process.StartInfo.FileName, process.ExitCode,
