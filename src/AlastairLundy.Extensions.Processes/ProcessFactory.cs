@@ -237,8 +237,9 @@ public class ProcessFactory : Abstractions.IProcessFactory
     {
         Process process = From(configuration);
 
-        if (process.StartInfo.RedirectStandardInput && configuration.StandardInput is not null)
+        if (configuration.StandardInput is not null)
         {
+            process.StartInfo.RedirectStandardInput = true;
             configuration.StandardInput.BaseStream.CopyTo(process.StandardInput.BaseStream);
         }
         
