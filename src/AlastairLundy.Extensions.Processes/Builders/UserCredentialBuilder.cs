@@ -14,8 +14,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 using System.Security;
 
-using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Abstractions.Builders;
+
 
 // ReSharper disable ArrangeObjectCreationWhenTypeEvident
 // ReSharper disable PossibleInvalidOperationException
@@ -32,14 +32,14 @@ namespace AlastairLundy.Extensions.Processes.Builders;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")]
 public class UserCredentialBuilder : IUserCredentialBuilder
 {
-    private UserCredential? _userCredential;
+    private Processes.Abstractions.UserCredential? _userCredential;
 
     /// <summary>
     /// Instantiates the UserCredentialBuilder class.
     /// </summary>
     public UserCredentialBuilder()
     {
-        _userCredential = new UserCredential();
+        _userCredential = new Processes.Abstractions.UserCredential();
     }
         
     /// <summary>
@@ -51,7 +51,7 @@ public class UserCredentialBuilder : IUserCredentialBuilder
     public IUserCredentialBuilder SetDomain(string? domain) =>
         new UserCredentialBuilder
         {
-           _userCredential = new UserCredential(domain, _userCredential.UserName, _userCredential.Password,
+           _userCredential = new Processes.Abstractions.UserCredential(domain, _userCredential.UserName, _userCredential.Password,
                    _userCredential.LoadUserProfile)
         };
 
@@ -64,7 +64,7 @@ public class UserCredentialBuilder : IUserCredentialBuilder
     public IUserCredentialBuilder SetUsername(string? username) =>
         new UserCredentialBuilder
         {
-            _userCredential = new UserCredential(_userCredential.Domain, username, _userCredential.Password,
+            _userCredential = new Processes.Abstractions.UserCredential(_userCredential.Domain, username, _userCredential.Password,
                 _userCredential.LoadUserProfile)
         };
 
@@ -77,7 +77,7 @@ public class UserCredentialBuilder : IUserCredentialBuilder
     public IUserCredentialBuilder SetPassword(SecureString? password) =>
         new UserCredentialBuilder
         {
-            _userCredential = new UserCredential(_userCredential.Domain, _userCredential.UserName, password,
+            _userCredential = new Processes.Abstractions.UserCredential(_userCredential.Domain, _userCredential.UserName, password,
                 _userCredential.LoadUserProfile)
         };
         
@@ -90,7 +90,7 @@ public class UserCredentialBuilder : IUserCredentialBuilder
     public IUserCredentialBuilder LoadUserProfile(bool loadUserProfile) =>
         new UserCredentialBuilder
         {
-            _userCredential = new UserCredential(_userCredential.Domain, _userCredential.UserName, _userCredential.Password,
+            _userCredential = new Processes.Abstractions.UserCredential(_userCredential.Domain, _userCredential.UserName, _userCredential.Password,
                 loadUserProfile)
         };
 
@@ -99,8 +99,8 @@ public class UserCredentialBuilder : IUserCredentialBuilder
     /// </summary>
     /// <returns>The built UserCredentials.</returns>
     [Pure]
-    public UserCredential Build() =>
-        new UserCredential(_userCredential.Domain, _userCredential.UserName, _userCredential.Password,
+    public Processes.Abstractions.UserCredential Build() =>
+        new Processes.Abstractions.UserCredential(_userCredential.Domain, _userCredential.UserName, _userCredential.Password,
             _userCredential.LoadUserProfile);
         
     /// <summary>

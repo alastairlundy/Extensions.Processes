@@ -10,11 +10,9 @@
 using AlastairLundy.Extensions.IO.Files;
 using AlastairLundy.Extensions.IO.Files.Abstractions;
 
-using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Abstractions.Piping;
-
 using AlastairLundy.Extensions.Processes.Piping;
-
+using AlastairLundy.Extensions.Processes.Utilities;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -36,27 +34,31 @@ public static class DependencyInjectionExtensions
             case ServiceLifetime.Singleton:
                 services.TryAddSingleton<IFilePathResolver, FilePathResolver>();
 
-                services.AddSingleton<IProcessFactory, ProcessFactory>();
-                services.AddSingleton<IPipedProcessRunner, PipedProcessRunner>();
-                services.AddSingleton<IProcessRunner, ProcessRunner>();
-                services.AddSingleton<IProcessPipeHandler, ProcessPipeHandler>();
+                services.AddSingleton<Abstractions.IProcessFactory, ProcessFactory>();
+                services.AddSingleton<Abstractions.Utilities.IProcessRunnerUtility, ProcessRunnerUtility>();
+                services.AddSingleton<Abstractions.IPipedProcessRunner, PipedProcessRunner>();
+                services.AddSingleton<Abstractions.IProcessRunner, ProcessRunner>();
+                services.AddSingleton<IProcessPipeHandler, Processes.Piping.ProcessPipeHandler>();
                 break;
             case ServiceLifetime.Scoped:
                 services.TryAddScoped<IFilePathResolver, FilePathResolver>();
                 
-                services.AddScoped<IProcessFactory, ProcessFactory>();
+                services.AddScoped<Abstractions.IProcessFactory, ProcessFactory>();
 
-                services.AddScoped<IPipedProcessRunner, PipedProcessRunner>();
-                services.AddScoped<IProcessRunner, ProcessRunner>();
+                services.AddScoped<Abstractions.Utilities.IProcessRunnerUtility, ProcessRunnerUtility>();
+                services.AddScoped<Abstractions.IPipedProcessRunner, PipedProcessRunner>();
+                services.AddScoped<Abstractions.IProcessRunner, ProcessRunner>();
                 services.AddScoped<IProcessPipeHandler, ProcessPipeHandler>();
                 break;
             case ServiceLifetime.Transient:
                 services.TryAddTransient<IFilePathResolver, FilePathResolver>();
                 
-                services.AddTransient<IProcessFactory, ProcessFactory>();
+                services.AddTransient<Abstractions.IProcessFactory, ProcessFactory>();
 
-                services.AddTransient<IPipedProcessRunner, PipedProcessRunner>();
-                services.AddTransient<IProcessRunner, ProcessRunner>();
+                
+                services.AddTransient<Abstractions.Utilities.IProcessRunnerUtility, ProcessRunnerUtility>();
+                services.AddTransient<Abstractions.IPipedProcessRunner, PipedProcessRunner>();
+                services.AddTransient<Abstractions.IProcessRunner, ProcessRunner>();
                 services.AddTransient<IProcessPipeHandler, ProcessPipeHandler>();
                 break;
         }
