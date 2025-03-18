@@ -16,12 +16,12 @@ using System.IO;
 // ReSharper disable ClassNeverInstantiated.Global
 
 namespace AlastairLundy.Extensions.Processes;
+
+/// <summary>
+/// A class to store Process configuration information.
+/// </summary>
 public class ProcessConfiguration
 {
-        /// <summary>
-        /// A class to store Process configuration information.
-        /// </summary>
-        {
                 /// <summary>
                 /// Instantiates the Process Configuration class with a ProcessStartInfo and other optional parameters.
                 /// </summary>
@@ -137,5 +137,4 @@ public class ProcessConfiguration
                 /// <remarks>Process Resource Policy objects enable configuring Processor Affinity and other resource settings to be applied to the Command if supported by the currently running operating system.
                 /// <para>Not all properties of a Process Resource Policy support all operating systems. Check before configuring a property.</para></remarks>
                 public ProcessResourcePolicy? ResourcePolicy { get; protected set; }
-        }
 }
