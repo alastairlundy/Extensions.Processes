@@ -9,12 +9,14 @@
 
 using System;
 using System.IO.Pipelines;
+
 // ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable ClassNeverInstantiated.Global
 
 namespace AlastairLundy.Extensions.Processes.Abstractions;
 
 /// <summary>
-/// A Piped ProcessResult containing a Process's or Command's StandardOutput and StandardError Pipes.
+/// A Piped ProcessResult containing a Process's or Command's StandardOutput and StandardError information.
 /// </summary>
 public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
 {
@@ -30,14 +32,14 @@ public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
     public Pipe StandardError { get; }
     
     /// <summary>
-    /// 
+    /// Initializes the PipedProcessResult with process information.
     /// </summary>
-    /// <param name="executableFilePath"></param>
-    /// <param name="exitCode"></param>
-    /// <param name="startTime"></param>
-    /// <param name="exitTime"></param>
-    /// <param name="standardOutput"></param>
-    /// <param name="standardError"></param>
+    /// <param name="executableFilePath">The file path of the file that was executed.</param>
+    /// <param name="exitCode">The process' exit code.</param>
+    /// <param name="startTime">The start time of the process.</param>
+    /// <param name="exitTime">The exit time of the process.</param>
+    /// <param name="standardOutput">The process' standard output.</param>
+    /// <param name="standardError">The process' standard error.</param>
     public PipedProcessResult(string executableFilePath, int exitCode, DateTime startTime, DateTime exitTime,
         Pipe standardOutput, Pipe standardError) : base(executableFilePath, exitCode, startTime, exitTime)
     {
@@ -49,7 +51,7 @@ public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
     /// <summary>
     /// Determines whether this PipedProcessResult is equal to another PipedProcessResult object.
     /// </summary>
-    /// <remarks>This method intentionally does not consider Start and Exit times of Piped Results for the purposes of equality comparison.</remarks>
+    /// <remarks>This method intentionally does not consider Start and Exit times of Command Results for the purposes of equality comparison.</remarks>
     /// <param name="other">The other PipedProcessResult to compare.</param>
     /// <returns>True if this PipedProcessResult is equal to the other PipedProcessResult; false otherwise.</returns>
     public bool Equals(PipedProcessResult? other)
@@ -98,7 +100,7 @@ public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
     }
 
     /// <summary>
-    /// Determines whether two PipedProcessResult are equal.
+    /// Determines whether two PipedProcessResults are equal.
     /// </summary>
     /// <param name="left">The first PipedProcessResult to compare.</param>
     /// <param name="right">The second PipedProcessResult to compare.</param>
@@ -118,7 +120,7 @@ public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
     /// </summary>
     /// <param name="left">A PipedProcessResult to be compared.</param>
     /// <param name="right">The other PipedProcessResult to be compared.</param>
-    /// <returns>True if both PipedProcessResult are equal to each other; false otherwise.</returns>
+    /// <returns>True if both PipedProcessResults are equal to each other; false otherwise.</returns>
     public static bool operator ==(PipedProcessResult? left, PipedProcessResult? right)
     {
         return Equals(left, right);
@@ -129,7 +131,7 @@ public class PipedProcessResult : ProcessResult, IEquatable<PipedProcessResult>
     /// </summary>
     /// <param name="left">A PipedProcessResult to be compared.</param>
     /// <param name="right">The other PipedProcessResult to be compared.</param>
-    /// <returns>True if both PipedProcessResult are not equal to each other; false otherwise.</returns>
+    /// <returns>True if both PipedProcessResults are not equal to each other; false otherwise.</returns>
     public static bool operator !=(PipedProcessResult? left, PipedProcessResult? right)
     {
         return !Equals(left, right);
