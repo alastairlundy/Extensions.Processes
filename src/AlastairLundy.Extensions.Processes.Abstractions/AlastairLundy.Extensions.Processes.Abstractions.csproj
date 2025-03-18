@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
         <TargetFrameworks>net8.0;net9.0;netstandard2.0;netstandard2.1</TargetFrameworks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>2.0.0-preview.1</Version>
+        <Version>2.0.0-preview.2</Version>
         <Title>AlastairLundy.Extensions.Processes.Abstractions</Title>
         <Authors>AlastairLundy</Authors>
         <Description>Abstractions and common types used by AlastairLundy.Extensions.Processes</Description>
@@ -19,9 +19,9 @@
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
-        <PackageReleaseNotes># Changes since 1.4.0
-* Added support for PipedProcessResult to IFactory, IProcessRunner
-* Added System.IO.Pipelines support for IProcessPipeHandler</PackageReleaseNotes>
+        <PackageReleaseNotes># Changes since 2.0.0 Preview 1
+* Updated ``IProcessFactory`` to simplify interface
+* Added missing xml doc comments</PackageReleaseNotes>
         <PackageTags>process, processes, process runner, process-result,</PackageTags>
     </PropertyGroup>
 
