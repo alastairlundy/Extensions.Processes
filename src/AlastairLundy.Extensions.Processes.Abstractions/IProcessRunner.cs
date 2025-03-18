@@ -57,12 +57,14 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// <param name="processResultValidation">The process result validation to be used.</param>
         /// <param name="processResourcePolicy">The process resource policy to be set if it is not null.</param>
         /// <param name="cancellationToken">A token to cancel the operation if required.</param>
-        /// <returns>The Piped Process Results from running the process.</returns>
-        Task<PipedProcessResult> ExecutePipedProcessAsync(Process process, ProcessResultValidation processResultValidation,
+        /// <returns>The Buffered Process Results from running the process.</returns>
+        Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
+            ProcessResultValidation processResultValidation,
             ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default);
         
-        Task<BufferedProcessResult> ExecuteBufferedProcessConfigAsync(ProcessConfiguration processConfiguration,
+        Task<PipedProcessResult> ExecutePipedProcessConfigAsync(
+            ProcessConfiguration processConfiguration,
             CancellationToken cancellationToken = default);
         
         /// <summary>
@@ -71,8 +73,8 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// <param name="process">The process to be run.</param>
         /// <param name="processConfiguration">The process configuration to use when running the Process.</param>
         /// <param name="cancellationToken">A token to cancel the operation if required.</param>
-        /// <returns>The Buffered Process Results from running the process.</returns>
-         Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
+        /// <returns>The Piped Process Results from running the process.</returns>
+        Task<PipedProcessResult> ExecutePipedProcessAsync(Process process, 
             ProcessConfiguration processConfiguration,
             CancellationToken cancellationToken = default);
         
@@ -83,9 +85,8 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// <param name="processResultValidation">The process result validation to be used.</param>
         /// <param name="processResourcePolicy">The process resource policy to be set if it is not null.</param>
         /// <param name="cancellationToken">A token to cancel the operation if required.</param>
-        /// <returns>The Buffered Process Results from running the process.</returns>
-         Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
-            ProcessResultValidation processResultValidation,
+        /// <returns>The Piped Process Results from running the process.</returns>
+        Task<PipedProcessResult> ExecutePipedProcessAsync(Process process, ProcessResultValidation processResultValidation,
             ProcessResourcePolicy? processResourcePolicy = null,
             CancellationToken cancellationToken = default);
     }
