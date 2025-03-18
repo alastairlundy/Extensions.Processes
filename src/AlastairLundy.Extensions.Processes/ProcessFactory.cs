@@ -236,6 +236,11 @@ public class ProcessFactory : Abstractions.IProcessFactory
     public Process StartNew(Processes.Abstractions.ProcessConfiguration configuration)
     {
         Process process = From(configuration);
+
+        if (process.StartInfo.RedirectStandardInput && configuration.StandardInput is not null)
+        {
+            configuration.StandardInput.BaseStream.CopyTo(process.StandardInput.BaseStream);
+        }
         
         process.Start();
         
