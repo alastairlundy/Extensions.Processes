@@ -9,6 +9,7 @@
 
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.IO.Pipelines;
 using System.Threading;
 using System.Threading.Tasks;
@@ -97,7 +98,7 @@ public class ProcessFactory : IProcessFactory
             output.AddUserCredential(credential);
 #pragma warning restore CA1416
         }
-
+        
         return output;
     }
 
@@ -120,6 +121,15 @@ public class ProcessFactory : IProcessFactory
             output = From(configuration.StartInfo);
         }
 
+        if (configuration.StandardInput is not null && configuration.StandardInput != StreamWriter.Null)
+        {
+            Task pipeInputTask = _processPipeHandler.PipeStandardInputAsync(configuration.StandardInput.BaseStream, output);
+
+            pipeInputTask.Start();
+            
+            pipeInputTask.Wait();
+        }
+        
         if (configuration.StandardInput is not null)
         {
             _processPipeHandler.PipeStandardInputAsync(configuration.StandardInput.BaseStream, output);
@@ -174,6 +184,15 @@ public class ProcessFactory : IProcessFactory
     {
         Process process = From(startInfo, credential);
         
+        if (process.StartInfo.RedirectStandardInput)
+        {
+            Task task = _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
+
+            task.Start();
+
+            task.Wait();
+        }
+        
         process.Start();
         
         return process;
@@ -200,6 +219,15 @@ public class ProcessFactory : IProcessFactory
     {
         Process process = From(startInfo);
 
+        if (process.StartInfo.RedirectStandardInput)
+        {
+            Task task = _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
+
+            task.Start();
+
+            task.Wait();
+        }
+        
         process.Start();
         
         process.SetResourcePolicy(resourcePolicy);
@@ -230,6 +258,15 @@ public class ProcessFactory : IProcessFactory
     {
         Process process = From(startInfo, credential);
         
+        if (process.StartInfo.RedirectStandardInput)
+        {
+            Task task = _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
+
+            task.Start();
+
+            task.Wait();
+        }
+        
         process.Start();
         
         process.SetResourcePolicy(resourcePolicy);
@@ -245,6 +282,15 @@ public class ProcessFactory : IProcessFactory
     public Process StartNew(ProcessConfiguration configuration)
     {
         Process process = From(configuration);
+
+        if (configuration.StandardInput is not null && configuration.StandardInput != StreamWriter.Null)
+        {
+            Task pipeInputTask = _processPipeHandler.PipeStandardInputAsync(configuration.StandardInput.BaseStream, process);
+
+            pipeInputTask.Start();
+            
+            pipeInputTask.Wait();
+        }
         
         process.Start();
         
@@ -318,12 +364,22 @@ public class ProcessFactory : IProcessFactory
     public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
         CancellationToken cancellationToken = default)
     {
+        if (process.StartInfo.RedirectStandardInput)
+        {
+            await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
+        }
+        
         
     }
 
     public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
         CancellationToken cancellationToken = default)
     {
+        if (process.StartInfo.RedirectStandardInput)
+        {
+            await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
+        }
+        
         
     }
 
@@ -331,6 +387,11 @@ public class ProcessFactory : IProcessFactory
         ProcessResultValidation resultValidation,
         CancellationToken cancellationToken = default)
     {
+        if (process.StartInfo.RedirectStandardInput)
+        {
+            await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
+        }
+        
         await process.WaitForExitAsync(cancellationToken);
 
         if (resultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
@@ -405,6 +466,10 @@ public class ProcessFactory : IProcessFactory
         ProcessResultValidation resultValidation,
         CancellationToken cancellationToken = default)
     {
+        if (process.StartInfo.RedirectStandardInput)
+        {
+            await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process);
+        }
         
     }
 
@@ -430,12 +495,16 @@ public class ProcessFactory : IProcessFactory
 #endif
     public async Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
         ProcessConfiguration processConfiguration,
-        ProcessResultValidation resultValidation,
         CancellationToken cancellationToken = default)
     {
+        if (processConfiguration.StandardInput is not null && process.StartInfo.RedirectStandardInput)
+        {
+            await _processPipeHandler.PipeStandardInputAsync(processConfiguration.StandardInput.BaseStream, process);
+        }
+        
         await process.WaitForExitAsync(cancellationToken);
         
-        if (process.ExitCode != 0 && resultValidation == ProcessResultValidation.ExitCodeZero)
+        if (process.ExitCode != 0 && processConfiguration.ResultValidation == ProcessResultValidation.ExitCodeZero)
         {
             throw new ProcessNotSuccessfulException(exitCode: process.ExitCode, process: process);
         }
