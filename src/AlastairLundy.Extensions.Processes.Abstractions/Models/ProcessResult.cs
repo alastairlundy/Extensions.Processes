@@ -29,6 +29,10 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// <summary>
         /// Instantiates a ProcessResult with data about a Process' execution.
         /// </summary>
+        /// <param name="executableFilePath"></param>
+        /// <param name="exitCode"></param>
+        /// <param name="startTime"></param>
+        /// <param name="exitTime"></param>
         public ProcessResult(string executableFilePath,
             int exitCode,
             DateTime startTime,
