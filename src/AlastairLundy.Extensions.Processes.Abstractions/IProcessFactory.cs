@@ -88,7 +88,7 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
         /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
         /// <returns>The task and processResult that are returned upon completion of the task.</returns>
          Task<ProcessResult> ContinueWhenExitAsync(Process process,
-          ProcessResultValidation resultValidation,
+          ProcessResultValidation resultValidation = ProcessResultValidation.ExitCodeZero,
          CancellationToken cancellationToken = default);
 
          /// <summary>
@@ -110,7 +110,7 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
          /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
          /// <returns>The task and PipedProcessResult that are returned upon completion of the task.</returns>
          Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
-          ProcessResultValidation resultValidation,
+          ProcessResultValidation resultValidation = ProcessResultValidation.ExitCodeZero,
           CancellationToken cancellationToken = default);
 
          /// <summary>
@@ -133,7 +133,7 @@ namespace AlastairLundy.Extensions.Processes.Abstractions
          /// <param name="cancellationToken">The cancellation token to use in case cancellation is requested.</param>
          /// <returns>The task and BufferedProcessResult that are returned upon completion of the task.</returns>
          Task<BufferedProcessResult> ContinueWhenExitBufferedAsync(Process process,
-         ProcessResultValidation resultValidation,
+         ProcessResultValidation resultValidation = ProcessResultValidation.ExitCodeZero,
           CancellationToken cancellationToken = default);
 
          /// <summary>
