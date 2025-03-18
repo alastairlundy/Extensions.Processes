@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
         <TargetFrameworks>net8.0;net9.0;netstandard2.0;netstandard2.1</TargetFrameworks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>1.4.1</Version>
+        <Version>1.4.2</Version>
         <Title>AlastairLundy.Extensions.Processes.Abstractions</Title>
         <Authors>AlastairLundy</Authors>
         <Description>Abstractions and common types used by AlastairLundy.Extensions.Processes</Description>
@@ -19,7 +19,10 @@
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
-        <PackageReleaseNotes>* Fixed an issue where IPipedProcessRunner and IProcessRunnerUtility was missing from the new abstractions package</PackageReleaseNotes>
+        <PackageReleaseNotes>## Changes
+
+## 🚀 Features
+- Add missing xml doc comments @alastairlundy (#12)</PackageReleaseNotes>
         <PackageTags>process, processes, process runner, process-result,</PackageTags>
         
     </PropertyGroup>
