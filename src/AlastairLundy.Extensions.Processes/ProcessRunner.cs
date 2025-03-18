@@ -96,14 +96,35 @@ public class ProcessRunner : IProcessRunner
         ProcessConfiguration processConfiguration,
         CancellationToken cancellationToken = default)
     {
-        
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+
+        Process actualProcess = _processFactory.StartNew(processConfiguration);
+
+        return await _processFactory.ContinueWhenExitPipedAsync(actualProcess, processConfiguration.ResultValidation,
+            cancellationToken);
     }
 
     public async Task<PipedProcessResult> ExecutePipedProcessAsync(Process process,
         ProcessResultValidation processResultValidation,
         ProcessResourcePolicy? processResourcePolicy = null, CancellationToken cancellationToken = default)
     {
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+
+        Process actualProcess;
         
+        if (processResourcePolicy is not null)
+        {
+           actualProcess  = _processFactory.StartNew(process.StartInfo, processResourcePolicy);
+        }
+        else
+        {
+            actualProcess = _processFactory.StartNew(process.StartInfo);
+        }
+
+        return await _processFactory.ContinueWhenExitPipedAsync(actualProcess, processResultValidation,
+            cancellationToken);
     }
 
     public async Task<BufferedProcessResult> ExecuteBufferedProcessAsync(Process process,
@@ -112,7 +133,7 @@ public class ProcessRunner : IProcessRunner
     {
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.RedirectStandardError = true;
-
+        
         Process actualProcess = _processFactory.StartNew(processConfiguration);
         
         return await _processFactory.ContinueWhenExitBufferedAsync(actualProcess, processConfiguration.ResultValidation,
