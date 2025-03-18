@@ -9,12 +9,8 @@
 
 using System;
 using System.Diagnostics;
-
-using AlastairLundy.Extensions.Processes.Abstractions;
-
-#if NET5_0_OR_GREATER
 using System.Runtime.Versioning;
-#endif
+using AlastairLundy.Extensions.Processes.Abstractions;
 
 namespace AlastairLundy.Extensions.Processes;
 
