@@ -356,6 +356,9 @@ public class ProcessFactory : Abstractions.IProcessFactory
         Processes.Abstractions.ProcessResultValidation resultValidation,
         CancellationToken cancellationToken = default)
     {
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+        
         await process.WaitForExitAsync(cancellationToken);
         
         if (process.ExitCode != 0 && resultValidation == Processes.Abstractions.ProcessResultValidation.ExitCodeZero)
