@@ -158,7 +158,8 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo, Processes.Abstractions.UserCredential credential)
+    public Process StartNew(ProcessStartInfo startInfo,
+        Processes.Abstractions.UserCredential credential)
     {
         Process process = From(startInfo, credential);
         
@@ -184,7 +185,8 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo, Processes.Abstractions.ProcessResourcePolicy resourcePolicy)
+    public Process StartNew(ProcessStartInfo startInfo,
+        Processes.Abstractions.ProcessResourcePolicy resourcePolicy)
     {
         Process process = From(startInfo);
 
@@ -213,7 +215,9 @@ public class ProcessFactory : Abstractions.IProcessFactory
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    public Process StartNew(ProcessStartInfo startInfo, Processes.Abstractions.ProcessResourcePolicy resourcePolicy, Processes.Abstractions.UserCredential credential)
+    public Process StartNew(ProcessStartInfo startInfo, 
+        Processes.Abstractions.ProcessResourcePolicy resourcePolicy,
+        Processes.Abstractions.UserCredential credential)
     {
         Process process = From(startInfo, credential);
         
