@@ -441,9 +441,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -----------------------------------------------------------------------------
- AlastairLundy.Extensions.Processes uses AlastairLundy.Extensions.Collections to enable easier manipulation of Dictionaries.
+ AlastairLundy.Extensions.Processes uses AlastairLundy.DotExtensions to enable easier manipulation of Dictionaries.
  
- AlastairLundy.Extensions.Collections is licensed under the MIT license.
+ AlastairLundy.DotExtensions is licensed under the MIT license.
 -----------------------------------------------------
 MIT License
 
