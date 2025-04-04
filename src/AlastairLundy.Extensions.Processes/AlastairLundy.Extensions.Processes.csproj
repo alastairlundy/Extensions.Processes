@@ -18,9 +18,7 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
 
 ## 🚀 Features
 
-- Update ProcessFactory implementation in 1.x @alastairlundy (#13)
-- Add missing xml doc comments @alastairlundy (#12)
-- Fixed a bug where a namespace collision would occur between some interfaces in the abstractions package and the implementation package</PackageReleaseNotes>
+- Remove all abstractions from implementation library to avoid class, interface, and namespace collisions.</PackageReleaseNotes>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -28,7 +26,7 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageTags>process, processes, process-runner, process runner, process-result,</PackageTags>
-        <Version>1.4.2</Version>
+        <Version>1.4.3</Version>
     </PropertyGroup>
 
     <ItemGroup>
@@ -58,18 +56,10 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\..\LICENSE.txt">
-        <Link>LICENSE.txt</Link>
-          <PackagePath>LICENSE.txt</PackagePath>
-      </Content>
       <Content Include="..\..\README.md">
         <Link>README.md</Link>
           <PackagePath>README.md</PackagePath>
       </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Utilities\Abstractions\" />
     </ItemGroup>
 
 </Project>

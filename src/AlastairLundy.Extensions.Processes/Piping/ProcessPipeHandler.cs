@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.Versioning;
 using System.Threading.Tasks;
+using AlastairLundy.Extensions.Processes.Abstractions.Piping;
 
 
 namespace AlastairLundy.Extensions.Processes.Piping;
@@ -18,7 +19,7 @@ namespace AlastairLundy.Extensions.Processes.Piping;
 /// <summary>
 /// 
 /// </summary>
-public class ProcessPipeHandler : Abstractions.IProcessPipeHandler
+public class ProcessPipeHandler : IProcessPipeHandler
 {
     /// <summary>
     /// Asynchronously copies the Stream to the process' standard input.

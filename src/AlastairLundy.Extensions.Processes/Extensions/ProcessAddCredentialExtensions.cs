@@ -27,7 +27,7 @@ public static class ProcessAddCredentialExtensions
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
 #endif
-    public static void AddUserCredential(this Process process, Processes.Abstractions.UserCredential credential)
+    public static void AddUserCredential(this Process process, Abstractions.UserCredential credential)
     {
 #pragma warning disable CA1416
         if (credential.IsSupportedOnCurrentOS())
@@ -67,7 +67,7 @@ public static class ProcessAddCredentialExtensions
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
 #endif
-    public static void AddUserCredential(this ProcessStartInfo processStartInfo, Processes.Abstractions.UserCredential credential)
+    public static void AddUserCredential(this ProcessStartInfo processStartInfo, Abstractions.UserCredential credential)
     {
 #pragma warning disable CA1416
         if (credential.IsSupportedOnCurrentOS())
