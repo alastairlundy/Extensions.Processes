@@ -15,10 +15,8 @@
 
 ProcessExtensions started as part of CliRunner but is now a separate package, helping other projects besides CliRunner to run processes easily and safely.</Description>
         <PackageReleaseNotes>## Changes
-
-## 🚀 Features
-
-- Remove all abstractions from implementation library to avoid class, interface, and namespace collisions.</PackageReleaseNotes>
+            - Update dependencies @alastairlundy (#15)
+        </PackageReleaseNotes>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
