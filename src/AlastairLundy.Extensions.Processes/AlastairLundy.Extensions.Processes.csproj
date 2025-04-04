@@ -24,7 +24,7 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageTags>process, processes, process-runner, process runner, process-result,</PackageTags>
-        <Version>1.4.3</Version>
+        <Version>1.4.4</Version>
     </PropertyGroup>
 
     <ItemGroup>
