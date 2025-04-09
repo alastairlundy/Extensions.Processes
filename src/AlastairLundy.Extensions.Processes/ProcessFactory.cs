@@ -9,8 +9,10 @@
 
 using System;
 using System.Diagnostics;
+
 using System.IO;
 using System.IO.Pipelines;
+
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -23,7 +25,6 @@ using AlastairLundy.Extensions.Processes.Internal.Localizations;
 
 #if NET5_0_OR_GREATER
 using System.Runtime.Versioning;
-using System.IO;
 #endif
 
 // ReSharper disable UnusedType.Global
@@ -339,11 +340,41 @@ public class ProcessFactory : Abstractions.IProcessFactory
         return processResult;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="process"></param>
+    /// <param name="processConfiguration"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    /// <exception cref="ProcessNotSuccessfulException"></exception>
     public async Task<ProcessResult> ContinueWhenExitAsync(Process process, 
         ProcessConfiguration processConfiguration,
         CancellationToken cancellationToken = default)
     {
+        if (process.HasStarted() == false)
+        {
+            process.Start();
+        }
         
+        if (processConfiguration.ResourcePolicy is not null)
+        {
+            process.SetResourcePolicy(processConfiguration.ResourcePolicy);
+        }
+        
+        await process.WaitForExitAsync(cancellationToken);
+
+        if (processConfiguration.ResultValidation == ProcessResultValidation.ExitCodeZero && process.ExitCode != 0)
+        {
+            throw new ProcessNotSuccessfulException(process: process, exitCode: process.ExitCode);
+        }
+
+        ProcessResult processResult = new ProcessResult(process.StartInfo.FileName, process.ExitCode, process.StartTime,
+            process.ExitTime);
+        
+        process.Dispose();
+        
+        return processResult;
     }
 
     public async Task<PipedProcessResult> ContinueWhenExitPipedAsync(Process process,
@@ -435,12 +466,35 @@ public class ProcessFactory : Abstractions.IProcessFactory
         ProcessResultValidation resultValidation = ProcessResultValidation.ExitCodeZero,
         CancellationToken cancellationToken = default)
     {
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardError = true;
+        
         if (process.StartInfo.RedirectStandardInput)
         {
             await _processPipeHandler.PipeStandardInputAsync(process.StandardInput.BaseStream, process, cancellationToken);
         }
         
+        await process.WaitForExitAsync(cancellationToken);
         
+        if (process.ExitCode != 0 && resultValidation == ProcessResultValidation.ExitCodeZero)
+        {
+            throw new ProcessNotSuccessfulException(exitCode: process.ExitCode, process: process);
+        }
+        
+        Stream standardOutput = Stream.Null;
+        Stream standardError = Stream.Null;
+        
+        await _processPipeHandler.PipeStandardOutputAsync(process, standardOutput, cancellationToken);
+        await _processPipeHandler.PipeStandardErrorAsync(process, standardError, cancellationToken);
+        
+        BufferedProcessResult processResult = new BufferedProcessResult(
+            process.StartInfo.FileName, process.ExitCode,
+            await process.StandardOutput.ReadToEndAsync(cancellationToken),  await process.StandardError.ReadToEndAsync(),
+            process.StartTime, process.ExitTime);
+        
+        process.Dispose();
+        
+        return processResult;
     }
 
     /// <summary>
