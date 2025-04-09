@@ -98,10 +98,39 @@ public class ProcessRunner : Abstractions.IProcessRunner
                 cancellationToken);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="processConfiguration"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+#if NET5_0_OR_GREATER
+    [SupportedOSPlatform("windows")]
+    [SupportedOSPlatform("linux")]
+    [SupportedOSPlatform("freebsd")]
+    [SupportedOSPlatform("macos")]
+    [SupportedOSPlatform("maccatalyst")]
+    [UnsupportedOSPlatform("ios")]
+    [SupportedOSPlatform("android")]
+    [UnsupportedOSPlatform("tvos")]
+    [UnsupportedOSPlatform("browser")]
+#endif
     public async Task<BufferedProcessResult> ExecuteBufferedProcessConfigAsync(ProcessConfiguration processConfiguration,
         CancellationToken cancellationToken = default)
     {
+        Process actualProcess;
         
+        if (processConfiguration.ResourcePolicy is not null)
+        {
+            actualProcess = _processFactory.StartNew(processConfiguration.StartInfo, processConfiguration.ResourcePolicy);
+        }
+        else
+        {
+            actualProcess = _processFactory.StartNew(processConfiguration.StartInfo);
+        }
+        
+        return await _processFactory.ContinueWhenExitBufferedAsync(actualProcess, processConfiguration.ResultValidation,
+            cancellationToken);
     }
 
     public async Task<PipedProcessResult> ExecutePipedProcessConfigAsync(ProcessConfiguration processConfiguration,
