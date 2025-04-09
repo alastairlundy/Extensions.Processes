@@ -9,6 +9,8 @@
 
 using System.Diagnostics;
 
+using AlastairLundy.Resyslib.Processes.Policies;
+
 #if NET5_0_OR_GREATER
 using System.Runtime.Versioning;
 #endif
