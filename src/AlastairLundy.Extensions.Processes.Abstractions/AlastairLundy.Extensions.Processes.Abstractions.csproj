@@ -6,7 +6,7 @@
         <Nullable>enable</Nullable>
         <TargetFrameworks>net8.0;net9.0;netstandard2.0;netstandard2.1</TargetFrameworks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>1.4.4</Version>
+        <Version>2.0.0-preview.1</Version>
         <Title>AlastairLundy.Extensions.Processes.Abstractions</Title>
         <Authors>AlastairLundy</Authors>
         <Description>Abstractions and common types used by AlastairLundy.Extensions.Processes</Description>
@@ -20,15 +20,15 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <PackageReleaseNotes>## Changes
-* Updated to use Extensions.Processes 1.4.4</PackageReleaseNotes>
+* Moved models and Process related primitives to Resyslib.Processes</PackageReleaseNotes>
         <PackageTags>process, processes, process runner, process-result,</PackageTags>
         
     </PropertyGroup>
 
 
     <ItemGroup >
-        <PackageReference Include="System.IO.Pipelines" Version="[9.0.3, 10.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1' OR '$(TargetFramework)' == 'net8.0'"/>
-        <PackageReference Include="Microsoft.Bcl.HashCode" Version="[6.0.0, 7.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0'"/>
+        <PackageReference Include="AlastairLundy.Resyslib.Processes" Version="1.0.0" />
+        <PackageReference Include="System.IO.Pipelines" Version="[9.0.4, 10.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1' OR '$(TargetFramework)' == 'net8.0'"/>
     </ItemGroup>
 
     <ItemGroup>
