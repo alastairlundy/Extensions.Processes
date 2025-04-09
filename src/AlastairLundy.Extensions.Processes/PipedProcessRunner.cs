@@ -18,6 +18,7 @@ using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Abstractions.Piping;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal;
+using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
 
 namespace AlastairLundy.Extensions.Processes;
 
