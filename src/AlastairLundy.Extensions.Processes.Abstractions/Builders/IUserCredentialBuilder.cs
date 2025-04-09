@@ -10,6 +10,8 @@
 using System;
 using System.Security;
 
+using AlastairLundy.Resyslib.Processes;
+
 namespace AlastairLundy.Extensions.Processes.Abstractions.Builders;
 
 /// <summary>
