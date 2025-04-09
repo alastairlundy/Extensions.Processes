@@ -33,7 +33,7 @@ public class ProcessRunner : Abstractions.IProcessRunner
 
 
     public async Task<ProcessResult> ExecuteProcessConfigAsync(ProcessConfiguration processConfiguration,
-        CancellationToken cancellationToken = new CancellationToken())
+        CancellationToken cancellationToken = default)
     {
         
     }
@@ -99,13 +99,13 @@ public class ProcessRunner : Abstractions.IProcessRunner
     }
 
     public async Task<BufferedProcessResult> ExecuteBufferedProcessConfigAsync(ProcessConfiguration processConfiguration,
-        CancellationToken cancellationToken = new CancellationToken())
+        CancellationToken cancellationToken = default)
     {
         
     }
 
     public async Task<PipedProcessResult> ExecutePipedProcessConfigAsync(ProcessConfiguration processConfiguration,
-        CancellationToken cancellationToken = new CancellationToken())
+        CancellationToken cancellationToken = default)
     {
         
     }
