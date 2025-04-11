@@ -29,7 +29,7 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AlastairLundy.Extensions.Collections" Version="[6.0.0, 7.0.0)"/>
+        <PackageReference Include="AlastairLundy.DotExtensions" Version="[6.3.1, 7.0.0)"/>
         <PackageReference Include="AlastairLundy.Extensions.IO" Version="[2.2.0, 3.0.0)" />
         <PackageReference Include="AlastairLundy.Extensions.Processes.Abstractions" Version="2.0.0-preview.2" />
     </ItemGroup>
