@@ -13,6 +13,8 @@ using System.Diagnostics.Contracts;
 
 using AlastairLundy.Extensions.Processes.Abstractions.Builders;
 
+using AlastairLundy.Resyslib.Processes.Policies;
+
 
 #if NET5_0_OR_GREATER
 using System.Runtime.Versioning;
@@ -26,21 +28,21 @@ namespace AlastairLundy.Extensions.Processes.Builders;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")]
 public class ProcessResourcePolicyBuilder : IProcessResourcePolicyBuilder
 {
-    private readonly Processes.Abstractions.ProcessResourcePolicy _processResourcePolicy;
+    private readonly ProcessResourcePolicy _processResourcePolicy;
 
     /// <summary>
     /// Instantiates the ProcessResourcePolicy Builder with default ProcessResourcePolicy values.
     /// </summary>
     public ProcessResourcePolicyBuilder()
     {
-        _processResourcePolicy = Processes.Abstractions.ProcessResourcePolicy.Default;
+        _processResourcePolicy = ProcessResourcePolicy.Default;
     }
 
     /// <summary>
     /// Internally instantiates the ProcessResourcePolicy object with the specified ProcessResourcePolicy value.
     /// </summary>
     /// <param name="processResourcePolicy">The process resource policy object to use.</param>
-    protected ProcessResourcePolicyBuilder(Processes.Abstractions.ProcessResourcePolicy processResourcePolicy)
+    protected ProcessResourcePolicyBuilder(ProcessResourcePolicy processResourcePolicy)
     {
         _processResourcePolicy = processResourcePolicy;
     }
@@ -57,7 +59,7 @@ public class ProcessResourcePolicyBuilder : IProcessResourcePolicyBuilder
 #endif
     [Pure]
     public IProcessResourcePolicyBuilder WithProcessorAffinity(nint processorAffinity) =>
-        new ProcessResourcePolicyBuilder(new Processes.Abstractions.ProcessResourcePolicy(
+        new ProcessResourcePolicyBuilder(new ProcessResourcePolicy(
             processorAffinity,
             _processResourcePolicy.MinWorkingSet,
             _processResourcePolicy.MaxWorkingSet,
@@ -81,7 +83,7 @@ public class ProcessResourcePolicyBuilder : IProcessResourcePolicyBuilder
 #endif
     [Pure]
     public IProcessResourcePolicyBuilder WithMinWorkingSet(nint minWorkingSet) =>
-        new ProcessResourcePolicyBuilder(new Processes.Abstractions.ProcessResourcePolicy(
+        new ProcessResourcePolicyBuilder(new ProcessResourcePolicy(
             _processResourcePolicy.ProcessorAffinity,
             minWorkingSet,
             _processResourcePolicy.MaxWorkingSet,
@@ -105,7 +107,7 @@ public class ProcessResourcePolicyBuilder : IProcessResourcePolicyBuilder
     [UnsupportedOSPlatform("android")]
 #endif
     public IProcessResourcePolicyBuilder WithMaxWorkingSet(nint maxWorkingSet) =>
-        new ProcessResourcePolicyBuilder(new Processes.Abstractions.ProcessResourcePolicy(
+        new ProcessResourcePolicyBuilder(new ProcessResourcePolicy(
             _processResourcePolicy.ProcessorAffinity,
             _processResourcePolicy.MinWorkingSet,
             maxWorkingSet,
@@ -119,7 +121,7 @@ public class ProcessResourcePolicyBuilder : IProcessResourcePolicyBuilder
     /// <returns>The newly created ProcessResourcePolicyBuilder with the updated Process Priority Class.</returns>
     [Pure]
     public IProcessResourcePolicyBuilder WithPriorityClass(ProcessPriorityClass processPriorityClass) =>
-        new ProcessResourcePolicyBuilder(new Processes.Abstractions.ProcessResourcePolicy(
+        new ProcessResourcePolicyBuilder(new ProcessResourcePolicy(
             _processResourcePolicy.ProcessorAffinity,
             _processResourcePolicy.MinWorkingSet,
             _processResourcePolicy.MaxWorkingSet,
@@ -133,7 +135,7 @@ public class ProcessResourcePolicyBuilder : IProcessResourcePolicyBuilder
     /// <returns>The newly created ProcessResourcePolicyBuilder with the updated priority boost behaviour.</returns>
     [Pure]
     public IProcessResourcePolicyBuilder WithPriorityBoost(bool enablePriorityBoost) =>
-        new ProcessResourcePolicyBuilder(new Processes.Abstractions.ProcessResourcePolicy(
+        new ProcessResourcePolicyBuilder(new ProcessResourcePolicy(
             _processResourcePolicy.ProcessorAffinity,
             _processResourcePolicy.MinWorkingSet,
             _processResourcePolicy.MaxWorkingSet,
@@ -144,5 +146,5 @@ public class ProcessResourcePolicyBuilder : IProcessResourcePolicyBuilder
     /// Builds the configured ProcessResourcePolicy
     /// </summary>
     /// <returns>The configured ProcessResourcePolicy.</returns>
-    public Processes.Abstractions.ProcessResourcePolicy Build() => _processResourcePolicy;
+    public ProcessResourcePolicy Build() => _processResourcePolicy;
 }

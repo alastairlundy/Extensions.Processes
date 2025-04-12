@@ -12,8 +12,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using AlastairLundy.Extensions.Processes.Abstractions;
+
 using AlastairLundy.Extensions.Processes.Internal;
+
+using AlastairLundy.Resyslib.Processes.Policies;
+using AlastairLundy.Resyslib.Processes.Results;
 
 namespace AlastairLundy.Extensions.Processes;
 

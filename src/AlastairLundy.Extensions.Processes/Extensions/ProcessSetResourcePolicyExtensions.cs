@@ -16,6 +16,7 @@ using System.Runtime.InteropServices;
 using System;
 using System.Diagnostics;
 using AlastairLundy.Extensions.Processes.Abstractions;
+using AlastairLundy.Resyslib.Processes.Policies;
 
 namespace AlastairLundy.Extensions.Processes;
 
@@ -28,7 +29,7 @@ public static class ProcessSetResourcePolicyExtensions
     /// <param name="process">The process to apply the policy to.</param>
     /// <param name="resourcePolicy">The process resource policy to be applied.</param>
     /// <exception cref="InvalidOperationException"></exception>
-    public static void SetResourcePolicy(this Process process, Processes.Abstractions.ProcessResourcePolicy? resourcePolicy)
+    public static void SetResourcePolicy(this Process process, ProcessResourcePolicy? resourcePolicy)
     {
         if (process.HasStarted() && resourcePolicy != null)
         {

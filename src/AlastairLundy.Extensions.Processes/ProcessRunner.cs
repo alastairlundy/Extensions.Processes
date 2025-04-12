@@ -16,6 +16,9 @@ using System.Threading.Tasks;
 using AlastairLundy.Extensions.Processes.Abstractions;
 
 using AlastairLundy.Extensions.Processes.Exceptions;
+using AlastairLundy.Resyslib.Processes;
+using AlastairLundy.Resyslib.Processes.Policies;
+using AlastairLundy.Resyslib.Processes.Results;
 
 namespace AlastairLundy.Extensions.Processes;
 

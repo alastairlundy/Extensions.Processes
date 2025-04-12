@@ -11,6 +11,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.Versioning;
 using AlastairLundy.Extensions.Processes.Abstractions;
+using AlastairLundy.Resyslib.Processes;
 
 namespace AlastairLundy.Extensions.Processes;
 
@@ -25,7 +26,7 @@ public static class ProcessAddCredentialExtensions
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
 #endif
-    public static void AddUserCredential(this Process process, Processes.Abstractions.UserCredential credential)
+    public static void AddUserCredential(this Process process, UserCredential credential)
     {
 #pragma warning disable CA1416
         if (credential.IsSupportedOnCurrentOS())
@@ -65,7 +66,7 @@ public static class ProcessAddCredentialExtensions
 #if NET5_0_OR_GREATER
     [SupportedOSPlatform("windows")]
 #endif
-    public static void AddUserCredential(this ProcessStartInfo processStartInfo, Processes.Abstractions.UserCredential credential)
+    public static void AddUserCredential(this ProcessStartInfo processStartInfo, UserCredential credential)
     {
 #pragma warning disable CA1416
         if (credential.IsSupportedOnCurrentOS())

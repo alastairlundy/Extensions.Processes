@@ -18,10 +18,13 @@ using System.Threading.Tasks;
 
 using AlastairLundy.Extensions.IO.Files.Abstractions;
 
-using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Abstractions.Piping;
 using AlastairLundy.Extensions.Processes.Exceptions;
 using AlastairLundy.Extensions.Processes.Internal.Localizations;
+
+using AlastairLundy.Resyslib.Processes;
+using AlastairLundy.Resyslib.Processes.Policies;
+using AlastairLundy.Resyslib.Processes.Results;
 
 #if NET5_0_OR_GREATER
 using System.Runtime.Versioning;

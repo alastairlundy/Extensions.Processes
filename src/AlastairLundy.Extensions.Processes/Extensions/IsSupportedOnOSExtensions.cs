@@ -8,7 +8,8 @@
    */
 
 
-using AlastairLundy.Extensions.Processes.Abstractions;
+using AlastairLundy.Resyslib.Processes;
+
 #if NET5_0_OR_GREATER
 using System;
 #else
@@ -24,7 +25,7 @@ public static class IsSupportedOnOsExtensions
     /// </summary>
     /// <param name="userCredential"></param>
     /// <returns>True if supported; false otherwise.</returns>
-    public static bool IsSupportedOnCurrentOS(this Processes.Abstractions.UserCredential userCredential)
+    public static bool IsSupportedOnCurrentOS(this UserCredential userCredential)
     {
 #if NET5_0_OR_GREATER
         return OperatingSystem.IsWindows();
