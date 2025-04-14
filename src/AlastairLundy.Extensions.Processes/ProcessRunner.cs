@@ -13,9 +13,11 @@ using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
 
-using AlastairLundy.Extensions.Processes.Abstractions;
+using AlastairLundy.DotExtensions.Resyslib.Processes;
 
+using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Extensions.Processes.Exceptions;
+
 using AlastairLundy.Resyslib.Processes;
 using AlastairLundy.Resyslib.Processes.Policies;
 using AlastairLundy.Resyslib.Processes.Results;
@@ -38,7 +40,12 @@ public class ProcessRunner : Abstractions.IProcessRunner
     public async Task<ProcessResult> ExecuteProcessConfigAsync(ProcessConfiguration processConfiguration,
         CancellationToken cancellationToken = default)
     {
+        Process actualProcess = _processFactory.StartNew(processConfiguration);        
         
+        actualProcess.SetResourcePolicy(processConfiguration.ResourcePolicy);
+        
+        return await _processFactory.ContinueWhenExitAsync(actualProcess, processConfiguration.ResultValidation,
+            cancellationToken);
     }
 
     /// <summary>

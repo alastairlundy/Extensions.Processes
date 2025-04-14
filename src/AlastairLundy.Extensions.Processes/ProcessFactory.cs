@@ -12,10 +12,11 @@ using System.Diagnostics;
 
 using System.IO;
 using System.IO.Pipelines;
-
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using AlastairLundy.DotExtensions.Processes;
+using AlastairLundy.DotExtensions.Resyslib.Processes;
 using AlastairLundy.Extensions.IO.Files.Abstractions;
 
 using AlastairLundy.Extensions.Processes.Abstractions.Piping;
