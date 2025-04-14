@@ -15,7 +15,7 @@ using System.IO.Pipelines;
 
 using System.Threading;
 using System.Threading.Tasks;
-
+using AlastairLundy.DotExtensions.Processes;
 using AlastairLundy.Extensions.IO.Files.Abstractions;
 
 using AlastairLundy.Extensions.Processes.Abstractions.Piping;

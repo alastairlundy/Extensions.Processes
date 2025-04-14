@@ -15,6 +15,7 @@ using System.Runtime.InteropServices;
 
 using System;
 using System.Diagnostics;
+using AlastairLundy.DotExtensions.Processes;
 using AlastairLundy.Extensions.Processes.Abstractions;
 using AlastairLundy.Resyslib.Processes.Policies;
 
