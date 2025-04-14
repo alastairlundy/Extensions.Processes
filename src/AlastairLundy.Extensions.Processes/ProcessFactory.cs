@@ -116,16 +116,6 @@ public class ProcessFactory : Abstractions.IProcessFactory
     {
         Process output;
         
-        // ReSharper disable once ConvertIfStatementToConditionalTernaryExpression
-        if (configuration.Credential != null)
-        {
-            output = From(configuration.StartInfo, configuration.Credential);
-        }
-        else
-        {
-            output = From(configuration.StartInfo);
-        }
-
         if (configuration.StandardInput is not null && configuration.StandardInput != StreamWriter.Null)
         {
             Task pipeInputTask = _processPipeHandler.PipeStandardInputAsync(configuration.StandardInput.BaseStream, output);
