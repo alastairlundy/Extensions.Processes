@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;net8.0;net9.0;</TargetFrameworks>
+        <LangVersion>13</LangVersion>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>AlastairLundy.ProcessInvoke.Abstractions</AssemblyName>
+        <RootNamespace>AlastairLundy.ProcessInvoke.Abstractions</RootNamespace>
+        <PackageId>AlastairLundy.ProcessInvoke.Abstractions</PackageId>
+        <Title>ProcessInvoke.Abstractions</Title>
+        <Authors />
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Update="README.md">
+        <Link>README.md</Link>
+        <PackagePath>README.md</PackagePath>
+      </Content>
+    </ItemGroup>
+
+</Project>

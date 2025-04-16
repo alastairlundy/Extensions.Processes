@@ -53,11 +53,4 @@ ProcessExtensions started as part of CliRunner but is now a separate package, he
       </Compile>
     </ItemGroup>
 
-    <ItemGroup>
-      <Content Include="..\..\README.md">
-        <Link>README.md</Link>
-          <PackagePath>README.md</PackagePath>
-      </Content>
-    </ItemGroup>
-
 </Project>
