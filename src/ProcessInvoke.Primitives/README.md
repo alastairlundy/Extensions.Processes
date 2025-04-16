@@ -1,4 +1,4 @@
-# Resyslib.Processes
+# ProcessInvoke.Primitives
 A library that adds useful Process related primitives, like BufferedProcessResult, ProcessResultValidation, and ProcessConfiguration.
 
 Some primitives added include:
@@ -12,17 +12,17 @@ Some primitives added include:
 * ``ProcessResultValidation`` - An enum representing whether process result validation should be performed or not.
 * ``ProcessConfiguration`` - A model class for representing Process configurations.
 
-[![NuGet](https://img.shields.io/nuget/v/AlastairLundy.Resyslib.Processes.svg)](https://www.nuget.org/packages/AlastairLundy.Resyslib.Processes/)
-[![NuGet](https://img.shields.io/nuget/dt/AlastairLundy.Resyslib.Processes.svg)](https://www.nuget.org/packages/AlastairLundy.Resyslib.Processes/)
+[![NuGet](https://img.shields.io/nuget/v/AlastairLundy.ProcessInvoke.Primitives.svg)](https://www.nuget.org/packages/AlastairLundy.ProcessInvoke.Primitives/)
+[![NuGet](https://img.shields.io/nuget/dt/AlastairLundy.ProcessInvoke.Primitives.svg)](https://www.nuget.org/packages/AlastairLundy.ProcessInvoke.Primitives/)
 
 ## Table of Contents
-* [Using Resyslib.Processes](#how-to-use-the-project)
+* [Using ProcessInvoke.Primitives](#how-to-use-the-project)
 * [How to Build the Code](#how-to-build-the-code)
 * [Roadmap](#roadmap)
 * [Acknowledgements](#acknowledgements)
 
 ## How to Use the Project
-Get the package from the [Official Nuget Gallery](https://nuget.org/) [here](https://www.nuget.org/packages/AlastairLundy.Resyslib.Processes).
+Get the package from the [Official Nuget Gallery](https://nuget.org/) [here](https://www.nuget.org/packages/AlastairLundy.ProcessInvoke.Primitives).
 
 If you use Visual Studio, Jetbrains Rider, or an IDE with a Nuget interface built in, you can search for the package through there instead.
 
@@ -62,6 +62,5 @@ Future versions will aim to add more Process related primitives as well as possi
 
 ### Projects
 This project would like to thank the following projects for their work:
-* [Polyfill](https://github.com/SimonCropp/Polyfill) for simplifying .NET Standard 2.0 support
 * [System.IO.Pipelines](https://www.nuget.org/packages/System.IO.Pipelines) for simplifying Piping support.
 * [Microsoft.Bcl.HashCode](https://github.com/dotnet/maintenance-packages) for providing a backport of the HashCode class and static methods to .NET Standard 2.0
