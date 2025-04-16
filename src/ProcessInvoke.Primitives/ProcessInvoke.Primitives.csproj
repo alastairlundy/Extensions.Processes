@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;net8.0;net9.0</TargetFrameworks>
+        <LangVersion>13</LangVersion>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>AlastairLundy.ProcessInvoke.Primitives</AssemblyName>
+        <RootNamespace>AlastairLundy.ProcessInvoke.Primitives</RootNamespace>
+        <Title>ProcessInvoke.Primitives</Title>
+        <Authors>Alastair Lundy</Authors>
+        <Version>1.2.0</Version>
+        <Description>A library that adds useful Process related primitives, like BufferedProcessResult, ProcessResultValidation, and ProcessConfiguration.</Description>
+        <Copyright>Copyright (c) Alastair Lundy 2024-2025</Copyright>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/alastairlundy/ProcessInvoke</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageTags>process-primitives, primitives, processresult, bufferedprocessresult, processresultvalidation</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup >
+        <PackageReference Include="System.IO.Pipelines" Version="[9.0.4, 10.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1' OR '$(TargetFramework)' == 'net8.0'"/>
+        <PackageReference Include="Microsoft.Bcl.HashCode" Version="[6.0.0, 7.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0'"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="README.md">
+            <Link>README.md</Link>
+            <PackagePath>README.md</PackagePath>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <EmbeddedResource Update="Localizations\Resources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Localizations\Resources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Resources.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+
+</Project>
