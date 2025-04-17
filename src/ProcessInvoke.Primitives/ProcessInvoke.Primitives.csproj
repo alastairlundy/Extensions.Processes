@@ -22,6 +22,7 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageTags>process-primitives, primitives, processresult, bufferedprocessresult, processresultvalidation</PackageTags>
+        <PackageReleaseNotes>Initial release under new package name</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup >

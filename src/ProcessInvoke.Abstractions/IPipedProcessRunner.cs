@@ -1,5 +1,5 @@
 ﻿/*
-    AlastairLundy.Extensions.Processes  
+    ProcessInvoke
     Copyright (C) 2024-2025  Alastair Lundy
 
     This Source Code Form is subject to the terms of the Mozilla Public
@@ -18,7 +18,7 @@ namespace AlastairLundy.ProcessInvoke.Abstractions;
 /// <summary>
 /// A Process Runner-esque interface for Piping output after Executing processes.
 /// </summary>
-[Obsolete(DeprecationMessages.InterfaceDeprecationV2UseProcessFactoryInstead)]
+[Obsolete]
 public interface IPipedProcessRunner
 {
     /// <summary>
