@@ -9,7 +9,7 @@
         <RootNamespace>AlastairLundy.ProcessInvoke.Abstractions</RootNamespace>
         <PackageId>AlastairLundy.ProcessInvoke.Abstractions</PackageId>
         <Title>ProcessInvoke.Abstractions</Title>
-        <Authors />
+        <Authors >Alastair Lundy</Authors>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Version>1.5.0</Version>
         <Copyright>Copyright (c) Alastair Lundy 2024-2025</Copyright>
@@ -17,7 +17,13 @@
         <RepositoryType>git</RepositoryType>
         <PackageTags>process, processes, runner, iprocessfactory, iprocessrunner</PackageTags>
         <PackageReleaseNotes>Initial release under new package name</PackageReleaseNotes>
+        <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Description>Process running related abstractions implemented by AlastairLundy.ProcessInvoke</Description>
     </PropertyGroup>
     
