@@ -31,11 +31,14 @@
         <PackageReference Include="AlastairLundy.ProcessInvoke.Primitives" Version="1.2.0" />
     </ItemGroup>
 
+
     <ItemGroup>
-      <Content Update="README.md">
-        <Link>README.md</Link>
-        <PackagePath>README.md</PackagePath>
-      </Content>
+        <Content Include="README.md">
+            <Link>README.md</Link>
+            <PackagePath>README.md</PackagePath>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
+
 
 </Project>
