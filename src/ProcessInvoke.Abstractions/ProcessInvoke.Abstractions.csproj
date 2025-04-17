@@ -10,7 +10,19 @@
         <PackageId>AlastairLundy.ProcessInvoke.Abstractions</PackageId>
         <Title>ProcessInvoke.Abstractions</Title>
         <Authors />
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>1.5.0</Version>
+        <Copyright>Copyright (c) Alastair Lundy 2024-2025</Copyright>
+        <RepositoryUrl>https://github.com/alastairlundy/ProcessInvoke</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>process, processes, runner, iprocessfactory, iprocessrunner</PackageTags>
+        <PackageReleaseNotes>Initial release under new package name</PackageReleaseNotes>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="AlastairLundy.ProcessInvoke.Primitives" Version="1.2.0" />
+    </ItemGroup>
 
     <ItemGroup>
       <Content Update="README.md">

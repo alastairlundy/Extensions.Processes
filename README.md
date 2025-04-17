@@ -1,12 +1,12 @@
-# AlastairLundy.Extensions.Processes
-In this readme, the package AlastairLundy.Extensions.Processes is referred to as ProcessExtensions for brevity.
+# AlastairLundy.ProcessInvoke
+In this readme, the package AlastairLundy.ProcessInvoke is referred to as ProcessExtensions for brevity.
 
 ProcessExtensions adds much needed abstractions and extensions to Processes and Process Running, to make it easier and safer.
 
 ProcessExtensions started as part of CliInvoke but is now a separate package, helping other projects besides CliInvoke to run processes easily and safely.
 
-[![NuGet](https://img.shields.io/nuget/v/AlastairLundy.Extensions.Processes.svg)](https://www.nuget.org/packages/AlastairLundy.Extensions.Processes/)
-[![NuGet](https://img.shields.io/nuget/dt/AlastairLundy.Extensions.Processes.svg)](https://www.nuget.org/packages/AlastairLundy.Extensions.Processes/)
+[![NuGet](https://img.shields.io/nuget/v/AlastairLundy.ProcessInvoke.svg)](https://www.nuget.org/packages/AlastairLundy.ProcessInvoke/)
+[![NuGet](https://img.shields.io/nuget/dt/AlastairLundy.ProcessInvoke.svg)](https://www.nuget.org/packages/AlastairLundy.ProcessInvoke/)
 
 ## Table of Contents
 * [Features](#features)
@@ -34,7 +34,7 @@ ProcessExtensions's packages can be installed via the .NET SDK CLI, Nuget via yo
 
 | Package Name                       | Nuget Link                                                                                                | .NET SDK CLI command                                      |
 |------------------------------------|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
-| AlastairLundy.Extensions.Processes | [AlastairLundy.Extensions.Processes Nuget](https://nuget.org/packages/AlastairLundy.Extensions.Processes) | ``dotnet add package AlastairLundy.Extensions.Processes`` |
+| AlastairLundy.ProcessInvoke | [AlastairLundy.ProcessInvoke Nuget](https://nuget.org/packages/AlastairLundy.ProcessInvoke) | ``dotnet add package AlastairLundy.ProcessInvoke`` |
 
 ### Supported Platforms
 ProcessExtensions can be added to any .NET Standard 2.0, .NET Standard 2.1, .NET 8, or .NET 9 supported project.
@@ -78,7 +78,7 @@ A default value for the parameter is intentionally not provided, as it is up to 
 
 This example shows how it might be used:
 ```csharp
-using AlastairLundy.Extensions.Processes;
+using AlastairLundy.ProcessInvoke;
 // Using namespaces for Dependency Injection code ommitted for clarity
 
 //Namespace and classs code ommitted for clarity 
@@ -103,8 +103,8 @@ Usage of ``IProcessRunnerUtility`` is most appropriate when greater flexibility 
 For instance, you can keep a Process object alive for as long as needed, and then dispose of it later.
 
 ```csharp
-using AlastairLundy.Extensions.Processes;
-using AlastairLundy.Extensions.Processes.Utilities.Abstractions;
+using AlastairLundy.ProcessInvoke;
+using AlastairLundy.ProcessInvoke.Utilities.Abstractions;
 
 // Using namespaces for Dependency Injection code ommitted for clarity
 
@@ -162,10 +162,10 @@ Releases that add major breaking changes or significantly affect the API should 
 ### Building for Testing
 You can build for testing by building the desired project within your IDE or VS Code, or manually by entering the following command: ``dotnet build -c Debug``.
 
-If you encounter any bugs or issues, please [report them](https://github.com/alastairlundy/Extensions.Processes/issues/new/) if an issue doesn't already exist for the bug(s).
+If you encounter any bugs or issues, please [report them](https://github.com/alastairlundy/ProcessInvoke/issues/new/) if an issue doesn't already exist for the bug(s).
 
 ### Building for Release
-Before building a release build, ensure you apply the relevant changes to ``AlastairLundy.Extensions.Processes.csproj`` file corresponding to the package you are trying to build:
+Before building a release build, ensure you apply the relevant changes to ``AlastairLundy.ProcessInvoke.csproj`` file corresponding to the package you are trying to build:
 * Update the Package Version variable
 * Update the project file's Changelog
 
@@ -180,10 +180,10 @@ Builds should generally always include Source Link and symbol packages if intend
 ## How to Contribute to ProcessExtensions
 Thank you in advance for considering contributing to ProcessExtensions.
 
-Please see the [CONTRIBUTING.md file](https://github.com/alastairlundy/Extensions.Processes/blob/main/CONTRIBUTING.md) for code and localization contributions.
+Please see the [CONTRIBUTING.md file](https://github.com/alastairlundy/ProcessInvoke/blob/main/CONTRIBUTING.md) for code and localization contributions.
 
-If you want to file a bug report or suggest a potential feature to add, please check out the [GitHub issues page](https://github.com/alastairlundy/Extensions.Processes/issues/) to see if a similar or identical issue is already open.
-If there is not already a relevant issue filed, please [file one here](https://github.com/alastairlundy/Extensions.Processes/issues/new) and follow the respective guidance from the appropriate issue template.
+If you want to file a bug report or suggest a potential feature to add, please check out the [GitHub issues page](https://github.com/alastairlundy/ProcessInvoke/issues/) to see if a similar or identical issue is already open.
+If there is not already a relevant issue filed, please [file one here](https://github.com/alastairlundy/ProcessInvoke/issues/new) and follow the respective guidance from the appropriate issue template.
 
 Thanks.
 
@@ -203,7 +203,7 @@ Future updates should aim focus on one or more of the following:
 ## License
 ProcessExtensions is licensed under the MPL 2.0 license. If you modify any of ProcessExtensions' files then the modified files must be licensed under the MPL 2.0 .
 
-If you use ProcessExtensions in your project please make an exact copy of the contents of ProcessExtensions' [LICENSE.txt file](https://github.com/alastairlundy/Extensions.Processes/blob/main/LICENSE.txt) available either in your third party licenses txt file or as a separate txt file.
+If you use ProcessExtensions in your project please make an exact copy of the contents of ProcessExtensions' [LICENSE.txt file](https://github.com/alastairlundy/ProcessInvoke/blob/main/LICENSE.txt) available either in your third party licenses txt file or as a separate txt file.
 
 ## Acknowledgements
 
@@ -212,4 +212,4 @@ This project would like to thank the following projects for their work:
 * [Polyfill](https://github.com/SimonCropp/Polyfill) for simplifying .NET Standard 2.0 & 2.1 support
 * [Microsoft.Bcl.HashCode](https://github.com/dotnet/maintenance-packages) for providing a backport of the HashCode class and static methods to .NET Standard 2.0
 
-For more information, please see the [THIRD_PARTY_NOTICES file](https://github.com/alastairlundy/Extensions.Processes/blob/main/THIRD_PARTY_NOTICES.txt).
+For more information, please see the [THIRD_PARTY_NOTICES file](https://github.com/alastairlundy/ProcessInvoke/blob/main/THIRD_PARTY_NOTICES.txt).

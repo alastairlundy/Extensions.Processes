@@ -1,5 +1,5 @@
 ﻿/*
-    AlastairLundy.Extensions.Processes.Abstractions
+    AlastairLundy.ProcessInvoke.Abstractions
     Copyright (C) 2024-2025  Alastair Lundy
 
     This Source Code Form is subject to the terms of the Mozilla Public
@@ -10,6 +10,10 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
+
+using AlastairLundy.ProcessInvoke.Primitives;
+using AlastairLundy.ProcessInvoke.Primitives.Policies;
+using AlastairLundy.ProcessInvoke.Primitives.Results;
 
 namespace AlastairLundy.ProcessInvoke.Abstractions
 {

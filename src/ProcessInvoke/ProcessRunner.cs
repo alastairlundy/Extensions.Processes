@@ -1,5 +1,5 @@
 ﻿/*
-    AlastairLundy.Extensions.Processes  
+    AlastairLundy.ProcessInvoke  
     Copyright (C) 2024-2025  Alastair Lundy
 
     This Source Code Form is subject to the terms of the Mozilla Public
@@ -24,7 +24,7 @@ public class ProcessRunner : IProcessRunner
 {
     private readonly IProcessRunnerUtility _processRunnerUtils;
     
-    [Obsolete(DeprecationMessages.InterfaceDeprecationV2)]
+    [Obsolete]
     public ProcessRunner(IProcessRunnerUtility processRunnerUtils)
     {
         _processRunnerUtils = processRunnerUtils;
@@ -51,7 +51,7 @@ public class ProcessRunner : IProcessRunner
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    [Obsolete(DeprecationMessages.InterfaceDeprecationV2)]
+    [Obsolete]
     public ProcessResult ExecuteProcess(Process process, ProcessResultValidation processResultValidation,
         ProcessResourcePolicy? processResourcePolicy = null)
     {
@@ -91,7 +91,7 @@ public class ProcessRunner : IProcessRunner
     [UnsupportedOSPlatform("tvos")]
     [UnsupportedOSPlatform("browser")]
 #endif
-    [Obsolete(DeprecationMessages.InterfaceDeprecationV2)]
+    [Obsolete]
     public BufferedProcessResult ExecuteBufferedProcess(Process process,
         ProcessResultValidation processResultValidation,
         ProcessResourcePolicy? processResourcePolicy = null)

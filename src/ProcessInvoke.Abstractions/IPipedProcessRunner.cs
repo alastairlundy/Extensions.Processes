@@ -12,40 +12,43 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using AlastairLundy.ProcessInvoke.Primitives.Policies;
+using AlastairLundy.ProcessInvoke.Primitives.Results;
 
-namespace AlastairLundy.ProcessInvoke.Abstractions;
-
-/// <summary>
-/// A Process Runner-esque interface for Piping output after Executing processes.
-/// </summary>
-[Obsolete]
-public interface IPipedProcessRunner
+namespace AlastairLundy.ProcessInvoke.Abstractions
 {
     /// <summary>
-    /// Runs the process asynchronously, waits for exit, and safely disposes of the Process before returning.
+    /// A Process Runner-esque interface for Piping output after Executing processes.
     /// </summary>
-    /// <param name="process">The process to be run.</param>
-    /// <param name="processResultValidation">The process result validation to be used.</param>
-    /// <param name="processResourcePolicy"></param>
-    /// <param name="cancellationToken">A token to cancel the operation if required.</param>
-    /// <returns>The Process Results from the running the process with the Piped Standard Output and Standard Error.</returns>
-     Task<(ProcessResult processResult, Stream standardOutput, Stream standardError)>
-        ExecuteProcessWithPipingAsync(Process process, ProcessResultValidation processResultValidation,
-            ProcessResourcePolicy? processResourcePolicy = null,
-            CancellationToken cancellationToken = default);
+    [Obsolete]
+    public interface IPipedProcessRunner
+    {
+        /// <summary>
+        /// Runs the process asynchronously, waits for exit, and safely disposes of the Process before returning.
+        /// </summary>
+        /// <param name="process">The process to be run.</param>
+        /// <param name="processResultValidation">The process result validation to be used.</param>
+        /// <param name="processResourcePolicy"></param>
+        /// <param name="cancellationToken">A token to cancel the operation if required.</param>
+        /// <returns>The Process Results from the running the process with the Piped Standard Output and Standard Error.</returns>
+        Task<(ProcessResult processResult, Stream standardOutput, Stream standardError)>
+            ExecuteProcessWithPipingAsync(Process process, ProcessResultValidation processResultValidation,
+                ProcessResourcePolicy? processResourcePolicy = null,
+                CancellationToken cancellationToken = default);
 
 
-    /// <summary>
-    /// Runs the process asynchronously, waits for exit, and safely disposes of the Process before returning.
-    /// </summary>
-    /// <param name="process">The process to be run.</param>
-    /// <param name="processResultValidation">The process result validation to be used.</param>
-    /// <param name="processResourcePolicy"></param>
-    /// <param name="cancellationToken">A token to cancel the operation if required.</param>
-    /// <returns>The Buffered Process Results from running the process with the Piped Standard Output and Standard Error.</returns>
-     Task<(BufferedProcessResult processResult, Stream standardOutput, Stream standardError)>
-        ExecuteBufferedProcessWithPipingAsync(Process process,
-            ProcessResultValidation processResultValidation,
-            ProcessResourcePolicy? processResourcePolicy = null,
-            CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Runs the process asynchronously, waits for exit, and safely disposes of the Process before returning.
+        /// </summary>
+        /// <param name="process">The process to be run.</param>
+        /// <param name="processResultValidation">The process result validation to be used.</param>
+        /// <param name="processResourcePolicy"></param>
+        /// <param name="cancellationToken">A token to cancel the operation if required.</param>
+        /// <returns>The Buffered Process Results from running the process with the Piped Standard Output and Standard Error.</returns>
+        Task<(BufferedProcessResult processResult, Stream standardOutput, Stream standardError)>
+            ExecuteBufferedProcessWithPipingAsync(Process process,
+                ProcessResultValidation processResultValidation,
+                ProcessResourcePolicy? processResourcePolicy = null,
+                CancellationToken cancellationToken = default);
+    }
 }
