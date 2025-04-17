@@ -58,5 +58,14 @@ namespace AlastairLundy.ProcessInvoke.Localizations {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Exceptions_IO_FileNotFound {
+            get {
+                return ResourceManager.GetString("Exceptions.IO.FileNotFound", resourceCulture);
+            }
+        }
     }
 }

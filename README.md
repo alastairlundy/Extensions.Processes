@@ -1,20 +1,20 @@
 # AlastairLundy.ProcessInvoke
-In this readme, the package AlastairLundy.ProcessInvoke is referred to as ProcessExtensions for brevity.
+In this readme, the package AlastairLundy.ProcessInvoke is referred to as ProcessInvoke for brevity.
 
-ProcessExtensions adds much needed abstractions and extensions to Processes and Process Running, to make it easier and safer.
+ProcessInvoke adds much-needed abstractions and extensions to Processes and Process Running, to make it easier and safer.
 
-ProcessExtensions started as part of CliInvoke but is now a separate package, helping other projects besides CliInvoke to run processes easily and safely.
+ProcessInvoke started as part of CliInvoke but is now a separate package, helping other projects besides CliInvoke to run processes easily and safely.
 
 [![NuGet](https://img.shields.io/nuget/v/AlastairLundy.ProcessInvoke.svg)](https://www.nuget.org/packages/AlastairLundy.ProcessInvoke/)
 [![NuGet](https://img.shields.io/nuget/dt/AlastairLundy.ProcessInvoke.svg)](https://www.nuget.org/packages/AlastairLundy.ProcessInvoke/)
 
 ## Table of Contents
 * [Features](#features)
-* [Installing ProcessExtensions](#how-to-install-and-use-processextensions)
+* [Installing ProcessInvoke](#how-to-install-and-use-ProcessInvoke)
     * [Compatibility](#supported-platforms)
 * [Examples](#examples)
-* [Contributing to ProcessExtensions](#how-to-contribute-to-processextensions)
-* [Roadmap](#processextensions-roadmap)
+* [Contributing to ProcessInvoke](#how-to-contribute-to-ProcessInvoke)
+* [Roadmap](#ProcessInvoke-roadmap)
 * [License](#license)
 * [Acknowledgements](#acknowledgements)
 
@@ -26,18 +26,35 @@ ProcessExtensions started as part of CliInvoke but is now a separate package, he
 
 ^1 - [Polyfill](https://github.com/SimonCropp/Polyfill) is a dependency only required for .NET Standard 2.0 and 2.1 users. [Microsoft.Bcl.HashCode](https://www.nuget.org/packages/Microsoft.Bcl.HashCode) is a dependency only required for .NET Standard 2.0 users.
 
-## How to install and use ProcessExtensions
-ProcessExtensions is available on [Nuget](https://nuget.org).
+## When should I use [ProcessInvoke](https://github.com/alastairlundy/ProcessInvoke) vs [CliInvoke](https://github.com/alastairlundy/CliInvoke)?
 
-### Installing ProcessExtensions
-ProcessExtensions's packages can be installed via the .NET SDK CLI, Nuget via your IDE or code editor's package interface, or via the Nuget website.
+Use _CliInvoke_ **IF any** of the following apply:
+- You want to programatically execute a Cli Application
+- You want to get the output of a Cli Application.
+- You want to Pipe the Input or Output of a Cli Application.
+
+Use _ProcessInvoke_ **IF ALL** the following apply:
+- You don't care about getting a Process's Standard Output.
+- You're focussed more on starting and/or stopping Processes.
+- You don't need Argument Building or Escaping capabilities
+
+**Note**: Whilst ProcessInvoke is capable of doing most of what CliInvoke is capable of, they are intended for different use cases.
+
+CliInvoke internally uses ProcessInvoke but provides additional abstractions around programatically executing programs and is designed specifically for this task.
+
+
+## How to install and use ProcessInvoke
+ProcessInvoke is available on [Nuget](https://nuget.org).
+
+### Installing ProcessInvoke
+ProcessInvoke's packages can be installed via the .NET SDK CLI, Nuget via your IDE or code editor's package interface, or via the Nuget website.
 
 | Package Name                       | Nuget Link                                                                                                | .NET SDK CLI command                                      |
 |------------------------------------|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
 | AlastairLundy.ProcessInvoke | [AlastairLundy.ProcessInvoke Nuget](https://nuget.org/packages/AlastairLundy.ProcessInvoke) | ``dotnet add package AlastairLundy.ProcessInvoke`` |
 
 ### Supported Platforms
-ProcessExtensions can be added to any .NET Standard 2.0, .NET Standard 2.1, .NET 8, or .NET 9 supported project.
+ProcessInvoke can be added to any .NET Standard 2.0, .NET Standard 2.1, .NET 8, or .NET 9 supported project.
 
 The following table details which target platforms are supported for running Processes.
 
@@ -63,10 +80,10 @@ The following table details which target platforms are supported for running Pro
 
 
 ## Examples
-One of the main use cases for ProcessExtensions is intended to be [safe Process Running](#safe-process-running).
+One of the main use cases for ProcessInvoke is intended to be [safe Process Running](#safe-process-running).
 
 ### Safe Process Running
-ProcessExtensions offers safe abstractions around Process Running to avoid accidentally not disposing of Processes after they are executed.
+ProcessInvoke offers safe abstractions around Process Running to avoid accidentally not disposing of Processes after they are executed.
 
 If directly executing the process and receiving a ``ProcessResult`` or ``BufferedProcessResult`` object is desirable you should use ``IProcessRunner`` as a service.
 
@@ -129,10 +146,10 @@ using AlastairLundy.ProcessInvoke.Utilities.Abstractions;
 
 Some synchronous methods are available in ``IProcessRunnerUtility`` but should be used as a last resort, in situations where using async and await are not possible.
 
-## How to Build ProcessExtensions' code
+## How to Build ProcessInvoke' code
 
 ### Requirements
-ProcessExtensions requires the latest .NET release SDK to be installed to target all supported TFM (Target Framework Moniker) build targets.
+ProcessInvoke requires the latest .NET release SDK to be installed to target all supported TFM (Target Framework Moniker) build targets.
 
 Currently, the required .NET SDK is .NET 9.
 
@@ -145,7 +162,7 @@ The current build targets include:
 Any version of the .NET 9 SDK can be used, but using the latest version is preferred.
 
 ### Versioning new releases
-ProcessExtensions aims to follow Semantic versioning with ```[Major].[Minor].[Build]``` for most circumstances and an optional ``.[Revision]`` when only a configuration change is made, or a new build of a preview release is made.
+ProcessInvoke aims to follow Semantic versioning with ```[Major].[Minor].[Build]``` for most circumstances and an optional ``.[Revision]`` when only a configuration change is made, or a new build of a preview release is made.
 
 #### Pre-releases
 Pre-release versions should have a suffix of -alpha, -beta, -rc, or -preview followed by a ``.`` and what pre-release version number they are. The number should be incremented by 1 after each release unless it only contains a configuration change, or another packaging, or build change. An example pre-release version may look like 1.1.0-alpha.2 , this version string would indicate it is the 2nd alpha pre-release version of 1.1.0 .
@@ -177,8 +194,8 @@ To manually build a project for release, enter ``dotnet build -c Release /p:Cont
 Builds should generally always include Source Link and symbol packages if intended for wider distribution.
 
 
-## How to Contribute to ProcessExtensions
-Thank you in advance for considering contributing to ProcessExtensions.
+## How to Contribute to ProcessInvoke
+Thank you in advance for considering contributing to ProcessInvoke.
 
 Please see the [CONTRIBUTING.md file](https://github.com/alastairlundy/ProcessInvoke/blob/main/CONTRIBUTING.md) for code and localization contributions.
 
@@ -187,8 +204,8 @@ If there is not already a relevant issue filed, please [file one here](https://g
 
 Thanks.
 
-## ProcessExtensions' Roadmap
-ProcessExtensions aims to make working with processes easier and safer.
+## ProcessInvoke' Roadmap
+ProcessInvoke aims to make working with processes easier and safer.
 
 Whilst an initial set of features are available in version 1, there is room for more features, and for modifications of existing features in future updates.
 
@@ -201,9 +218,9 @@ Future updates should aim focus on one or more of the following:
 * Enhancing existing features
 
 ## License
-ProcessExtensions is licensed under the MPL 2.0 license. If you modify any of ProcessExtensions' files then the modified files must be licensed under the MPL 2.0 .
+ProcessInvoke is licensed under the MPL 2.0 license. If you modify any of ProcessInvoke' files then the modified files must be licensed under the MPL 2.0 .
 
-If you use ProcessExtensions in your project please make an exact copy of the contents of ProcessExtensions' [LICENSE.txt file](https://github.com/alastairlundy/ProcessInvoke/blob/main/LICENSE.txt) available either in your third party licenses txt file or as a separate txt file.
+If you use ProcessInvoke in your project please make an exact copy of the contents of ProcessInvoke' [LICENSE.txt file](https://github.com/alastairlundy/ProcessInvoke/blob/main/LICENSE.txt) available either in your third party licenses txt file or as a separate txt file.
 
 ## Acknowledgements
 

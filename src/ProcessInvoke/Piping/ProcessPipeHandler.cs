@@ -12,6 +12,8 @@ using System.IO;
 using System.Runtime.Versioning;
 using System.Threading.Tasks;
 
+using AlastairLundy.ProcessInvoke.Abstractions.Piping;
+
 namespace AlastairLundy.ProcessInvoke.Piping;
 
 /// <summary>

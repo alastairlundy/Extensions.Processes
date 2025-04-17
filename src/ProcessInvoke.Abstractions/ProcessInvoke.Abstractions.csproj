@@ -28,7 +28,7 @@
     </PropertyGroup>
     
     <ItemGroup>
-        <PackageReference Include="AlastairLundy.ProcessInvoke.Primitives" Version="1.2.0" />
+        <PackageReference Include="AlastairLundy.ProcessInvoke.Primitives" Version="[1.2.0, 2.0.0)" />
     </ItemGroup>
 
 

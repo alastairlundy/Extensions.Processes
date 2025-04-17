@@ -9,7 +9,18 @@
         <RootNamespace>AlastairLundy.ProcessInvoke</RootNamespace>
         <PackageId>AlastairLundy.ProcessInvoke</PackageId>
         <Title>AlastairLundy.ProcessInvoke</Title>
-        <Authors />
+        <Authors>Alastair Lundy</Authors>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>1.5.0</Version>
+        <Description>ProcessInvoke adds much needed abstractions and extensions to Processes and Process Running in .NET, to make it easier and safer.
+
+ProcessInvoke started as part of CliInvoke but is now a separate package, helping other projects besides CliInvoke to run processes easily and safely.</Description>
+        <Copyright>Copyright (c) Alastair Lundy 2024-2025</Copyright>
+        <RepositoryUrl>https://github.com/alastairlundy/ProcessInvoke</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>process, processes, processrunner, processfactory,</PackageTags>
+        <PackageReleaseNotes>Initial release under new package name</PackageReleaseNotes>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
     <ItemGroup>
@@ -17,6 +28,13 @@
         <Link>README.md</Link>
         <PackagePath>README.md</PackagePath>
       </Content>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="AlastairLundy.Extensions.IO.Abstractions" Version="3.0.0-preview.1"/>
+        <PackageReference Include="AlastairLundy.ProcessInvoke.Abstractions" Version="[1.5.0, 2.0.0)"/>
+        <PackageReference Include="AlastairLundy.ProcessInvoke.Primitives" Version="[1.2.0, 2.0.0)" />
+        <PackageReference Include="AlastairLundy.DotExtensions.Resyslib" Version="[6.4.1, 7.0.0)"/>
     </ItemGroup>
 
     <ItemGroup>

@@ -10,10 +10,21 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
+using AlastairLundy.ProcessInvoke.Abstractions;
+
+
+#if NET5_0_OR_GREATER
+using System.Runtime.Versioning;
+#endif
+
 using AlastairLundy.ProcessInvoke.Localizations;
+
+using AlastairLundy.ProcessInvoke.Primitives;
+using AlastairLundy.ProcessInvoke.Primitives.Exceptions;
+using AlastairLundy.ProcessInvoke.Primitives.Policies;
+using AlastairLundy.ProcessInvoke.Primitives.Results;
 
 namespace AlastairLundy.ProcessInvoke;
 

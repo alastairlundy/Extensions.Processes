@@ -11,7 +11,11 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
+
 using System.Runtime.Versioning;
+
+using AlastairLundy.ProcessInvoke.Abstractions.Builders;
+using AlastairLundy.ProcessInvoke.Primitives.Policies;
 
 namespace AlastairLundy.ProcessInvoke.Builders;
 
