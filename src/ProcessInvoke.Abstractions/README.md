@@ -32,6 +32,24 @@ Key Abstractions:
 
 ^1 - [Polyfill](https://github.com/SimonCropp/Polyfill) is a dependency only required for .NET Standard 2.0 and 2.1 users. [Microsoft.Bcl.HashCode](https://www.nuget.org/packages/Microsoft.Bcl.HashCode) is a dependency only required for .NET Standard 2.0 users.
 
+
+## When should I use [ProcessInvoke](https://github.com/alastairlundy/ProcessInvoke) vs [CliInvoke](https://github.com/alastairlundy/CliInvoke)?
+
+Use _CliInvoke_ **IF any** of the following apply:
+- You want to programatically execute a Cli Application
+- You want to get the output of a Cli Application.
+- You want to Pipe the Input or Output of a Cli Application.
+
+Use _ProcessInvoke_ **IF ALL** the following apply:
+- You don't care about getting a Process's Standard Output.
+- You're focussed more on starting and/or stopping Processes.
+- You don't need Argument Building or Escaping capabilities
+
+**Note**: Whilst ProcessInvoke is capable of doing most of what CliInvoke is capable of, they are intended for different use cases.
+
+CliInvoke internally uses ProcessInvoke but provides additional abstractions around programatically executing programs and is designed specifically for this task.
+
+
 ## How to install and use ProcessInvoke.Abstractions
 ProcessInvoke.Abstractions is available on [Nuget](https://nuget.org).
 

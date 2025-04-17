@@ -18,6 +18,7 @@
         <PackageTags>process, processes, runner, iprocessfactory, iprocessrunner</PackageTags>
         <PackageReleaseNotes>Initial release under new package name</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Description>Process running related abstractions implemented by AlastairLundy.ProcessInvoke</Description>
     </PropertyGroup>
     
     <ItemGroup>
