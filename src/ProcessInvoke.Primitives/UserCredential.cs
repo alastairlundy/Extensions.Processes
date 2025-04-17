@@ -20,8 +20,11 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Runtime.Versioning;
 using System.Security;
+
+#if NET5_0_OR_GREATER
+using System.Runtime.Versioning;
+#endif
 
 namespace AlastairLundy.ProcessInvoke.Primitives
 {
@@ -129,7 +132,7 @@ namespace AlastairLundy.ProcessInvoke.Primitives
         }
 
         /// <summary>
-        /// Determines whether two user credentials are equal.
+        /// Determines whether one User Credential is equal to another.
         /// </summary>
         /// <param name="left">The first user credential to compare.</param>
         /// <param name="right">The second user credential to compare.</param>
