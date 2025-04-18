@@ -35,6 +35,8 @@ ProcessInvoke started as part of CliInvoke but is now a separate package, helpin
         <PackageReference Include="AlastairLundy.ProcessInvoke.Abstractions" Version="[1.5.0, 2.0.0)"/>
         <PackageReference Include="AlastairLundy.ProcessInvoke.Primitives" Version="[1.2.0, 2.0.0)" />
         <PackageReference Include="AlastairLundy.DotExtensions.Resyslib" Version="[6.4.1, 7.0.0)"/>
+    
+        <PackageReference Include="Polyfill" Version="[7.27.0, 8.0.0)" Condition="'$(TargetFramework)' == 'netstandard2.0' OR '$(TargetFramework)' == 'netstandard2.1'"/>
     </ItemGroup>
 
     <ItemGroup>
