@@ -36,7 +36,12 @@ public class ProcessRunner : Abstractions.IProcessRunner
         _processFactory = processFactory;
     }
 
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="processConfiguration"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
     public async Task<ProcessResult> ExecuteProcessConfigAsync(ProcessConfiguration processConfiguration,
         CancellationToken cancellationToken = default)
     {
